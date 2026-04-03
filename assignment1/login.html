@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Login page for Cacti-Succulent Kuching">
+<meta name="keywords" content="login, account">
+<meta name="author" content="YOUR NAME">
+<title>Login | Cacti-Succulent Kuching</title>
+<link rel="stylesheet" href="styles/login_styles.css">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<!-- NAV WILL BE ADDED HERE LATER -->
+
+
+<!-- MAIN CONTENT -->
+<main>
+
+    <!-- LOGIN FORM -->
+    <section>
+        <h2>Login Form</h2>
+
+        <form action="process_login.php" method="post">
+
+            <fieldset>
+                <legend>Account Details</legend>
+
+                <label for="login">Login:</label>
+                <input type="text" id="login" name="login"
+                       maxlength="10"
+                       pattern="[A-Za-z]+"
+                       required><br>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password"
+                       maxlength="25"
+                       pattern="[A-Za-z]+"
+                       required>
+            </fieldset>
+
+            <br>
+            <input type="submit" value="Login">
+            <input type="reset" value="Clear">
+
+        </form>
+    </section>
+
+    <!-- HELP / ASIDE -->
+    <aside>
+        <h2>Help</h2>
+        <p>Your login must contain alphabet characters only.</p>
+        <p>Password is case sensitive.</p>
+    </aside>
+
+</main>
+
+<!-- FOOTER WILL BE ADDED HERE LATER -->
+
+</body>
+</html>

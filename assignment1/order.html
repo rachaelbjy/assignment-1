@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Order page for Cacti-Succulent Kuching">
+<meta name="keywords" content="order, cactus, succulent">
+<meta name="author" content="YOUR NAME">
+<title>Order | Cacti-Succulent Kuching</title>
+<link rel="stylesheet" href="styles/order_styles.css">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<!-- NAV WILL BE ADDED HERE LATER -->
+
+
+<!-- MAIN CONTENT -->
+<main>
+
+    <!-- ORDER FORM -->
+    <section>
+        <h2>Order Form</h2>
+
+        <form action="process_order.php" method="post">
+
+            <!-- ORDER DETAILS -->
+            <fieldset>
+                <legend>Order Details</legend>
+
+                <label for="product">Product:</label>
+                <select id="product" name="product" required>
+                    <option value="">Select</option>
+                    <option value="succulent">Succulent</option>
+                    <option value="cactus">Cactus</option>
+                    <option value="pot">Pot</option>
+                    <option value="accessories">Accessories</option>
+                </select><br>
+
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" name="quantity" min="1" max="20" required><br>
+
+                <p>Delivery Mode:</p>
+                <input type="radio" id="pickup" name="delivery" value="pickup" required>
+                <label for="pickup">Self Pick-up</label>
+
+                <input type="radio" id="delivery" name="delivery" value="delivery">
+                <label for="delivery">Delivery</label><br>
+
+                <p>Payment Mode:</p>
+                <input type="radio" id="cash" name="payment" value="cash" required>
+                <label for="cash">Cash</label>
+
+                <input type="radio" id="online" name="payment" value="online">
+                <label for="online">Online Transfer</label><br>
+
+                <label for="date">Preferred Date:</label>
+                <input type="date" id="date" name="date" required>
+            </fieldset>
+
+            <!-- CUSTOMER INFO -->
+            <fieldset>
+                <legend>Customer Information</legend>
+
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required><br>
+
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder="0123456789" required><br>
+
+                <label for="address">Address:</label>
+                <textarea id="address" name="address" rows="4" cols="30" required></textarea>
+            </fieldset>
+
+            <!-- EXTRA OPTIONS -->
+            <fieldset>
+                <legend>Extra Options</legend>
+
+                <input type="checkbox" id="gift" name="extra" value="gift">
+                <label for="gift">Gift Wrapping</label>
+
+                <input type="checkbox" id="potting" name="extra" value="potting">
+                <label for="potting">Potting Service</label>
+
+                <input type="checkbox" id="card" name="extra" value="card">
+                <label for="card">Care Card</label>
+            </fieldset>
+
+            <br>
+            <input type="submit" value="Submit Order">
+            <input type="reset" value="Clear Form">
+
+        </form>
+    </section>
+
+    <!-- ORDER NOTES -->
+    <aside>
+        <h2>Order Notes</h2>
+        <p>Delivery is available within Kuching area only.</p>
+        <p>Please ensure all information is correct before submitting.</p>
+        <p>Our team will contact you after receiving your order.</p>
+    </aside>
+
+</main>
+
+<!-- FOOTER WILL BE ADDED HERE LATER -->
+
+</body>
+</html>

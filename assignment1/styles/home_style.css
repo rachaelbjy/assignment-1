@@ -1,0 +1,281 @@
+/* =====================================================
+   HOME PAGE ONLY
+===================================================== */
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BASE */
+.home-page {
+  font-family: 'Jost', sans-serif;
+}
+
+/* =====================================================
+   HERO SECTION (HOME)
+===================================================== */
+
+.home-page .hero {
+  background: #6d9e51;
+  color: white;
+  padding-bottom: 80px;
+}
+
+/* CONTAINER */
+.home-page .container {
+  width: 1100px;
+  margin: auto;
+}
+
+/* NAV WILL BE ADDED HERE LATER */
+
+/* HERO CONTENT */
+.home-page .hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 40px;
+}
+
+/* TEXT */
+.home-page .hero-text {
+  width: 48%;
+}
+
+.home-page .hero-text h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 56px;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.home-page .hero-text p {
+  font-size: 14px;
+  margin-bottom: 30px;
+  max-width: 400px;
+}
+
+/* BUTTON */
+.home-page .btn {
+  background: white;
+  color: #355f2e;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-bottom: 40px;
+  transition: 0.3s ease;
+}
+
+.home-page .btn:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+/* STATS */
+.home-page .stats {
+  display: flex;
+  gap: 50px;
+}
+
+.home-page .stats h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+}
+
+.home-page .stats span {
+  font-family: 'Playfair Display', serif;
+  font-size: 12px;
+}
+
+/* IMAGES */
+.home-page .hero-images {
+  width: 50%;
+  position: relative;
+  transform: translateX(-30px);
+}
+
+/* BIG IMAGE */
+.home-page .img-big {
+  width: 300px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: 0.4s ease;
+}
+
+/* SMALL IMAGE */
+.home-page .img-small {
+  width: 220px;
+  position: absolute;
+  bottom: -60px;
+  left: 80px;
+  transition: 0.4s ease;
+}
+
+/* FLOAT EFFECT */
+.home-page .img-big:hover,
+.home-page .img-small:hover {
+  transform: translateY(-12px) scale(1.03);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .home-page .container {
+    width: 90%;
+  }
+
+  .home-page .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .home-page .hero-text,
+  .home-page .hero-images {
+    width: 100%;
+  }
+
+  .home-page .hero-images {
+    margin-top: 40px;
+    height: 300px;
+  }
+
+  .home-page .img-big,
+  .home-page .img-small {
+    position: static;
+    margin: 10px auto;
+  }
+}
+
+
+/* =====================================================
+   SERVICES SECTION (HOME)
+===================================================== */
+
+.services {
+  background: #ffffff;
+  padding: 40px 0;
+  color: #14532d;
+}
+
+.services-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.service-card {
+  border: 1px solid #14532d;
+  padding: 25px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.service-top {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.service-top i {
+  font-size: 40px;
+}
+
+.service-top h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1.3;
+}
+
+.service-card p {
+  margin-top: 15px;
+  font-family: 'Jost', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+  .services-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .services-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* =====================================================
+   ABOUT SECTION (HOME)
+===================================================== */
+
+.home-page .about {
+  padding: 80px 0;
+  background: #6d9e51;
+}
+
+.home-page .about-container {
+  width: 1100px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+.home-page .about-image {
+  width: 50%;
+  overflow: hidden;
+}
+
+.home-page .about-image img {
+  width: 100%;
+  display: block;
+  border-radius: 8px;
+  transition: 0.4s ease;
+}
+
+.home-page .about-text {
+  width: 50%;
+}
+
+.home-page .about-text h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 48px;
+  margin-bottom: 20px;
+  color: #eb5b26;
+}
+
+.home-page .about-text p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .home-page .about-container {
+    flex-direction: column;
+    width: 90%;
+    text-align: center;
+  }
+
+  .home-page .about-image,
+  .home-page .about-text {
+    width: 100%;
+  }
+}

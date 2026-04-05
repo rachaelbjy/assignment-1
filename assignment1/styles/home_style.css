@@ -1,282 +1,441 @@
-/* =====================================================
-   HOME PAGE ONLY
-===================================================== */
-
-/* RESET */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
-/* BASE */
-.home-page {
-  font-family: 'Jost', sans-serif;
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+/* Header */
+.Header {
+    position: relative;
 }
 
-/* =====================================================
-   HERO SECTION (HOME)
-===================================================== */
-
-.home-page .hero {
-  background: #6d9e51;
-  color: white;
-  padding-bottom: 80px;
-}
-
-/* CONTAINER */
-.home-page .container {
-  width: 1100px;
-  margin: auto;
-}
-
-/* NAV WILL BE ADDED HERE LATER */
-
-/* HERO CONTENT */
-.home-page .hero-content {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-top: 40px;
-}
-
-/* TEXT */
-.home-page .hero-text {
-  width: 48%;
-}
-
-.home-page .hero-text h1 {
-  font-family: 'Playfair Display', serif;
-  color: #eb5b26;
-  font-size: 56px;
-  line-height: 1.2;
-  margin-bottom: 20px;
-}
-
-.home-page .hero-text p {
-  font-size: 14px;
-  margin-bottom: 30px;
-  max-width: 400px;
-}
-
-/* BUTTON */
-.home-page .btn {
-  background: white;
-  color: #355f2e;
-  padding: 12px 25px;
-  border: none;
-  border-radius: 20px;
-  cursor: pointer;
-  margin-bottom: 40px;
-  transition: 0.3s ease;
-}
-
-.home-page .btn:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-}
-
-/* STATS */
-.home-page .stats {
-  display: flex;
-  gap: 50px;
-}
-
-.home-page .stats h3 {
-  font-family: 'Playfair Display', serif;
-  font-size: 22px;
-}
-
-.home-page .stats span {
-  font-family: 'Playfair Display', serif;
-  font-size: 12px;
-}
-
-/* IMAGES */
-.home-page .hero-images {
-  width: 50%;
-  position: relative;
-  transform: translateX(-30px);
-}
-
-/* BIG IMAGE */
-.home-page .img-big {
-  width: 300px;
-  position: absolute;
-  right: 0;
-  top: 0;
-  transition: 0.4s ease;
-}
-
-/* SMALL IMAGE */
-.home-page .img-small {
-  width: 220px;
-  position: absolute;
-  bottom: -60px;
-  left: 80px;
-  transition: 0.4s ease;
-}
-
-/* FLOAT EFFECT */
-.home-page .img-big:hover,
-.home-page .img-small:hover {
-  transform: translateY(-12px) scale(1.03);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-}
-
-/* RESPONSIVE */
-@media (max-width: 900px) {
-  .home-page .container {
-    width: 90%;
-  }
-
-  .home-page .hero-content {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .home-page .hero-text,
-  .home-page .hero-images {
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-  }
+    height: 100%;
 
-  .home-page .hero-images {
-    margin-top: 40px;
-    height: 300px;
-  }
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.6),
+        rgba(0, 0, 0, 0.4),
+        rgba(0, 0, 0, 0.3)
+    );
 
-  .home-page .img-big,
-  .home-page .img-small {
-    position: static;
-    margin: 10px auto;
-  }
+    z-index: 1;
 }
 
-
-/* =====================================================
-   SERVICES SECTION (HOME)
-===================================================== */
-
-.services {
-  background: #ffffff;
-  padding: 40px 0;
-  color: #14532d;
+/* navbar */
+.navbar {
+    position: fixed;
+    display: flex;
+    top: 0;
+    left: 0;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #6d9e51;
+    padding: 5px 30px;
+    z-index: 3;
 }
 
-.services-container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
+.navbar li {
+  position: relative;
 }
 
-.service-card {
-  border: 1px solid #14532d;
-  padding: 25px;
-  border-radius: 10px;
-  cursor: pointer;
+.navbar li a {
+  display: block;
+  color: white;
+  text-decoration: none;
+}
+
+/* hover效果 */
+.navbar li a:hover {
+  background-color: #EB5B26;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%; 
+  left: 0;
+  background-color: #6d9e51;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  min-width: 100px;
+  opacity: 0;
+  visibility: hidden;
   transition: 0.3s;
 }
 
-.service-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+.dropdown-menu li a {
+  color: white;
+  padding: 10px 15px;
 }
 
-.service-top {
-  display: flex;
-  align-items: center;
-  gap: 15px;
+.dropdown-menu li a:hover {
+  background-color: #EB5B26;
 }
 
-.service-top i {
-  font-size: 40px;
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
 }
 
-.service-top h3 {
-  font-family: 'Playfair Display', serif;
-  font-size: 18px;
-  font-weight: bold;
-  line-height: 1.3;
+/* logo */
+.logo_box {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 10px;
 }
 
-.service-card p {
-  margin-top: 15px;
-  font-family: 'Jost', sans-serif;
-  font-size: 16px;
-  line-height: 1.6;
-}
-
-/* RESPONSIVE */
-@media (max-width: 992px) {
-  .services-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 600px) {
-  .services-container {
-    grid-template-columns: 1fr;
-  }
+.logo img {
+    height: 50px;
+    width: auto;
+    align-items: center;
+    border-radius: 50%;
 }
 
 
-/* =====================================================
-   ABOUT SECTION (HOME)
-===================================================== */
 
-.home-page .about {
-  padding: 80px 0;
-  background: #6d9e51;
+.logo_name h1 {
+    color: #FFFFFF;
+    font-weight: 900;         
+    text-transform: uppercase;  
+    font-size: 1.2rem;          
+    letter-spacing: 1px;
+    font-family: "Cinzel", serif;
 }
 
-.home-page .about-container {
-  width: 1100px;
-  margin: auto;
-  display: flex;
-  align-items: center;
-  gap: 60px;
+/* navbar */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
 }
 
-.home-page .about-image {
-  width: 50%;
-  overflow: hidden;
+/* links */
+.nav-links li a {
+    font-family: "montserrat", sans-serif;  
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
 }
 
-.home-page .about-image img {
-  width: 100%;
-  display: block;
-  border-radius: 8px;
-  transition: 0.4s ease;
+/* hover effect */
+.nav-links li a:hover {
+    background-color: #EB5B26;
+    transition: 0.4s;
+    padding: 5px 10px;
 }
 
-.home-page .about-text {
-  width: 50%;
+.banner {
+    margin: 0;
+    padding: 0;
 }
 
-.home-page .about-text h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 48px;
-  margin-bottom: 20px;
-  color: #eb5b26;
+.banner-text h1 {
+    position: absolute;
+    top: 35%;
+    left: 60px;
+    transform: translateY(-50%);
+    color: white;
+    z-index: 2;
 }
 
-.home-page .about-text p {
-  font-size: 16px;
-  line-height: 1.8;
-  color: #ffffff;
-  margin-bottom: 20px;
+.banner-text h1 {
+    font-family: "Cinzel", serif;
+    font-size: 75px;
+    font-weight: bold;
 }
 
-/* RESPONSIVE */
-@media (max-width: 900px) {
-  .home-page .about-container {
-    flex-direction: column;
-    width: 90%;
-    text-align: center;
-  }
+.banner-text p {
+    position: absolute;
+    top: 75%;
+    right: 60px;
+    transform: translateY(-50%);
+    color: white;
+    z-index: 2;
+    text-align: right;
+}
 
-  .home-page .about-image,
-  .home-page .about-text {
+.banner-text p {
+    font-family: "Cinzel", serif;
+    font-size: 55px;
+    font-weight: bold;
+}
+
+/* banner */
+.banner img {
     width: 100%;
-  }
+    height: 700px;
+    object-fit: cover;
+    display: block;
+    padding: 0%;
+}
+
+/* Content */
+.Content1 {
+    background-color: #EB5B26;
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.Content1 h1 {
+    font-family: "Cinzel", serif;
+    color: white;
+    font-size: 40px;
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+.Products-box {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 10px;
+}
+
+.Products {
+  flex: 1; 
+  text-align: center;
+}
+
+.Products img {
+  width: 70%;
+  height: 350px;
+  object-fit: cover;
+}
+
+.Products img:hover {
+  transform: scale(1.05);
+  transition: 0.3s;
+}
+
+.Products p {
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.Products p a {
+  text-decoration: none;
+  color: black;
+}
+
+.Products p a:hover {
+    background-color: #EB5B26;
+    transition: 0.4s;
+    padding: 5px 10px;
+}
+
+/* Content 2 */
+.Content2 {
+    text-align: left;
+    padding: 10px;
+}
+
+.promo {
+    width: 700px;
+    margin: auto;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.Promo h1 {
+    font-family: "Cinzel", serif;
+    color: #EB5B26;
+    font-size: 125px;
+    text-align: center;
+    margin: 0;
+}
+
+.left-text {
+    font-family: "Montserrat", sans-serif;  
+    text-align: left;
+    margin-top: 10px;
+    color: #EB5B26;
+    font-size: 25px;
+    padding-left: 80px;
+}
+
+.right-text {
+    font-family: "Montserrat", sans-serif;  
+    text-align: right;
+    margin-top: 10px;
+    color: #EB5B26;
+    font-size: 25px;
+    padding-right: 80px;
+}
+
+/* Content 3 */
+.Content3 {
+    background: #ffffff;
+    padding: 40px 40px;
+    color: #6d9e51;
+}
+
+.features-box{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 70px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.features {
+    border: 1px solid #6d9e51;
+    padding: 10px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.features i {
+    font-size: 35px;
+    color: #6d9e51;
+    margin-bottom: 10px;
+}
+
+.features h3 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+    color: #6d9e51;
+    font-size: 25px;
+}
+
+.features p {
+    font-family: "Montserrat", sans-serif;  
+    color: #6d9e51;
+    font-size: 20px;
+}
+
+.features:hover {
+    transform: scale(1.05);
+}
+
+.Shop-button {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.button {
+    display: inline-block;
+    background-color: #6d9e51;
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: 0.3s;
+    font-family: "Cinzel", serif;
+    font-size: 20px;
+    }
+
+.button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
+
+/* Footer */
+.site-footer {
+    background-image: linear-gradient(rgba(20, 40, 10, 0.7), rgba(10, 25, 5, 0.9)), url('../Cactus-Succulent/footer-background.jpeg');
+    color: #ffffff;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 20px 0 10px 0;
+}
+
+.footer-grid {
+    max-width: 1100px; 
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: auto auto auto; 
+    gap: 40px; 
+    align-items: start;
+}
+
+/* Brand Title */
+.brand-title {
+    font-size: 22px;          
+    font-weight: 550;         
+    line-height: 1.2;        
+    letter-spacing: 0px;      
+    text-transform: uppercase;
+    margin: 0 0 15px 0;
+    color: #ffffff;
+    display: inline-block;     
+    border-bottom: 1.3px solid #ffffff; 
+    padding-bottom: 10px;
+}
+
+/* Tagline */
+.tagline {
+    font-style: italic;
+    font-size: 16px;
+    opacity: 0.9;
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* Headings for 'Navigation' and 'Connect With Us' */
+.footer-col h4:not(.brand-title) {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1px;
+    display: inline-block;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.4);
+    padding-bottom: 5px;
+}
+
+/* Lists and Links */
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-col li {
+    margin-bottom: 5px;
+}
+
+.footer-col a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1rem;
+    opacity: 0.8;
+    transition: 0.3s;
+}
+
+.footer-col a:hover {
+    opacity: 1;
+    color: #EB5B26; 
+    padding-left: 5px;
+}
+
+/* Contact Info Text */
+.contact-info p {
+    font-size: 0.95rem;
+    margin: 5px 0;
+    opacity: 0.9;
+}
+
+/* Bottom Bar */
+.footer-bottom {
+    text-align: center;
+    margin-top: 10px;
+    padding-top: 5px;
+    padding-bottom: 0; 
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 12px;
+    opacity: 0.5;
 }

@@ -1,62 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="description" content="Login page for Cacti-Succulent Kuching">
-<meta name="keywords" content="login, account">
-<meta name="author" content="YOUR NAME">
-<title>Login | Cacti-Succulent Kuching</title>
-<link rel="stylesheet" href="styles/login_styles.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Login page for Cacti-Succulent Kuching">
+    <meta name="keywords" content="login, account">
+    <meta name="author" content="Rachael Bong">
+    <title>Login</title>
+    <link rel="stylesheet" href="style/styles.css">
 </head>
 
-<body>
+<body class="order-page">
 
-<!-- HEADER -->
-<!-- NAV WILL BE ADDED HERE LATER -->
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo-area">
+                <a href="index.html">
+                    <img src="images/cacti-succulent-logo.png" alt="Logo" class="site-logo">
+                    <span class="brand-name">Cacti Succulent Kuching</span>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Products ▾</a>
+                        <div class="dropdown-content">
+                            <a href="product1.html">Cacti</a>
+                            <a href="product2.html">Succulents</a>
+                            <a href="product3.html">Planting Accessories</a>
+                            <a href="service1.html">Services</a>
+                        </div>
+                    </li>
+                    <li><a href="order.html">Order</a></li>
+                    <li><a href="login.html" class="active">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
+    <main class="order-main">
+        <div class="form-header">
+            <h1>Login</h1>
+            <p>Access your account securely 🌿</p>
+        </div>
 
-<!-- MAIN CONTENT -->
-<main>
+        <section class="form-card">
+            <form action="process_login.php" method="post">
 
-    <!-- LOGIN FORM -->
-    <section>
-        <h2>Login Form</h2>
+                <fieldset>
+                    <legend>Account Details</legend>
 
-        <form action="process_login.php" method="post">
+                    <div class="form-row">
+                        <div class="input-group full-width">
+                            <label for="login">Username</label>
+                            <input type="text" id="login" name="login" maxlength="10" pattern="[A-Za-z]+" placeholder="Enter your username" required>
+                        </div>
+                    </div>
 
-            <fieldset>
-                <legend>Account Details</legend>
+                    <div class="form-row">
+                        <div class="input-group full-width">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" name="password" maxlength="25" pattern="[A-Za-z]+" placeholder="Enter your password" required>
+                        </div>
+                    </div>
+                </fieldset>
 
-                <label for="login">Login:</label>
-                <input type="text" id="login" name="login"
-                       maxlength="10"
-                       pattern="[A-Za-z]+"
-                       required><br>
+                <div class="button-group">
+                    <input type="submit" value="Login">
+                    <input type="reset" value="Clear Form">
+                </div>
 
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password"
-                       maxlength="25"
-                       pattern="[A-Za-z]+"
-                       required>
-            </fieldset>
+                <div class="form-redirect">
+                    <p>Don't have an account? <a href="register.html">Register with us</a></p>
+                </div>
 
-            <br>
-            <input type="submit" value="Login">
-            <input type="reset" value="Clear">
+            </form>
+        </section>
+    </main>
 
-        </form>
-    </section>
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-col brand-col">
+                <h4 class="brand-title">Cacti<br>Succulent<br>Kuching</h4>
+                <p class="tagline">From the desert to your home.</p>
+            </div>
 
-    <!-- HELP / ASIDE -->
-    <aside>
-        <h2>Help</h2>
-        <p>Your login must contain alphabet characters only.</p>
-        <p>Password is case sensitive.</p>
-    </aside>
+            <div class="footer-col">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="enquiry.html">Enquiry</a></li>
+                    <li><a href="profile.html">Our Profile</a></li>
+                    <li><a href="enhancements.html">Enhancements</a></li>
+                </ul>
+            </div>
 
-</main>
+            <div class="footer-col">
+                <h4>Connect With Us</h4>
+                <div class="contact-info">
+                    <p><strong>WA:</strong> +60 12-888 4444</p>
+                    <p><strong>FB:</strong> CactiSucculentKCH</p>
+                    <p><strong>LOC:</strong> Kuching, Sarawak</p>
+                </div>
+            </div>
+        </div>
 
-<!-- FOOTER WILL BE ADDED HERE LATER -->
+        <div class="footer-bottom">
+            <p>&copy; 2026 Cacti-Succulent Kuching. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+<a href="#" class="back-to-top">▲</a>
 
 </body>
 </html>

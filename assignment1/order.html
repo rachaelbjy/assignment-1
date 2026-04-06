@@ -1,109 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="description" content="Order page for Cacti-Succulent Kuching">
-<meta name="keywords" content="order, cactus, succulent">
-<meta name="author" content="YOUR NAME">
-<title>Order | Cacti-Succulent Kuching</title>
-<link rel="stylesheet" href="styles/order_styles.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Order page for Cacti-Succulent Kuching">
+    <meta name="author" content="Rachael">
+    <title>Order</title>
+    <link rel="stylesheet" href="style/styles.css">
 </head>
 
 <body>
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo-area">
+                <a href="index.html">
+                    <img src="images/cacti-succulent-logo.png" alt="Logo" class="site-logo">
+                    <span class="brand-name">Cacti Succulent Kuching</span>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Products ▾</a>
+                        <div class="dropdown-content">
+                            <a href="product1.html">Cacti</a>
+                            <a href="product2.html">Succulents</a>
+                            <a href="product3.html">Planting Accessories</a>
+                            <a href="service1.html">Services</a>
+                        </div>
+                    </li>
+                    <li><a href="order.html" class="active">Order</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-<!-- HEADER -->
-<!-- NAV WILL BE ADDED HERE LATER -->
+    <main class="order-main">
+        <div class="form-header">
+            <h1>Order Form</h1>
+            <p>Order your favorite plants easily and quickly 🌿</p>
+        </div>
 
+        <section class="form-card">
+            <form action="process_order.php" method="post">
+                
+                <fieldset>
+                    <legend>Order Details</legend>
+                    
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label for="product">Product</label>
+                            <select id="product" name="product" required>
+                                <option value="">Select Category</option>
+                                <option value="succulent">Succulent</option>
+                                <option value="cactus">Cactus</option>
+                                <option value="pot">Pot</option>
+                                <option value="accessories">Accessories</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label for="quantity">Quantity</label>
+                            <input type="number" id="quantity" name="quantity" min="1" max="20" placeholder="e.g. 2" required>
+                        </div>
+                    </div>
 
-<!-- MAIN CONTENT -->
-<main>
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label for="delivery">Delivery Mode</label>
+                            <select id="delivery" name="delivery" required>
+                                <option value="">Select Mode</option>
+                                <option value="pickup">Self Pick-up</option>
+                                <option value="delivery">Home Delivery</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label for="payment">Payment Mode</label>
+                            <select id="payment" name="payment" required>
+                                <option value="">Select Mode</option>
+                                <option value="cash">Cash</option>
+                                <option value="online">Online Transfer</option>
+                            </select>
+                        </div>
+                    </div>
 
-    <!-- ORDER FORM -->
-    <section>
-        <h2>Order Form</h2>
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label for="date">Preferred Date</label>
+                            <input type="date" id="date" name="date" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="time">Preferred Time</label>
+                            <select id="time" name="time" required>
+                                <option value="">Select Time Slot</option>
+                                <option value="morning">Morning (9AM - 12PM)</option>
+                                <option value="afternoon">Afternoon (1PM - 4PM)</option>
+                                <option value="evening">Evening (5PM - 8PM)</option>
+                            </select>
+                        </div>
+                    </div>
+                </fieldset>
 
-        <form action="process_order.php" method="post">
+                <fieldset>
+                    <legend>Customer Information</legend>
+                    
+                    <div class="form-row">
+                        <div class="input-group full-width">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                        </div>
+                    </div>
 
-            <!-- ORDER DETAILS -->
-            <fieldset>
-                <legend>Order Details</legend>
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="e.g. hello@example.com" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" pattern="[0-9]{10,11}" placeholder="e.g. 0128884444" required>
+                        </div>
+                    </div>
 
-                <label for="product">Product:</label>
-                <select id="product" name="product" required>
-                    <option value="">Select</option>
-                    <option value="succulent">Succulent</option>
-                    <option value="cactus">Cactus</option>
-                    <option value="pot">Pot</option>
-                    <option value="accessories">Accessories</option>
-                </select><br>
+                    <div class="form-row">
+                        <div class="input-group full-width">
+                            <label for="address">Full Address</label>
+                            <textarea id="address" name="address" rows="4" placeholder="Enter your delivery or billing address" required></textarea>
+                        </div>
+                    </div>
+                </fieldset>
 
-                <label for="quantity">Quantity:</label>
-                <input type="number" id="quantity" name="quantity" min="1" max="20" required><br>
+                <div class="button-group">
+                    <input type="submit" value="Submit Order">
+                    <input type="reset" value="Clear Form">
+                </div>
+                
+            </form>
+        </section>
+    </main>
 
-                <p>Delivery Mode:</p>
-                <input type="radio" id="pickup" name="delivery" value="pickup" required>
-                <label for="pickup">Self Pick-up</label>
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-col brand-col">
+                <h4 class="brand-title">Cacti<br>Succulent<br>Kuching</h4>
+                <p class="tagline">From the desert to your home.</p>
+            </div>
 
-                <input type="radio" id="delivery" name="delivery" value="delivery">
-                <label for="delivery">Delivery</label><br>
+            <div class="footer-col">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="enquiry.html">Enquiry</a></li>
+                    <li><a href="profile.html">Our Profile</a></li>
+                    <li><a href="enhancements.html">Enhancements</a></li>
+                </ul>
+            </div>
 
-                <p>Payment Mode:</p>
-                <input type="radio" id="cash" name="payment" value="cash" required>
-                <label for="cash">Cash</label>
+            <div class="footer-col">
+                <h4>Connect With Us</h4>
+                <div class="contact-info">
+                    <p><strong>WA :</strong> +60 12-888 4444</p>
+                    <p><strong>FB :</strong> CactiSucculentKCH</p>
+                    <p><strong>LOC :</strong> Kuching, Sarawak</p>
+                </div>
+            </div>
+        </div>
 
-                <input type="radio" id="online" name="payment" value="online">
-                <label for="online">Online Transfer</label><br>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Cacti-Succulent Kuching. All Rights Reserved.</p>
+        </div>
+    </footer>
 
-                <label for="date">Preferred Date:</label>
-                <input type="date" id="date" name="date" required>
-            </fieldset>
-
-            <!-- CUSTOMER INFO -->
-            <fieldset>
-                <legend>Customer Information</legend>
-
-                <label for="name">Full Name:</label>
-                <input type="text" id="name" name="name" required><br>
-
-                <label for="phone">Phone Number:</label>
-                <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder="0123456789" required><br>
-
-                <label for="address">Address:</label>
-                <textarea id="address" name="address" rows="4" cols="30" required></textarea>
-            </fieldset>
-
-            <!-- EXTRA OPTIONS -->
-            <fieldset>
-                <legend>Extra Options</legend>
-
-                <input type="checkbox" id="gift" name="extra" value="gift">
-                <label for="gift">Gift Wrapping</label>
-
-                <input type="checkbox" id="potting" name="extra" value="potting">
-                <label for="potting">Potting Service</label>
-
-                <input type="checkbox" id="card" name="extra" value="card">
-                <label for="card">Care Card</label>
-            </fieldset>
-
-            <br>
-            <input type="submit" value="Submit Order">
-            <input type="reset" value="Clear Form">
-
-        </form>
-    </section>
-
-    <!-- ORDER NOTES -->
-    <aside>
-        <h2>Order Notes</h2>
-        <p>Delivery is available within Kuching area only.</p>
-        <p>Please ensure all information is correct before submitting.</p>
-        <p>Our team will contact you after receiving your order.</p>
-    </aside>
-
-</main>
-
-<!-- FOOTER WILL BE ADDED HERE LATER -->
+<a href="#" class="back-to-top">▲</a>
 
 </body>
 </html>

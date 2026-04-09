@@ -1,121 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css">
-
-<link rel="stylesheet" href="style/home_style.css">
-
-<title>Home</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Cacti-Succulent Kuching homepage">
+    <meta name="keywords" content="cactus, succulent, Kuching, plants, pots, accessories">
+    <meta name="author" content="YOUR NAME">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    
+    <link rel="stylesheet" href="style/styles.css"> 
+    <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
 </head>
-
 <body class="home-page">
 
-<header class="hero">
+   <header class="main-header">
+        <div class="header-container">
+            <div class="logo-area">
+                <a href="index.html">
+                    <img src="images/cacti-succulent-logo.png" alt="Logo" class="site-logo">
+                    <span class="brand-name">Cacti-Succulent Kuching</span>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Products ▾</a>
+                        <div class="dropdown-content">
+                            <a href="product1.html">Cacti</a>
+                            <a href="product2.html">Succulents</a>
+                            <a href="product3.html">Planting Accessories</a>
+                            <a href="service1.html">Services</a>
+                        </div>
+                    </li>
+                    <li><a href="order.html">Order</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-  <!-- NAV WILL BE ADDED HERE LATER -->
+<section class="premium-hero">
+    <div class="home-container hero-wrapper">
+        
+        <div class="hero-text-box">
+            <span class="hero-subtitle">From Desert to Your Home</span>
+            <h1>Bring Nature<br>Into Your Life</h1>
+            <p>Discover a wide range of healthy cactus and succulent plants perfect for your space. Carefully selected to bring comfort, freshness, and lasting beauty into your daily life.</p>
+            
+            <a href="product1.html" class="hero-btn">Discover Collection <i class="ri-arrow-right-line"></i></a>
 
-  <div class="container hero-content">
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <h3>6500+</h3>
+                    <span>Happy Customers</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <h3>2400+</h3>
+                    <span>Unique Plants</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <h3>8000+</h3>
+                    <span>Orders Delivered</span>
+                </div>
+            </div>
+        </div>
 
-    <div class="hero-text">
-
-      <h1>Bring Nature<br>Into Your Home</h1>
-
-      <p>Discover a wide range of healthy cactus and succulent plants that are perfect for your home. Our plants are carefully selected to bring comfort, freshness, and beauty into your daily life.</p>
-
-      <button class="btn">DISCOVER →</button>
-
-      <div class="stats">
-        <div><h3>6500+</h3><span>Customers</span></div>
-        <div><h3>2400+</h3><span>Plants</span></div>
-        <div><h3>8000+</h3><span>Purchase</span></div>
-      </div>
+        <div class="hero-image-box">
+            <img src="images/cactus1.jpg" alt="Beautiful Cactus" class="img-primary">
+            <img src="images/succulent1.jpg" alt="Small Succulent" class="img-secondary">
+        </div>
 
     </div>
-
-    <div class="hero-images">
-      <img src="images/cactus1.jpg" class="img-big">
-      <img src="images/succulent1.jpg" class="img-small">
-    </div>
-
-  </div>
-
-</header>
-
-<section class="services">
-
-  <div class="container services-container">
-
-    <div class="service-card">
-      <div class="service-top">
-        <i class="ri-truck-line"></i>
-        <h3>Fast <br> Delivery</h3>
-      </div>
-      <p>We provide fast and reliable delivery to ensure your plants arrive safely. Each order is carefully packed to protect the plants during transportation.</p>
-    </div>
-
-    <div class="service-card">
-      <div class="service-top">
-        <i class="ri-customer-service-line"></i>
-        <h3>Great Customer <br> Service</h3>
-      </div>
-      <p>Our team is always ready to help with any questions or enquiries. We aim to give customers a smooth and friendly shopping experience.</p>
-    </div>
-
-    <div class="service-card">
-      <div class="service-top">
-        <i class="ri-plant-line"></i>
-        <h3>Original <br> Plants</h3>
-      </div>
-      <p>We offer a variety of cactus and succulent plants that are carefully selected. All plants are healthy and well-maintained before being sold.</p>
-    </div>
-
-    <div class="service-card">
-      <div class="service-top">
-        <i class="ri-money-dollar-circle-line"></i>
-        <h3>Affordable <br> Price</h3>
-      </div>
-      <p>Our plants are sold at reasonable prices without compromising quality. We want everyone to be able to enjoy having plants at home.</p>
-    </div>
-
-  </div>
-
 </section>
 
-<section class="about">
+<section class="home-services">
+    <div class="home-container">
+        <div class="section-heading">
+            <h2>Why Choose Us</h2>
+            <div class="heading-line"></div>
+        </div>
 
-  <div class="container about-container">
+        <div class="services-grid">
+            <div class="service-card-pro">
+                <div class="icon-circle"><i class="ri-truck-line"></i></div>
+                <h3>Fast Delivery</h3>
+                <p>Fast and reliable delivery ensuring your plants arrive safely. Each order is meticulously packed for protection.</p>
+            </div>
 
-    <div class="about-image">
-      <img src="images/aboutus.jpg" alt="About Us">
+            <div class="service-card-pro">
+                <div class="icon-circle"><i class="ri-customer-service-2-line"></i></div>
+                <h3>Great Support</h3>
+                <p>Our friendly team is always ready to assist with any enquiries, giving you a smooth shopping experience.</p>
+            </div>
+
+            <div class="service-card-pro">
+                <div class="icon-circle"><i class="ri-plant-line"></i></div>
+                <h3>Original Plants</h3>
+                <p>We offer a premium variety of carefully selected plants, guaranteed healthy and well-maintained.</p>
+            </div>
+
+            <div class="service-card-pro">
+                <div class="icon-circle"><i class="ri-money-dollar-circle-line"></i></div>
+                <h3>Affordable</h3>
+                <p>Enjoy beautiful plants at reasonable prices without compromising on quality or service.</p>
+            </div>
+        </div>
     </div>
-
-    <div class="about-text">
-
-      <h2>About Us</h2>
-
-      <p>
-        Cacti-Succulent Kuching started as a small project by a group of friends who share a strong interest in plants and nature. 
-        At first, we only kept plants for our own homes, but we soon realised that many people also enjoy having plants in their living spaces. 
-        This inspired us to start sharing our plants with others.
-      </p>
-
-      <p>
-        Over time, we turned our passion into a small business. 
-        Today, we offer a variety of cactus and succulent plants that are carefully selected and well-maintained. 
-        Our goal is to provide healthy plants and create a simple and enjoyable experience for our customers.
-      </p>
-
-    </div>
-
-  </div>
-
 </section>
 
-<!-- FOOTER WILL BE ADDED HERE LATER -->
+<section class="home-about">
+    <div class="home-container about-wrapper">
+        <div class="about-visual">
+            <div class="visual-backdrop"></div>
+            <img src="images/aboutus.jpg" alt="About Cacti Succulent Kuching" class="about-img">
+        </div>
+
+        <div class="about-content">
+            <span class="section-tag">Our Story</span>
+            <h2>Rooted in Passion</h2>
+            <p>Cacti-Succulent Kuching started as a small project by a group of friends sharing a strong interest in plants and nature. At first, we only kept plants for our own homes, but we soon realised that many people also enjoy having plants in their living spaces.</p>
+            <p>Over time, we turned our passion into a small business. Today, our goal remains the same: to provide healthy plants and create a simple, enjoyable experience for our community.</p>
+            <a href="aboutme.html" class="outline-btn">Read Our Full Story</a>
+        </div>
+    </div>
+</section>
+
+<footer class="site-footer">
+    <div class="footer-grid">
+        <div class="footer-col brand-col">
+            <h4 class="brand-title">Cacti<br>Succulent<br>Kuching</h4>
+            <p class="tagline">From the desert to your home</p>
+        </div>
+
+        <div class="footer-col">
+            <h4>Navigation</h4>
+            <ul>
+                <li><a href="order.html">Track My Order</a></li>
+                <li><a href="enquiry.html">Service Enquiry</a></li>
+                <li><a href="aboutme.html">Our Story</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h4>Connect With Us</h4>
+            <div class="contact-info">
+                <p><strong>WA:</strong> +60 12-888 4444</p>
+                <p><strong>FB:</strong> CactiSucculentKCH</p>
+                <p><strong>LOC:</strong> Kuching, Sarawak</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2026 Cacti-Succulent Kuching. All Rights Reserved.</p>
+    </div>
+</footer>
+
+<a href="#" class="back-to-top">▲</a>
 
 </body>
 </html>

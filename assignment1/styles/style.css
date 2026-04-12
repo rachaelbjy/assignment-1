@@ -118,6 +118,23 @@ h1 {
     font-size: 1rem;
 }
 
+.add-to-cart::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%; 
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%);
+    transform: skewX(-25deg); 
+    transition: left 0.5s ease;
+    z-index: 1;
+}
+
+.add-to-cart:hover::before {
+    left: 200%; 
+}
+
 .button-group input[type="submit"]:hover,
 .hero-btn:hover,
 .add-to-cart:hover,
@@ -391,11 +408,18 @@ h1 {
     justify-content: center; 
 }
 
-.hero-section h1 { 
+.hero-section h1 {
     color: #EB5B26; 
-    margin: 0 0 15px 0; 
-    text-shadow: 2px 2px 15px rgba(0,0,0,0.5); 
-    font: normal normal bold 4.5em/1.1 'Cinzel', serif; 
+    margin: 0 auto 15px auto;
+    text-shadow: 2px 2px 15px rgba(0,0,0,0.5);
+    display: inline-block; 
+    white-space: nowrap; 
+    clip-path: inset(0 100% 0 0); 
+    animation: typing 1.5s steps(30, end) forwards;
+}
+
+@keyframes typing {
+    to { clip-path: inset(0 0 0 0); } 
 }
 
 .hero-section h2 { 
@@ -716,9 +740,25 @@ h1 {
     margin-bottom: 25px; 
 }
 
-.cactus-card figure { 
+.cactus-card figure {
     margin: 0 0 15px 0; 
-    flex-shrink: 0; 
+    flex-shrink: 0;
+    overflow: hidden; 
+    border-radius: 4px; 
+}
+
+.cactus-card img { 
+    width: 100%; 
+    height: auto;
+    aspect-ratio: 1/1;
+    object-fit: cover; 
+    border-radius: 4px; 
+    margin-bottom: 25px; 
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
+}
+
+.cactus-card:hover img {
+    transform: scale(1.1); 
 }
 
 .cactus-card figcaption { 
@@ -727,7 +767,6 @@ h1 {
     flex-direction: row; 
     justify-content: center; 
     font-size: 0.9rem; 
-    margin-top: -25px;
 }
 
 .card-content { 
@@ -1704,3 +1743,71 @@ html {
         display: none; 
     }
 }
+
+/* Enhancements */
+
+/* 1. Cactus Party */
+.cactus-party {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    pointer-events: none; /* Let clicks pass through! */
+    z-index: 9999;
+    overflow: hidden;
+}
+
+.cactus-party span {
+    position: absolute;
+    opacity: 0; 
+    filter: drop-shadow(0 15px 20px rgba(0,0,0,0.4)); 
+}
+
+.cactus-party .c1  { font-size: 4rem; top: 10%; left: -10%; animation: fly-left-to-right 3.2s ease-in 0.1s forwards; }
+.cactus-party .c2  { font-size: 7rem; top: 50%; left: -10%; animation: fly-left-to-right 2.5s ease-out 0.8s forwards; }
+.cactus-party .c3  { font-size: 3rem; top: 80%; left: -10%; animation: fly-left-to-right 3.8s linear 1.2s forwards; }
+.cactus-party .c13 { font-size: 5rem; top: 30%; left: -10%; animation: fly-left-to-right 2.9s ease-in-out 0.4s forwards; }
+
+.cactus-party .c4  { font-size: 6rem; top: 20%; right: -10%; animation: fly-right-to-left 2.8s ease-out 0.3s forwards; }
+.cactus-party .c5  { font-size: 3.5rem; top: 70%; right: -10%; animation: fly-right-to-left 3.5s linear 1.5s forwards; }
+.cactus-party .c6  { font-size: 5.5rem; top: 40%; right: -10%; animation: fly-right-to-left 2.6s ease-in 0.6s forwards; }
+.cactus-party .c14 { font-size: 2.5rem; top: 85%; right: -10%; animation: fly-right-to-left 3.1s ease-in-out 0.9s forwards; }
+
+.cactus-party .c7  { font-size: 4.5rem; left: 20%; top: -10%; animation: fly-top-to-bottom 3.1s ease-in 0.5s forwards; }
+.cactus-party .c8  { font-size: 2rem; left: 60%; top: -10%; animation: fly-top-to-bottom 4.0s linear 0.2s forwards; }
+.cactus-party .c9  { font-size: 6.5rem; left: 80%; top: -10%; animation: fly-top-to-bottom 2.4s ease-out 1.1s forwards; }
+
+.cactus-party .c10 { font-size: 5rem; left: 10%; bottom: -10%; animation: fly-bottom-to-top 2.7s ease-out 0.7s forwards; }
+.cactus-party .c11 { font-size: 3rem; left: 50%; bottom: -10%; animation: fly-bottom-to-top 3.6s ease-in-out 0s forwards; }
+.cactus-party .c12 { font-size: 4rem; left: 85%; bottom: -10%; animation: fly-bottom-to-top 3.3s linear 1.4s forwards; }
+.cactus-party .c15 { font-size: 7rem; left: 35%; bottom: -10%; animation: fly-bottom-to-top 2.5s ease-in 1.0s forwards; }
+
+
+@keyframes fly-left-to-right {
+    0%   { transform: translate(0, 0) scale(0.5) rotate(-90deg); opacity: 0; }
+    10%  { opacity: 1; }
+    90%  { opacity: 1; }
+    100% { transform: translate(120vw, 30vh) scale(1.5) rotate(360deg); opacity: 0; }
+}
+
+@keyframes fly-right-to-left {
+    0%   { transform: translate(0, 0) scale(1.2) rotate(90deg); opacity: 0; }
+    10%  { opacity: 1; }
+    90%  { opacity: 1; }
+    100% { transform: translate(-120vw, -40vh) scale(0.6) rotate(-360deg); opacity: 0; }
+}
+
+@keyframes fly-top-to-bottom {
+    0%   { transform: translate(0, 0) scale(0.8) rotate(0deg); opacity: 0; }
+    10%  { opacity: 1; }
+    90%  { opacity: 1; }
+    100% { transform: translate(40vw, 120vh) scale(2) rotate(540deg); opacity: 0; }
+}
+
+@keyframes fly-bottom-to-top {
+    0%   { transform: translate(0, 0) scale(1.5) rotate(45deg); opacity: 0; }
+    10%  { opacity: 1; }
+    90%  { opacity: 1; }
+    100% { transform: translate(-50vw, -120vh) scale(0.4) rotate(-720deg); opacity: 0; }
+}
+
+/* 2. 

@@ -4,18 +4,25 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Enquiry page for Cacti-Succulent Kuching">
-    <meta name="author" content="Rachael Bong">
-    <title>Enquiry</title>
-    <link rel="stylesheet" href="style/styles.css">
+    <meta name="keywords" content="cactus, succulent, Kuching, enquiry, contact us">
+    <meta name="author" content="Rachael, Eleona, Amber">
+    <title>Enquiry | Cacti-Succulent Kuching</title>
+    
+    <link rel="stylesheet" href="styles/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
 </head>
 
 <body class="enquiry-page">
 
-    <header class="main-header">
+    <!-- MAIN HEADER & NAVIGATION AREA -->
+    <header id="top-header" class="main-header">
         <div class="header-container">
             <div class="logo-area">
                 <a href="index.html">
-                    <img src="images/cacti-succulent-logo.png" alt="Logo" class="site-logo">
+                    <img src="images/cacti-succulent-logo.png" alt="Cacti-Succulent Kuching Logo" class="site-logo">
                     <span class="brand-name">Cacti-Succulent Kuching</span>
                 </a>
             </div>
@@ -37,6 +44,7 @@
         </div>
     </header>
 
+    <!-- ENQUIRY FORM SECTION -->
     <main class="form-main">
         <div class="form-header">
             <h1>Enquiry Form</h1>
@@ -67,7 +75,7 @@
                         </div>
                         <div class="input-group">
                             <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" name="phone" pattern="[0-9]{10,11}" placeholder="e.g. 0128884444" required>
+                            <input type="tel" id="phone" name="phone" maxlength="10" pattern="[0-9]{10}" placeholder="e.g. 0128884444" required>
                         </div>
                     </div>
                 </fieldset>
@@ -77,14 +85,29 @@
                     
                     <div class="form-row">
                         <div class="input-group full-width">
-                            <label for="topic">Enquiry Type</label>
-                            <select id="topic" name="topic" required>
-                                <option value="">Select Topic</option>
-                                <option value="succulent">Succulents</option>
-                                <option value="cactus">Cactus</option>
-                                <option value="pots">Pots</option>
-                                <option value="accessories">Accessories</option>
-                                <option value="general">General Enquiry</option>
+                            <label for="subject">What can we help you with?</label>
+                            <select id="subject" name="subject" required>
+                                <option value="" disabled selected>Select a Topic</option>
+                                
+                                <optgroup label="General">
+                                    <option value="general">General Inquiry</option>
+                                    <option value="feedback">Feedback & Suggestions</option>
+                                </optgroup>
+
+                                <option disabled></option> 
+                                <optgroup label="Services">
+                                    <option value="hospital">The Plant Hospital</option>
+                                    <option value="boarding">Plant Boarding</option>
+                                    <option value="custom-terrarium">Custom Terrariums</option>
+                                    <option value="workshop">Terrarium Workshop</option>
+                                </optgroup>
+
+                                <option disabled></option> 
+                                <optgroup label="Event Door Gifts">
+                                    <option value="gift-standard">Standard Package</option>
+                                    <option value="gift-luxury">Luxury Package</option>
+                                    <option value="gift-premium">Premium Package</option>
+                                </optgroup>
                             </select>
                         </div>
                     </div>
@@ -92,7 +115,7 @@
                     <div class="form-row">
                         <div class="input-group full-width">
                             <label for="comments">Comments</label>
-                            <textarea id="comments" name="comments" rows="5" placeholder="Type your message here..." required></textarea>
+                            <textarea id="comments" name="comments" rows="5" cols="50" placeholder="Type your message here..." required></textarea>
                         </div>
                     </div>
                 </fieldset>
@@ -106,6 +129,7 @@
         </section>
     </main>
 
+    <!-- WEBSITE FOOTER & COPYRIGHT AREA -->
     <footer class="site-footer">
         <div class="footer-grid">
             <div class="footer-col brand-col">
@@ -127,7 +151,7 @@
                 <div class="contact-info">
                     <p><strong>WA :</strong> +60 12-888 4444</p>
                     <p><strong>FB :</strong> CactiSucculentKCH</p>
-                    <p><strong>LOC :</strong> Kuching, Sarawak</p>
+                    <p><strong>EML :</strong> <a href="mailto:104402891@students.swinburne.edu.my">cactisucculentkch@email.com</a></p>
                 </div>
             </div>
         </div>
@@ -137,7 +161,7 @@
         </div>
     </footer>
 
-<a href="#" class="back-to-top">▲</a>
+    <a href="#" class="back-to-top">▲</a>
 
 </body>
 </html>

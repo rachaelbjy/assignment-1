@@ -4,17 +4,25 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Order page for Cacti-Succulent Kuching">
-    <meta name="author" content="Rachael">
-    <title>Order</title>
-    <link rel="stylesheet" href="style/styles.css">
+    <meta name="keywords" content="order, buy plants, cactus, succulent, Kuching delivery">
+    <meta name="author" content="Rachael, Eleona, Amber">
+    <title>Order | Cacti-Succulent Kuching</title>
+    
+    <link rel="stylesheet" href="styles/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
 </head>
 
-<body>
-    <header class="main-header">
+<body class="order-page">
+
+    <!-- MAIN HEADER & NAVIGATION AREA -->
+    <header id="top-header" class="main-header">
         <div class="header-container">
             <div class="logo-area">
                 <a href="index.html">
-                    <img src="images/cacti-succulent-logo.png" alt="Logo" class="site-logo">
+                    <img src="images/cacti-succulent-logo.png" alt="Cacti-Succulent Kuching Logo" class="site-logo">
                     <span class="brand-name">Cacti-Succulent Kuching</span>
                 </a>
             </div>
@@ -36,6 +44,7 @@
         </div>
     </header>
 
+    <!-- ORDER FORM SECTION -->
     <main class="form-main">
         <div class="form-header">
             <h1>Order Form</h1>
@@ -50,37 +59,150 @@
                     
                     <div class="form-row">
                         <div class="input-group">
-                            <label for="product">Product</label>
-                            <select id="product" name="product" required>
-                                <option value="">Select Category</option>
-                                <option value="succulent">Succulent</option>
-                                <option value="cactus">Cactus</option>
-                                <option value="pot">Pot</option>
-                                <option value="accessories">Accessories</option>
+                            <label for="product1">Item 1</label>
+                            <select id="product1" name="product1" required>
+                                <option value="" disabled selected>Choose a Product</option>
+                                <optgroup label="1. Cacti Collection">
+                                    <option value="golden-barrel">Golden Barrel</option>
+                                    <option value="bunny-ear">Bunny Ear</option>
+                                    <option value="old-lady">Old Lady</option>
+                                    <option value="princess-night">Princess of the Night</option>
+                                    <option value="prickly-pear">Prickly Pear</option>
+                                    <option value="cardon">Cardon</option>
+                                </optgroup>
+                                <option disabled></option>
+                                <optgroup label="2. Succulent Collection">
+                                    <option value="lola">Echeveria Lola</option>
+                                    <option value="jade">Jade Plant</option>
+                                    <option value="moonstones">Moonstones</option>
+                                    <option value="aloe">Aloe Vera</option>
+                                    <option value="ghosty">Ghosty</option>
+                                    <option value="string-of-pearls">String of Pearls</option>
+                                </optgroup>
+                                <option disabled></option>
+                                <optgroup label="3. Planting Accessories">
+                                    <option value="terracotta">Artisan Terracotta</option>
+                                    <option value="cactus-mix">Premium Cactus Mix</option>
+                                    <option value="pumice">Natural Pumice</option>
+                                    <option value="watering-can">Long-Spout Can</option>
+                                    <option value="tweezers">Planting Tweezers</option>
+                                    <option value="shears">Pruning Shears</option>
+                                    <option value="fertilizer">Liquid Cactus Food</option>
+                                    <option value="dressing">River Stone Dressing</option>
+                                    <option value="moisture-meter">Soil Moisture Meter</option>
+                                </optgroup>
                             </select>
                         </div>
                         <div class="input-group">
-                            <label for="quantity">Quantity</label>
-                            <input type="number" id="quantity" name="quantity" min="1" max="20" placeholder="e.g. 2" required>
+                            <label for="quantity1">Quantity 1</label>
+                            <input type="number" id="quantity1" name="quantity1" min="1" max="20" placeholder="Qty" required>
                         </div>
                     </div>
 
                     <div class="form-row">
                         <div class="input-group">
-                            <label for="delivery">Delivery Mode</label>
-                            <select id="delivery" name="delivery" required>
-                                <option value="">Select Mode</option>
-                                <option value="pickup">Self Pick-up</option>
-                                <option value="delivery">Home Delivery</option>
+                            <label for="product2">Item 2</label>
+                            <select id="product2" name="product2">
+                                <option value="" selected>Choose a Product</option>
+                                <optgroup label="1. Cacti Collection">
+                                    <option value="golden-barrel">Golden Barrel</option>
+                                    <option value="bunny-ear">Bunny Ear</option>
+                                    <option value="old-lady">Old Lady</option>
+                                    <option value="princess-night">Princess of the Night</option>
+                                    <option value="prickly-pear">Prickly Pear</option>
+                                    <option value="cardon">Cardon</option>
+                                </optgroup>
+                                <option disabled></option>
+                                <optgroup label="2. Succulent Collection">
+                                    <option value="lola">Echeveria Lola</option>
+                                    <option value="jade">Jade Plant</option>
+                                    <option value="moonstones">Moonstones</option>
+                                    <option value="aloe">Aloe Vera</option>
+                                    <option value="ghosty">Ghosty</option>
+                                    <option value="string-of-pearls">String of Pearls</option>
+                                </optgroup>
+                                <option disabled></option>
+                                <optgroup label="3. Planting Accessories">
+                                    <option value="terracotta">Artisan Terracotta</option>
+                                    <option value="cactus-mix">Premium Cactus Mix</option>
+                                    <option value="pumice">Natural Pumice</option>
+                                    <option value="watering-can">Long-Spout Can</option>
+                                    <option value="tweezers">Planting Tweezers</option>
+                                    <option value="shears">Pruning Shears</option>
+                                    <option value="fertilizer">Liquid Cactus Food</option>
+                                    <option value="dressing">River Stone Dressing</option>
+                                    <option value="moisture-meter">Soil Moisture Meter</option>
+                                </optgroup>
                             </select>
                         </div>
                         <div class="input-group">
-                            <label for="payment">Payment Mode</label>
-                            <select id="payment" name="payment" required>
-                                <option value="">Select Mode</option>
-                                <option value="cash">Cash</option>
-                                <option value="online">Online Transfer</option>
+                            <label for="quantity2">Quantity 2</label>
+                            <input type="number" id="quantity2" name="quantity2" min="1" max="20" placeholder="Qty">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label for="product3">Item 3</label>
+                            <select id="product3" name="product3">
+                                <option value="" selected>Choose a Product</option>
+                                <optgroup label="1. Cacti Collection">
+                                    <option value="golden-barrel">Golden Barrel</option>
+                                    <option value="bunny-ear">Bunny Ear</option>
+                                    <option value="old-lady">Old Lady</option>
+                                    <option value="princess-night">Princess of the Night</option>
+                                    <option value="prickly-pear">Prickly Pear</option>
+                                    <option value="cardon">Cardon</option>
+                                </optgroup>
+                                <option disabled></option>
+                                <optgroup label="2. Succulent Collection">
+                                    <option value="lola">Echeveria Lola</option>
+                                    <option value="jade">Jade Plant</option>
+                                    <option value="moonstones">Moonstones</option>
+                                    <option value="aloe">Aloe Vera</option>
+                                    <option value="ghosty">Ghosty</option>
+                                    <option value="string-of-pearls">String of Pearls</option>
+                                </optgroup>
+                                <option disabled></option>
+                                <optgroup label="3. Planting Accessories">
+                                    <option value="terracotta">Artisan Terracotta</option>
+                                    <option value="cactus-mix">Premium Cactus Mix</option>
+                                    <option value="pumice">Natural Pumice</option>
+                                    <option value="watering-can">Long-Spout Can</option>
+                                    <option value="tweezers">Planting Tweezers</option>
+                                    <option value="shears">Pruning Shears</option>
+                                    <option value="fertilizer">Liquid Cactus Food</option>
+                                    <option value="dressing">River Stone Dressing</option>
+                                    <option value="moisture-meter">Soil Moisture Meter</option>
+                                </optgroup>
                             </select>
+                        </div>
+                        <div class="input-group">
+                            <label for="quantity3">Quantity 3</label>
+                            <input type="number" id="quantity3" name="quantity3" min="1" max="20" placeholder="Qty">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label>Delivery Mode</label>
+                            <div class="radio-group">
+                                <input type="radio" id="del-pickup" name="delivery" value="pickup" required>
+                                <label for="del-pickup" class="inline-label">Self Pick-up</label>
+                                
+                                <input type="radio" id="del-home" name="delivery" value="delivery" required>
+                                <label for="del-home" class="inline-label">Home Delivery</label>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label>Payment Mode</label>
+                            <div class="radio-group">
+                                <input type="radio" id="pay-cash" name="payment" value="cash" required>
+                                <label for="pay-cash" class="inline-label">Cash</label>
+                                
+                                <input type="radio" id="pay-online" name="payment" value="online" required>
+                                <label for="pay-online" class="inline-label">Online Transfer</label>
+                            </div>
                         </div>
                     </div>
 
@@ -118,17 +240,24 @@
                         </div>
                         <div class="input-group">
                             <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" name="phone" pattern="[0-9]{10,11}" placeholder="e.g. 0128884444" required>
+                            <input type="tel" id="phone" name="phone" maxlength="11" pattern="[0-9]{10,11}" title="Please enter 10 to 11 digit phone number without dashes" placeholder="e.g. 0128884444" required>
                         </div>
                     </div>
 
                     <div class="form-row">
                         <div class="input-group full-width">
                             <label for="address">Full Address</label>
-                            <textarea id="address" name="address" rows="4" placeholder="Enter your delivery or billing address" required></textarea>
+                            <textarea id="address" name="address" rows="4" cols="50" placeholder="Enter your delivery or billing address" required></textarea>
                         </div>
                     </div>
-                </fieldset>
+                </fieldset> 
+                
+                <div class="form-row checkbox-row">
+                    <div class="input-group full-width checkbox-group">
+                        <input type="checkbox" id="terms" name="terms" required>
+                        <label for="terms" class="inline-label">I agree to the Terms and Conditions and confirm my order details.</label>
+                    </div>
+                </div>
 
                 <div class="button-group">
                     <input type="submit" value="Submit Order">
@@ -139,6 +268,7 @@
         </section>
     </main>
 
+    <!-- WEBSITE FOOTER & COPYRIGHT AREA -->
     <footer class="site-footer">
         <div class="footer-grid">
             <div class="footer-col brand-col">
@@ -160,7 +290,7 @@
                 <div class="contact-info">
                     <p><strong>WA :</strong> +60 12-888 4444</p>
                     <p><strong>FB :</strong> CactiSucculentKCH</p>
-                    <p><strong>LOC :</strong> Kuching, Sarawak</p>
+                    <p><strong>EML :</strong> <a href="mailto:104402891@students.swinburne.edu.my">cactisucculentkch@email.com</a></p>
                 </div>
             </div>
         </div>
@@ -170,7 +300,7 @@
         </div>
     </footer>
 
-<a href="#" class="back-to-top">▲</a>
+    <a href="#" class="back-to-top">▲</a>
 
 </body>
 </html>

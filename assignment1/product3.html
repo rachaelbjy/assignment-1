@@ -1,29 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Planting Accessories</title>
-    <link rel="stylesheet" href="style/styles.css">
+    <meta name="description" content="Planting Accessories for desert plants">
+    <meta name="keywords" content="soil, pumice, pots, gardening tools">
+    <meta name="author" content="Rachael, Eleona, Amber">
+    <title>Planting Accessories | Cacti-Succulent Kuching</title>
+    
+    <link rel="stylesheet" href="styles/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
 </head>
-<body class="accessories-page">
 
-    <header class="main-header">
+<body class="product-page">
+
+    <!-- MAIN HEADER & NAVIGATION AREA -->
+    <header id="top-header" class="main-header">
         <div class="header-container">
             <div class="logo-area">
                 <a href="index.html">
-                    <img src="images/cacti-succulent-logo.png" alt="Logo" class="site-logo">
+                    <img src="images/cacti-succulent-logo.png" alt="Cacti-Succulent Kuching Logo" class="site-logo">
                     <span class="brand-name">Cacti-Succulent Kuching</span>
                 </a>
             </div>
             <nav class="main-nav">
                 <ul>
                     <li class="dropdown">
-                        <a href="#" class="dropbtn">Products ▾</a>
+                        <a href="#" class="dropbtn active">Products ▾</a>
                         <div class="dropdown-content">
                             <a href="product1.html">Cacti</a>
                             <a href="product2.html">Succulents</a>
-                            <a href="product3.html">Planting Accessories</a>
+                            <a href="product3.html" class="active">Planting Accessories</a>
                             <a href="service1.html">Services</a>
                         </div>
                     </li>
@@ -34,19 +44,21 @@
         </div>
     </header>
 
+    <!-- HERO SECTION -->
     <section class="hero-section hero-accessories">
-            <div class="hero-content">
-                <h2>The Right Tools for the Job</h2>
-                <h1>Planting Accessories</h1>
-                <p>Premium soils, breathable terracotta, and precision tools. Everything you need to repot, prune, and maintain your desert gems with professional care.</p>
-                <div class="hero-divider"></div>
-            </div>
+        <div class="hero-content">
+            <h1>Planting Accessories</h1>
+            <h2>The Right Tools for the Job</h2>
+            <p>Premium soils, breathable terracotta, and precision tools. Everything you need to repot, prune, and maintain your desert gems with professional care.</p>
+            <div class="hero-divider"></div>
+        </div>
     </section>
 
     <main class="content-wrapper">
+       
+        <!-- PRODUCTS SECTION -->
        <section class="product-grid">
-            
-            <div class="cactus-card">
+            <article class="cactus-card">
                 <figure>
                     <img src="images/acc-terracotta-pot.jpg" alt="Terracotta Pot">
                     <figcaption>Breathable Clay. <a href="https://pin.it/2WzknA4F8">Source</a></figcaption>
@@ -56,14 +68,13 @@
                     <p class="price">RM 25.00</p>
                     <select class="size-selector" name="pot-size">
                         <option value="small">Small (4")</option>
-                        <option value="medium" selected>Medium (6") - +RM 10</option>
-                        <option value="large">Large (8") - +RM 20</option>
+                        <option value="medium" selected>Medium (6")</option>
                     </select>
                     <button class="add-to-cart">Add to Cart</button>
                 </div>
-            </div>
+            </article>
 
-            <div class="cactus-card">
+            <article class="cactus-card">
                 <figure>
                     <img src="images/acc-cactus-soil.jpg" alt="Cactus Soil Mix">
                     <figcaption>Fast-Draining. <a href="https://pin.it/6YrfMEAHy">Source</a></figcaption>
@@ -73,14 +84,13 @@
                     <p class="price">RM 18.00</p>
                     <select class="size-selector" name="soil-size">
                         <option value="1l">1 Litre Bag</option>
-                        <option value="3l" selected>3 Litre Bag - +RM 15</option>
-                        <option value="5l">5 Litre Bag - +RM 25</option>
+                        <option value="3l" selected>3 Litre Bag</option>
                     </select>
                     <button class="add-to-cart">Add to Cart</button>
                 </div>
-            </div>
+            </article>
 
-            <div class="cactus-card">
+            <article class="cactus-card">
                 <figure>
                     <img src="images/acc-pumice-stone.jpg" alt="Pumice Stone">
                     <figcaption>Volcanic Rock. <a href="https://pin.it/1Rx7HkHvh">Source</a></figcaption>
@@ -91,13 +101,12 @@
                     <select class="size-selector" name="pumice-grain">
                         <option value="fine">Fine Grain</option>
                         <option value="medium" selected>Medium Grain</option>
-                        <option value="coarse">Coarse Grain</option>
                     </select>
                     <button class="add-to-cart">Add to Cart</button>
                 </div>
-            </div>
+            </article>
 
-            <div class="cactus-card">
+            <article class="cactus-card">
                 <figure>
                     <img src="images/acc-watering-can.jpg" alt="Watering Can">
                     <figcaption>Stainless Steel. <a href="https://pin.it/2ntpM6Ih4">Source</a></figcaption>
@@ -107,13 +116,13 @@
                     <p class="price">RM 45.00</p>
                     <select class="size-selector" name="can-volume">
                         <option value="500ml">500 ml</option>
-                        <option value="1l" selected>1 Litre - +RM 15</option>
+                        <option value="1l" selected>1 Litre</option>
                     </select>
                     <button class="add-to-cart">Add to Cart</button>
                 </div>
-            </div>
+            </article>
 
-            <div class="cactus-card">
+            <article class="cactus-card">
                 <figure>
                     <img src="images/acc-tweezers.jpg" alt="Precision Tweezers">
                     <figcaption>Extra Long. <a href="https://pin.it/5SQixT7Jj">Source</a></figcaption>
@@ -127,9 +136,9 @@
                     </select>
                     <button class="add-to-cart">Add to Cart</button>
                 </div>
-            </div>
+            </article>
             
-            <div class="cactus-card">
+            <article class="cactus-card">
                 <figure>
                     <img src="images/acc-pruning-sheers.jpg" alt="Pruning Shears">
                     <figcaption>Carbon Steel. <a href="https://pin.it/5QugjbdMH">Source</a></figcaption>
@@ -139,13 +148,13 @@
                     <p class="price">RM 35.00</p>
                     <select class="size-selector" name="shear-type">
                         <option value="standard" selected>Standard Steel</option>
-                        <option value="titanium">Titanium Coated - +RM 15</option>
+                        <option value="titanium">Titanium Coated</option>
                     </select>
                     <button class="add-to-cart">Add to Cart</button>
                 </div>
-            </div>
+            </article>
 
-            <div class="cactus-card">
+            <article class="cactus-card">
                 <figure>
                     <img src="images/acc-liquid-fertilizer.jpg" alt="Liquid Fertilizer">
                     <figcaption>Low-Nitrogen. <a href="https://pin.it/1lPFa10eo">Source</a></figcaption>
@@ -154,14 +163,14 @@
                     <h3>Liquid Cactus Food</h3>
                     <p class="price">RM 22.00</p>
                     <select class="size-selector" name="fertilizer-size">
-                        <option value="250ml" selected>250 ml Bottle</option>
-                        <option value="500ml">500 ml Bottle - +RM 15</option>
+                        <option value="250ml" selected>250 ml</option>
+                        <option value="500ml">500 ml</option>
                     </select>
                     <button class="add-to-cart">Add to Cart</button>
                 </div>
-            </div>
+            </article>
 
-            <div class="cactus-card">
+            <article class="cactus-card">
                 <figure>
                     <img src="images/acc-top-dressing.jpg" alt="Top Dressing Pebbles">
                     <figcaption>Decorative Stones. <a href="https://pin.it/1O2jrIwtG">Source</a></figcaption>
@@ -171,14 +180,13 @@
                     <p class="price">RM 10.00</p>
                     <select class="size-selector" name="stone-color">
                         <option value="white">Matte White</option>
-                        <option value="black">Basalt Black</option>
                         <option value="mixed" selected>Natural Mixed</option>
                     </select>
                     <button class="add-to-cart">Add to Cart</button>
                 </div>
-            </div>
+            </article>
 
-            <div class="cactus-card">
+            <article class="cactus-card">
                 <figure>
                     <img src="images/acc-moisture-meter.jpg" alt="Moisture Meter">
                     <figcaption>Root-Level Tech. <a href="https://pin.it/4LvlLriA1">Source</a></figcaption>
@@ -187,17 +195,33 @@
                     <h3>Soil Moisture Meter</h3>
                     <p class="price">RM 30.00</p>
                     <select class="size-selector" name="meter-type">
-                        <option value="analog" selected>Standard Analog</option>
-                        <option value="digital">Digital Display - +RM 25</option>
+                        <option value="analog" selected>Analog</option>
+                        <option value="digital">Digital</option>
                     </select>
                     <button class="add-to-cart">Add to Cart</button>
                 </div>
-            </div>
+            </article>
         </section>
 
-        <section class="knowledge-base">
-            <div class="glossary-area">
+        <!-- STEP GUIDE SECTION -->
+        <section class="step-guide">
+            <h3>How to Repot Safely:</h3>
+            <ol>
+                <li>Fill the bottom third of your terracotta pot with the premium cactus mix.</li>
+                <li>Gently remove the plant from its nursery pot, using tweezers to avoid glochids.</li>
+                <li>Place the plant in the center and fill the remaining space with soil.</li>
+                <li>Add a layer of river stone top dressing to keep the base dry.</li>
+                <li>Wait at least a week before watering to allow roots to heal!</li>
+            </ol>
+        </section>
+
+        <!-- KNOWLEDGE BASE -->
+        <section class="product-knowledge-base">
+            <div class="product-main-content">
                 <h3>Materials Matter</h3>
+                <p>Having the correct tools and soil components is half the battle when caring for xerophytic plants. The wrong pot or a heavily peated soil mix can retain moisture for far too long, leading to irreversible root rot. We highly advocate for using unglazed terracotta and gritty inorganic mixes to ensure your plants thrive.</p>
+                <p>Professional precision tools are not just for aesthetics; they serve vital functions. Long tweezers protect your hands from fine glochids and allow you to remove dead leaves securely without disturbing the root system. Clean, sharp shears prevent crushing stems when propagating, minimizing the risk of bacterial infections spreading.</p>
+                
                 <dl class="modern-dl">
                     <dt>Terracotta</dt>
                     <dd>Unlike plastic, unglazed terracotta is porous. It pulls moisture out of the soil, preventing the dreaded root rot.</dd>
@@ -210,59 +234,83 @@
                 </dl>
             </div>
 
-            <aside class="accessory-faq">
-                <h3>Equipment FAQ</h3>
+            <!-- ASIDE SECTION -->
+            <aside class="product-aside">
+                <h3>Tool Guide & Tips</h3>
                 
-                <details class="faq-item" open>
-                    <summary>Do I need special soil?</summary>
-                    <p>Yes! Regular potting soil holds too much moisture. Desert plants require a gritty mix of at least 50-70% inorganic material like pumice or perlite.</p>
-                </details>
+                <h4>Maintenance Check</h4>
+                <ol>
+                    <li>Wipe shears with alcohol.</li>
+                    <li>Calibrate moisture meter.</li>
+                    <li>Check terracotta for cracks.</li>
+                    <li>Sift out degraded soil dust.</li>
+                </ol>
 
-                <details class="faq-item">
-                    <summary>Why a long-spout can?</summary>
-                    <p>A long spout allows you to deliver water directly to the soil without getting the leaves wet, which prevents sunburn and fungal diseases.</p>
-                </details>
+                <h4>Tool Lifespan</h4>
+                <table>
+                    <tr>
+                        <th>Equipment</th>
+                        <th>Replacement</th>
+                    </tr>
+                    <tr>
+                        <td>Shears</td>
+                        <td>Every 2 Years</td>
+                    </tr>
+                    <tr>
+                        <td>Moisture Meter</td>
+                        <td>Every 1 Year</td>
+                    </tr>
+                    <tr>
+                        <td>Terracotta</td>
+                        <td>Indefinite</td>
+                    </tr>
+                </table>
 
-                <details class="faq-item">
-                    <summary>How do I clean my shears?</summary>
-                    <p>Always wipe down your pruning shears with rubbing alcohol between cuts. This prevents the spread of bacteria from one plant to another.</p>
-                </details>
+                <h4>Troubleshooting</h4>
+                <dl>
+                    <dt>Tool Rust</dt>
+                    <dd>Caused by leaving carbon steel shears wet. Always wipe dry.</dd>
+                    
+                    <dt>White Crust</dt>
+                    <dd>Mineral buildup on clay pots. Soak in diluted vinegar to clean.</dd>
+                </dl>
             </aside>
         </section>
     </main>
 
-   <footer class="site-footer">
-    <div class="footer-grid">
-        <div class="footer-col brand-col">
-            <h4 class="brand-title">Cacti<br>Succulent<br>Kuching</h4>
-            <p class="tagline">From the desert to your home.</p>
-        </div>
+    <!-- WEBSITE FOOTER & COPYRIGHT AREA -->
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-col brand-col">
+                <h4 class="brand-title">Cacti<br>Succulent<br>Kuching</h4>
+                <p class="tagline">From the desert to your home.</p>
+            </div>
 
-        <div class="footer-col">
-            <h4>Navigation</h4>
-            <ul>
-                <li><a href="enquiry.html">Enquiry</a></li>
-                <li><a href="profile.html">Our Profile</a></li>
-                <li><a href="enhancements.html">Enhancements</a></li>
-            </ul>
-        </div>
+            <div class="footer-col">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="enquiry.html">Enquiry</a></li>
+                    <li><a href="profile.html">Our Profile</a></li>
+                    <li><a href="enhancements.html">Enhancements</a></li>
+                </ul>
+            </div>
 
-        <div class="footer-col">
-            <h4>Connect With Us</h4>
-            <div class="contact-info">
-                <p><strong>WA :</strong> +60 12-888 4444</p>
-                <p><strong>FB :</strong> CactiSucculentKCH</p>
-                <p><strong>LOC :</strong> Kuching, Sarawak</p>
+            <div class="footer-col">
+                <h4>Connect With Us</h4>
+                <div class="contact-info">
+                    <p><strong>WA :</strong> +60 12-888 4444</p>
+                    <p><strong>FB :</strong> CactiSucculentKCH</p>
+                    <p><strong>EML :</strong> <a href="mailto:104402891@students.swinburne.edu.my">cactisucculentkch@email.com</a></p>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="footer-bottom">
-        <p>&copy; 2026 Cacti-Succulent Kuching. All Rights Reserved.</p>
-    </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Cacti-Succulent Kuching. All Rights Reserved.</p>
+        </div>
     </footer>
 
-<a href="#" class="back-to-top">▲</a>
+    <a href="#" class="back-to-top">▲</a>
 
 </body>
 </html>

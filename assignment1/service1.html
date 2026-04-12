@@ -1,30 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Planting Accessories</title>
-    <link rel="stylesheet" href="style/styles.css">
+    <meta name="description" content="Services offered by Cacti-Succulent Kuching">
+    <meta name="keywords" content="plants, repotting, terrarium, workshop, Kuching">
+    <meta name="author" content="Rachael, Eleona, Amber">
+    <title>Services | Cacti-Succulent Kuching</title>
+    
+    <link rel="stylesheet" href="styles/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
 </head>
+
 <body class="services-page">
 
-    <header class="main-header">
+    <!-- MAIN HEADER & NAVIGATION AREA -->
+    <header id="top-header" class="main-header">
         <div class="header-container">
             <div class="logo-area">
                 <a href="index.html">
-                    <img src="images/cacti-succulent-logo.png" alt="Logo" class="site-logo">
-                    <span class="brand-name">Cacti Succulent Kuching</span>
+                    <img src="images/cacti-succulent-logo.png" alt="Cacti-Succulent Kuching Logo" class="site-logo">
+                    <span class="brand-name">Cacti-Succulent Kuching</span>
                 </a>
             </div>
             <nav class="main-nav">
                 <ul>
                     <li class="dropdown">
-                        <a href="#" class="dropbtn">Products ▾</a>
+                        <a href="#" class="dropbtn active">Products ▾</a>
                         <div class="dropdown-content">
                             <a href="product1.html">Cacti</a>
                             <a href="product2.html">Succulents</a>
                             <a href="product3.html">Planting Accessories</a>
-                            <a href="service1.html">Services</a>
+                            <a href="service1.html" class="active">Services</a>
                         </div>
                     </li>
                     <li><a href="order.html">Order</a></li>
@@ -34,60 +44,128 @@
         </div>
     </header>
 
+    <!-- SERVICES HERO SECTION -->
     <section class="hero-section hero-services">
         <div class="hero-content">
-            <h2>Expert Care</h2>
             <h1>Our Services</h1>
-            <p>From rescuing sick plants to crafting custom desert terrariums.</p>
+            <h2>Expert Care & Workshops</h2>
+            <p>From rescuing sick plants to reliable holiday boarding.</p>
             <div class="hero-divider"></div>
         </div>
     </section>
 
+    <!-- ASIDE & SERVICES LIST LAYOUT -->
     <main class="content-wrapper">
         
-        <section class="services-list">
+        <div class="service-layout-wrapper">
             
-            <article class="service-row">
-                <figure>
-                    <img src="images/repotting.jpg" alt="Plant Hospital Repotting">
-                    <figcaption>Professional Repotting Services <a href="https://pin.it/6zDtNyDIg">Source</a></figcaption>
-                </figure>
-                <div class="service-text">
-                    <h3>The Plant Hospital</h3>
-                    <p>Did you overwater your succulent? Is your cactus stretching for light? Bring your struggling plants to our Kuching home-base. We provide professional root-rot treatments, precision pruning, and repotting in our premium gritty soil mix to bring your desert gems back to life.</p>
-                    <p class="price">From RM 15.00</p>
-                    <a href="enquiry.html" class="add-to-cart">Book a Rescue</a>
-                </div>
-            </article>
+            <aside class="service-aside">
+                <h3>Care Guide & Glossary</h3>
+                
+                <h4>Treatment Process</h4>
+                <ol>
+                    <li>Initial health assessment</li>
+                    <li>Root pruning & treatment</li>
+                    <li>Repotting in custom soil</li>
+                    <li>Post-care monitoring</li>
+                </ol>
 
-            <article class="service-row reverse">
-                <figure>
-                    <img src="images/terrarium.jpg" alt="Custom Terrariums">
-                    <figcaption>Custom Terrariums <a href="https://pin.it/3B9oUqJFv">Source</a></figcaption>
-                </figure>
-                <div class="service-text">
-                    <h3>Custom Terrariums</h3>
-                    <p>Perfect for office desks or unique gifts. We design and build enclosed or open-air glass terrariums tailored to your aesthetic. Choose your preferred glass shape, sand colors, and plant varieties, and we handle the complex layering required for proper drainage.</p>
-                    <p class="price">From RM 65.00</p>
-                    <a href="enquiry.html" class="add-to-cart">Design Yours</a>
-                </div>
-            </article>
+                <h4>Watering Schedule</h4>
+                <table class="aside-table">
+                    <tr>
+                        <th>Plant Type</th>
+                        <th>Frequency</th>
+                    </tr>
+                    <tr>
+                        <td>Cacti</td>
+                        <td>Every 3 weeks</td>
+                    </tr>
+                    <tr>
+                        <td>Succulents</td>
+                        <td>Every 2 weeks</td>
+                    </tr>
+                    <tr>
+                        <td>Terrariums</td>
+                        <td>Once a month</td>
+                    </tr>
+                </table>
 
-            <article class="service-row">
-                <figure>
-                    <img src="images/workshop.jpg" alt="Hands-on Terrarium Workshop in Kuching">
-                    <figcaption>Hands-on Terrarium Workshop <a href="https://pin.it/adKGgj00G">Source</a></figcaption>
-                </figure>
-                <div class="service-text">
-                    <h3>Terrarium Workshop</h3>
-                    <p>Join us for a hands-on afternoon and learn the art of building your own desert landscape. We provide all the materials, including glass vessels, specialized gritty soil, decorative sands, and your choice of premium succulents. Perfect for weekend dates, team building, or just a relaxing solo activity!</p>
-                    <p class="price">From RM 85.00 <span>/ person</span></p>
-                    <a href="enquiry.html" class="add-to-cart">Book a Slot</a>
-                </div>
-            </article>
+                <h4>Terminology</h4>
+                <dl class="service-dl">
+                    <dt>Root Rot</dt>
+                    <dd>A severe disease caused by overwatering, leading to decaying plant roots.</dd>
+                    
+                    <dt>Top Dressing</dt>
+                    <dd>Decorative and functional gravel placed on top of soil to prevent rot and deter bugs.</dd>
+                </dl>
+            </aside>
 
-        </section>
+            <section class="services-list">
+                
+                <article class="service-row">
+                    <figure>
+                        <img src="images/repotting.jpg" alt="Plant Hospital Repotting">
+                        <figcaption>Professional Repotting <a href="https://pin.it/6zDtNyDIg">Source</a></figcaption>
+                    </figure>
+                    <div class="service-text">
+                        <h3>The Plant Hospital</h3>
+                        <p>Did you overwater your succulent? Is your cactus stretching for light? Bring your struggling plants to our Kuching home-base. We provide professional root-rot treatments, precision pruning, and repotting in our premium gritty soil mix to bring your desert gems back to life.</p>
+                        <div class="price-action-row">
+                            <p class="price">From RM 15.00</p>
+                            <a href="enquiry.html" class="add-to-cart">Book a Rescue</a>
+                        </div>
+                    </div>
+                </article>
 
+                <article class="service-row reverse">
+                    <figure>
+                        <img src="images/terrarium.jpg" alt="Custom Terrariums">
+                        <figcaption>Custom Terrariums <a href="https://pin.it/3B9oUqJFv">Source</a></figcaption>
+                    </figure>
+                    <div class="service-text">
+                        <h3>Custom Terrariums</h3>
+                        <p>Perfect for office desks or unique gifts. We design and build enclosed or open-air glass terrariums tailored to your aesthetic. Choose your preferred glass shape, sand colors, and plant varieties, and we handle the complex layering required for proper drainage.</p>
+                        <div class="price-action-row">
+                            <p class="price">From RM 65.00</p>
+                            <a href="enquiry.html" class="add-to-cart">Design Yours</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="service-row">
+                    <figure>
+                        <img src="images/workshop.jpg" alt="Hands-on Terrarium Workshop in Kuching">
+                        <figcaption>Terrarium Workshop <a href="https://pin.it/adKGgj00G">Source</a></figcaption>
+                    </figure>
+                    <div class="service-text">
+                        <h3>Terrarium Workshop</h3>
+                        <p>Join us for a hands-on afternoon and learn the art of building your own desert landscape. We provide all the materials, including glass vessels, specialized gritty soil, decorative sands, and your choice of premium succulents. Perfect for weekend dates, team building, or just a relaxing solo activity!</p>
+                        <div class="price-action-row">
+                            <p class="price">From RM 85.00 <span>/ person</span></p>
+                            <a href="enquiry.html" class="add-to-cart">Book a Slot</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="service-row reverse">
+                    <figure>
+                        <img src="images/boarding.jpg" alt="Plant Boarding Service">
+                        <figcaption>Plant Boarding <a href="https://www.freepik.com/free-photo/asian-gardener-woman-wearing-face-mask-apron-holding-spray-watering-green-houseplant-hand_18684843.htm#fromView=search&page=4&position=2&uuid=4ffb5aa7-11a7-43fb-ae83-270c07284659&query=Plant+nursery+service">Source</a></figcaption>
+                    </figure>
+                    <div class="service-text">
+                        <h3>Plant Boarding</h3>
+                        <p>Going on a long holiday? Don't leave your precious succulents to wither or get overwatered by well-meaning neighbors. Drop them off at our dedicated greenhouse. We provide optimal sunlight exposure, controlled watering schedules, and daily monitoring to ensure your plants thrive while you are away.</p>
+                        <div class="price-action-row">
+                            <p class="price">From RM 5.00 <span>/ day</span></p>
+                            <a href="enquiry.html" class="add-to-cart">Reserve Space</a>
+                        </div>
+                    </div>
+                </article>
+
+            </section>
+        </div>
+
+        <!-- EVENT DOOR GIFTS PRICING SECTION -->
         <section class="pricing-section">
             <div class="pricing-header">
                 <h3>Event Door Gifts</h3>
@@ -95,7 +173,6 @@
             </div>
             
             <div class="pricing-grid">
-                
                 <div class="pricing-card">
                     <h4>Standard Package</h4>
                     <p class="tier-price">RM 8.00 <span>/ plant</span></p>
@@ -105,23 +182,10 @@
                         <li>Nursery plastic pot</li>
                         <li>Basic care instruction card</li>
                     </ul>
-                    <a href="enquiry.html" class="tier-btn outline-btn">Enquire Now</a>
+                    <a href="enquiry.html" class="tier-btn solid-btn">Enquire Now</a>
                 </div>
 
-                <div class="pricing-card premium-card">
-                    <h4>Premium Package</h4>
-                    <p class="tier-price">RM 15.00 <span>/ plant</span></p>
-                    <ul>
-                        <li>Minimum 30 units</li>
-                        <li>Rare Echeveria rosettes</li>
-                        <li>Artisan Terracotta pot</li>
-                        <li>Custom printed name tags</li>
-                        <li>Decorative top-dressing stones</li>
-                    </ul>
-                    <a href="enquiry.html" class="tier-btn solid-btn">Most Popular</a>
-                </div>
-
-                <div class="pricing-card">
+                <div class="pricing-card luxury-card">
                     <h4>Luxury Package</h4>
                     <p class="tier-price">RM 25.00 <span>/ plant</span></p>
                     <ul>
@@ -129,53 +193,59 @@
                         <li>Imported Gymnocalycium</li>
                         <li>Glazed ceramic pot</li>
                         <li>Custom laser-cut wooden tags</li>
+                        <li>Decorative top-dressing stones</li>
                     </ul>
-                    <a href="enquiry.html" class="tier-btn outline-btn">Enquire Now</a>
+                    <a href="enquiry.html" class="tier-btn solid-btn">Most Popular</a>
                 </div>
 
+                <div class="pricing-card">
+                    <h4>Premium Package</h4>
+                    <p class="tier-price">RM 15.00 <span>/ plant</span></p>
+                    <ul>
+                        <li>Minimum 30 units</li>
+                        <li>Rare Echeveria rosettes</li>
+                        <li>Artisan Terracotta pot</li>
+                        <li>Custom printed name tags</li>
+                    </ul>
+                    <a href="enquiry.html" class="tier-btn solid-btn">Enquire Now</a>
+                </div>
             </div>
         </section>
-
-        <section class="cta-banner">
-            <h2>Ready to transform your space?</h2>
-            <p>Contact us today to discuss your custom project or plant rescue needs.</p>
-            <a href="order.html" class="add-to-cart cta-button">Start an Order</a>
-        </section>
-
     </main>
 
+    <!-- WEBSITE FOOTER & COPYRIGHT AREA -->
     <footer class="site-footer">
-    <div class="footer-grid">
-        <div class="footer-col brand-col">
-            <h4 class="brand-title">Cacti<br>Succulent<br>Kuching</h4>
-            <p class="tagline">From the desert to your home.</p>
-        </div>
+        <div class="footer-grid">
+            <div class="footer-col brand-col">
+                <h4 class="brand-title">Cacti<br>Succulent<br>Kuching</h4>
+                <p class="tagline">From the desert to your home.</p>
+            </div>
 
-        <div class="footer-col">
-            <h4>Navigation</h4>
-            <ul>
-                <li><a href="enquiry.html">Enquiry</a></li>
-                <li><a href="profile.html">Our Profile</a></li>
-                <li><a href="enhancements.html">Enhancements</a></li>
-            </ul>
-        </div>
+            <div class="footer-col">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="enquiry.html">Enquiry</a></li>
+                    <li><a href="profile.html">Our Profile</a></li>
+                    <li><a href="enhancements.html">Enhancements</a></li>
+                </ul>
+            </div>
 
-        <div class="footer-col">
-            <h4>Connect With Us</h4>
-            <div class="contact-info">
-                <p><strong>WA:</strong> +60 12-888 4444</p>
-                <p><strong>FB:</strong> CactiSucculentKCH</p>
-                <p><strong>LOC:</strong> Kuching, Sarawak</p>
+            <div class="footer-col">
+                <h4>Connect With Us</h4>
+                <div class="contact-info">
+                    <p><strong>WA:</strong> +60 12-888 4444</p>
+                    <p><strong>FB:</strong> CactiSucculentKCH</p>
+                    <p><strong>EML :</strong> <a href="mailto:104402891@students.swinburne.edu.my">cactisucculentkch@email.com</a></p>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="footer-bottom">
-        <p>&copy; 2026 Cacti-Succulent Kuching. All Rights Reserved.</p>
-    </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Cacti-Succulent Kuching. All Rights Reserved.</p>
+        </div>
     </footer>
 
-<a href="#" class="back-to-top">▲</a>
+    <a href="#" class="back-to-top">▲</a>
 
 </body>
 </html>

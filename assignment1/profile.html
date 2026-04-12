@@ -4,18 +4,25 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Profile page for Rachael Bong">
-    <meta name="keywords" content="profile, about, student">
+    <meta name="keywords" content="profile, about, student, resume">
     <meta name="author" content="Rachael Bong">
-    <title>Profile</title>
-    <link rel="stylesheet" href="style/styles.css">
+    <title>Profile | Cacti-Succulent Kuching</title>
+    
+    <link rel="stylesheet" href="styles/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
 </head>
 
-<body>
-    <header class="main-header">
+<body class="profile-page">
+
+    <!-- MAIN HEADER & NAVIGATION AREA -->
+    <header id="top-header" class="main-header">
         <div class="header-container">
             <div class="logo-area">
                 <a href="index.html">
-                    <img src="images/cacti-succulent-logo.png" alt="Logo" class="site-logo">
+                    <img src="images/cacti-succulent-logo.png" alt="Cacti-Succulent Kuching Logo" class="site-logo">
                     <span class="brand-name">Cacti-Succulent Kuching</span>
                 </a>
             </div>
@@ -37,17 +44,15 @@
         </div>
     </header>
 
+    <!-- PROFILE BIOGRAPHY SECTION -->
     <main class="profile-main">
-        
-        <div class="bio-card">
+        <section class="bio-card">
             
             <div class="bio-header clearfix">
-                <img src="images/profile.jpeg" alt="Rachael Bong" class="bio-photo">
+                <img src="images/profile_rachael.jpg" alt="Photo of Rachael Bong" class="bio-photo">
                 
                 <h1 class="bio-name">Rachael Bong Jia Yee</h1>
-                
                 <p class="bio-id">Student ID : 104402891</p>
-                
                 <p class="bio-course">Bachelor of Computer Science</p>
             </div>
 
@@ -57,28 +62,49 @@
                 </tr>
                 <tr>
                     <td>Birthday</td>
-                    <td>03/24/2006 (Age: 20)</td>
+                    <td>24/03/2006</td>
                 </tr>
+
+                <tr>
+                    <td>Age</td>  
+                    <td>20</td>
+                </tr>
+
                 <tr>
                     <td>Education</td>
                     <td>Swinburne University of Technology Sarawak (Year 1 Semester 1)</td>
                 </tr>
+
                 <tr>
                     <td>Languages</td>
                     <td>English, Chinese, Bahasa Melayu</td>
                 </tr>
+
                 <tr>
                     <td>Interests & Hobbies</td>
                     <td>Photography, Travelling, Growing Plants & Web Development</td>
                 </tr>
+
                 <tr>
                     <td>About Me</td>
                     <td>I am a student who enjoys learning web development and exploring creative design. I like working on projects that involve both technical and aesthetic elements.</td>
                 </tr>
+
+                <tr>
+                    <td>Hometown</td>   
+                    <td>Kuching, Sarawak</td>
+                </tr>
+
                 <tr>
                     <td>Hometown Description</td>
                     <td>Kuching is a peaceful and beautiful city known for its rich culture, friendly people, and delicious local food. It is surrounded by nature, making it a great place for relaxation.</td>
                 </tr>
+
+                <tr>
+                    <td>Skills</td>   
+                    <td>HTML, CSS, Python, C</td>
+                </tr>
+
                 <tr>
                     <td>Career Goal</td>
                     <td>To become a highly skilled software developer and UI/UX designer.</td>
@@ -86,20 +112,22 @@
                 
                 <tr>
                     <td colspan="2" class="bio-email-cell">
-                        <a href="mailto:104402891@students.swinburne.edu.my" class="email-btn">Email Me</a>
+                        <a href="mailto:104402891@students.swinburne.edu.my" class="solid-btn">Email Me</a>
                     </td>
                 </tr>
             </table>
 
-        </div>
+        </section>
     </main>
 
+    <!-- WEBSITE FOOTER & COPYRIGHT AREA -->
     <footer class="site-footer">
         <div class="footer-grid">
             <div class="footer-col brand-col">
                 <h4 class="brand-title">Cacti<br>Succulent<br>Kuching</h4>
                 <p class="tagline">From the desert to your home.</p>
             </div>
+
             <div class="footer-col">
                 <h4>Navigation</h4>
                 <ul>
@@ -108,12 +136,13 @@
                     <li><a href="enhancements.html">Enhancements</a></li>
                 </ul>
             </div>
+            
             <div class="footer-col">
                 <h4>Connect With Us</h4>
                 <div class="contact-info">
                     <p><strong>WA :</strong> +60 12-888 4444</p>
                     <p><strong>FB :</strong> CactiSucculentKCH</p>
-                    <p><strong>LOC :</strong> Kuching, Sarawak</p>
+                    <p><strong>EML :</strong> <a href="mailto:104402891@students.swinburne.edu.my">cactisucculentkch@email.com</a></p>
                 </div>
             </div>
         </div>
@@ -122,7 +151,7 @@
         </div>
     </footer>
 
-<a href="#" class="back-to-top">▲</a>
+    <a href="#" class="back-to-top">▲</a>
 
 </body>
 </html>

@@ -1,27 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cacti</title>
-    <link rel="stylesheet" href="style/styles.css">
+    <meta name="description" content="Cacti Collection of Cacti-Succulent Kuching">
+    <meta name="keywords" content="cacti, cactus, desert plants, buy cactus">
+    <meta name="author" content="Rachael, Eleona, Amber">
+    <title>Cacti | Cacti-Succulent Kuching</title>
+    
+    <link rel="stylesheet" href="styles/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
 </head>
-<body class="cacti-page">
 
-    <header class="main-header">
+<body class="product-page">
+
+    <!-- MAIN HEADER & NAVIGATION AREA -->
+    <header id="top-header" class="main-header">
         <div class="header-container">
             <div class="logo-area">
                 <a href="index.html">
-                    <img src="images/cacti-succulent-logo.png" alt="Logo" class="site-logo">
+                    <img src="images/cacti-succulent-logo.png" alt="Cacti-Succulent Kuching Logo" class="site-logo">
                     <span class="brand-name">Cacti-Succulent Kuching</span>
                 </a>
             </div>
             <nav class="main-nav">
                 <ul>
                     <li class="dropdown">
-                        <a href="#" class="dropbtn">Products ▾</a>
+                        <a href="#" class="dropbtn active">Products ▾</a>
                         <div class="dropdown-content">
-                            <a href="product1.html">Cacti</a>
+                            <a href="product1.html" class="active">Cacti</a>
                             <a href="product2.html">Succulents</a>
                             <a href="product3.html">Planting Accessories</a>
                             <a href="service1.html">Services</a>
@@ -34,18 +44,21 @@
         </div>
     </header>
 
+    <!-- HERO SECTION -->
     <section class="hero-section hero-cacti">
-            <div class="hero-content">
-                <h2>The Desert Gems of Kuching</h2>
-                <h1>Cacti Collection</h1>
-                <p>Our hand-reared collection of resilient xerophytes is curated for the modern home. Each plant stores the essence of the desert within its stems, offering a timeless aesthetic that requires minimal effort but provides maximum natural beauty.</p>
-                <div class="hero-divider"></div>
-            </div>
+        <div class="hero-content">
+            <h1>Cacti Collection</h1>
+            <h2>The Desert Gems of Kuching</h2>
+            <p>Our hand-reared collection of resilient xerophytes is curated for the modern home. Each plant stores the essence of the desert within its stems, offering a timeless aesthetic that requires minimal effort but provides maximum natural beauty.</p>
+            <div class="hero-divider"></div>
+        </div>
     </section>
 
     <main class="content-wrapper">
+        
+        <!-- PRODUCTS SECTION -->
         <section class="product-grid">
-            <div class="cactus-card">
+            <article class="cactus-card">
                 <figure>
                     <img src="images/cacti-golden-barrel.jpg" alt="Golden Barrel">
                     <figcaption>E. grusonii. <a href="https://www.pexels.com/photo/green-cactus-plants-11678322/">Source</a></figcaption>
@@ -55,9 +68,9 @@
                     <p class="price">RM 45.00</p>
                     <button class="add-to-cart">Add to Cart</button>
                 </div>
-            </div>
+            </article>
 
-            <div class="cactus-card">
+            <article class="cactus-card">
                 <figure>
                     <img src="images/cacti-bunny-ear.jpg" alt="Bunny Ear">
                     <figcaption>O. microdasys. <a href="https://www.pexels.com/photo/lots-of-bunny-ears-cacti-in-pots-18468949/">Source</a></figcaption>
@@ -67,9 +80,9 @@
                     <p class="price">RM 25.00</p>
                     <button class="add-to-cart">Add to Cart</button>
                 </div>
-            </div>
+            </article>
 
-            <div class="cactus-card">
+            <article class="cactus-card">
                 <figure>
                     <img src="images/cacti-old-lady.jpg" alt="Old Lady">
                     <figcaption>M. hahniana. <a href="https://www.pexels.com/photo/blooming-cactus-in-pot-16667048/">Source</a></figcaption>
@@ -79,21 +92,21 @@
                     <p class="price">RM 32.00</p>
                     <button class="add-to-cart">Add to Cart</button>
                 </div>
-            </div>
+            </article>
 
-            <div class="cactus-card">
+            <article class="cactus-card">
                 <figure>
                     <img src="images/cacti-princess-of-the-night.jpg" alt="Princess of the Night">
                     <figcaption>C. jamacaru. <a href="https://www.pexels.com/photo/blooming-cactus-at-sunset-in-brazilian-countryside-36769813/">Source</a></figcaption>
                 </figure>
                 <div class="card-content">
-                    <h3>Princess of the Night</h3>
+                    <h3>Princess of Night</h3>
                     <p class="price">RM 55.00</p>
                     <button class="add-to-cart">Add to Cart</button>
                 </div>
-            </div>
+            </article>
 
-            <div class="cactus-card">
+            <article class="cactus-card">
                 <figure>
                     <img src="images/cacti-prickly-pear.jpg" alt="Prickly Pear">
                     <figcaption>O. ficus-indica. <a href="https://unsplash.com/photos/cactus-plants-Npfkyf94cik">Source</a></figcaption>
@@ -103,9 +116,9 @@
                     <p class="price">RM 35.00</p>
                     <button class="add-to-cart">Add to Cart</button>
                 </div>
-            </div>
+            </article>
             
-            <div class="cactus-card">
+            <article class="cactus-card">
                 <figure>
                     <img src="images/cacti-cardon-cactus.jpg" alt="Cardon">
                     <figcaption> P. pringlei. <a href="https://unsplash.com/photos/green-cactus-under-blue-sky-at-daytime-a_YGMhAa0e0">Source</a></figcaption>
@@ -115,12 +128,16 @@
                     <p class="price">RM 85.00</p>
                     <button class="add-to-cart">Add to Cart</button>
                 </div>
-            </div>
+            </article>
         </section>
 
-        <section class="knowledge-base">
-            <div class="glossary-area">
-                <h3>Botanical Glossary</h3>
+        <!-- KNOWLEDGE BASE -->
+        <section class="product-knowledge-base">
+            <div class="product-main-content">
+                <h3>Botanical Glossary & Care Philosophy</h3>
+                <p>Understanding the anatomy of a cactus is the first step to ensuring its longevity. These plants have evolved over millennia to thrive in some of the harshest conditions on Earth. By learning their specific terminology and growth habits, you can replicate their natural habitat right here in Kuching, ensuring they remain robust and healthy year-round.</p>
+                <p>It is crucial to remember that while they are hardy, they are not invincible. Overwatering is the most common mistake made by new collectors. Always err on the side of underwatering, providing them with plenty of bright, indirect light, and allowing their soil to dry out completely before the next soak. Proper drainage is absolutely essential to prevent root decay.</p>
+                
                 <dl class="modern-dl">
                     <dt>Xerophyte</dt>
                     <dd>Species adapted to survive in dry environments with specialized water-storage organs.</dd>
@@ -133,50 +150,83 @@
                 </dl>
             </div>
 
-            <aside class="care-timeline-aside">
-                <h3>Success Guide</h3>
-                <ol class="timeline-list">
-                    <li>Pumice-Rich Soil</li>
-                    <li>Complete Drought</li>
-                    <li>Bright Exposure</li>
-                    <li>Optimal Airflow</li>
+            <!-- ASIDE SECTION -->
+            <aside class="product-aside">
+                <h3>Care Guide & Tips</h3>
+                
+                <h4>Growth Stages</h4>
+                <ol>
+                    <li>Seedling establishment</li>
+                    <li>Vegetative root growth</li>
+                    <li>Areole development</li>
+                    <li>Maturation and blooming</li>
                 </ol>
+
+                <h4>Quick Specs</h4>
+                <table>
+                    <tr>
+                        <th>Element</th>
+                        <th>Requirement</th>
+                    </tr>
+                    <tr>
+                        <td>Watering</td>
+                        <td>Once a month</td>
+                    </tr>
+                    <tr>
+                        <td>Light</td>
+                        <td>Full, direct sun</td>
+                    </tr>
+                    <tr>
+                        <td>Soil</td>
+                        <td>80% Pumice</td>
+                    </tr>
+                </table>
+
+                <h4>Troubleshooting</h4>
+                <dl>
+                    <dt>Yellowing Base</dt>
+                    <dd>Usually a sign of overwatering and early root rot.</dd>
+                    
+                    <dt>White Patches</dt>
+                    <dd>Sunburn from sudden exposure to intense afternoon heat.</dd>
+                </dl>
             </aside>
         </section>
     </main>
 
-   <footer class="site-footer">
-    <div class="footer-grid">
-        <div class="footer-col brand-col">
-            <h4 class="brand-title">Cacti<br>Succulent<br>Kuching</h4>
-            <p class="tagline">From the desert to your home.</p>
-        </div>
+    <!-- WEBSITE FOOTER & COPYRIGHT AREA -->
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-col brand-col">
+                <h4 class="brand-title">Cacti<br>Succulent<br>Kuching</h4>
+                <p class="tagline">From the desert to your home.</p>
+            </div>
 
-        <div class="footer-col">
-            <h4>Navigation</h4>
-            <ul>
-                <li><a href="enquiry.html">Enquiry</a></li>
-                <li><a href="profile.html">Our Profile</a></li>
-                <li><a href="enhancements.html">Enhancements</a></li>
-            </ul>
-        </div>
+            <div class="footer-col">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="enquiry.html">Enquiry</a></li>
+                    <li><a href="profile.html">Our Profile</a></li>
+                    <li><a href="enhancements.html">Enhancements</a></li>
+                </ul>
+            </div>
 
-        <div class="footer-col">
-            <h4>Connect With Us</h4>
-            <div class="contact-info">
-                <p><strong>WA :</strong> +60 12-888 4444</p>
-                <p><strong>FB :</strong> CactiSucculentKCH</p>
-                <p><strong>LOC :</strong> Kuching, Sarawak</p>
+            <div class="footer-col">
+                <h4>Connect With Us</h4>
+                <div class="contact-info">
+                    <p><strong>WA :</strong> +60 12-888 4444</p>
+                    <p><strong>FB :</strong> CactiSucculentKCH</p>
+                    <p><strong>EML :</strong> <a href="mailto:104402891@students.swinburne.edu.my">cactisucculentkch@email.com</a></p>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="footer-bottom">
-        <p>&copy; 2026 Cacti-Succulent Kuching. All Rights Reserved.</p>
-    </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Cacti-Succulent Kuching. All Rights Reserved.</p>
+        </div>
     </footer>
 
-<a href="#" class="back-to-top">▲</a>
+    <a href="#" class="back-to-top">▲</a>
 
 </body>
 </html>

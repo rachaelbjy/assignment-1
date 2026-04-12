@@ -1810,4 +1810,110 @@ html {
     100% { transform: translate(-50vw, -120vh) scale(0.4) rotate(-720deg); opacity: 0; }
 }
 
-/* 2. 
+/* ==========================================================================
+   PART 10: PROFILE PAGE 
+   ========================================================================== */
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    padding: 50px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.team-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 40px 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    border-top: 6px solid #6D9E51;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(109, 158, 81, 0.15);
+}
+
+.team-photo {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 4px solid #f6faf4;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.team-card h3 {
+    margin: 0 0 5px 0;
+    color: #EB5B26;
+    font-size: 1.4rem;
+}
+
+.team-card .role {
+    color: #666;
+    font-size: 0.95rem;
+    margin-bottom: 25px;
+    font-family: 'Cinzel', serif;
+    font-weight: bold;
+}
+
+.profile-modal {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(8px); 
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
+}
+
+.profile-modal:target {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-dialog {
+    position: relative;
+    width: 90%;
+    max-width: 950px;
+    transform: scale(0.8);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+}
+
+.profile-modal:target .modal-dialog {
+    transform: scale(1); 
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 3rem;
+    color: #EB5B26;
+    text-decoration: none;
+    font-weight: normal;
+    line-height: 1;
+    z-index: 2;
+    transition: 0.3s;
+}
+
+.close-modal:hover {
+    color: #6D9E51;
+    transform: rotate(90deg); 
+}
+
+@media (max-width: 800px) {
+    .team-grid {
+        grid-template-columns: 1fr; 
+    }
+}

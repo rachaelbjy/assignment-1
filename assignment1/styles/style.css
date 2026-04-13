@@ -1749,18 +1749,93 @@ html {
         display: none; 
     }
 }
-/* ==========================================================================
-    12: TEAM GRID & MODAL 
-   ========================================================================== */
 
-.profile-page .content-wrapper {
-    padding-top: 50px; 
-    padding-bottom: 60px; 
+/* ==========================================================================
+   12. ENHANCEMENTS
+   ========================================================================== */
+/* 1. Cactus Party */
+.cactus-party {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    pointer-events: none; /* Let clicks pass through! */
+    z-index: 9999;
+    overflow: hidden;
 }
 
+.cactus-party span {
+    position: absolute;
+    opacity: 0; 
+    filter: drop-shadow(0 15px 20px rgba(0,0,0,0.4)); 
+}
+
+.cactus-party .c1  { font-size: 4rem; top: 10%; left: -10%; animation: fly-left-to-right 3.2s ease-in 0.1s forwards; }
+.cactus-party .c2  { font-size: 7rem; top: 50%; left: -10%; animation: fly-left-to-right 2.5s ease-out 0.8s forwards; }
+.cactus-party .c3  { font-size: 3rem; top: 80%; left: -10%; animation: fly-left-to-right 3.8s linear 1.2s forwards; }
+.cactus-party .c13 { font-size: 5rem; top: 30%; left: -10%; animation: fly-left-to-right 2.9s ease-in-out 0.4s forwards; }
+
+.cactus-party .c4  { font-size: 6rem; top: 20%; right: -10%; animation: fly-right-to-left 2.8s ease-out 0.3s forwards; }
+.cactus-party .c5  { font-size: 3.5rem; top: 70%; right: -10%; animation: fly-right-to-left 3.5s linear 1.5s forwards; }
+.cactus-party .c6  { font-size: 5.5rem; top: 40%; right: -10%; animation: fly-right-to-left 2.6s ease-in 0.6s forwards; }
+.cactus-party .c14 { font-size: 2.5rem; top: 85%; right: -10%; animation: fly-right-to-left 3.1s ease-in-out 0.9s forwards; }
+
+.cactus-party .c7  { font-size: 4.5rem; left: 20%; top: -10%; animation: fly-top-to-bottom 3.1s ease-in 0.5s forwards; }
+.cactus-party .c8  { font-size: 2rem; left: 60%; top: -10%; animation: fly-top-to-bottom 4.0s linear 0.2s forwards; }
+.cactus-party .c9  { font-size: 6.5rem; left: 80%; top: -10%; animation: fly-top-to-bottom 2.4s ease-out 1.1s forwards; }
+
+.cactus-party .c10 { font-size: 5rem; left: 10%; bottom: -10%; animation: fly-bottom-to-top 2.7s ease-out 0.7s forwards; }
+.cactus-party .c11 { font-size: 3rem; left: 50%; bottom: -10%; animation: fly-bottom-to-top 3.6s ease-in-out 0s forwards; }
+.cactus-party .c12 { font-size: 4rem; left: 85%; bottom: -10%; animation: fly-bottom-to-top 3.3s linear 1.4s forwards; }
+.cactus-party .c15 { font-size: 7rem; left: 35%; bottom: -10%; animation: fly-bottom-to-top 2.5s ease-in 1.0s forwards; }
+
+
+@keyframes fly-left-to-right {
+    0%   { transform: translate(0, 0) scale(0.5) rotate(-90deg); opacity: 0; }
+    10%  { opacity: 1; }
+    90%  { opacity: 1; }
+    100% { transform: translate(120vw, 30vh) scale(1.5) rotate(360deg); opacity: 0; }
+}
+
+@keyframes fly-right-to-left {
+    0%   { transform: translate(0, 0) scale(1.2) rotate(90deg); opacity: 0; }
+    10%  { opacity: 1; }
+    90%  { opacity: 1; }
+    100% { transform: translate(-120vw, -40vh) scale(0.6) rotate(-360deg); opacity: 0; }
+}
+
+@keyframes fly-top-to-bottom {
+    0%   { transform: translate(0, 0) scale(0.8) rotate(0deg); opacity: 0; }
+    10%  { opacity: 1; }
+    90%  { opacity: 1; }
+    100% { transform: translate(40vw, 120vh) scale(2) rotate(540deg); opacity: 0; }
+}
+
+@keyframes fly-bottom-to-top {
+    0%   { transform: translate(0, 0) scale(1.5) rotate(45deg); opacity: 0; }
+    10%  { opacity: 1; }
+    90%  { opacity: 1; }
+    100% { transform: translate(-50vw, -120vh) scale(0.4) rotate(-720deg); opacity: 0; }
+}
+
+/* ==========================================================================
+   PART 10: TEAM GRID & MODAL UPGRADES (REFINED SPACING & NO INLINE STYLES)
+   ========================================================================== */
+
+/* 专属限定：只在 Profile 页面的 content-wrapper 生效 */
+/* ==========================================================================
+   PART 10: TEAM GRID & MODAL UPGRADES (REFINED SPACING & NO INLINE STYLES)
+   ========================================================================== */
+
+/* 专属限定：只在 Profile 页面的 content-wrapper 生效 */
+.profile-page .content-wrapper {
+    padding-top: 50px; 
+    padding-bottom: 60px; /* 👈 这里！把原本的 0 改成了 80px，用力把 Footer 推下去，留出呼吸空间 */
+}
+
+/* 专属限定：只在 Profile 页面的 form-header 生效，让它变厚变长 */
 .profile-page .form-header {
-    padding: 50px 40px; 
-    max-width: 1015px;
+    padding: 50px 40px; /* 稍微调薄一点点，配合缩短的宽度，比例更完美 */
+    max-width: 1015px; /* 👈 这里！从 1100px 缩小到 1050px，现在和卡片宽度绝对 1:1 对齐了！ */
     margin: 0 auto 30px auto;
     border-radius: 15px; 
     box-shadow: 0 10px 25px rgba(0,0,0,0.05);
@@ -1771,10 +1846,12 @@ html {
     grid-template-columns: repeat(3, 1fr);
     gap: 45px;
     padding: 20px 20px 0 20px; 
-    max-width: 1050px; 
+    max-width: 1050px; /* 卡片的总宽度也是 1050px，现在它们完美对齐 */
     margin: 0 auto;
     align-items: stretch;
 }
+
+/* 👇 下面的 .team-card 和后面的代码完全不用动，保留原样就好 👇 */
 
 .team-card {
     background: #ffffff;
@@ -1856,11 +1933,13 @@ html {
     transform: scale(1) translateY(0); 
 }
 
+/* 专属限定：只在 Modal 弹窗里的 bio-card 生效，防止被拉伸变形并开启内建滚动条 */
 .profile-modal .bio-card {
     margin: 0; 
     max-height: 90vh; 
     overflow-y: auto;
 }
+
 
 .close-modal {
     position: absolute;
@@ -1893,282 +1972,3 @@ html {
         gap: 30px;
     }
 }
-
-<<<<<<< HEAD
-=======
-/* ==========================================================================
-   13. ENHANCEMENTS PAGE LAYOUT
-   ========================================================================== */
-.enhancements-header {
-    max-width: 1015px;
-    margin: 0 auto 50px auto; 
-    background-color: #6D9E51;
-    text-align: center;
-    padding: 40px 30px;
-    border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-}
-
-.enhancements-header h1 {
-    font-size: 2.7rem;
-    color: #ffffff;
-    margin: 0 0 10px 0;
-    letter-spacing: 2px;
-}
-
-.enhancements-header p {
-    font-family: 'Montserrat', serif;
-    font-size: 1rem;
-    color: #ffffff;
-    margin: 0;
-    opacity: 0.9;
-}
-
-.enhancements-list {
-    max-width: 1015px;
-    margin: 0 auto;
-    padding-bottom: 60px;
-    display: flex;
-    flex-direction: column;
-}
-
-.enhancement-row {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    margin-bottom: 80px;
-}
-
-.enhancement-row:last-child {
-    margin-bottom: 0; 
-}
-
-.enhancement-figure {
-    width: 80%;
-    margin: 0 auto;
-}
-
-.enhancement-video {
-    width: 100%;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-}
-
-.enhancement-text {
-    width: 80%;
-    text-align: center; 
-}
-
-.enhancement-text h3 {
-    color: #EB5B26;
-    font-size: 1.8rem;
-    margin: 0 0 15px 0;
-}
-
-.enhancement-text p {
-    font-size: 1rem;
-    color: #555555;
-    text-align: justify;
-    margin-bottom: 15px;
-}
-
-/* ==========================================================================
-   14. ENHANCEMENTS
-   ========================================================================== */
-
-/* 1. Cactus Party */
-.cactus-party {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100vw; height: 100vh;
-    pointer-events: none; 
-    z-index: 9999;
-    overflow: hidden;
-}
-
-.cactus-party span {
-    position: absolute;
-    opacity: 0; 
-    filter: drop-shadow(0 15px 20px rgba(0,0,0,0.4)); 
-}
-
-.cactus-party .c1  { font-size: 4rem; top: 10%; left: -10%; animation: fly-left-to-right 3.2s ease-in 0.1s forwards; }
-.cactus-party .c2  { font-size: 7rem; top: 50%; left: -10%; animation: fly-left-to-right 2.5s ease-out 0.8s forwards; }
-.cactus-party .c3  { font-size: 3rem; top: 80%; left: -10%; animation: fly-left-to-right 3.8s linear 1.2s forwards; }
-.cactus-party .c13 { font-size: 5rem; top: 30%; left: -10%; animation: fly-left-to-right 2.9s ease-in-out 0.4s forwards; }
-
-.cactus-party .c4  { font-size: 6rem; top: 20%; right: -10%; animation: fly-right-to-left 2.8s ease-out 0.3s forwards; }
-.cactus-party .c5  { font-size: 3.5rem; top: 70%; right: -10%; animation: fly-right-to-left 3.5s linear 1.5s forwards; }
-.cactus-party .c6  { font-size: 5.5rem; top: 40%; right: -10%; animation: fly-right-to-left 2.6s ease-in 0.6s forwards; }
-.cactus-party .c14 { font-size: 2.5rem; top: 85%; right: -10%; animation: fly-right-to-left 3.1s ease-in-out 0.9s forwards; }
-
-.cactus-party .c7  { font-size: 4.5rem; left: 20%; top: -10%; animation: fly-top-to-bottom 3.1s ease-in 0.5s forwards; }
-.cactus-party .c8  { font-size: 2rem; left: 60%; top: -10%; animation: fly-top-to-bottom 4.0s linear 0.2s forwards; }
-.cactus-party .c9  { font-size: 6.5rem; left: 80%; top: -10%; animation: fly-top-to-bottom 2.4s ease-out 1.1s forwards; }
-
-.cactus-party .c10 { font-size: 5rem; left: 10%; bottom: -10%; animation: fly-bottom-to-top 2.7s ease-out 0.7s forwards; }
-.cactus-party .c11 { font-size: 3rem; left: 50%; bottom: -10%; animation: fly-bottom-to-top 3.6s ease-in-out 0s forwards; }
-.cactus-party .c12 { font-size: 4rem; left: 85%; bottom: -10%; animation: fly-bottom-to-top 3.3s linear 1.4s forwards; }
-.cactus-party .c15 { font-size: 7rem; left: 35%; bottom: -10%; animation: fly-bottom-to-top 2.5s ease-in 1.0s forwards; }
-
-
-@keyframes fly-left-to-right {
-    0%   { transform: translate(0, 0) scale(0.5) rotate(-90deg); opacity: 0; }
-    10%  { opacity: 1; }
-    90%  { opacity: 1; }
-    100% { transform: translate(120vw, 30vh) scale(1.5) rotate(360deg); opacity: 0; }
-}
-
-@keyframes fly-right-to-left {
-    0%   { transform: translate(0, 0) scale(1.2) rotate(90deg); opacity: 0; }
-    10%  { opacity: 1; }
-    90%  { opacity: 1; }
-    100% { transform: translate(-120vw, -40vh) scale(0.6) rotate(-360deg); opacity: 0; }
-}
-
-@keyframes fly-top-to-bottom {
-    0%   { transform: translate(0, 0) scale(0.8) rotate(0deg); opacity: 0; }
-    10%  { opacity: 1; }
-    90%  { opacity: 1; }
-    100% { transform: translate(40vw, 120vh) scale(2) rotate(540deg); opacity: 0; }
-}
-
-@keyframes fly-bottom-to-top {
-    0%   { transform: translate(0, 0) scale(1.5) rotate(45deg); opacity: 0; }
-    10%  { opacity: 1; }
-    90%  { opacity: 1; }
-    100% { transform: translate(-50vw, -120vh) scale(0.4) rotate(-720deg); opacity: 0; }
-}
-
-/* 2. Dark Mode Overrides */
-@media (prefers-color-scheme: dark) {
-    body, .content-wrapper, .home-catalogues, .home-services, .home-about, .profile-main, .form-main {
-        background-color: #121212 !important;
-        color: #e0e0e0 !important;
-    }
-
-    .dropdown-content { 
-        background-color: #1e1e1e !important; 
-        box-shadow: 0px 10px 25px 0px rgba(0,0,0,0.7) !important; 
-        border: 1px solid #333333 !important;
-    }
-
-    .dropdown-content a { 
-        color: #e0e0e0 !important; 
-        border-bottom-color: #333333 !important; 
-    }
-
-    .main-nav .dropdown-content a:hover,
-    .main-nav .dropdown-content a.active,
-    .dropdown-content a:hover,
-    .dropdown-content a.active { 
-        background-color: #2a2a2a !important;
-        color: #ff7b47 !important; 
-    }
-
-    .service-card-pro, .pricing-card, .form-card, .bio-card, .team-card, .product-aside, .service-aside, .step-guide {
-        background-color: #1e1e1e !important;
-        border-color: #333333 !important;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.5) !important;
-    }
-
-    .cactus-card {
-        background-color: #1e1e1e !important;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.5) !important;
-        padding: 25px 20px !important; 
-        border-radius: 15px !important; 
-    }
-
-    .global-hero-graphic {
-        background-color: #121212 !important;
-        background-image: linear-gradient(to right, #121212 0%, rgba(18,18,18,0.9) 25%, rgba(18,18,18,0) 60%), url('../images/hero-background.jpg') !important;
-    }
-
-    .form-card fieldset {
-        background-color: #1e1e1e !important;
-        border-color: #81b861 !important;
-    }
-
-    .form-card label, 
-    .form-card legend, 
-    .form-card label.inline-label {
-        color: #f0f0f0 !important; 
-        background-color: transparent !important;
-    }
-
-    .form-card input, 
-    .form-card select, 
-    .form-card textarea, 
-    .size-selector {
-        background-color: #2a2a2a !important;
-        color: #ffffff !important;
-        border-color: #444444 !important;
-    }
-
-    .form-header h1, 
-    .form-header h2, 
-    .form-header h3 {
-        color: #ffffff !important;
-    }
-
-    p, td, li, .service-text p, .modern-dl dd, .bio-id, .role, .product-aside h4, .product-aside p, .product-aside dt, .product-aside dd, .step-guide h4, .step-guide p, .service-aside h4, .service-aside p, .service-aside dt, .service-aside dd, .enhancements-header h1{
-        color: #eeeeee !important;
-    }
-
-    h1, h2, h3, h4, .brand-title, .modern-dl dt {
-        color: #81b861 !important; 
-    }
-    
-    .price, .hero-subtitle, .tier-price {
-        color: #ff7b47 !important; 
-    }
-
-    table, th, td {
-        border-color: #333333 !important;
-    }
-    
-    th {
-        background-color: #2a2a2a !important; 
-        color: #81b861 !important; 
-    }
-    
-    td {
-        background-color: #1e1e1e !important; 
-        color: #bbbbbb !important;
-    }
-    
-    .bio-table td:first-child {
-        background-color: #2a2a2a !important;
-        color: #ffffff !important;
-    }
-}
-
-/* 3. Cascade Animation */
-@keyframes fadeUpCascade {
-    0% { opacity: 0; transform: translateY(40px); }
-    100% { opacity: 1; transform: translateY(0); }
-}
-
-.cactus-card, .catalogue-card {
-    animation: fadeUpCascade 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) backwards;
-}
-
-.cactus-card:nth-child(1), .catalogue-card:nth-child(1) { animation-delay: 0.2s; }
-.cactus-card:nth-child(2), .catalogue-card:nth-child(2) { animation-delay: 0.4s; }
-.cactus-card:nth-child(3), .catalogue-card:nth-child(3) { animation-delay: 0.6s; }
-.cactus-card:nth-child(4), .catalogue-card:nth-child(4) { animation-delay: 0.8s; }
-.cactus-card:nth-child(5) { animation-delay: 1.0s; }
-.cactus-card:nth-child(6) { animation-delay: 1.2s; }
-
-/* 4. Smooth Page Load Fade */
-@keyframes pageFadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-body {
-    animation: pageFadeIn 0.6s ease-in-out forwards;
-}
-
->>>>>>> 4d9c4b2747dc14d6984cd3c2f03403b47a3777e2

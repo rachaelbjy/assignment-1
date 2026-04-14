@@ -53,7 +53,7 @@
             <p>Pushing the boundaries of standard-compliant web design with pure CSS3 and HTML5</p>
         </div>
 
-        <section class="enhancements-list">
+        <div class="enhancements-list">
             
             <article class="enhancement-row">
                 <figure class="enhancement-figure">
@@ -63,7 +63,7 @@
                     </video>
                 </figure>
                 <div class="enhancement-text">
-                    <h3>1. "Maximum Chaos" Emoji Overlay & HTML5 Video</h3>
+                    <h2>1. "Maximum Chaos" Emoji Overlay & HTML5 Video</h2>
                     <p><strong>How it goes beyond basic requirements:</strong> We utilized the advanced HTML5 <code>&lt;video&gt;</code> element to demonstrate features. Furthermore, we created a full-screen animated overlay using <code>position: fixed</code>. To ensure it doesn't block users from clicking underlying links, we added <code>pointer-events: none</code>. The emojis fly across the screen utilizing complex, simultaneous multi-transform <code>@keyframes</code> animations.</p>
                     <div class="code-box">
                         .cactus-party { pointer-events: none; z-index: 9999; }<br>
@@ -82,7 +82,7 @@
                     </video>
                 </figure>
                 <div class="enhancement-text">
-                    <h3>2. Stationary Typewriter Text Reveal</h3>
+                    <h2>2. Stationary Typewriter Text Reveal</h2>
                     <p><strong>How it goes beyond basic requirements:</strong> Typically, typewriter effects require JavaScript string manipulation. We achieved this entirely through pure CSS by animating the <code>clip-path: inset()</code> property. Combined with the <code>steps()</code> timing function, it perfectly mimics the rigid, character-by-character reveal of a mechanical typewriter without any scripting.</p>                
                     <div class="code-box">
                         .hero-section h1 { clip-path: inset(0 100% 0 0); animation: typing 1.5s steps(30, end) forwards; }
@@ -100,7 +100,7 @@
                     </video>
                 </figure>
                 <div class="enhancement-text">
-                    <h3>3. Automatic System Dark Mode Detection</h3>
+                    <h2>3. Automatic System Dark Mode Detection</h2>
                     <p><strong>How it goes beyond basic requirements:</strong> We implemented an automatic dark theme using the advanced CSS Level 5 media query <code>@media (prefers-color-scheme: dark)</code>. The website reads the user's OS settings and seamlessly swaps backgrounds, form inputs, and text colors to a highly accessible dark palette.</p>
                     <div class="code-box">
                         @media (prefers-color-scheme: dark) { body { background-color: #121212; color: #e0e0e0; } }
@@ -118,7 +118,7 @@
                     </video>
                 </figure>
                 <div class="enhancement-text">
-                    <h3>4. Advanced Pseudo-Element Button Shine</h3>
+                    <h2>4. Advanced Pseudo-Element Button Shine</h2>
                     <p><strong>How it goes beyond basic requirements:</strong> Instead of a simple color change on hover, we engineered a dynamic "light sweep" interaction. This uses the <code>::before</code> pseudo-element alongside a transparent <code>linear-gradient</code> and <code>skewX()</code> transformation. Upon hover, the invisible element transitions smoothly across the button's layout.</p>
                     <div class="code-box">
                         .add-to-cart::before { background: linear-gradient(...); transform: skewX(-25deg); }<br>
@@ -137,7 +137,7 @@
                     </video>
                 </figure>
                 <div class="enhancement-text">
-                    <h3>5. Sequential Staggered Loading (Cascade Grid)</h3>
+                    <h2>5. Sequential Staggered Loading (Cascade Grid)</h2>
                     <p><strong>How it goes beyond basic requirements:</strong> To create a premium entrance effect without JavaScript, we leveraged the CSS <code>:nth-child()</code> structural pseudo-class combined with <code>animation-delay</code>. This mathematically targets siblings and forces the grid items to load sequentially, calculating precise timing within the CSS cascade.</p>
                     <div class="code-box">
                         .cactus-card { animation: fadeUpCascade 0.8s backwards; }<br>
@@ -156,7 +156,7 @@
                     </video>
                 </figure>
                 <div class="enhancement-text">
-                    <h3>6. Global Smooth Page Transitions</h3>
+                    <h2>6. Global Smooth Page Transitions</h2>
                     <p><strong>How it goes beyond basic requirements:</strong> To eliminate the jarring visual flash during standard HTML page navigation, we implemented a global fade-in effect. By applying a custom CSS animation directly to the root element with a <code>forwards</code> fill mode, the document maintains visual state preservation seamlessly.</p>
                     <div class="code-box">
                         @keyframes pageFadeIn { from { opacity: 0; } to { opacity: 1; } }<br>
@@ -175,31 +175,30 @@
                     </video>
                 </figure>
                 <div class="enhancement-text">
-                    <h3>7. Smart "Back to Top" Scroll Detection</h3>
-                    <p><strong>How it goes beyond basic requirements:</strong> To create a back-to-top button that appears on scroll without JavaScript, we used the cutting-edge CSS property <code>animation-timeline: scroll()</code>. To ensure strict cross-browser compatibility (as required by the rubric for Firefox), we wrapped it in an advanced <code>@supports</code> feature query. This guarantees the UI degrades gracefully on older browsers while providing a premium experience on modern ones.</p>
+                    <h2>7. Smooth Scrolling "Back to Top"</h2>
+                    <p><strong>How it goes beyond basic requirements:</strong> Instead of relying on JavaScript for page navigation, we implemented a pure CSS3 solution for our global "Back to Top" button. By applying <code>scroll-behavior: smooth</code> to the root HTML element and combining it with <code>position: fixed</code>, users experience a fluid, graceful glide back to the header rather than an abrupt, disorienting jump.</p>
                     <div class="code-box">
-                        @supports (animation-timeline: scroll()) {<br>
-                        &nbsp;&nbsp;.back-to-top { animation-timeline: scroll(); }<br>
-                        }
+                        html { scroll-behavior: smooth; }<br>
+                        .back-to-top { position: fixed; bottom: 40px; right: 40px; z-index: 9999; }
                     </div>
-                    <p><strong>Source / Citation:</strong> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@supports" target="_blank">MDN Web Docs: @supports</a></p>
+                    <p><strong>Source / Citation:</strong> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-behavior" target="_blank">MDN Web Docs: scroll-behavior</a></p>
                     <a href="service1.html" class="btn-link7">View Feature</a>
                 </div>
             </article>
 
-        </section>
+        </div>
     </main>
 
     <!-- WEBSITE FOOTER & COPYRIGHT AREA -->
     <footer class="site-footer">
         <div class="footer-grid">
             <div class="footer-col brand-col">
-                <h4 class="brand-title">Cacti<br>Succulent<br>Kuching</h4>
+                <h3 class="brand-title">Cacti<br>Succulent<br>Kuching</h3>
                 <p class="tagline">From the desert to your home.</p>
             </div>
 
             <div class="footer-col">
-                <h4>Navigation</h4>
+                <h3>Navigation</h3>
                 <ul>
                     <li><a href="enquiry.html">Enquiry</a></li>
                     <li><a href="profile.html">Our Profile</a></li>
@@ -208,7 +207,7 @@
             </div>
 
             <div class="footer-col">
-                <h4>Connect With Us</h4>
+                <h3>Connect With Us</h3>
                 <div class="contact-info">
                     <p><strong>WA :</strong> +60 12-888 4444</p>
                     <p><strong>FB :</strong> CactiSucculentKCH</p>

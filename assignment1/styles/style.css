@@ -1701,19 +1701,18 @@ html {
 /* ==========================================================================
    11. GLOBAL MOBILE RESPONSIVE QUERIES
    ========================================================================== */
-
 /* Tablet Breakpoints */
 @media (max-width: 992px) {
-    .product-main-content, 
-    .service-layout-wrapper .services-list {
-        width: 100% !important;
-        float: none !important;
+    body .product-main-content, 
+    body .service-layout-wrapper .services-list {
+        width: 100%;
+        float: none;
     }
-    .product-aside, 
-    .service-aside {
-        width: 100% !important;
-        float: none !important;
-        margin: 30px 0 !important;
+    body .product-aside, 
+    body .service-aside {
+        width: 100%;
+        float: none;
+        margin: 30px 0;
     }
 
     .hero-wrapper, 
@@ -1732,23 +1731,23 @@ html {
         transform: translateX(0); 
     }
 
-    .catalogues-grid, 
-    .services-grid,
-    .product-grid,
-    .pricing-grid { 
-        grid-template-columns: repeat(2, 1fr) !important; 
-        gap: 30px !important;
+    body .catalogues-grid, 
+    body .services-grid,
+    body .product-grid,
+    body .pricing-grid { 
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 30px;
     }
 }
 
 /* Small Tablet & Mobile Landscape */
 @media (max-width: 768px) {
-    .footer-grid {
-        grid-template-columns: 1fr !important;
+    body .footer-grid {
+        grid-template-columns: 1fr;
         text-align: center;
         gap: 30px;
     }
-    .footer-col {
+    body .footer-col {
         width: 100%;
         margin: 0 auto;
     }
@@ -1778,8 +1777,8 @@ html {
 
 /* Mobile Devices */
 @media (max-width: 650px) {
-    .form-row { 
-        grid-template-columns: 1fr !important; 
+    body .form-row { 
+        grid-template-columns: 1fr; 
         row-gap: 25px; 
     }
     .form-card fieldset { 
@@ -1788,12 +1787,12 @@ html {
 }
 
 @media (max-width: 600px) {
-    .catalogues-grid, 
-    .services-grid,
-    .product-grid,
-    .pricing-grid,
-    .team-grid { 
-        grid-template-columns: 1fr !important; 
+    body .catalogues-grid, 
+    body .services-grid,
+    body .product-grid,
+    body .pricing-grid,
+    body .team-grid { 
+        grid-template-columns: 1fr; 
     }
 
     .img-wrapper { 
@@ -1807,8 +1806,9 @@ html {
         display: none; 
     }
 
-    h1, .hero-content-box h1 {
-        font-size: 2.5rem !important;
+    body h1, 
+    body .hero-content-box h1 {
+        font-size: 2.5rem;
     }
 }
 

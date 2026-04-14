@@ -1,22 +1,25 @@
 /* ==========================================================================
    Author: Rachael, Eleona, Amber
-   Student ID: 104402891, 
+   Student ID: 104402891，104403014，104399472
    Purpose: Global external stylesheet for Cacti-Succulent Kuching website.
    Valid: CSS3 / CSS2.1 Compliant
-========================================================================== */
+   ========================================================================== */
 
 /* ==========================================================================
    01. GLOBAL STYLES & TYPOGRAPHY
    ========================================================================== */
+/* Font Imports */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&display=swap');
 
+/* Base Resets */
 *, 
 *::before, 
 *::after {
     box-sizing: border-box; 
 }
 
+/* Document Setup */
 body {
     background-color: #ffffff; 
     font-family: 'Montserrat', sans-serif; 
@@ -39,6 +42,7 @@ dt,
     font-family: 'Cinzel', serif; 
 }
 
+/* Primary Heading */
 h1 {
     font: normal normal bold 4.5em/1.1 'Cinzel', serif;
     color: #6D9E51;
@@ -46,7 +50,7 @@ h1 {
     letter-spacing: 2px;
 }
 
-/* Fluid Page Layout Wrappers */
+/* Fluid Layout Wrappers */
 .content-wrapper, 
 .home-container, 
 .header-container, 
@@ -57,12 +61,10 @@ h1 {
     padding: 0 25px;
 }
 
-
 /* ==========================================================================
-   02. UNIFIED UI COMPONENTS (Floats & Buttons - Global)
+   02. UNIFIED UI COMPONENTS
    ========================================================================== */
-
-/* Universal Float Pattern (Asides, Cards, Step Guides) */
+/* Universal Float Pattern */
 .product-aside,
 .service-aside,
 .service-card-pro,
@@ -80,6 +82,7 @@ h1 {
     z-index: 10;
 }
 
+/* Luxury Pricing Card Override */
 .pricing-grid .luxury-card {
     transform: scale(1.15); 
     border: 2px solid #EB5B26; 
@@ -94,6 +97,7 @@ h1 {
     box-shadow: 0 15px 30px rgba(235, 91, 38, 0.12);
 }
 
+/* Global Button Styles */
 .button-group input[type="submit"], 
 .hero-btn, 
 .add-to-cart, 
@@ -118,6 +122,7 @@ h1 {
     font-size: 1rem;
 }
 
+/* Button Shine Effect */
 .add-to-cart::before {
     content: "";
     position: absolute;
@@ -135,6 +140,7 @@ h1 {
     left: 200%; 
 }
 
+/* Button Hover States */
 .button-group input[type="submit"]:hover,
 .hero-btn:hover,
 .add-to-cart:hover,
@@ -149,6 +155,7 @@ h1 {
     transform: translateY(-3px);
 }
 
+/* Button Variants */
 .button-group input[type="submit"] { 
     width: 180px; 
     padding: 15px; 
@@ -172,6 +179,7 @@ h1 {
     width: 90%; 
 }
 
+/* Reset Button Styles */
 .button-group input[type="reset"] {
     width: 180px;
     padding: 15px;
@@ -192,10 +200,10 @@ h1 {
     color: #EB5B26;
 }
 
-
 /* ==========================================================================
-   03. HEADER & NAVIGATION (All Pages)
+   03. HEADER & NAVIGATION
    ========================================================================== */
+/* Header Container */
 #top-header {
     background-color: #EB5B26; 
     padding: 8px 0;
@@ -212,6 +220,7 @@ h1 {
     padding: 0 18px; 
 }
 
+/* Brand Logo */
 .logo-area a { 
     display: flex; 
     align-items: center; 
@@ -298,6 +307,7 @@ h1 {
     border-bottom: none; 
 }
 
+/* Dropdown Hover States */
 .main-nav .dropdown-content a:hover,
 .main-nav .dropdown-content a.active { 
     background-color: #f9f9f9; 
@@ -319,10 +329,10 @@ h1 {
     display: block; 
 }
 
-
 /* ==========================================================================
-   04. HERO SECTIONS (Index & Shared Hero Banners)
+   04. HERO SECTIONS
    ========================================================================== */
+/* Global Hero Layout */
 .global-hero-graphic {
     background-color: #fdfdfd;
     padding: 0 0 240px 0;
@@ -334,6 +344,7 @@ h1 {
     background-repeat: no-repeat;
 }
 
+/* Hero Content Styling */
 .hero-content-box { 
     width: 50%; 
     margin-left: -10px; 
@@ -369,6 +380,7 @@ h1 {
     max-width: 480px; 
 }
 
+/* Hero Statistics */
 .hero-stats { 
     display: flex; 
     align-items: center; 
@@ -412,6 +424,7 @@ h1 {
     justify-content: center; 
 }
 
+/* Hero Typewriter Animation */
 .hero-section h1 {
     color: #EB5B26; 
     margin: 0 auto 15px auto;
@@ -505,16 +518,17 @@ h1 {
     z-index: 2; 
 }
 
-
 /* ==========================================================================
-   05. HOME PAGE SECTIONS (Index Content)
+   05. HOME PAGE SECTIONS
    ========================================================================== */
+/* Section Backgrounds */
 .home-catalogues, 
 .home-services { 
     background-color: #f6faf4; 
     padding: 40px 0; 
 }
 
+/* Catalogues Grid */
 .catalogues-grid { 
     display: grid; 
     grid-template-columns: repeat(4, 1fr); 
@@ -562,6 +576,7 @@ h1 {
     color: #EB5B26; 
 }
 
+/* Section Headings */
 .section-heading { 
     text-align: center; 
     margin-bottom: 60px; 
@@ -580,13 +595,13 @@ h1 {
     margin: 0 auto; 
 }
 
+/* Services Grid & Cards */
 .services-grid { 
     display: grid; 
     grid-template-columns: repeat(4, 1fr); 
     gap: 50px; 
 }
 
-/* Service Card Pro */
 .service-card-pro { 
     background: #ffffff; 
     padding: 40px 30px; 
@@ -634,7 +649,7 @@ h1 {
     margin: 0; 
 }
 
-/* Home About Section */
+/* About Us Section */
 .home-about { 
     padding: 70px 0 45px 0; 
     background-color: #ffffff; 
@@ -664,7 +679,6 @@ h1 {
     z-index: 1; 
 }
 
-/* About Us Image Wrapper & Zoom Effect */
 .about-img-wrapper { 
     border-radius: 20px; 
     position: relative; 
@@ -683,6 +697,7 @@ h1 {
     transform: scale(1.08); 
 }
 
+/* About Content Typography */
 .about-content { 
     width: 55%; 
 }
@@ -710,10 +725,10 @@ h1 {
     margin-top: -10px;
 }
 
-
 /* ==========================================================================
-   06. PRODUCT PAGES & KNOWLEDGE BASE (Product 1, 2, 3)
+   06. PRODUCT PAGES & KNOWLEDGE BASE
    ========================================================================== */
+/* Product Grid Layout */
 .product-grid { 
     display: grid; 
     grid-template-columns: repeat(3, 1fr); 
@@ -765,6 +780,7 @@ h1 {
     transform: scale(1.1); 
 }
 
+/* Card Typography & Layout */
 .cactus-card figcaption { 
     height: 3em; 
     display: flex; 
@@ -794,6 +810,7 @@ h1 {
     margin-bottom: 5px; 
 }
 
+/* Dropdown Selectors */
 .size-selector { 
     width: 60%; 
     padding: 15px 10px; 
@@ -818,7 +835,7 @@ h1 {
     box-shadow: 0 0 5px rgba(109, 158, 81, 0.3); 
 }
 
-/* Knowledge Base Shared Layout */
+/* Knowledge Base Main Article */
 .product-knowledge-base { 
     max-width: 1400px; 
     margin: 0 auto; 
@@ -850,7 +867,7 @@ h1 {
     margin-bottom: 20px; 
 }
 
-/* Asides */
+/* Sidebar Asides */
 .product-aside, 
 .service-aside {
     float: right;
@@ -872,6 +889,7 @@ h1 {
     box-shadow: 0 10px 30px rgba(0,0,0,0.06); 
 }
 
+/* Aside Typography */
 .product-aside h3, 
 .service-aside h3 { 
     color: #6D9E51; 
@@ -927,6 +945,7 @@ h1 {
     line-height: 1.4;
 }
 
+/* Aside Tables */
 .product-aside table, 
 .aside-table { 
     width: 100%; 
@@ -985,7 +1004,7 @@ h1 {
     line-height: 1.6; 
 }
 
-/* Step Guide Formatting */
+/* Step-by-Step Guide Layout */
 .step-guide { 
     position: relative;
     max-width: 1000px; 
@@ -1035,10 +1054,10 @@ h1 {
     font-size: 1.1rem; 
 }
 
-
 /* ==========================================================================
-   07. SERVICES & PRICING (Services Page)
+   07. SERVICES & PRICING
    ========================================================================== */
+/* Service Rows Layout */
 .service-layout-wrapper { 
     max-width: 1400px; 
     margin: 0 auto; 
@@ -1096,6 +1115,7 @@ h1 {
     text-decoration: none; 
 }
 
+/* Service Details Typography */
 .service-text { 
     width: 60%; 
     display: flex; 
@@ -1128,7 +1148,11 @@ h1 {
     margin-top: 5px; 
 }
 
-/* Pricing Grid Layout */
+.price-action-row .price { 
+    color: #EB5B26; 
+}
+
+/* Pricing Section Setup */
 .pricing-section { 
     padding: 35px 0 40px 0; 
     border-top: 1px solid #ddd; 
@@ -1152,6 +1176,7 @@ h1 {
     margin-bottom: 40px; 
 } 
 
+/* Pricing Cards Framework */
 .pricing-grid { 
     display: grid; 
     grid-template-columns: repeat(3, 1fr); 
@@ -1209,14 +1234,15 @@ h1 {
     font-size: 0.9rem; 
 }
 
+/* Luxury Card Styling */
 .luxury-card .tier-price { 
     color: #EB5B26; 
 }
 
-
 /* ==========================================================================
-   08. FORMS (Order, Enquiry, Login & Registration Pages)
+   08. FORMS (Order, Enquiry, Login)
    ========================================================================== */
+/* Form Base Elements */
 .form-main { 
     display: flex; 
     flex-direction: column; 
@@ -1256,6 +1282,7 @@ h1 {
     opacity: 0.9; 
 }
 
+/* Form Layout Structures */
 .form-card { 
     width: 100%; 
     max-width: 970px; 
@@ -1298,6 +1325,7 @@ h1 {
     width: 100%; 
 }
 
+/* Form Typography & Inputs */
 .form-card label { 
     margin: 0 0 6px 0; 
     font-weight: 700; 
@@ -1328,7 +1356,7 @@ h1 {
     cursor: pointer; 
 }
 
-/* Checkbox and Radio Configurations */
+/* Input Overrides */
 .form-card input[type="radio"], 
 .form-card input[type="checkbox"] { 
     width: auto !important; 
@@ -1371,7 +1399,7 @@ h1 {
     margin-right: 0 !important; 
 }
 
-/* Form Redirect Navigation */
+/* Form Redirections & Submit Areas */
 .form-redirect { 
     text-align: center; 
     margin-top: 35px; 
@@ -1403,10 +1431,10 @@ h1 {
     margin-top: 20px; 
 }
 
-
 /* ==========================================================================
    09. PROFILE PAGE
    ========================================================================== */
+/* Profile Card Base */
 .profile-main { 
     padding: 50px 20px; 
     background-color: #f6faf4; 
@@ -1425,8 +1453,9 @@ h1 {
     border-top: 8px solid #6D9E51; 
 }
 
+/* Profile Photo & Typography */
 .bio-photo { 
-    float: center; 
+    float: left; 
     position: relative; 
     left: 50%; 
     transform: translateX(-50%); 
@@ -1434,7 +1463,7 @@ h1 {
     padding: 20px; 
     width: 300px; 
     background-color: #ffffff; 
-    margin-bottom: -25px; 
+    margin-bottom: 15px; 
     box-shadow: 0 5px 15px rgba(0,0,0,0.1); 
 }
 
@@ -1461,12 +1490,12 @@ h1 {
     text-align: center; 
     font-size: 1.1rem; 
     font-weight: bold; 
-    margin: 0 0 35px 0; 
+    margin: 0 0 40px 0; 
     text-transform: uppercase; 
     letter-spacing: 1px; 
 }
 
-/* Profile Table */
+/* Profile Details Table */
 .bio-table { 
     width: 100%; 
     border-collapse: collapse; 
@@ -1508,10 +1537,10 @@ table.bio-table td.bio-email-cell {
     background-color: #ffffff; 
 }
 
-
 /* ==========================================================================
    10. FOOTER & BACK TO TOP
    ========================================================================== */
+/* Footer Base Settings */
 .site-footer {
     background-image: linear-gradient(rgba(20, 40, 10, 0.7), rgba(10, 25, 5, 0.9)), url('../images/footer-background.jpeg');
     color: #ffffff;
@@ -1539,6 +1568,7 @@ table.bio-table td.bio-email-cell {
     text-align: left; 
 }
 
+/* Footer Typography */
 .brand-title { 
     font-size: 22px; 
     font-weight: 550; 
@@ -1573,6 +1603,7 @@ table.bio-table td.bio-email-cell {
     padding-bottom: 0px; 
 }
 
+/* Footer Navigation Links */
 .footer-col ul { 
     list-style: none; 
     padding: 0; 
@@ -1606,6 +1637,7 @@ table.bio-table td.bio-email-cell {
     padding-left: 0; 
 }
 
+/* Copyright Bar */
 .footer-bottom { 
     text-align: center; 
     margin-top: 10px; 
@@ -1624,7 +1656,7 @@ table.bio-table td.bio-email-cell {
     text-align: center; 
 }
 
-/* Floating Back To Top Button */
+/* Interactive Back To Top System */
 html { 
     scroll-behavior: smooth; 
 }
@@ -1668,10 +1700,10 @@ html {
     box-shadow: none; 
 }
 
-
 /* ==========================================================================
    11. GLOBAL MOBILE RESPONSIVE QUERIES
    ========================================================================== */
+/* Tablet Breakpoints */
 @media (max-width: 992px) {
     .hero-wrapper, 
     .about-wrapper { 
@@ -1697,6 +1729,7 @@ html {
     }
 }
 
+/* Small Tablet & Mobile Landscape */
 @media (max-width: 768px) {
     .bio-photo { 
         float: none; 
@@ -1721,1756 +1754,7 @@ html {
     }
 }
 
-@media (max-width: 650px) {
-    .form-row { 
-        grid-template-columns: 1fr; 
-        row-gap: 25px; 
-    }
-    .form-card fieldset { 
-        padding: 25px; 
-    }
-}
-
-@media (max-width: 600px) {
-    .catalogues-grid { 
-        grid-template-columns: 1fr; 
-    }
-    .services-grid { 
-        grid-template-columns: 1fr; 
-    }
-    .img-wrapper { 
-        height: 300px; 
-    }
-    .hero-stats { 
-        flex-direction: column; 
-        gap: 15px; 
-    }
-    .stat-divider { 
-        display: none; 
-    }
-}
-
-/* ==========================================================================
-   Author: Rachael, Eleona, Amber
-   Student ID: 104402891, 
-   Purpose: Global external stylesheet for Cacti-Succulent Kuching website.
-   Valid: CSS3 / CSS2.1 Compliant
-========================================================================== */
-
-/* ==========================================================================
-   01. GLOBAL STYLES & TYPOGRAPHY
-   ========================================================================== */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&display=swap');
-
-*, 
-*::before, 
-*::after {
-    box-sizing: border-box; 
-}
-
-body {
-    background-color: #ffffff; 
-    font-family: 'Montserrat', sans-serif; 
-    margin: 0; 
-    padding: 0;
-    line-height: 1.6;
-    font-size: 115%;
-    overflow-x: hidden;
-}
-
-/* Typography Assignments */
-h2, 
-h3, 
-h4, 
-.main-nav a, 
-.price, 
-.add-to-cart, 
-dt, 
-.tier-price {
-    font-family: 'Cinzel', serif; 
-}
-
-h1 {
-    font: normal normal bold 4.5em/1.1 'Cinzel', serif;
-    color: #6D9E51;
-    text-align: center;
-    letter-spacing: 2px;
-}
-
-/* Fluid Page Layout Wrappers */
-.content-wrapper, 
-.home-container, 
-.header-container, 
-.footer-grid {
-    max-width: 1400px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 25px;
-}
-
-
-/* ==========================================================================
-   02. UNIFIED UI COMPONENTS (Floats & Buttons - Global)
-   ========================================================================== */
-
-/* Universal Float Pattern (Asides, Cards, Step Guides) */
-.product-aside,
-.service-aside,
-.service-card-pro,
-.pricing-card {
-    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
-    position: relative;
-}
-
-.product-aside:hover,
-.service-aside:hover,
-.service-card-pro:hover,
-.pricing-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
-    z-index: 10;
-}
-
-.pricing-grid .luxury-card {
-    transform: scale(1.15); 
-    border: 2px solid #EB5B26; 
-    background-color: #ffffff; 
-    box-shadow: none; 
-    z-index: 2;
-    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
-}
-
-.pricing-grid .luxury-card:hover {
-    transform: scale(1.15) translateY(-6px);
-    box-shadow: 0 15px 30px rgba(235, 91, 38, 0.12);
-}
-
-.button-group input[type="submit"], 
-.hero-btn, 
-.add-to-cart, 
-.solid-btn, 
-.cta-button, 
-.email-btn,
-.tier-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #6D9E51;
-    color: #ffffff;
-    border: 2px solid #6D9E51;
-    border-radius: 8px;
-    cursor: pointer;
-    text-decoration: none;
-    text-align: center;
-    font-family: 'Cinzel', serif;
-    font-weight: bold;
-    transition: all 0.3s ease-out;
-    padding: 12px 30px; 
-    font-size: 1rem;
-}
-
-.add-to-cart::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -100%; 
-    width: 50%;
-    height: 100%;
-    background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%);
-    transform: skewX(-25deg); 
-    transition: left 0.5s ease;
-    z-index: 1;
-}
-
-.add-to-cart:hover::before {
-    left: 200%; 
-}
-
-.button-group input[type="submit"]:hover,
-.hero-btn:hover,
-.add-to-cart:hover,
-.solid-btn:hover,
-.cta-button:hover,
-.email-btn:hover,
-.tier-btn:hover {
-    background-color: #EB5B26; 
-    border-color: #EB5B26;
-    color: #ffffff;
-    box-shadow: 0 8px 20px rgba(235, 91, 38, 0.2);
-    transform: translateY(-3px);
-}
-
-.button-group input[type="submit"] { 
-    width: 180px; 
-    padding: 15px; 
-}
-
-.hero-btn { 
-    padding: 16px 35px; 
-    font-size: 1.1rem; 
-    gap: 10px; 
-}
-
-.add-to-cart { 
-    padding: 13px 35px; 
-    margin-top: auto; 
-    position: relative;
-    overflow: hidden;
-}
-
-.tier-btn { 
-    margin-top: auto; 
-    width: 90%; 
-}
-
-.button-group input[type="reset"] {
-    width: 180px;
-    padding: 15px;
-    font-size: 1rem;
-    font-weight: bold;
-    border: 2px solid #cccccc;
-    border-radius: 8px;
-    background-color: transparent;
-    color: #888888;
-    cursor: pointer;
-    text-align: center;
-    font-family: 'Cinzel', serif;
-    transition: 0.3s ease;
-}
-
-.button-group input[type="reset"]:hover {
-    border-color: #EB5B26;
-    color: #EB5B26;
-}
-
-
-/* ==========================================================================
-   03. HEADER & NAVIGATION (All Pages)
-   ========================================================================== */
-#top-header {
-    background-color: #EB5B26; 
-    padding: 8px 0;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1); 
-    position: sticky; 
-    top: 0; 
-    z-index: 1000;
-}
-
-.header-container { 
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
-    padding: 0 18px; 
-}
-
-.logo-area a { 
-    display: flex; 
-    align-items: center; 
-    text-decoration: none; 
-    gap: 15px; 
-}
-
-.site-logo { 
-    height: 65px; 
-    width: auto; 
-    object-fit: cover; 
-    border-radius: 50%; 
-    display: block; 
-    transition: 0.3s ease; 
-}
-
-.brand-name { 
-    color: #ffffff; 
-    font-weight: 900; 
-    text-transform: uppercase; 
-    font-size: 1.3rem; 
-    letter-spacing: 1.4px; 
-    font-family: 'Cinzel', serif; 
-}
-
-/* Main Navigation */
-.main-nav ul { 
-    list-style: none; 
-    display: flex; 
-    gap: 40px; 
-    margin: 0; 
-    align-items: center; 
-}
-
-.main-nav a { 
-    text-decoration: none; 
-    color: #ffffff; 
-    font-weight: bold; 
-    font-size: 15px; 
-    letter-spacing: 1px; 
-    transition: 0.3s ease; 
-}
-
-.main-nav a:hover, 
-.main-nav a.active { 
-    background-color: #6D9E51; 
-    color: #ffffff; 
-    padding: 6px 12px; 
-    border-radius: 8px;
-}
-
-/* Dropdown Menu */
-.dropdown { 
-    position: relative; 
-    display: inline-block; 
-}
-
-.dropdown-content { 
-    display: none; 
-    position: absolute; 
-    background-color: #ffffff; 
-    min-width: 230px; 
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.15); 
-    z-index: 1001; 
-    border-radius: 8px; 
-    top: 100%; 
-    left: 0; 
-    margin-top: 2px; 
-    padding-top: 5px; 
-    overflow: hidden; 
-}
-
-.dropdown-content a { 
-    color: #111111; 
-    font-weight: 500; 
-    padding: 12px 18px; 
-    display: block; 
-    font-size: 14px; 
-    border-bottom: 1px solid #f1f1f1; 
-    transition: none;
-}
-
-.dropdown-content a:last-child { 
-    border-bottom: none; 
-}
-
-.main-nav .dropdown-content a:hover,
-.main-nav .dropdown-content a.active { 
-    background-color: #f9f9f9; 
-    color: #EB5B26; 
-    padding: 12px 18px; 
-    border-radius: 0; 
-}
-
-.dropdown-content a:hover,
-.dropdown-content a.active { 
-    background-color: #f9f9f9; 
-    color: #EB5B26; 
-    padding: 13px 19px; 
-    border-radius: 0; 
-    font-weight: bold; 
-}
-
-.dropdown:hover .dropdown-content { 
-    display: block; 
-}
-
-
-/* ==========================================================================
-   04. HERO SECTIONS (Index & Shared Hero Banners)
-   ========================================================================== */
-.global-hero-graphic {
-    background-color: #fdfdfd;
-    padding: 0 0 240px 0;
-    position: relative;
-    overflow: hidden;
-    background-image: linear-gradient(to right, rgba(255,255,255,0.98) 0%, rgba(255,255,255,0) 30%), url('../images/hero-background.jpg');
-    background-size: 90% auto;
-    background-position: right center;
-    background-repeat: no-repeat;
-}
-
-.hero-content-box { 
-    width: 50%; 
-    margin-left: -10px; 
-    position: relative; 
-    z-index: 2; 
-    text-align: left; 
-    transform: translateY(95px); 
-}
-
-.hero-subtitle { 
-    font-family: 'Montserrat', sans-serif; 
-    color: #EB5B26; 
-    font-weight: 700; 
-    letter-spacing: 2px; 
-    text-transform: uppercase; 
-    font-size: 0.9rem; 
-    display: block; 
-    margin-bottom: 15px; 
-    margin-left: 5px; 
-}
-
-.hero-content-box h1 { 
-    font-size: 4rem; 
-    margin: 25px 0 25px 0; 
-    text-align: left; 
-    letter-spacing: 0; 
-}
-
-.hero-content-box p { 
-    font-size: 1.1rem; 
-    color: #555555; 
-    margin-bottom: 40px; 
-    max-width: 480px; 
-}
-
-.hero-stats { 
-    display: flex; 
-    align-items: center; 
-    gap: 30px; 
-    margin-top: 50px; 
-}
-
-.stat-item h3 { 
-    font-size: 1.8rem; 
-    color: #EB5B26; 
-    margin: 0 0 5px 0; 
-}
-
-.stat-item span { 
-    font-size: 0.85rem; 
-    color: #777777; 
-    text-transform: uppercase; 
-    letter-spacing: 1px; 
-    font-weight: 600; 
-}
-
-.stat-divider { 
-    width: 2px; 
-    min-width: 2px; 
-    height: 40px; 
-    background-color: #cccccc; 
-    opacity: 1; 
-}
-
-/* Shared Products & Services Hero */
-.hero-section { 
-    width: 100%; 
-    text-align: center; 
-    padding: 0 20px; 
-    background-size: cover; 
-    background-position: center; 
-    height: 480px;
-    min-height: 40vh; 
-    display: flex; 
-    flex-direction: column; 
-    justify-content: center; 
-}
-
-.hero-section h1 {
-    color: #EB5B26; 
-    margin: 0 auto 15px auto;
-    text-shadow: 2px 2px 15px rgba(0,0,0,0.5);
-    display: inline-block; 
-    white-space: nowrap; 
-    clip-path: inset(0 100% 0 0); 
-    animation: typing 1.5s steps(30, end) forwards;
-}
-
-@keyframes typing {
-    to { clip-path: inset(0 0 0 0); } 
-}
-
-.hero-section h2 { 
-    color: #EB5B26; 
-    font-size: 1.1em; 
-    margin-bottom: 10px; 
-    letter-spacing: 6px; 
-    text-transform: uppercase; 
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.5); 
-}
-
-.hero-section p { 
-    max-width: 800px; 
-    margin: 0 auto; 
-    color: #ffffff; 
-    font-size: 1.1em; 
-    font-weight: 300; 
-    text-shadow: 1px 1px 5px rgba(0,0,0,0.5); 
-}
-
-.hero-divider { 
-    width: 80px; 
-    height: 2px; 
-    background-color: #6D9E51; 
-    margin: 40px auto 0; 
-    box-shadow: 0px 2px 10px rgba(0,0,0,0.3); 
-}
-
-/* Contextual Hero Backgrounds */
-.hero-cacti { 
-    background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.5)), url('../images/cacti-hero.jpg'); 
-}
-
-.hero-succulents { 
-    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../images/suc-hero.jpg'); 
-}
-
-.hero-services { 
-    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('../images/service-hero.jpg'); 
-}
-
-.hero-accessories { 
-    position: relative; 
-    background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.85)), url('../images/acc-hero-middle.jpg'); 
-    background-size: 33.33% 100%; 
-    background-position: center; 
-    background-repeat: no-repeat; 
-    overflow: hidden; 
-}
-
-.hero-accessories::before { 
-    content: ""; 
-    position: absolute; 
-    top: 0; 
-    left: 0; 
-    width: 33.33%; 
-    height: 100%; 
-    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('../images/acc-hero-left.jpg'); 
-    background-size: cover; 
-    background-position: center; 
-    z-index: 1; 
-}
-
-.hero-accessories::after { 
-    content: ""; 
-    position: absolute; 
-    top: 0; 
-    right: 0; 
-    width: 33.33%; 
-    height: 100%; 
-    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('../images/acc-hero-right.jpg'); 
-    background-size: cover; 
-    background-position: center; 
-    z-index: 1; 
-}
-
-.hero-accessories .hero-content { 
-    position: relative; 
-    z-index: 2; 
-}
-
-
-/* ==========================================================================
-   05. HOME PAGE SECTIONS (Index Content)
-   ========================================================================== */
-.home-catalogues, 
-.home-services { 
-    background-color: #f6faf4; 
-    padding: 40px 0; 
-}
-
-.catalogues-grid { 
-    display: grid; 
-    grid-template-columns: repeat(4, 1fr); 
-    gap: 80px; 
-}
-
-.catalogue-card { 
-    text-align: center; 
-}
-
-.catalogue-link { 
-    text-decoration: none; 
-    display: block; 
-    transition: all 0.3s ease; 
-}
-
-.img-wrapper { 
-    width: 100%; 
-    height: 350px; 
-    overflow: hidden; 
-    border-radius: 12px; 
-    box-shadow: 0 10px 20px rgba(0,0,0,0.06); 
-    margin-bottom: 20px; 
-}
-
-.img-wrapper img { 
-    width: 100%; 
-    height: 100%; 
-    object-fit: cover; 
-    transition: transform 0.5s ease; 
-}
-
-.catalogue-link:hover .img-wrapper img { 
-    transform: scale(1.08); 
-}
-
-.catalogue-card h3 { 
-    font-size: 1.4rem; 
-    color: #333333; 
-    margin: 0; 
-    transition: color 0.3s ease; 
-}
-
-.catalogue-link:hover h3 { 
-    color: #EB5B26; 
-}
-
-.section-heading { 
-    text-align: center; 
-    margin-bottom: 60px; 
-}
-
-.section-heading h2 { 
-    font-size: 2.5rem; 
-    color: #6D9E51; 
-    margin: 0 0 15px 0; 
-}
-
-.heading-line { 
-    width: 60px; 
-    height: 3px; 
-    background-color: #EB5B26; 
-    margin: 0 auto; 
-}
-
-.services-grid { 
-    display: grid; 
-    grid-template-columns: repeat(4, 1fr); 
-    gap: 50px; 
-}
-
-/* Service Card Pro */
-.service-card-pro { 
-    background: #ffffff; 
-    padding: 40px 30px; 
-    border-radius: 12px; 
-    text-align: center; 
-    box-shadow: 0 10px 30px rgba(0,0,0,0.03); 
-    border-bottom: 4px solid transparent; 
-    transition: all 0.4s ease; 
-}
-
-.service-card-pro:hover {
-    transform: translateY(-10px); 
-    box-shadow: 0 20px 40px rgba(109, 158, 81, 0.1); 
-    border-bottom-color: #6D9E51; 
-}
-
-.icon-circle { 
-    width: 70px; 
-    height: 70px; 
-    background-color: #fcf1ed; 
-    color: #EB5B26; 
-    border-radius: 50%; 
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    font-size: 30px; 
-    margin: 0 auto 20px auto; 
-    transition: all 0.4s ease; 
-}
-
-.service-card-pro:hover .icon-circle { 
-    background-color: #EB5B26; 
-    color: #ffffff; 
-}
-
-.service-card-pro h3 { 
-    font-size: 1.3rem; 
-    color: #333333; 
-    margin: 0 0 15px 0; 
-}
-
-.service-card-pro p { 
-    font-size: 0.95rem; 
-    color: #666666; 
-    margin: 0; 
-}
-
-/* Home About Section */
-.home-about { 
-    padding: 70px 0 45px 0; 
-    background-color: #ffffff; 
-}
-
-.about-wrapper { 
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-    gap: 60px; 
-    transform: translateX(20px); 
-}
-
-.about-visual { 
-    width: 45%; 
-    position: relative; 
-}
-
-.visual-backdrop { 
-    position: absolute; 
-    top: -20px; 
-    left: -20px; 
-    width: 100%; 
-    height: 100%; 
-    border: 4px solid #6D9E51; 
-    border-radius: 20px; 
-    z-index: 1; 
-}
-
-/* About Us Image Wrapper & Zoom Effect */
-.about-img-wrapper { 
-    border-radius: 20px; 
-    position: relative; 
-    z-index: 2; 
-    box-shadow: 0 15px 30px rgba(0,0,0,0.1); 
-    overflow: hidden; 
-}
-
-.about-img { 
-    width: 100%; 
-    display: block; 
-    transition: transform 0.5s ease; 
-}
-
-.about-visual:hover .about-img { 
-    transform: scale(1.08); 
-}
-
-.about-content { 
-    width: 55%; 
-}
-
-.section-tag { 
-    color: #EB5B26; 
-    font-weight: 700; 
-    letter-spacing: 2px; 
-    text-transform: uppercase; 
-    font-size: 0.9rem; 
-    display: block; 
-    margin-bottom: 15px; 
-}
-
-.about-content h2 { 
-    font-size: 2.8rem; 
-    color: #6D9E51; 
-    margin: 0 0 25px 0; 
-}
-
-.about-content p { 
-    font-size: 1.05rem; 
-    color: #555555; 
-    margin-bottom: 40px; 
-    margin-top: -10px;
-}
-
-
-/* ==========================================================================
-   06. PRODUCT PAGES & KNOWLEDGE BASE (Product 1, 2, 3)
-   ========================================================================== */
-.product-grid { 
-    display: grid; 
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 110px 80px; 
-    margin-bottom: 20px; 
-    padding: 40px 0; 
-}
-
-/* Product Cards */
-.cactus-card { 
-    text-align: center; 
-    display: flex; 
-    flex-direction: column; 
-    height: 100%; 
-    transition: transform 0.4s ease; 
-}
-
-.cactus-card:hover { 
-    transform: translateY(-10px); 
-}
-
-.cactus-card img { 
-    width: 95%; 
-    height: auto; 
-    aspect-ratio: 1/1; 
-    object-fit: cover; 
-    border-radius: 4px; 
-    margin-bottom: 25px; 
-}
-
-.cactus-card figure {
-    margin: 0; 
-    flex-shrink: 0;
-    overflow: hidden; 
-    border-radius: 4px; 
-}
-
-.cactus-card img { 
-    width: 95%; 
-    height: auto;
-    aspect-ratio: 1/1;
-    object-fit: cover; 
-    border-radius: 4px; 
-    margin-bottom: 25px; 
-    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
-}
-
-.cactus-card:hover img {
-    transform: scale(1.1); 
-}
-
-.cactus-card figcaption { 
-    height: 3em; 
-    display: flex; 
-    flex-direction: row; 
-    justify-content: center; 
-    font-size: 0.9rem; 
-}
-
-.card-content { 
-    display: flex; 
-    flex-direction: column; 
-    flex: 1; 
-    align-items: center; 
-}
-
-.card-content h3 { 
-    min-height: 3em; 
-    margin: -30px 0 -10px 0; 
-    display: flex; 
-    align-items: flex-end; 
-    justify-content: center; 
-}
-
-.price { 
-    color: #EB5B26; 
-    font-size: 1.5em; 
-    margin-bottom: 5px; 
-}
-
-.size-selector { 
-    width: 60%; 
-    padding: 15px 10px; 
-    margin-top: -5px; 
-    margin-bottom: 15px; 
-    border: 1px solid #dddddd; 
-    border-radius: 4px; 
-    background-color: #fdfdfd; 
-    font-family: inherit; 
-    font-size: 1rem; 
-    cursor: pointer; 
-    justify-content: center; 
-}
-
-.size-selector:hover { 
-    border-color: #6D9E51; 
-}
-
-.size-selector:focus { 
-    outline: none; 
-    border-color: #6D9E51; 
-    box-shadow: 0 0 5px rgba(109, 158, 81, 0.3); 
-}
-
-/* Knowledge Base Shared Layout */
-.product-knowledge-base { 
-    max-width: 1400px; 
-    margin: 0 auto; 
-    padding: 60px 0; 
-    border-top: 1px solid #eeeeee; 
-    margin-bottom: -40px;
-}
-
-.product-knowledge-base::after { 
-    content: ""; 
-    display: table; 
-    clear: both; 
-}
-
-.product-main-content { 
-    float: left; 
-    width: 65%; 
-}
-
-.product-main-content h3 { 
-    color: #6D9E51; 
-    font-size: 2em; 
-    letter-spacing: 1px; 
-    margin: 0 0 20px 0; 
-}
-
-.product-main-content p { 
-    color: #555555; 
-    margin-bottom: 20px; 
-}
-
-/* Asides */
-.product-aside, 
-.service-aside {
-    float: right;
-    width: 30%; 
-    background-color: #ffffff; 
-    border: 2px solid #6D9E51; 
-    padding: 45px 30px; 
-    border-radius: 15px;
-    box-sizing: border-box;
-}
-
-.product-aside { 
-    margin: -10px 0 30px 4%; 
-    box-shadow: 0 10px 30px rgba(0,0,0,0.06); 
-}
-
-.service-aside { 
-    margin: 480px -20px 30px 4%; 
-    box-shadow: 0 10px 30px rgba(0,0,0,0.06); 
-}
-
-.product-aside h3, 
-.service-aside h3 { 
-    color: #6D9E51; 
-    margin: 0 0 30px 0; 
-    font-size: 1.5rem; 
-    text-align: center; 
-    font-family: 'Cinzel', serif;
-}
-
-.product-aside h4, 
-.service-aside h4 { 
-    color: #EB5B26; 
-    margin: 35px 0 10px 0; 
-    font-size: 1.1rem; 
-    border-bottom: 1px solid #eeeeee; 
-    padding-bottom: 8px;
-}
-
-.product-aside h4:first-of-type, 
-.service-aside h4:first-of-type { 
-    margin-top: 0; 
-} 
-
-.product-aside ol, 
-.service-aside ol { 
-    margin-top: 10px; 
-    margin-bottom: 25px; 
-    padding-left: 20px; 
-    color: #555555; 
-    font-family: 'Montserrat', sans-serif; 
-    font-size: 0.85rem;
-}
-
-.product-aside ol li, 
-.service-aside ol li { 
-    margin-bottom: 12px; 
-}
-
-.product-aside dl dt, 
-.service-dl dt { 
-    color: #333333; 
-    font-weight: bold; 
-    margin-top: 20px; 
-    font-family: 'Montserrat', sans-serif; 
-    font-size: 0.9rem;
-}
-
-.product-aside dl dd, 
-.service-dl dd { 
-    margin: 6px 0 0 15px; 
-    color: #666666; 
-    font-size: 0.85rem; 
-    line-height: 1.4;
-}
-
-.product-aside table, 
-.aside-table { 
-    width: 100%; 
-    border-collapse: collapse; 
-    margin-top: 15px; 
-    margin-bottom: 25px; 
-    font-size: 0.8rem; 
-    font-family: 'Montserrat', sans-serif;
-}
-
-.product-aside table th, 
-.aside-table th, 
-.product-aside table td, 
-.aside-table td { 
-    border: 1px solid #eeeeee; 
-    padding: 10px; 
-    text-align: left; 
-}
-
-.product-aside table th, 
-.aside-table th { 
-    background-color: #f6faf4; 
-    color: #6D9E51; 
-    font-weight: bold;
-}
-
-.product-aside table td, 
-.aside-table td { 
-    color: #555555; 
-}
-
-/* Glossary Definition List */
-.modern-dl dt { 
-    color: #EB5B26; 
-    font-size: 1.3em; 
-    margin-top: 30px; 
-    display: flex; 
-    align-items: center; 
-    font-weight: 600; 
-}
-
-.modern-dl dt::before { 
-    content: ""; 
-    display: inline-block; 
-    width: 30px; 
-    height: 2px; 
-    background: #6D9E51; 
-    margin-right: 15px; 
-}
-
-.modern-dl dd { 
-    margin: 10px 0 0 45px; 
-    color: #666666; 
-    font-style: italic; 
-    font-weight: 300; 
-    line-height: 1.6; 
-}
-
-/* Step Guide Formatting */
-.step-guide { 
-    position: relative;
-    max-width: 1000px; 
-    margin: 80px auto 50px auto; 
-    padding: 30px 25px; 
-    background-color: #f6faf4;
-    border-left: 4px solid #6D9E51; 
-    border-radius: 8px; 
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-}
-
-.step-guide::before { 
-    content: ""; 
-    position: absolute; 
-    top: -50px; 
-    width: 80vw; 
-    left: 50%; 
-    transform: translateX(-50%); 
-    height: 1px; 
-    background-color: #eee; 
-}
-
-.step-guide h3 { 
-    color: #EB5B26; 
-    margin-top: 0; 
-    margin-bottom: 20px; 
-    font-size: 1.5rem; 
-}
-
-.step-guide ol { 
-    margin: 0; 
-    padding-left: 20px; 
-}
-
-.step-guide ol li { 
-    margin-bottom: 12px; 
-    color: #555; 
-    font-size: 0.95rem; 
-    line-height: 1.6; 
-}
-
-.step-guide ol li::marker { 
-    color: #6D9E51; 
-    font-weight: bold; 
-    text-align: left; 
-    font-family: 'Cinzel', serif; 
-    font-size: 1.1rem; 
-}
-
-
-/* ==========================================================================
-   07. SERVICES & PRICING (Services Page)
-   ========================================================================== */
-.service-layout-wrapper { 
-    max-width: 1400px; 
-    margin: 0 auto; 
-    padding: 0; 
-}
-
-.service-layout-wrapper::after { 
-    content: ""; 
-    display: table; 
-    clear: both; 
-}
-
-.service-layout-wrapper .services-list { 
-    float: left; 
-    width: 65%; 
-    margin: 40px 0 60px 0; 
-    display: flex; 
-    flex-direction: column; 
-    gap: 90px; 
-}
-
-.service-row { 
-    display: flex; 
-    align-items: stretch; 
-    gap: 30px; 
-}
-
-.service-row.reverse { 
-    flex-direction: row-reverse; 
-}
-
-.service-row figure { 
-    width: 40%; 
-    margin: 0; 
-    display: flex; 
-    flex-direction: column; 
-}
-
-.service-row figure img { 
-    width: 100%; 
-    border-radius: 8px; 
-    aspect-ratio: 1/1; 
-    object-fit: cover; 
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1); 
-}
-
-.service-row figcaption { 
-    font-size: 0.75rem; 
-    text-align: left; 
-    margin-top: 8px; 
-}
-
-.service-row figcaption a { 
-    color: #6D9E51; 
-    text-decoration: none; 
-}
-
-.service-text { 
-    width: 60%; 
-    display: flex; 
-    flex-direction: column; 
-    align-items: flex-start; 
-}
-
-.service-text h3 { 
-    color: #EB5B26; 
-    font-size: 1.8rem; 
-    margin: 0; 
-}
-
-.service-text p { 
-    font-size: 1rem; 
-    color: #444; 
-    margin-bottom: 15px; 
-}
-
-.price-action-row { 
-    display: flex; 
-    flex-direction: column; 
-    align-items: flex-start; 
-    font: 1.25rem 'Cinzel', serif; 
-    gap: 12px; 
-    width: 100%; 
-}
-
-.service-text .add-to-cart { 
-    margin-top: 5px; 
-}
-
-/* Pricing Grid Layout */
-.pricing-section { 
-    padding: 35px 0 40px 0; 
-    border-top: 1px solid #ddd; 
-    clear: both; 
-    margin-bottom: 40px; 
-}
-
-.pricing-header { 
-    text-align: center; 
-    margin-bottom: 50px; 
-}
-
-.pricing-header h3 { 
-    color: #6D9E51; 
-    font-size: 2.2em; 
-    margin: 0; 
-}
-
-.pricing-header p { 
-    margin-top: 0px; 
-    margin-bottom: 40px; 
-} 
-
-.pricing-grid { 
-    display: grid; 
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 70px; 
-    max-width: 1100px; 
-    margin: 0 auto; 
-    align-items: center; 
-}
-
-.pricing-card { 
-    border: 2px solid #eeeeee; 
-    border-radius: 10px; 
-    padding: 30px 20px; 
-    background-color: #ffffff; 
-    display: flex; 
-    flex-direction: column; 
-    align-items: center; 
-    text-align: center; 
-}
-
-.pricing-card h4 { 
-    font-size: 1.2rem; 
-    margin: 0 0 10px 0; 
-    color: #333333; 
-}
-
-.tier-price { 
-    font-size: 1.8rem; 
-    font-family: 'Cinzel', serif; 
-    color: #6D9E51; 
-    font-weight: bold; 
-    margin: 0 0 20px 0; 
-    border-bottom: 1px solid #eeeeee; 
-    padding-bottom: 15px; 
-    width: 100%; 
-}
-
-.tier-price span { 
-    font-size: 0.8rem; 
-    color: #888; 
-    font-family: 'Montserrat', sans-serif; 
-    font-weight: normal; 
-}
-
-.pricing-card ul { 
-    list-style: none; 
-    padding: 0; 
-    margin: 0 0 25px 0; 
-    width: 100%; 
-}
-
-.pricing-card li { 
-    padding: 8px 0; 
-    color: #555555; 
-    font-size: 0.9rem; 
-}
-
-.luxury-card .tier-price { 
-    color: #EB5B26; 
-}
-
-
-/* ==========================================================================
-   08. FORMS (Order, Enquiry, Login & Registration Pages)
-   ========================================================================== */
-.form-main { 
-    display: flex; 
-    flex-direction: column; 
-    align-items: center; 
-    padding: 60px 20px; 
-    background-color: #f6faf4; 
-    width: 100%; 
-}
-
-.form-main legend, 
-.form-main label, 
-.form-main .button-group input { 
-    font-family: 'Cinzel', serif; 
-}
-
-.form-header { 
-    width: 100%; 
-    max-width: 970px; 
-    background-color: #6D9E51; 
-    text-align: center; 
-    padding: 30px; 
-    border-radius: 15px 15px 0 0; 
-}
-
-.form-header h1 { 
-    font-size: 2.7rem; 
-    color: #ffffff; 
-    margin: 0 0 10px 0; 
-    letter-spacing: 2px; 
-}
-
-.form-header p { 
-    font-family: 'Montserrat', serif; 
-    font-size: 1rem; 
-    color: #ffffff; 
-    margin: 0; 
-    opacity: 0.9; 
-}
-
-.form-card { 
-    width: 100%; 
-    max-width: 970px; 
-    background: #ffffff; 
-    padding: 40px 30px; 
-    border-radius: 0 0 15px 15px; 
-    box-shadow: 0 25px 50px rgba(0,0,0,0.08), 0 5px 15px rgba(0,0,0,0.04); 
-}
-
-.form-card fieldset { 
-    border: 2px solid #6D9E51; 
-    padding: 30px 40px; 
-    margin-bottom: 40px; 
-    border-radius: 12px; 
-    background-color: #fdfdfd; 
-}
-
-.form-card legend { 
-    font-size: 1.8rem; 
-    color: #EB5B26; 
-    font-weight: 900; 
-    padding: 0 15px; 
-}
-
-.form-row { 
-    display: grid; 
-    grid-template-columns: 1fr 1fr; 
-    column-gap: 60px; 
-    row-gap: 30px; 
-    margin-bottom: 40px; 
-}
-
-.full-width { 
-    grid-column: 1 / -1; 
-}
-
-.input-group { 
-    display: flex; 
-    flex-direction: column; 
-    width: 100%; 
-}
-
-.form-card label { 
-    margin: 0 0 6px 0; 
-    font-weight: 700; 
-    font-size: 1.15rem; 
-    color: #333333; 
-}
-
-.form-card input, 
-.form-card select, 
-.form-card textarea { 
-    width: 100%; 
-    padding: 15px; 
-    border-radius: 6px; 
-    border: 1px solid #d1d1d1; 
-    font-family: 'Montserrat', sans-serif; 
-    font-size: 1rem; 
-    background-color: #ffffff; 
-    margin: 0; 
-    color: #333333; 
-}
-
-.form-card select { 
-    appearance: none; 
-    background-image: url("data:image/svg+xml;utf8,<svg fill='%236D9E51' height='20' viewBox='0 0 20 20'><polygon points='5,7 10,12 15,7'/></svg>"); 
-    background-repeat: no-repeat; 
-    background-position: right 15px center; 
-    background-size: 16px; 
-    cursor: pointer; 
-}
-
-/* Checkbox and Radio Configurations */
-.form-card input[type="radio"], 
-.form-card input[type="checkbox"] { 
-    width: auto !important; 
-    padding: 0 !important; 
-    margin: 0 !important; 
-    display: inline-block; 
-    cursor: pointer; 
-}
-
-.radio-group { 
-    display: flex; 
-    align-items: center; 
-    gap: 0; 
-    height: 100%; 
-    margin-top: 5px; 
-}
-
-.checkbox-row { 
-    margin-bottom: 20px; 
-}
-
-.checkbox-group { 
-    display: flex; 
-    flex-direction: row; 
-    align-items: center; 
-    justify-content: center; 
-    gap: 0; 
-}
-
-.form-card label.inline-label { 
-    font-family: 'Montserrat', sans-serif !important; 
-    font-weight: 500 !important; 
-    font-size: 1rem !important; 
-    margin: 0 50px 0 6px !important; 
-    color: #333333 !important; 
-    cursor: pointer; 
-}
-
-.checkbox-group label.inline-label { 
-    margin-right: 0 !important; 
-}
-
-/* Form Redirect Navigation */
-.form-redirect { 
-    text-align: center; 
-    margin-top: 35px; 
-}
-
-.form-redirect p { 
-    margin: 0; 
-    font-size: 0.95rem; 
-    color: #555555; 
-}
-
-.form-redirect a { 
-    color: #EB5B26; 
-    font-weight: 700; 
-    text-decoration: none; 
-    transition: 0.3s ease; 
-    margin-left: 5px; 
-}
-
-.form-redirect a:hover { 
-    color: #6D9E51; 
-    text-decoration: underline; 
-}
-
-.button-group {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin-top: 20px; 
-}
-
-
-/* ==========================================================================
-   09. PROFILE PAGE
-   ========================================================================== */
-.profile-main { 
-    padding: 50px 20px; 
-    background-color: #f6faf4; 
-    display: flex; 
-    justify-content: center; 
-    width: 100%; 
-}
-
-.bio-card { 
-    width: 100%; 
-    max-width: 1000px; 
-    background-color: #ffffff; 
-    border-radius: 12px; 
-    box-shadow: 0 10px 30px rgba(0,0,0,0.06); 
-    padding: 40px; 
-    border-top: 8px solid #6D9E51; 
-}
-
-.bio-photo { 
-    float: left; 
-    position: relative; 
-    left: 50%; 
-    transform: translateX(-50%); 
-    border: 6px groove #6D9E51; 
-    padding: 20px; 
-    width: 300px; 
-    background-color: #ffffff; 
-    margin-bottom: 15px; 
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1); 
-}
-
-.bio-name { 
-    clear: both; 
-    text-align: center; 
-    font-weight: bold; 
-    font-size: 200%; 
-    padding-top: 20px; 
-    margin-bottom: -7px; 
-    color: #333333; 
-}
-
-.bio-id { 
-    font-family: Arial, sans-serif; 
-    text-align: center; 
-    font-size: 1.05rem; 
-    color: #666666; 
-    margin: 5px 0 7px 0;
-}
-
-.bio-course { 
-    color: rgb(235, 91, 38); 
-    text-align: center; 
-    font-size: 1.1rem; 
-    font-weight: bold; 
-    margin: 0 0 40px 0; 
-    text-transform: uppercase; 
-    letter-spacing: 1px; 
-}
-
-/* Profile Table */
-.bio-table { 
-    width: 100%; 
-    border-collapse: collapse; 
-    margin-top: 20px; 
-    clear: both; 
-}
-
-.bio-table th { 
-    text-align: center; 
-    font-weight: bold; 
-    background-color: #6D9E51; 
-    color: #ffffff; 
-    padding: 15px; 
-    font-size: 1.1rem; 
-    font-family: 'Cinzel', serif; 
-    letter-spacing: 1px; 
-    border: 1px solid #6D9E51; 
-}
-
-.bio-table td { 
-    background-color: #fafbfc; 
-    text-align: center; 
-    padding: 14px 15px; 
-    border: 1px solid #e0e0e0; 
-    color: #444444; 
-}
-
-.bio-table td:first-child { 
-    font-weight: bold; 
-    color: #333333; 
-    width: 35%; 
-    background-color: #f4f7f4; 
-    text-align: center; 
-}
-
-table.bio-table td.bio-email-cell { 
-    text-align: center; 
-    padding: 25px; 
-    background-color: #ffffff; 
-}
-
-
-/* ==========================================================================
-   10. FOOTER & BACK TO TOP
-   ========================================================================== */
-.site-footer {
-    background-image: linear-gradient(rgba(20, 40, 10, 0.7), rgba(10, 25, 5, 0.9)), url('../images/footer-background.jpeg');
-    color: #ffffff;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    padding: 0px 0 10px 0;
-    width: 100%;
-}
-
-.footer-grid { 
-    max-width: 1400px; 
-    width: 100%; 
-    margin: 0 auto; 
-    display: grid; 
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 10px; 
-    align-items: start; 
-    justify-items: center; 
-    padding: 0 25px; 
-}
-
-.footer-col { 
-    width: fit-content; 
-    text-align: left; 
-}
-
-.brand-title { 
-    font-size: 22px; 
-    font-weight: 550; 
-    line-height: 1.2; 
-    letter-spacing: 1px; 
-    text-transform: uppercase; 
-    margin: 0 0 8px 5px; 
-    color: #ffffff; 
-    display: inline-block; 
-    border-bottom: 1.3px solid #ffffff; 
-    padding-top: 10px; 
-    padding-bottom: 7px; 
-}
-
-.tagline { 
-    font-style: italic; 
-    font-size: 16px; 
-    opacity: 0.9; 
-    padding-top: 0; 
-    margin: 3px 0 -15px 5px; 
-    line-height: 1.4; 
-}
-
-.footer-col h4:not(.brand-title) { 
-    font-size: 0.8rem; 
-    font-weight: 700; 
-    text-transform: uppercase; 
-    letter-spacing: 2px; 
-    margin-bottom: 5px; 
-    display: inline-block; 
-    border-bottom: 2px solid rgba(255, 255, 255, 0.4); 
-    padding-bottom: 0px; 
-}
-
-.footer-col ul { 
-    list-style: none; 
-    padding: 0; 
-    margin: 0; 
-}
-
-.footer-col li { 
-    padding-left: 0; 
-}
-
-.footer-col a { 
-    text-decoration: none; 
-    color: #ffffff; 
-    font-size: 1rem; 
-    opacity: 0.8; 
-    transition: 0.3s ease; 
-    display: inline-block;
-}
-
-.footer-col a:hover,
-.footer-col a.active { 
-    opacity: 1;
-    color: #EB5B26; 
-    transform: translateX(5px);
-}
-
-.contact-info p { 
-    font-size: 0.95rem; 
-    margin: 0 0 0.5px 0; 
-    opacity: 0.9; 
-    padding-left: 0; 
-}
-
-.footer-bottom { 
-    text-align: center; 
-    margin-top: 10px; 
-    padding-top: 10px; 
-    padding-bottom: 10px; 
-    border-top: 1px solid rgba(255, 255, 255, 0.1); 
-    font-size: 12px; 
-    opacity: 0.6; 
-}
-
-.footer-bottom p { 
-    position: relative; 
-    top: 5px; 
-    margin: 0; 
-    font-style: italic; 
-    text-align: center; 
-}
-
-/* Floating Back To Top Button */
-html { 
-    scroll-behavior: smooth; 
-}
-
-@keyframes showOnScroll { 
-    0%, 10% { 
-        opacity: 0; 
-        visibility: hidden; 
-        transform: translateY(20px); 
-    } 
-    15%, 100% { 
-        opacity: 1; 
-        visibility: visible; 
-        transform: translateY(0); 
-    } 
-}
-
-.back-to-top {
-    position: fixed;
-    bottom: 40px;
-    right: 40px;
-    width: 50px;
-    height: 50px;
-    background-color: #EB5B26;
-    color: #ffffff;
-    text-align: center;
-    line-height: 50px;
-    border-radius: 50%;
-    font-size: 20px;
-    text-decoration: none;
-    box-shadow: none;
-    z-index: 9999;
-    transition: 0.3s ease;
-}
-
-.back-to-top:hover { 
-    background-color: #6D9E51; 
-    transform: translateY(-5px); 
-    box-shadow: none; 
-}
-
-
-/* ==========================================================================
-   11. GLOBAL MOBILE RESPONSIVE QUERIES
-   ========================================================================== */
-@media (max-width: 992px) {
-    .hero-wrapper, 
-    .about-wrapper { 
-        flex-direction: column; 
-        text-align: center; 
-    }
-    .hero-text-box, 
-    .hero-image-box, 
-    .about-visual, 
-    .about-content { 
-        width: 100%; 
-        padding: 0; 
-    }
-    .about-wrapper { 
-        transform: translateX(0); 
-    }
-    .catalogues-grid { 
-        grid-template-columns: repeat(2, 1fr); 
-        row-gap: 50px; 
-    }
-    .services-grid { 
-        grid-template-columns: repeat(2, 1fr); 
-    }
-}
-
-@media (max-width: 768px) {
-    .bio-photo { 
-        float: none; 
-        display: block; 
-        margin: 0 auto 20px auto; 
-        transform: none; 
-        left: 0; 
-    }
-    .bio-table td { 
-        display: block; 
-        width: 100%; 
-    }
-    .bio-table td:first-child { 
-        border-bottom: none; 
-    }
-    .back-to-top { 
-        bottom: 20px; 
-        right: 20px; 
-        width: 45px; 
-        height: 45px; 
-        line-height: 45px; 
-    }
-}
-
+/* Mobile Devices */
 @media (max-width: 650px) {
     .form-row { 
         grid-template-columns: 1fr; 
@@ -3503,7 +1787,7 @@ html {
 /* ==========================================================================
     12: TEAM GRID & MODAL 
    ========================================================================== */
-
+/* Profile Content Wrappers */
 .profile-page .content-wrapper {
     padding-top: 50px; 
     padding-bottom: 60px; 
@@ -3517,6 +1801,7 @@ html {
     box-shadow: 0 10px 25px rgba(0,0,0,0.05);
 }
 
+/* Team Grid Initialization */
 .team-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -3527,6 +1812,7 @@ html {
     align-items: stretch;
 }
 
+/* Team Profile Cards */
 .team-card {
     background: #ffffff;
     border-radius: 15px;
@@ -3575,6 +1861,7 @@ html {
     flex-grow: 1; 
 }
 
+/* CSS-Only Profile Modal System */
 .profile-modal {
     position: fixed;
     top: 0; left: 0;
@@ -3613,6 +1900,7 @@ html {
     overflow-y: auto;
 }
 
+/* Modal Interaction Elements */
 .close-modal {
     position: absolute;
     top: -20px;
@@ -3646,10 +1934,11 @@ html {
 }
 
 /* ==========================================================================
-   13. ENHANCEMENTS PAGE LAYOUT (100% Standard Compliant)
+   13. ENHANCEMENTS PAGE LAYOUT
    ========================================================================== */
+/* Enhancements Base Typography */
 .enhancements-header {
-    max-width: 1015px;
+    max-width: 990px;
     margin: 0 auto 50px auto; 
     background-color: #6D9E51;
     text-align: center;
@@ -3658,8 +1947,8 @@ html {
     box-shadow: 0 10px 25px rgba(0,0,0,0.05);
 }
 
+/* Font Shorthand Implementation */
 .enhancements-header h1 {
-    /* 🌟 满分细节: 严格执行 "using the short-hand font property" 的要求 */
     font: normal normal bold 2.7rem/1.2 'Cinzel', serif;
     color: #ffffff;
     margin: 0 0 10px 0;
@@ -3676,6 +1965,7 @@ html {
     text-align: center;
 }
 
+/* Enhancement Modules Structuring */
 .enhancements-list {
     max-width: 1015px;
     margin: 0 auto;
@@ -3696,6 +1986,7 @@ html {
     margin-bottom: 0; 
 }
 
+/* Video Frame Implementations */
 .enhancement-figure {
     width: 80%;
     margin: 0 auto;
@@ -3707,6 +1998,7 @@ html {
     box-shadow: 0 10px 30px rgba(0,0,0,0.15);
 }
 
+/* Descriptions & References Formatting */
 .enhancement-text {
     width: 80%;
     text-align: left; 
@@ -3726,17 +2018,17 @@ html {
     margin-bottom: 15px;
 }
 
-/* 🌟 满分细节: Citation 的普通链接样式 */
 .enhancement-text p a {
     color: #EB5B26;
     text-decoration: none;
     font-weight: bold;
 }
+
 .enhancement-text p a:hover {
     text-decoration: underline;
 }
 
-/* 🌟 代码展示框样式 (让你的解释更专业) */
+/* Custom Code Snippet Box */
 .code-box { 
     background: #282c34; 
     color: #abb2bf; 
@@ -3752,8 +2044,14 @@ html {
     border-left: 4px solid #EB5B26;
 }
 
-/* 🌟 "View Feature" 高级跳转按钮样式 */
-.btn-link { 
+/* Call to Action Feature Links */
+.btn-link1,
+.btn-link2,
+.btn-link3,
+.btn-link4,
+.btn-link5,
+.btn-link6,
+.btn-link7 { 
     display: inline-block; 
     background: #6D9E51; 
     color: #fff; 
@@ -3764,19 +2062,25 @@ html {
     font-family: 'Cinzel', serif; 
     margin-top: 20px; 
     transition: all 0.3s ease; 
+    font-size: 1rem;
 }
 
-.btn-link:hover { 
+.btn-link1:hover,
+.btn-link2:hover,
+.btn-link3:hover,
+.btn-link4:hover,
+.btn-link5:hover,
+.btn-link6:hover,
+.btn-link7:hover { 
     background: #EB5B26; 
     transform: translateY(-3px); 
     box-shadow: 0 8px 20px rgba(235,91,38,0.25); 
 }
 
 /* ==========================================================================
-   14. ENHANCEMENTS
+   14. ENHANCEMENTS ANIMATIONS
    ========================================================================== */
-
-/* 1. Cactus Party */
+/* Dynamic Emoji Overlay Initialization */
 .cactus-party {
     position: fixed;
     top: 0; left: 0;
@@ -3792,6 +2096,7 @@ html {
     filter: drop-shadow(0 15px 20px rgba(0,0,0,0.4)); 
 }
 
+/* Sequential Animation Triggers */
 .cactus-party .c1  { font-size: 4rem; top: 10%; left: -10%; animation: fly-left-to-right 3.2s ease-in 0.1s forwards; }
 .cactus-party .c2  { font-size: 7rem; top: 50%; left: -10%; animation: fly-left-to-right 2.5s ease-out 0.8s forwards; }
 .cactus-party .c3  { font-size: 3rem; top: 80%; left: -10%; animation: fly-left-to-right 3.8s linear 1.2s forwards; }
@@ -3811,7 +2116,7 @@ html {
 .cactus-party .c12 { font-size: 4rem; left: 85%; bottom: -10%; animation: fly-bottom-to-top 3.3s linear 1.4s forwards; }
 .cactus-party .c15 { font-size: 7rem; left: 35%; bottom: -10%; animation: fly-bottom-to-top 2.5s ease-in 1.0s forwards; }
 
-
+/* Physics Trajectory Keyframes */
 @keyframes fly-left-to-right {
     0%   { transform: translate(0, 0) scale(0.5) rotate(-90deg); opacity: 0; }
     10%  { opacity: 1; }
@@ -3840,9 +2145,7 @@ html {
     100% { transform: translate(-50vw, -120vh) scale(0.4) rotate(-720deg); opacity: 0; }
 }
 
-
-
-/* 3. Cascade Animation */
+/* Staggered Grid Transitions */
 @keyframes fadeUpCascade {
     0% { opacity: 0; transform: translateY(40px); }
     100% { opacity: 1; transform: translateY(0); }
@@ -3859,7 +2162,7 @@ html {
 .cactus-card:nth-child(5) { animation-delay: 1.0s; }
 .cactus-card:nth-child(6) { animation-delay: 1.2s; }
 
-/* 4. Smooth Page Load Fade */
+/* Initialization Fade Protocol */
 @keyframes pageFadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
@@ -3869,579 +2172,491 @@ body {
     animation: pageFadeIn 0.6s ease-in-out forwards;
 }
 
-
-
-/* =========================================
-   HOME PAGE 专属 Dark Mode 颜色
-   ========================================= */
-
-
-   @media (prefers-color-scheme: dark) {
-
-/* Base backgrounds - 仅仅让背景变黑，文字变浅 */
-html body, 
-html body .content-wrapper, 
-html body .home-catalogues, 
-html body .home-services, 
-html body .home-about, 
-html body .profile-main, 
-html body .form-main {
-    background-color: #121212;
-    color: #e0e0e0;
-}
-
-/* 1. 主页整体背景变黑 */
-html body, 
-html body .home-catalogues, 
-html body .home-services, 
-html body .home-about {
-    background-color: #121212;
-}
-
-/* 2. Hero Banner (头部横幅) 渐变黑底融合 */
-html body .global-hero-graphic {
-    background-color: #121212;
-    background-image: linear-gradient(to right, #121212 0%, rgba(18,18,18,0.9) 25%, rgba(18,18,18,0) 60%), url('../images/hero-background.jpg');
-}
-
-/* Hero Banner 里的文字 */
-html body .hero-content-box h1 {
-    color: #6D9E51; /* 标题亮绿色 */
-}
-html body .hero-subtitle {
-    color: #EB5B26; /* 副标题亮橘色 */
-}
-html body .hero-content-box p {
-    color: #ffffff; /* 段落纯白色 */
-}
-html body .stat-item h3 {
-    color: #EB5B26; /* 数据数字亮橘色 */
-}
-html body .stat-item span {
-    color: #bbbbbb; /* 数据小字浅灰色 */
-}
-html body .stat-divider {
-    background-color: #444444; /* 数据中间的分割线变暗 */
-}
-
-/* 3. Catalogues (分类区域) */
-html body .section-heading h2 {
-    color: #6D9E51; /* "Our Collections" 标题亮绿 */
-}
-html body .heading-line {
-    background-color: #ff7b47; /* 标题下面的小横线亮橘色 */
-}
-html body .catalogue-card h3 {
-    color: #6D9E51; /* 分类卡片名字亮绿 */
-}
-html body .catalogue-link:hover h3 {
-    color: #EB5B26; /* 鼠标悬停变亮橘色 */
-}
-
-/* 4. Services 卡片 (Service Card Pro) */
-html body .service-card-pro {
-    background-color: #1e1e1e; /* 卡片背景深灰 */
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5); /* 阴影变黑 */
-    border-bottom-color: transparent;
-}
-html body .service-card-pro:hover {
-    border-bottom-color: #6D9E51; /* 悬停时底边亮绿 */
-    box-shadow: 0 20px 40px rgba(129, 184, 97, 0.15);
-}
-html body .service-card-pro h3 {
-    color: #6D9E51; /* 卡片标题亮绿 */
-}
-html body .service-card-pro p {
-    color: #ffffff; /* 卡片介绍纯白 */
-}
-
-/* Services 卡片里的圆形 Icon */
-html body .icon-circle {
-    background-color: #2a2a2a; /* 圆圈背景灰 */
-    color: #EB5B26; /* Icon 图标亮橘色 */
-}
-html body .service-card-pro:hover .icon-circle {
-    background-color: #EB5B26; /* 悬停时圆圈变橘色 */
-    color: #ffffff; /* 悬停时 Icon 变白色 */
-}
-
-/* 5. About Us (关于我们区域) */
-html body .section-tag {
-    color: #EB5B26; /* "About us" 小标签亮橘色 */
-}
-html body .about-content h2 {
-    color: #6D9E51; /* "Growing Nature..." 标题亮绿 */
-}
-html body .about-content p {
-    color: #ffffff; /* 关于我们内容纯白 */
-}
-html body .visual-backdrop {
-    border-color: #6D9E51; /* 图片背后的绿色边框 */
-}
-
-
-
-/* =========================================
-   SECTION 分隔 (只改背景，区分区块)
-   ========================================= */
-
-/* 1. 原本是白色 (#ffffff) 的区域 -> 变成最深的黑 */
-html body, 
-html body .home-about, 
-html body .product-knowledge-base {
-    background-color: #121212;
-}
-
-/* 2. 原本是浅绿色 (#f6faf4) 的区域 -> 变成微亮的深灰/深绿黑，用来和纯黑区分 */
-html body .home-catalogues, 
-html body .home-services, 
-html body .form-main, 
-html body .profile-main {
-    background-color: #1a1e1a; 
-}
-
-
-/* =========================================
-   HEADER & NAVIGATION (顶部导航栏)
-   ========================================= */
-
-/* 1. 导航栏背景：从原本的橘色变成深灰黑 */
-html body #top-header {
-    background-color: #EB5B26; 
-    box-shadow: 0 4px 20px rgba(0,0,0,0.5); /* 阴影加深 */
-}
-
-/* 2. Logo / 品牌名颜色 */
-html body .brand-name {
-    color: #ffffff; /* 品牌名字换成亮绿色，在黑底上很明显 */
-}
-
-/* 3. 导航栏链接文字 */
-html body .main-nav a {
-    color: #ffffff; /* 默认文字用浅灰色 */
-}
-
-/* 4. 鼠标悬停/选中状态：原本背景是绿色，现在改成深灰底+亮绿字 */
-html body .main-nav a:hover, 
-html body .main-nav a.active {
-    background-color: #6D9E51; 
-    color: #ffffff; 
-}
-
-/* 5. 下拉菜单 (Dropdown) */
-html body .dropdown-content {
-    background-color: #1e1e1e; /* 下拉菜单背景黑 */
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.6); 
-    border: 1px solid #333333; /* 加一层暗色边框防边缘模糊 */
-}
-
-/* 下拉菜单里的文字和分割线 */
-html body .dropdown-content a {
-    color: #ffffff; 
-    border-bottom: 1px solid #333333; /* 原本的浅灰线变成深灰线 */
-}
-
-/* 下拉菜单鼠标悬停 */
-html body .main-nav .dropdown-content a:hover,
-html body .main-nav .dropdown-content a.active,
-html body .dropdown-content a:hover,
-html body .dropdown-content a.active {
-    background-color: #2a2a2a;
-    color: #EB5B26; /* 悬停时文字变成亮橘色 */
-}
-
-
-/* =========================================
-   FOOTER (底部页脚)
-   ========================================= */
-
-/* 1. Footer 背景：让原本的图片覆盖一层更纯正的黑色渐变，融入 Dark Mode */
-
-
-/* 2. Footer 标题 (比如 Cacti-Succulent Kuching) */
-html body .brand-title {
-    color: #ffffff; /* 标题亮绿 */
-    border-bottom-color: rgba(255, 255, 255, 0.2); /* 下划线变暗一点点 */
-}
-
-/* 3. Footer 小标题 (比如 Links, Contact) */
-html body .footer-col h4:not(.brand-title) {
-    color: #ffffff;
-}
-
-/* 4. Footer 链接文字 */
-html body .footer-col a {
-    color: #ffffff; /* 稍微调灰一点，不会太刺眼 */
-}
-
-/* 5. Footer 链接悬停 */
-html body .footer-col a:hover,
-html body .footer-col a.active {
-    color: #EB5B26; /* 悬停时变成你的品牌橘色 */
-}
-
-/* 6. 最底部的 Copyright 区域 */
-html body .footer-bottom {
-    border-top-color: rgba(255, 255, 255, 0.05); /* 顶部的细线非常暗 */
-    color: #888888; /* 文字变深灰 */
-}
-
-
-
-/* =========================================
-   06. PRODUCT PAGES & KNOWLEDGE BASE (Product 1, 2, 3)
-   严格保留原本的绿色 (#6D9E51) 和 橘色 (#EB5B26)
-   ========================================= */
-
-/* 1. 产品卡片 (Cactus Cards) */
-html body .cactus-card {
-    background-color: #1e1e1e;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    padding: 25px 20px; 
-    border-radius: 15px; 
-}
-html body .cactus-card h3 {
-    color: #6D9E51; /* 绝对原本的绿色 */
-}
-html body .price {
-    color: #EB5B26; /* 绝对原本的橘色 */
-}
-
-/* 尺寸选择框 */
-html body .size-selector {
-    background-color: #2a2a2a; 
-    color: #ffffff; 
-    border-color: #444444;
-}
-html body .size-selector:hover,
-html body .size-selector:focus {
-    border-color: #6D9E51; /* 绝对原本的绿色边框 */
-}
-
-/* 2. 主内容区域 (Knowledge Base Main Content) */
-html body .product-main-content h3 {
-    color: #6D9E51; /* 绝对原本的绿色 */
-}
-html body .product-main-content p {
-    color: #ffffff; /* 普通文字纯白 */
-}
-
-/* 3. 侧边栏 (Product Aside & Service Aside) */
-html body .product-aside, 
-html body .service-aside {
-    background-color: #1e1e1e; 
-    border: 2px solid #6D9E51; /* 绝对原本的绿色边框 */
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-}
-html body .product-aside h3, 
-html body .service-aside h3 {
-    color: #6D9E51; /* 绝对原本的绿色 */
-}
-html body .product-aside h4, 
-html body .service-aside h4 {
-    color: #EB5B26; /* 绝对原本的橘色 */
-    border-bottom-color: #333333; 
-}
-/* 侧边栏里的文字全部纯白 */
-html body .product-aside p, html body .product-aside ol li, html body .product-aside dl dt, html body .product-aside dl dd,
-html body .service-aside p, html body .service-aside ol li, html body .service-aside dl dt, html body .service-aside dl dd {
-    color: #ffffff; 
-}
-
-/* 侧边栏表格 (Table) */
-html body .product-aside table th, 
-html body .aside-table th {
-    background-color: #2a2a2a;
-    color: #6D9E51; /* 绝对原本的绿色 */
-    border-color: #333333;
-}
-html body .product-aside table td, 
-html body .aside-table td {
-    background-color: #1e1e1e;
-    color: #ffffff; 
-    border-color: #333333;
-}
-
-/* 4. 术语表 (Glossary / Modern DL) */
-html body .modern-dl dt {
-    color: #EB5B26; /* 绝对原本的橘色 */
-}
-html body .modern-dl dt::before {
-    background-color: #6D9E51; /* 绝对原本的绿色线 */
-}
-html body .modern-dl dd {
-    color: #ffffff;
-}
-
-/* 5. 步骤指南 (Step Guide / How to repot safely) */
-html body .step-guide {
-    background-color: #1e1e1e;
-    border-left: 4px solid #6D9E51; /* 绝对原本的绿色边框 */
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-}
-html body .step-guide::before {
-    background-color: #333333; /* 顶部的灰色分隔线变暗 */
-}
-html body .step-guide h3 {
-    color: #EB5B26; /* 绝对原本的橘色 */
-}
-html body .step-guide p,
-html body .step-guide ol li {
-    color: #ffffff; /* 纯白文字 */
-}
-html body .step-guide ol li::marker {
-    color: #6D9E51; /* 绝对原本的绿色列表数字 */
-}
-
-
-/* =========================================
-   07. SERVICES & PRICING (Services Page)
-   严格保留原本的绿色 (#6D9E51) 和 橘色 (#EB5B26)
-   ========================================= */
-
-/* 1. Services List (左侧服务图文介绍) */
-html body .service-row figcaption a {
-    color: #6D9E51; /* 照片下方的小链接，绝对原本的绿色 */
-}
-html body .service-text h3 {
-    color: #EB5B26; /* 服务大标题，绝对原本的橘色 */
-}
-html body .service-text p {
-    color: #ffffff; /* 服务介绍段落，纯白色 */
-}
-
-/* 2. Pricing Header (价格表顶部标题区域) */
-html body .pricing-header h3 {
-    color: #6D9E51; /* "Our Pricing" 标题，绝对原本的绿色 */
-}
-html body .pricing-header p {
-    color: #ffffff; 
-}
-
-/* 3. Pricing Cards (普通价格卡片) */
-html body .pricing-card {
-    background-color: #1e1e1e; 
-    border-color: #333333; /* 边框变暗，不刺眼 */
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-}
-html body .pricing-card h4 {
-    color: #ffffff; /* 卡片上的小标题 (比如 Basic/Pro)，黑底配纯白最清晰 */
-}
-html body .pricing-card li {
-    color: #ffffff; /* 列表里的包含项目，纯白色 */
-}
-
-html body .price-action-row .price {
-    color: #EB5B26; /* 价格数字，绝对原本的橘色！ */
-}
-
-/* 价格数字 */
-html body .tier-price {
-    color: #6D9E51; /* 普通卡片的价格，绝对原本的绿色 */
-    border-bottom-color: #333333; /* 价格下面的分割线变暗 */
-}
-html body .tier-price span {
-    color: #bbbbbb; /* "/month" 等小字用浅灰色 */
-}
-
-/* 4. Luxury Card (豪华版卡片 - 特殊高亮) */
-html body .pricing-grid .luxury-card {
-    background-color: #1e1e1e; 
-    border: 2px solid #EB5B26; /* 绝对原本的橘色边框！ */
-    box-shadow: 0 15px 30px rgba(0,0,0,0.5); 
-}
-html body .pricing-grid .luxury-card:hover {
-    box-shadow: 0 15px 30px rgba(235, 91, 38, 0.2); /* 悬停时散发橘色阴影 */
-}
-html body .luxury-card .tier-price {
-    color: #EB5B26; /* 豪华版的价格数字，绝对原本的橘色！ */
-}
-
-
-/* =========================================
-   08. FORMS (Order, Enquiry, Login & Registration)
-   严格保留原本的绿色 (#6D9E51) 和 橘色 (#EB5B26)
-   ========================================= */
-
-/* 1. 表单顶部 Header (带有 H1 标题的区域) */
-html body .form-header {
-    background-color: #6D9E51; /* 绝对原本的绿色背景！ */
-}
-html body .form-header h1, 
-html body .form-header p {
-    color: #ffffff; /* 保持原本的纯白文字 */
-}
-
-/* 2. 表单卡片背景 */
-html body .form-card {
-    background-color: #1e1e1e; 
-    box-shadow: 0 25px 50px rgba(0,0,0,0.5), 0 5px 15px rgba(0,0,0,0.3); 
-}
-
-/* 3. 输入框外围的框框 (Fieldset) */
-html body .form-card fieldset {
-    background-color: #1e1e1e; /* 里面保持深灰黑，保护眼睛 */
-    border: 2px solid #6D9E51; /* 绝对原本的绿色边框！ */
-}
-
-/* 4. 表单内的区块标题 (比如 Personal Details) */
-html body .form-card legend {
-    color: #EB5B26; /* 绝对原本的橘色标题！ */
-}
-
-/* 5. 强制让 Form 里的所有文字选项（Cash, I agree, Contact 等）变白 */
-html body .form-card label,
-html body .form-card span,
-html body .form-card .radio-group label,
-html body .form-card .checkbox-group label,
-html body .form-card fieldset div label,
-html body .form-card .inline-label {
-    color: #ffffff !important;
-}
-
-/* 6. 输入框本体 (这里我排除了 Submit 和 Reset 按钮，确保 Button 原汁原味！) */
-html body .form-card input:not([type="submit"]):not([type="reset"]):not([type="radio"]):not([type="checkbox"]), 
-html body .form-card select, 
-html body .form-card textarea {
-    background-color: #2a2a2a; /* 输入框底色深灰 */
-    color: #ffffff; /* 输入的字是纯白 */
-    border: 1px solid #444444; /* 边框暗灰 */
-}
-
-/* 鼠标点进去输入框时，边框变回原本的绿色 (同样排除按钮) */
-html body .form-card input:not([type="submit"]):not([type="reset"]):not([type="radio"]):not([type="checkbox"]):focus, 
-html body .form-card select:focus, 
-html body .form-card textarea:focus {
-    border-color: #6D9E51;
-    outline: none;
-}
-
-/* 7. 表单底部的跳转链接 (比如 "Already have an account? Login") */
-html body .form-redirect p {
-    color: #ffffff; /* 普通提示字浅灰 */
-}
-html body .form-redirect a {
-    color: #EB5B26; /* 链接绝对原本的橘色！ */
-}
-html body .form-redirect a:hover {
-    color: #6D9E51; /* 悬停时绝对原本的绿色！ */
-}
-
-
-
-
-/* =========================================
-   09 & 12. PROFILE PAGE & TEAM
-   严格保留原本的绿色 (#6D9E51) 和 橘色 (#EB5B26)
-   ========================================= */
-
-/* 1. 个人资料卡片 (Bio Card) */
-html body .bio-card {
-    background-color: #1e1e1e; 
-    border-top: 8px solid #6D9E51; /* 绝对原本的绿色顶部粗边框！ */
-}
-
-/* 头像边框 */
-html body .bio-photo {
-    background-color: #1e1e1e; /* 配合卡片底色 */
-    border: 6px groove #6D9E51; /* 绝对原本的绿色凹槽边框！ */
-}
-
-/* 名字和专业 */
-html body .bio-name {
-    color: #6D9E51; /* 名字用原本的绿色突出 */
-}
-html body .bio-id {
-    color: #bbbbbb; /* ID 学号用浅灰 */
-}
-html body .bio-course {
-    color: #EB5B26; /* 课程名称绝对原本的橘色！ */
-}
-
-/* 2. 资料表格 (Bio Table) */
-html body .bio-table {
-    border-color: #333333;
-}
-
-/* 表头 (th) 保持原本的绿底白字，完全不改！ */
-html body .bio-table th {
-    background-color: #6D9E51; /* 绝对原本的绿色背景！ */
-    color: #ffffff; /* 原本的白字 */
-    border: 1px solid #6D9E51; /* 绿边框 */
-}
-
-/* 表格内容 (td) */
-html body .bio-table td,
-html body table.bio-table td.bio-email-cell {
-    background-color: #1e1e1e; /* 护眼深灰黑底 */
-    color: #ffffff; /* 纯白字 */
-    border: 1px solid #333333; /* 暗色边框 */
-}
-html body .bio-table td:first-child {
-    background-color: #2a2a2a; /* 第一列稍微亮一点的黑灰，保持你原本设计的层次感 */
-    color: #ffffff;
-}
-
-/* 3. 团队成员卡片 (Team Card) */
-html body .team-card {
-    background-color: #1e1e1e;
-    border-top: 6px solid #6D9E51; /* 绝对原本的绿色顶部边框！ */
-    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
-}
-html body .team-card:hover {
-    /* 悬停时的阴影颜色保留了你原本的一点点绿色氛围 */
-    box-shadow: 0 25px 50px rgba(109, 158, 81, 0.15), 0 10px 20px rgba(0,0,0,0.5);
-}
-html body .team-card h3 {
-    color: #EB5B26; /* 队员名字，绝对原本的橘色！ */
-}
-html body .team-card .role {
-    color: #bbbbbb; /* 职位用浅灰字 */
-}
-html body .team-photo {
-    border-color: #2a2a2a; /* 头像外面的白边换成深灰，融入黑底 */
-}
-
-/* 4. 弹窗和关闭按钮 (Modal & Close Button) */
-html body .profile-modal {
-    background-color: rgba(10, 15, 8, 0.9); /* 弹窗背景保持深色遮罩 */
-}
-html body .close-modal {
-    background-color: #1e1e1e; /* 关闭按钮底色 */
-    color: #EB5B26; /* 关闭的 X，绝对原本的橘色！ */
-}
-html body .close-modal:hover {
-    background-color: #EB5B26; /* 悬停时变成你的橘色背景！ */
-    color: #ffffff; /* 纯白字 */
-}
-
-
-/* =========================================
-   13 & 14. ENHANCEMENTS PAGE
-   严格保留原本的绿色 (#6D9E51) 和 橘色 (#EB5B26)
-   ========================================= */
-
-/* 1. Enhancements 顶部大标题卡片 */
-html body .enhancements-header {
-    background-color: #6D9E51; /* 绝对原本的绿色背景！ */
-    box-shadow: 0 10px 25px rgba(0,0,0,0.5); /* 阴影加深以融入黑底 */
-}
-html body .enhancements-header h1,
-html body .enhancements-header p {
-    color: #ffffff; /* 保持原本的纯白文字 */
-}
-
-/* 2. Enhancements 介绍文字 */
-html body .enhancement-text h3 {
-    color: #EB5B26; /* 小标题绝对原本的橘色！ */
-}
-html body .enhancement-text p {
-    color: #ffffff; /* 介绍段落的文字变成纯白，保证阅读清晰 */
-}
-
-/* 3. 视频框的阴影 */
-html body .enhancement-video {
-    box-shadow: 0 10px 30px rgba(0,0,0,0.6); /* 适配黑底的深色阴影 */
-}
-
+/* ==========================================================================
+   15. SYSTEM DARK MODE PREFERENCE
+   ========================================================================== */
+@media (prefers-color-scheme: dark) {
+
+    /* Base Palette Reversal */
+    html body, 
+    html body .content-wrapper, 
+    html body .home-catalogues, 
+    html body .home-services, 
+    html body .home-about, 
+    html body .profile-main, 
+    html body .form-main {
+        background-color: #121212;
+        color: #e0e0e0;
+    }
+
+    html body, 
+    html body .home-catalogues, 
+    html body .home-services, 
+    html body .home-about {
+        background-color: #121212;
+    }
+
+    /* Hero Banner Modifications */
+    html body .global-hero-graphic {
+        background-color: #121212;
+        background-image: linear-gradient(to right, #121212 0%, rgba(18,18,18,0.9) 25%, rgba(18,18,18,0) 60%), url('../images/hero-background.jpg');
+    }
+
+    html body .hero-content-box h1 {
+        color: #6D9E51; 
+    }
+    html body .hero-subtitle {
+        color: #EB5B26; 
+    }
+    html body .hero-content-box p {
+        color: #ffffff; 
+    }
+    html body .stat-item h3 {
+        color: #EB5B26; 
+    }
+    html body .stat-item span {
+        color: #bbbbbb; 
+    }
+    html body .stat-divider {
+        background-color: #444444; 
+    }
+
+    /* Index Content Formatting */
+    html body .section-heading h2 {
+        color: #6D9E51; 
+    }
+    html body .heading-line {
+        background-color: #ff7b47; 
+    }
+    html body .catalogue-card h3 {
+        color: #6D9E51; 
+    }
+    html body .catalogue-link:hover h3 {
+        color: #EB5B26; 
+    }
+
+    /* Dynamic UI Cards */
+    html body .service-card-pro {
+        background-color: #1e1e1e; 
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5); 
+        border-bottom-color: transparent;
+    }
+    html body .service-card-pro:hover {
+        border-bottom-color: #6D9E51; 
+        box-shadow: 0 20px 40px rgba(129, 184, 97, 0.15);
+    }
+    html body .service-card-pro h3 {
+        color: #6D9E51; 
+    }
+    html body .service-card-pro p {
+        color: #ffffff; 
+    }
+
+    /* Service Visual Iconography */
+    html body .icon-circle {
+        background-color: #2a2a2a; 
+        color: #EB5B26; 
+    }
+    html body .service-card-pro:hover .icon-circle {
+        background-color: #EB5B26; 
+        color: #ffffff; 
+    }
+
+    /* Section Level Adjustments */
+    html body .section-tag {
+        color: #EB5B26; 
+    }
+    html body .about-content h2 {
+        color: #6D9E51; 
+    }
+    html body .about-content p {
+        color: #ffffff; 
+    }
+    html body .visual-backdrop {
+        border-color: #6D9E51; 
+    }
+
+    /* Contrast Isolation Blocks */
+    html body, 
+    html body .home-about, 
+    html body .product-knowledge-base {
+        background-color: #121212;
+    }
+
+    html body .home-catalogues, 
+    html body .home-services, 
+    html body .form-main, 
+    html body .profile-main {
+        background-color: #1a1e1a; 
+    }
+
+    /* Primary Navigation Inversions */
+    html body #top-header {
+        background-color: #EB5B26; 
+        box-shadow: 0 4px 20px rgba(0,0,0,0.5); 
+    }
+
+    html body .brand-name {
+        color: #ffffff; 
+    }
+
+    html body .main-nav a {
+        color: #ffffff; 
+    }
+
+    html body .main-nav a:hover, 
+    html body .main-nav a.active {
+        background-color: #6D9E51; 
+        color: #ffffff; 
+    }
+
+    /* Navigation Interaction Scopes */
+    html body .dropdown-content {
+        background-color: #1e1e1e; 
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.6); 
+        border: 1px solid #333333; 
+    }
+
+    html body .dropdown-content a {
+        color: #ffffff; 
+        border-bottom: 1px solid #333333; 
+    }
+
+    html body .main-nav .dropdown-content a:hover,
+    html body .main-nav .dropdown-content a.active,
+    html body .dropdown-content a:hover,
+    html body .dropdown-content a.active {
+        background-color: #2a2a2a;
+        color: #EB5B26; 
+    }
+
+    /* Footer Typography Adaptations */
+    html body .brand-title {
+        color: #ffffff; 
+        border-bottom-color: rgba(255, 255, 255, 0.2); 
+    }
+
+    html body .footer-col h4:not(.brand-title) {
+        color: #ffffff;
+    }
+
+    html body .footer-col a {
+        color: #ffffff; 
+    }
+
+    html body .footer-col a:hover,
+    html body .footer-col a.active {
+        color: #EB5B26; 
+    }
+
+    html body .footer-bottom {
+        border-top-color: rgba(255, 255, 255, 0.05); 
+        color: #ffffff; 
+    }
+
+    /* Base Product Framework */
+    html body .cactus-card {
+        background-color: #1e1e1e;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        padding: 25px 20px; 
+        border-radius: 15px; 
+    }
+    html body .cactus-card h3 {
+        color: #6D9E51; 
+    }
+    html body .price {
+        color: #EB5B26; 
+    }
+
+    html body .size-selector {
+        background-color: #2a2a2a; 
+        color: #ffffff; 
+        border-color: #444444;
+    }
+    html body .size-selector:hover,
+    html body .size-selector:focus {
+        border-color: #6D9E51; 
+    }
+
+    /* Content Area Refinements */
+    html body .product-main-content h3 {
+        color: #6D9E51; 
+    }
+    html body .product-main-content p {
+        color: #ffffff; 
+    }
+
+    /* Aside Components Layout */
+    html body .product-aside, 
+    html body .service-aside {
+        background-color: #1e1e1e; 
+        border: 2px solid #6D9E51; 
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+    html body .product-aside h3, 
+    html body .service-aside h3 {
+        color: #6D9E51; 
+    }
+    html body .product-aside h4, 
+    html body .service-aside h4 {
+        color: #EB5B26; 
+        border-bottom-color: #333333; 
+    }
+
+    html body .product-aside p, html body .product-aside ol li, html body .product-aside dl dt, html body .product-aside dl dd,
+    html body .service-aside p, html body .service-aside ol li, html body .service-aside dl dt, html body .service-aside dl dd {
+        color: #ffffff; 
+    }
+
+    /* Structural Table Data */
+    html body .product-aside table th, 
+    html body .aside-table th {
+        background-color: #2a2a2a;
+        color: #6D9E51; 
+        border-color: #333333;
+    }
+    html body .product-aside table td, 
+    html body .aside-table td {
+        background-color: #1e1e1e;
+        color: #ffffff; 
+        border-color: #333333;
+    }
+
+    /* Reference & Definition Details */
+    html body .modern-dl dt {
+        color: #EB5B26; 
+    }
+    html body .modern-dl dt::before {
+        background-color: #6D9E51; 
+    }
+    html body .modern-dl dd {
+        color: #ffffff;
+    }
+
+    /* Instructional Guide UI */
+    html body .step-guide {
+        background-color: #1e1e1e;
+        border-left: 4px solid #6D9E51; 
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+    html body .step-guide::before {
+        background-color: #333333; 
+    }
+    html body .step-guide h3 {
+        color: #EB5B26; 
+    }
+    html body .step-guide p,
+    html body .step-guide ol li {
+        color: #ffffff; 
+    }
+    html body .step-guide ol li::marker {
+        color: #6D9E51; 
+    }
+
+    /* Presentation Formats */
+    html body .service-row figcaption a {
+        color: #6D9E51; 
+    }
+    html body .service-text h3 {
+        color: #EB5B26; 
+    }
+    html body .service-text p {
+        color: #ffffff; 
+    }
+
+    /* Pricing Structure Modifiers */
+    html body .pricing-header h3 {
+        color: #6D9E51; 
+    }
+    html body .pricing-header p {
+        color: #ffffff; 
+    }
+
+    html body .pricing-card {
+        background-color: #1e1e1e; 
+        border-color: #333333; 
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+    html body .pricing-card h4 {
+        color: #ffffff; 
+    }
+    html body .pricing-card li {
+        color: #ffffff; 
+    }
+
+    html body .price-action-row .price {
+        color: #EB5B26; 
+    }
+
+    html body .tier-price {
+        color: #6D9E51; 
+        border-bottom-color: #333333; 
+    }
+    html body .tier-price span {
+        color: #bbbbbb; 
+    }
+
+    html body .pricing-grid .luxury-card {
+        background-color: #1e1e1e; 
+        border: 2px solid #EB5B26; 
+        box-shadow: 0 15px 30px rgba(0,0,0,0.5); 
+    }
+    html body .pricing-grid .luxury-card:hover {
+        box-shadow: 0 15px 30px rgba(235, 91, 38, 0.2); 
+    }
+    html body .luxury-card .tier-price {
+        color: #EB5B26; 
+    }
+
+    /* Interactive Form Elements */
+    html body .form-header {
+        background-color: #6D9E51; 
+    }
+    html body .form-header h1, 
+    html body .form-header p {
+        color: #ffffff; 
+    }
+
+    html body .form-card {
+        background-color: #1e1e1e; 
+        box-shadow: 0 25px 50px rgba(0,0,0,0.5), 0 5px 15px rgba(0,0,0,0.3); 
+    }
+
+    html body .form-card fieldset {
+        background-color: #1e1e1e; 
+        border: 2px solid #6D9E51; 
+    }
+
+    html body .form-card legend {
+        color: #EB5B26; 
+    }
+
+    html body .form-card label,
+    html body .form-card span,
+    html body .form-card .radio-group label,
+    html body .form-card .checkbox-group label,
+    html body .form-card fieldset div label,
+    html body .form-card .inline-label {
+        color: #ffffff !important;
+    }
+
+    /* Global Input Normalization */
+    html body .form-card input:not([type="submit"]):not([type="reset"]):not([type="radio"]):not([type="checkbox"]), 
+    html body .form-card select, 
+    html body .form-card textarea {
+        background-color: #2a2a2a; 
+        color: #ffffff; 
+        border: 1px solid #444444; 
+    }
+
+    html body .form-card input:not([type="submit"]):not([type="reset"]):not([type="radio"]):not([type="checkbox"]):focus, 
+    html body .form-card select:focus, 
+    html body .form-card textarea:focus {
+        border-color: #6D9E51;
+        outline: none;
+    }
+
+    html body .form-redirect p {
+        color: #ffffff; 
+    }
+    html body .form-redirect a {
+        color: #EB5B26; 
+    }
+    html body .form-redirect a:hover {
+        color: #6D9E51; 
+    }
+
+    /* Personal Bio Integrations */
+    html body .bio-card {
+        background-color: #1e1e1e; 
+        border-top: 8px solid #6D9E51; 
+    }
+
+    html body .bio-photo {
+        background-color: #1e1e1e; 
+        border: 6px groove #6D9E51; 
+    }
+
+    html body .bio-name {
+        color: #6D9E51; 
+    }
+    html body .bio-id {
+        color: #bbbbbb; 
+    }
+    html body .bio-course {
+        color: #EB5B26; 
+    }
+
+    html body .bio-table {
+        border-color: #333333;
+    }
+
+    html body .bio-table th {
+        background-color: #6D9E51; 
+        color: #ffffff; 
+        border: 1px solid #6D9E51; 
+    }
+
+    html body .bio-table td,
+    html body table.bio-table td.bio-email-cell {
+        background-color: #1e1e1e; 
+        color: #ffffff; 
+        border: 1px solid #333333; 
+    }
+    html body .bio-table td:first-child {
+        background-color: #2a2a2a; 
+        color: #ffffff;
+    }
+
+    /* Modal Interaction Modifiers */
+    html body .team-card {
+        background-color: #1e1e1e;
+        border-top: 6px solid #6D9E51; 
+        box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+    }
+    html body .team-card:hover {
+        box-shadow: 0 25px 50px rgba(109, 158, 81, 0.15), 0 10px 20px rgba(0,0,0,0.5);
+    }
+    html body .team-card h3 {
+        color: #EB5B26; 
+    }
+    html body .team-card .role {
+        color: #bbbbbb; 
+    }
+    html body .team-photo {
+        border-color: #2a2a2a; 
+    }
+
+    html body .profile-modal {
+        background-color: rgba(10, 15, 8, 0.9); 
+    }
+    html body .close-modal {
+        background-color: #1e1e1e; 
+        color: #EB5B26; 
+    }
+    html body .close-modal:hover {
+        background-color: #EB5B26; 
+        color: #ffffff; 
+    }
+
+    /* Technical Reporting Details */
+    html body .enhancements-header {
+        background-color: #6D9E51; 
+        box-shadow: 0 10px 25px rgba(0,0,0,0.5); 
+    }
+    html body .enhancements-header h1,
+    html body .enhancements-header p {
+        color: #ffffff; 
+    }
+
+    html body .enhancement-text h3 {
+        color: #EB5B26; 
+    }
+    html body .enhancement-text p {
+        color: #ffffff; 
+    }
+
+    html body .enhancement-video {
+        box-shadow: 0 10px 30px rgba(0,0,0,0.6); 
+    }
 }

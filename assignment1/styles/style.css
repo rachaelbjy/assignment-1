@@ -2311,12 +2311,13 @@ body {
     /* Contrast Isolation Blocks */
     html body, 
     html body .home-about, 
+    html body .home-services, 
     html body .product-knowledge-base {
         background-color: #121212;
     }
 
     html body .home-catalogues, 
-    html body .home-services, 
+    html body .home-video,
     html body .form-main, 
     html body .profile-main {
         background-color: #1a1e1a; 
@@ -2690,5 +2691,19 @@ body {
 
     html body .enhancement-video {
         box-shadow: 0 10px 30px rgba(0,0,0,0.6); 
+    }
+
+    /* Featured Video Section */
+    html body .home-video {
+        padding: 30px 0 60px 0; 
+    }
+
+    html body .video-wrapper {
+        max-width: 800px; 
+        margin: 0 auto; 
+        border-radius: 12px; 
+        overflow: hidden; 
+        box-shadow: 0 15px 30px rgba(0,0,0,0.1); 
+        border: 4px solid #6D9E51;
     }
 }

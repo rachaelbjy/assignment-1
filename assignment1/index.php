@@ -7,7 +7,7 @@
     <meta name="keywords" content="cactus, succulent, Kuching, plants, home">
     <meta name="author" content="Rachael, Eleona, Amber">
     
-    <title>Home | Cacti-Succulent Kuchingg</title>
+    <title>Home | Cacti-Succulent Kuchinggg</title>
     
     <link rel="stylesheet" href="styles/style.css"> 
     <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">

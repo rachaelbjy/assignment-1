@@ -18,32 +18,9 @@
 
 <body class="product-page">
 
-    <!-- MAIN HEADER & NAVIGATION AREA -->
-    <header id="top-header" class="main-header">
-        <div class="header-container">
-            <div class="logo-area">
-                <a href="index.html">
-                    <img src="images/cacti-succulent-logo.png" alt="Cacti-Succulent Kuching Logo" class="site-logo">
-                    <span class="brand-name">Cacti-Succulent Kuching</span>
-                </a>
-            </div>
-            <nav class="main-nav">
-                <ul>
-                    <li class="dropdown">
-                        <a href="#" class="dropbtn active">Products ▾</a>
-                        <div class="dropdown-content">
-                            <a href="product1.html" class="active">Cacti</a>
-                            <a href="product2.html">Succulents</a>
-                            <a href="product3.html">Planting Accessories</a>
-                            <a href="service1.html">Services</a>
-                        </div>
-                    </li>
-                    <li><a href="order.html">Order</a></li>
-                    <li><a href="login.html">Login</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+<!-- HEADER & NAVIGATION -->
+<?php include 'header.inc'; ?>
+<?php include 'menu.inc'; ?>
 
     <!-- ENHANCEMENT -->
     <div class="cactus-party">
@@ -204,39 +181,11 @@
         </section>
     </main>
 
-    <!-- WEBSITE FOOTER & COPYRIGHT AREA -->
-    <footer class="site-footer">
-        <div class="footer-grid">
-            <div class="footer-col brand-col">
-                <h3 class="brand-title">Cacti<br>Succulent<br>Kuching</h3>
-                <p class="tagline">From the desert to your home.</p>
-            </div>
+<!-- WEBSITE FOOTER & COPYRIGHT -->
+<?php include 'footer.inc'; ?>
 
-            <div class="footer-col">
-                <h3>Navigation</h3>
-                <ul>
-                    <li><a href="enquiry.html">Enquiry</a></li>
-                    <li><a href="profile.html">Our Profile</a></li>
-                    <li><a href="enhancement1.html">Enhancements</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-col">
-                <h3>Connect With Us</h3>
-                <div class="contact-info">
-                    <p><strong>WA :</strong> +60 12-888 4444</p>
-                    <p><strong>FB :</strong> CactiSucculentKCH</p>
-                    <p><strong>EML :</strong> <a href="mailto:104402891@students.swinburne.edu.my">cactisucculentkch@email.com</a></p>
-                </div>
-            </div>
-        </div>
-
-        <div class="footer-bottom">
-            <p>&copy; 2026 Cacti-Succulent Kuching. All Rights Reserved.</p>
-        </div>
-    </footer>
-
-    <a href="#" class="back-to-top">▲</a>
+<!-- BACK TO TOP BUTTON -->
+<a href="#" class="back-to-top">▲</a>
 
 </body>
 </html>

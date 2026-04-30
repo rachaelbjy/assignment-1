@@ -7,7 +7,7 @@
     <meta name="keywords" content="cactus, succulent, Kuching, plants, home">
     <meta name="author" content="Rachael, Eleona, Amber">
     
-    <title>Home | Cacti-Succulent Kuchinggg</title>
+    <title>Home | Cacti-Succulent Kuching</title>
     
     <link rel="stylesheet" href="styles/style.css"> 
     <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
@@ -20,7 +20,6 @@
 
 <!-- HEADER & NAVIGATION -->
 <?php include 'header.inc'; ?>
-<?php include 'menu.inc'; ?>
 
     <!-- HERO BANNER SECTION -->
     <section class="global-hero-graphic">

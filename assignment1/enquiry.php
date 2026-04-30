@@ -20,7 +20,6 @@
 
 <!-- HEADER & NAVIGATION -->
 <?php include 'header.inc'; ?>
-<?php include 'menu.inc'; ?>
 
     <!-- ENQUIRY FORM SECTION -->
     <main class="form-main">

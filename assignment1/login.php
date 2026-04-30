@@ -1,3 +1,10 @@
+<?php 
+session_start(); 
+$d = isset($_SESSION['login_data']) ? $_SESSION['login_data'] : [];
+$v_login = isset($d['login']) ? htmlspecialchars($d['login']) : '';
+
+unset($_SESSION['login_data']); 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,11 +25,8 @@
 
 <body class="login-page">
 
-<!-- HEADER & NAVIGATION -->
 <?php include 'header.inc'; ?>
-<?php include 'menu.inc'; ?>
 
-    <!-- LOGIN FORM SECTION -->
     <main class="form-main">
         <div class="form-header">
             <h1>Login</h1>
@@ -38,7 +42,7 @@
                     <div class="form-row">
                         <div class="input-group full-width">
                             <label for="login">Username</label>
-                            <input type="text" id="login" name="login" maxlength="10" pattern="[A-Za-z]+" title="Maximum 10 alphabetical characters only" placeholder="Enter your username (letters only)" required>
+                            <input type="text" id="login" name="login" value="<?php echo $v_login; ?>" maxlength="10" pattern="[A-Za-z]+" title="Maximum 10 alphabetical characters only" placeholder="Enter your username (letters only)" required>
                         </div>
                     </div>
 
@@ -63,11 +67,38 @@
         </div>
     </main>
 
-<!-- WEBSITE FOOTER & COPYRIGHT -->
 <?php include 'footer.inc'; ?>
 
-<!-- BACK TO TOP BUTTON -->
 <a href="#" class="back-to-top">▲</a>
+
+<?php
+if (isset($_GET['error']) && $_GET['error'] === 'invalid_credentials') {
+    echo "<script>
+        window.onload = function() {
+            var passwordInput = document.getElementById('password');
+            var loginInput = document.getElementById('login');
+            
+            if (passwordInput) {
+                passwordInput.setCustomValidity(''); 
+                setTimeout(function() {
+                    passwordInput.setCustomValidity('Invalid Username or Password!');
+                    passwordInput.reportValidity();
+                    window.history.replaceState({}, document.title, window.location.pathname);
+                }, 100);
+
+                passwordInput.addEventListener('input', function() {
+                    passwordInput.setCustomValidity('');
+                });
+                if(loginInput) {
+                    loginInput.addEventListener('input', function() {
+                        passwordInput.setCustomValidity('');
+                    });
+                }
+            }
+        };
+    </script>";
+}
+?>
 
 </body>
 </html>

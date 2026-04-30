@@ -20,7 +20,6 @@
 
 <!-- HEADER & NAVIGATION -->
 <?php include 'header.inc'; ?>
-<?php include 'menu.inc'; ?>
 
     <!-- Enhancement -->
     <div class="cactus-party">

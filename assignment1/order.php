@@ -1,5 +1,8 @@
 <?php 
+/* Start session to retrieve previously entered order data if validation fails */
 session_start(); 
+
+/* Retrieve saved order input from session, if available */
 $d = isset($_SESSION['order_data']) ? $_SESSION['order_data'] : [];
 $v_product1 = isset($d['product1']) ? $d['product1'] : '';
 $v_quantity1 = isset($d['quantity1']) ? htmlspecialchars($d['quantity1']) : '';
@@ -17,8 +20,10 @@ $v_phone = isset($d['phone']) ? htmlspecialchars($d['phone']) : '';
 $v_address = isset($d['address']) ? htmlspecialchars($d['address']) : '';
 $v_terms = isset($d['terms']) ? true : false;
 
+/* Clear saved order data after loading it */
 unset($_SESSION['order_data']); 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,7 +34,7 @@ unset($_SESSION['order_data']);
     <meta name="author" content="Rachael, Eleona, Amber">
     
     <title>Order | Cacti-Succulent Kuching</title>
-    
+
     <link rel="stylesheet" href="styles/style.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,8 +44,10 @@ unset($_SESSION['order_data']);
 
 <body class="order-page">
 
+<!-- HEADER & NAVIGATION -->
 <?php include 'header.inc'; ?>
 
+    <!-- ORDER FORM SECTION -->
     <main class="form-main">
         <div class="form-header">
             <h1>Order Form</h1>
@@ -48,11 +55,14 @@ unset($_SESSION['order_data']);
         </div>
 
         <div class="form-card">
-            <form action="process_order.php" method="post">
+            <!-- CUSTOMER ORDER FORM -->
+            <form action="order_process.php" method="post">
                 
+                <!-- ORDER DETAILS FIELDSET -->
                 <fieldset>
                     <legend>Order Details</legend>
                     
+                    <!-- ITEM 1 SELECTION -->
                     <div class="form-row">
                         <div class="input-group">
                             <label for="product1">Item 1</label>
@@ -66,7 +76,9 @@ unset($_SESSION['order_data']);
                                     <option value="prickly-pear" <?php echo ($v_product1 == 'prickly-pear') ? 'selected' : ''; ?>>Prickly Pear</option>
                                     <option value="cardon" <?php echo ($v_product1 == 'cardon') ? 'selected' : ''; ?>>Cardon</option>
                                 </optgroup>
+
                                 <option disabled label="&nbsp;">&nbsp;</option> 
+
                                 <optgroup label="2. Succulent Collection">
                                     <option value="lola" <?php echo ($v_product1 == 'lola') ? 'selected' : ''; ?>>Echeveria Lola</option>
                                     <option value="jade" <?php echo ($v_product1 == 'jade') ? 'selected' : ''; ?>>Jade Plant</option>
@@ -75,7 +87,9 @@ unset($_SESSION['order_data']);
                                     <option value="ghosty" <?php echo ($v_product1 == 'ghosty') ? 'selected' : ''; ?>>Ghosty</option>
                                     <option value="string-of-pearls" <?php echo ($v_product1 == 'string-of-pearls') ? 'selected' : ''; ?>>String of Pearls</option>
                                 </optgroup>
+
                                 <option disabled label="&nbsp;">&nbsp;</option> 
+
                                 <optgroup label="3. Planting Accessories">
                                     <option value="terracotta" <?php echo ($v_product1 == 'terracotta') ? 'selected' : ''; ?>>Artisan Terracotta</option>
                                     <option value="cactus-mix" <?php echo ($v_product1 == 'cactus-mix') ? 'selected' : ''; ?>>Premium Cactus Mix</option>
@@ -89,12 +103,14 @@ unset($_SESSION['order_data']);
                                 </optgroup>
                             </select>
                         </div>
+
                         <div class="input-group">
                             <label for="quantity1">Quantity 1</label>
                             <input type="number" id="quantity1" name="quantity1" value="<?php echo $v_quantity1; ?>" min="1" max="20" placeholder="Qty" required>
                         </div>
                     </div>
 
+                    <!-- ITEM 2 SELECTION -->
                     <div class="form-row">
                         <div class="input-group">
                             <label for="product2">Item 2</label>
@@ -108,7 +124,9 @@ unset($_SESSION['order_data']);
                                     <option value="prickly-pear" <?php echo ($v_product2 == 'prickly-pear') ? 'selected' : ''; ?>>Prickly Pear</option>
                                     <option value="cardon" <?php echo ($v_product2 == 'cardon') ? 'selected' : ''; ?>>Cardon</option>
                                 </optgroup>
+
                                 <option disabled label="&nbsp;">&nbsp;</option> 
+
                                 <optgroup label="2. Succulent Collection">
                                     <option value="lola" <?php echo ($v_product2 == 'lola') ? 'selected' : ''; ?>>Echeveria Lola</option>
                                     <option value="jade" <?php echo ($v_product2 == 'jade') ? 'selected' : ''; ?>>Jade Plant</option>
@@ -117,7 +135,9 @@ unset($_SESSION['order_data']);
                                     <option value="ghosty" <?php echo ($v_product2 == 'ghosty') ? 'selected' : ''; ?>>Ghosty</option>
                                     <option value="string-of-pearls" <?php echo ($v_product2 == 'string-of-pearls') ? 'selected' : ''; ?>>String of Pearls</option>
                                 </optgroup>
+
                                 <option disabled label="&nbsp;">&nbsp;</option> 
+
                                 <optgroup label="3. Planting Accessories">
                                     <option value="terracotta" <?php echo ($v_product2 == 'terracotta') ? 'selected' : ''; ?>>Artisan Terracotta</option>
                                     <option value="cactus-mix" <?php echo ($v_product2 == 'cactus-mix') ? 'selected' : ''; ?>>Premium Cactus Mix</option>
@@ -131,12 +151,14 @@ unset($_SESSION['order_data']);
                                 </optgroup>
                             </select>
                         </div>
+
                         <div class="input-group">
                             <label for="quantity2">Quantity 2</label>
                             <input type="number" id="quantity2" name="quantity2" value="<?php echo $v_quantity2; ?>" min="1" max="20" placeholder="Qty">
                         </div>
                     </div>
 
+                    <!-- ITEM 3 SELECTION -->
                     <div class="form-row">
                         <div class="input-group">
                             <label for="product3">Item 3</label>
@@ -150,7 +172,9 @@ unset($_SESSION['order_data']);
                                     <option value="prickly-pear" <?php echo ($v_product3 == 'prickly-pear') ? 'selected' : ''; ?>>Prickly Pear</option>
                                     <option value="cardon" <?php echo ($v_product3 == 'cardon') ? 'selected' : ''; ?>>Cardon</option>
                                 </optgroup>
+
                                 <option disabled label="&nbsp;">&nbsp;</option> 
+
                                 <optgroup label="2. Succulent Collection">
                                     <option value="lola" <?php echo ($v_product3 == 'lola') ? 'selected' : ''; ?>>Echeveria Lola</option>
                                     <option value="jade" <?php echo ($v_product3 == 'jade') ? 'selected' : ''; ?>>Jade Plant</option>
@@ -159,7 +183,9 @@ unset($_SESSION['order_data']);
                                     <option value="ghosty" <?php echo ($v_product3 == 'ghosty') ? 'selected' : ''; ?>>Ghosty</option>
                                     <option value="string-of-pearls" <?php echo ($v_product3 == 'string-of-pearls') ? 'selected' : ''; ?>>String of Pearls</option>
                                 </optgroup>
+
                                 <option disabled label="&nbsp;">&nbsp;</option> 
+
                                 <optgroup label="3. Planting Accessories">
                                     <option value="terracotta" <?php echo ($v_product3 == 'terracotta') ? 'selected' : ''; ?>>Artisan Terracotta</option>
                                     <option value="cactus-mix" <?php echo ($v_product3 == 'cactus-mix') ? 'selected' : ''; ?>>Premium Cactus Mix</option>
@@ -173,12 +199,14 @@ unset($_SESSION['order_data']);
                                 </optgroup>
                             </select>
                         </div>
+
                         <div class="input-group">
                             <label for="quantity3">Quantity 3</label>
                             <input type="number" id="quantity3" name="quantity3" value="<?php echo $v_quantity3; ?>" min="1" max="20" placeholder="Qty">
                         </div>
                     </div>
 
+                    <!-- DELIVERY AND PAYMENT OPTIONS -->
                     <div class="form-row">
                         <div class="input-group">
                             <label>Delivery Mode</label>
@@ -190,6 +218,7 @@ unset($_SESSION['order_data']);
                                 <label for="del-home" class="inline-label">Home Delivery</label>
                             </div>
                         </div>
+
                         <div class="input-group">
                             <label>Payment Mode</label>
                             <div class="radio-group">
@@ -202,11 +231,13 @@ unset($_SESSION['order_data']);
                         </div>
                     </div>
 
+                    <!-- PREFERRED DATE AND TIME -->
                     <div class="form-row">
                         <div class="input-group">
                             <label for="date">Preferred Date</label>
                             <input type="date" id="date" name="date" value="<?php echo $v_date; ?>" required>
                         </div>
+
                         <div class="input-group">
                             <label for="time">Preferred Time</label>
                             <select id="time" name="time" required>
@@ -219,9 +250,11 @@ unset($_SESSION['order_data']);
                     </div>
                 </fieldset>
 
+                <!-- CUSTOMER INFORMATION FIELDSET -->
                 <fieldset>
                     <legend>Customer Information</legend>
                     
+                    <!-- CUSTOMER NAME -->
                     <div class="form-row">
                         <div class="input-group full-width">
                             <label for="name">Full Name</label>
@@ -229,17 +262,20 @@ unset($_SESSION['order_data']);
                         </div>
                     </div>
 
+                    <!-- CUSTOMER CONTACT DETAILS -->
                     <div class="form-row">
                         <div class="input-group">
                             <label for="email">Email Address</label>
                             <input type="email" id="email" name="email" value="<?php echo $v_email; ?>" placeholder="e.g. hello@example.com" required>
                         </div>
+
                         <div class="input-group">
                             <label for="phone">Phone Number</label>
                             <input type="tel" id="phone" name="phone" value="<?php echo $v_phone; ?>" maxlength="11" pattern="[0-9]{10,11}" title="Please enter 10 to 11 digit phone number without dashes" placeholder="e.g. 0128884444" required>
                         </div>
                     </div>
 
+                    <!-- CUSTOMER ADDRESS -->
                     <div class="form-row">
                         <div class="input-group full-width">
                             <label for="address">Full Address</label>
@@ -248,6 +284,7 @@ unset($_SESSION['order_data']);
                     </div>
                 </fieldset> 
                 
+                <!-- TERMS AND CONDITIONS CHECKBOX -->
                 <div class="form-row checkbox-row">
                     <div class="input-group full-width checkbox-group">
                         <input type="checkbox" id="terms" name="terms" <?php echo $v_terms ? 'checked' : ''; ?> required>
@@ -255,6 +292,7 @@ unset($_SESSION['order_data']);
                     </div>
                 </div>
 
+                <!-- FORM BUTTONS -->
                 <div class="button-group">
                     <input type="submit" value="Submit Order">
                     <input type="reset" value="Clear Form">
@@ -264,10 +302,13 @@ unset($_SESSION['order_data']);
         </div>
     </main>
 
+<!-- WEBSITE FOOTER & COPYRIGHT -->
 <?php include 'footer.inc'; ?>
 
+<!-- BACK TO TOP BUTTON -->
 <a href="#" class="back-to-top">▲</a>
 
+<!-- ORDER DATE ERROR MESSAGE SCRIPT -->
 <?php
 if (isset($_GET['error']) && $_GET['error'] === 'invalid_date') {
     echo "<script>
@@ -289,5 +330,6 @@ if (isset($_GET['error']) && $_GET['error'] === 'invalid_date') {
     </script>";
 }
 ?>
+
 </body>
 </html>

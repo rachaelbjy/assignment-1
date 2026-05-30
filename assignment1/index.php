@@ -8,7 +8,7 @@
     <meta name="author" content="Rachael, Eleona, Amber">
     
     <title>Home | Cacti-Succulent Kuching</title>
-    
+
     <link rel="stylesheet" href="styles/style.css"> 
     <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,19 +27,24 @@
             <div class="hero-content-box">
                 <h1>Bring Nature<br>Into Your Life</h1>
                 <p>Discover a wide range of healthy cactus and succulent plants perfect for your space. Carefully selected to bring comfort, freshness, and lasting beauty into your daily life.</p>
-                <a href="product1.html" class="hero-btn">Discover Collection <i class="ri-arrow-right-line"></i></a>
+                <a href="product1.php" class="hero-btn">Discover Collection <i class="ri-arrow-right-line"></i></a>
 
+                <!-- HERO STATISTICS -->
                 <aside class="hero-stats">
                     <div class="stat-item">
                         <h2>6500+</h2>
                         <span>Happy Customers</span>
                     </div>
+
                     <div class="stat-divider"></div>
+
                     <div class="stat-item">
                         <h2>2400+</h2>
                         <span>Unique Plants</span>
                     </div>
+
                     <div class="stat-divider"></div>
+
                     <div class="stat-item">
                         <h2>8000+</h2>
                         <span>Orders Delivered</span>
@@ -57,33 +62,42 @@
                 <div class="heading-line"></div>
             </div>
 
+            <!-- CATALOGUE CARDS -->
             <div class="catalogues-grid">
+
+                <!-- CACTI CATALOGUE CARD -->
                 <div class="catalogue-card">
-                    <a href="product1.html" class="catalogue-link">
+                    <a href="product1.php" class="catalogue-link">
                         <div class="img-wrapper">
                             <img src="images/home-cacti.jpeg" alt="Indoor Cactus Collection">
                         </div>
                         <h3>Cacti</h3>
                     </a>
                 </div>
+
+                <!-- SUCCULENTS CATALOGUE CARD -->
                 <div class="catalogue-card">
-                    <a href="product4.html" class="catalogue-link">
+                    <a href="product2.php" class="catalogue-link">
                         <div class="img-wrapper">
                             <img src="images/home-succulents.jpeg" alt="Outdoor Cactus Collection">
                         </div>
                         <h3>Succulents</h3>
                     </a>
                 </div>
+
+                <!-- PLANTING ACCESSORIES CATALOGUE CARD -->
                 <div class="catalogue-card">
-                    <a href="product2.html" class="catalogue-link">
+                    <a href="product3.php" class="catalogue-link">
                         <div class="img-wrapper">
                             <img src="images/home-tools.jpeg" alt="Succulent Collection">
                         </div>
                         <h3>Planting Accessories</h3>
                     </a>
                 </div>
+
+                <!-- SERVICES CATALOGUE CARD -->
                 <div class="catalogue-card">
-                    <a href="product3.html" class="catalogue-link">
+                    <a href="service1.php" class="catalogue-link">
                         <div class="img-wrapper">
                             <img src="images/home-services.jpeg" alt="Cactus Gardening Tools">
                         </div>
@@ -97,6 +111,8 @@
     <!-- ABOUT US SECTION -->
     <div class="home-about">
         <div class="home-container about-wrapper">
+
+            <!-- ABOUT US IMAGE -->
             <div class="about-visual">
                 <div class="visual-backdrop"></div>
                 <div class="about-img-wrapper">
@@ -104,26 +120,27 @@
                 </div>
             </div>
 
+            <!-- ABOUT US CONTENT -->
             <article class="about-content">
                 <span class="section-tag">Our Story</span>
                 <h2>Rooted in Passion</h2>
                 <p>Cacti-Succulent Kuching started as a small project by a group of friends sharing a strong interest in plants and nature. At first, we only kept plants for our own homes, but we soon realised that many people also enjoy having plants in their living spaces.</p>
                 <p>Over time, we turned our passion into a small business. Today, our goal remains the same: to provide healthy plants and create a simple, enjoyable experience for our community.</p>
-                <a href="aboutus.html" class="solid-btn">Read Our Full Story</a>
+                <a href="profile.php" class="solid-btn">Read Our Full Story</a>
             </article>
         </div>
     </div>
 
    <!-- YOUTUBE VIDEO SECTION -->
     <section class="home-video">
-        <div class="home-container" style="text-align: center;">
+        <div class="home-container video-section-container">
             <div class="section-heading">
                 <h2>See Us In Action</h2>
                 <div class="heading-line"></div>
             </div>
             
             <div class="video-wrapper">
-                <iframe width="100%" height="450" src="https://www.youtube.com/embed/6vFobepZvf4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="display: block;"></iframe>
+                <iframe width="100%" height="450" src="https://www.youtube.com/embed/6vFobepZvf4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
     </section>
@@ -136,22 +153,31 @@
                 <div class="heading-line"></div>
             </div>
 
+            <!-- SERVICE FEATURE CARDS -->
             <div class="services-grid">
+
+                <!-- FAST DELIVERY FEATURE -->
                 <div class="service-card-pro">
                     <div class="icon-circle"><i class="ri-truck-line"></i></div>
                     <h3>Fast Delivery</h3>
                     <p>Fast and reliable delivery ensuring your plants arrive safely. Each order is meticulously packed for protection.</p>
                 </div>
+
+                <!-- CUSTOMER SUPPORT FEATURE -->
                 <div class="service-card-pro">
                     <div class="icon-circle"><i class="ri-customer-service-2-line"></i></div>
                     <h3>Great Support</h3>
                     <p>Our friendly team is always here to assist, ensuring a smooth and worry-free shopping experience from start to finish.</p>
                 </div>
+
+                <!-- ORIGINAL PLANTS FEATURE -->
                 <div class="service-card-pro">
                     <div class="icon-circle"><i class="ri-plant-line"></i></div>
                     <h3>Original Plants</h3>
                     <p>Discover our premium, hand-selected plants. We proudly guarantee each one arrives healthy, vibrant, and well-maintained.</p>
                 </div>
+
+                <!-- AFFORDABLE PRICE FEATURE -->
                 <div class="service-card-pro">
                     <div class="icon-circle"><i class="ri-money-dollar-circle-line"></i></div>
                     <h3>Affordable</h3>

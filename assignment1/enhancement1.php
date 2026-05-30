@@ -8,7 +8,7 @@
     <meta name="author" content="Rachael, Eleona, Amber">
     
     <title>Enhancements | Cacti-Succulent Kuching</title>
-    
+
     <link rel="stylesheet" href="styles/style.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,15 +21,19 @@
 <!-- HEADER & NAVIGATION -->
 <?php include 'header.inc'; ?>
 
-    <!-- ENHANCEMENTS CONTENT AREA -->
+    <!-- ENHANCEMENTS MAIN CONTENT SECTION -->
     <main class="content-wrapper">
+
+        <!-- ENHANCEMENTS PAGE HEADER -->
         <div class="enhancements-header">
             <h1>Enhancements</h1>
             <p>Pushing the boundaries of standard-compliant web design with pure CSS3 and HTML5</p>
         </div>
 
+        <!-- ENHANCEMENTS LIST -->
         <div class="enhancements-list">
             
+            <!-- ENHANCEMENT 1: EMOJI OVERLAY AND HTML5 VIDEO -->
             <article class="enhancement-row">
                 <figure class="enhancement-figure">
                     <video class="enhancement-video" preload="auto" autoplay loop muted playsinline>
@@ -37,18 +41,22 @@
                         Your browser does not support the video tag.
                     </video>
                 </figure>
+
                 <div class="enhancement-text">
                     <h2>1. "Maximum Chaos" Emoji Overlay & HTML5 Video</h2>
                     <p><strong>How it goes beyond basic requirements:</strong> We utilized the advanced HTML5 <code>&lt;video&gt;</code> element to demonstrate features. Furthermore, we created a full-screen animated overlay using <code>position: fixed</code>. To ensure it doesn't block users from clicking underlying links, we added <code>pointer-events: none</code>. The emojis fly across the screen utilizing complex, simultaneous multi-transform <code>@keyframes</code> animations.</p>
+                    
                     <div class="code-box">
                         .cactus-party { pointer-events: none; z-index: 9999; }<br>
                         @keyframes fly-left-to-right { 100% { transform: translate(120vw, 30vh) rotate(360deg); opacity: 0; } }
                     </div>
+
                     <p><strong>Source / Citation:</strong> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes" target="_blank">MDN Web Docs: @keyframes</a></p>
-                    <a href="product1.html" class="btn-link1">View Feature</a>
+                    <a href="product1.php" class="btn-link1">View Feature</a>
                 </div>
             </article>
 
+            <!-- ENHANCEMENT 2: TYPEWRITER TEXT REVEAL -->
             <article class="enhancement-row">
                 <figure class="enhancement-figure">
                     <video class="enhancement-video" preload="auto" autoplay loop muted playsinline>
@@ -56,17 +64,21 @@
                         Your browser does not support the video tag.
                     </video>
                 </figure>
+
                 <div class="enhancement-text">
                     <h2>2. Stationary Typewriter Text Reveal</h2>
                     <p><strong>How it goes beyond basic requirements:</strong> Typically, typewriter effects require JavaScript string manipulation. We achieved this entirely through pure CSS by animating the <code>clip-path: inset()</code> property. Combined with the <code>steps()</code> timing function, it perfectly mimics the rigid, character-by-character reveal of a mechanical typewriter without any scripting.</p>                
+                    
                     <div class="code-box">
                         .hero-section h1 { clip-path: inset(0 100% 0 0); animation: typing 1.5s steps(30, end) forwards; }
                     </div>
+
                     <p><strong>Source / Citation:</strong> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/clip-path" target="_blank">MDN Web Docs: clip-path</a></p>
-                    <a href="product2.html" class="btn-link2">View Feature</a>
+                    <a href="product2.php" class="btn-link2">View Feature</a>
                 </div>
             </article>
 
+            <!-- ENHANCEMENT 3: AUTOMATIC DARK MODE -->
             <article class="enhancement-row">
                 <figure class="enhancement-figure">
                     <video class="enhancement-video" preload="auto" autoplay loop muted playsinline>
@@ -74,17 +86,21 @@
                         Your browser does not support the video tag.
                     </video>
                 </figure>
+
                 <div class="enhancement-text">
                     <h2>3. Automatic System Dark Mode Detection</h2>
                     <p><strong>How it goes beyond basic requirements:</strong> We implemented an automatic dark theme using the advanced CSS Level 5 media query <code>@media (prefers-color-scheme: dark)</code>. The website reads the user's OS settings and seamlessly swaps backgrounds, form inputs, and text colors to a highly accessible dark palette.</p>
+                    
                     <div class="code-box">
                         @media (prefers-color-scheme: dark) { body { background-color: #121212; color: #e0e0e0; } }
                     </div>
+
                     <p><strong>Source / Citation:</strong> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme" target="_blank">MDN Web Docs: prefers-color-scheme</a></p>
-                    <a href="order.html" class="btn-link3">View Feature</a>
+                    <a href="order.php" class="btn-link3">View Feature</a>
                 </div>
             </article>
 
+            <!-- ENHANCEMENT 4: BUTTON SHINE EFFECT -->
             <article class="enhancement-row">
                 <figure class="enhancement-figure">
                     <video class="enhancement-video" preload="auto" autoplay loop muted playsinline>
@@ -92,18 +108,22 @@
                         Your browser does not support the video tag.
                     </video>
                 </figure>
+
                 <div class="enhancement-text">
                     <h2>4. Advanced Pseudo-Element Button Shine</h2>
                     <p><strong>How it goes beyond basic requirements:</strong> Instead of a simple color change on hover, we engineered a dynamic "light sweep" interaction. This uses the <code>::before</code> pseudo-element alongside a transparent <code>linear-gradient</code> and <code>skewX()</code> transformation. Upon hover, the invisible element transitions smoothly across the button's layout.</p>
+                    
                     <div class="code-box">
                         .add-to-cart::before { background: linear-gradient(...); transform: skewX(-25deg); }<br>
                         .add-to-cart:hover::before { left: 200%; }
                     </div>
+
                     <p><strong>Source / Citation:</strong> Self-developed based on: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::before" target="_blank">MDN Web Docs: ::before</a></p>
-                    <a href="product2.html" class="btn-link4">View Feature</a>
+                    <a href="product2.php" class="btn-link4">View Feature</a>
                 </div>
             </article>
 
+            <!-- ENHANCEMENT 5: CASCADE GRID LOADING -->
             <article class="enhancement-row">
                 <figure class="enhancement-figure">
                     <video class="enhancement-video" preload="auto" autoplay loop muted playsinline>
@@ -111,18 +131,22 @@
                         Your browser does not support the video tag.
                     </video>
                 </figure>
+
                 <div class="enhancement-text">
                     <h2>5. Sequential Staggered Loading (Cascade Grid)</h2>
                     <p><strong>How it goes beyond basic requirements:</strong> To create a premium entrance effect without JavaScript, we leveraged the CSS <code>:nth-child()</code> structural pseudo-class combined with <code>animation-delay</code>. This mathematically targets siblings and forces the grid items to load sequentially, calculating precise timing within the CSS cascade.</p>
+                    
                     <div class="code-box">
                         .cactus-card { animation: fadeUpCascade 0.8s backwards; }<br>
                         .cactus-card:nth-child(2) { animation-delay: 0.4s; }
                     </div>
+
                     <p><strong>Source / Citation:</strong> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:nth-child" target="_blank">MDN Web Docs: :nth-child</a></p>
-                    <a href="index.html" class="btn-link5">View Feature</a>
+                    <a href="index.php" class="btn-link5">View Feature</a>
                 </div>
             </article>
 
+            <!-- ENHANCEMENT 6: PAGE TRANSITION -->
             <article class="enhancement-row">
                 <figure class="enhancement-figure">
                     <video class="enhancement-video" preload="auto" autoplay loop muted playsinline>
@@ -130,18 +154,22 @@
                         Your browser does not support the video tag.
                     </video>
                 </figure>
+
                 <div class="enhancement-text">
                     <h2>6. Global Smooth Page Transitions</h2>
                     <p><strong>How it goes beyond basic requirements:</strong> To eliminate the jarring visual flash during standard HTML page navigation, we implemented a global fade-in effect. By applying a custom CSS animation directly to the root element with a <code>forwards</code> fill mode, the document maintains visual state preservation seamlessly.</p>
+                    
                     <div class="code-box">
                         @keyframes pageFadeIn { from { opacity: 0; } to { opacity: 1; } }<br>
                         body { animation: pageFadeIn 0.6s ease-in-out forwards; }
                     </div>
+
                     <p><strong>Source / Citation:</strong> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/animation" target="_blank">MDN Web Docs: CSS Animations</a></p>
-                    <a href="index.html" class="btn-link6">View Feature</a>
+                    <a href="index.php" class="btn-link6">View Feature</a>
                 </div>
             </article>
 
+            <!-- ENHANCEMENT 7: BACK TO TOP BUTTON -->
             <article class="enhancement-row">
                 <figure class="enhancement-figure">
                     <video class="enhancement-video" preload="auto" autoplay loop muted playsinline>
@@ -149,15 +177,18 @@
                         Your browser does not support the video tag.
                     </video>
                 </figure>
+
                 <div class="enhancement-text">
                     <h2>7. Smooth Scrolling "Back to Top"</h2>
                     <p><strong>How it goes beyond basic requirements:</strong> Instead of relying on JavaScript for page navigation, we implemented a pure CSS3 solution for our global "Back to Top" button. By applying <code>scroll-behavior: smooth</code> to the root HTML element and combining it with <code>position: fixed</code>, users experience a fluid, graceful glide back to the header rather than an abrupt, disorienting jump.</p>
+                    
                     <div class="code-box">
                         html { scroll-behavior: smooth; }<br>
                         .back-to-top { position: fixed; bottom: 40px; right: 40px; z-index: 9999; }
                     </div>
+
                     <p><strong>Source / Citation:</strong> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-behavior" target="_blank">MDN Web Docs: scroll-behavior</a></p>
-                    <a href="service1.html" class="btn-link7">View Feature</a>
+                    <a href="service1.php" class="btn-link7">View Feature</a>
                 </div>
             </article>
 

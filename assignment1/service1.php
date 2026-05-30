@@ -8,7 +8,7 @@
     <meta name="author" content="Rachael, Eleona, Amber">
     
     <title>Services | Cacti-Succulent Kuching</title>
-    
+
     <link rel="stylesheet" href="styles/style.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,7 +21,7 @@
 <!-- HEADER & NAVIGATION -->
 <?php include 'header.inc'; ?>
 
-    <!-- Enhancement: Services Party -->
+    <!-- ENHANCEMENT1: SERVICES PARTY -->
     <div class="cactus-party">
         <span class="c1">✨</span><span class="c2">🧑‍🌾</span><span class="c3">🏥</span>
         <span class="c4">🌿</span><span class="c5">✨</span><span class="c6">🧑‍🌾</span>
@@ -40,14 +40,17 @@
         </div>
     </section>
 
-    <!-- ASIDE & SERVICES LIST LAYOUT -->
+    <!-- SERVICES MAIN CONTENT SECTION -->
     <main class="content-wrapper">
         
+        <!-- SERVICES CONTENT LAYOUT -->
         <div class="service-layout-wrapper">
             
+            <!-- SERVICE CARE GUIDE SIDEBAR -->
             <aside class="service-aside">
                 <h3>Care Guide & Glossary</h3>
                 
+                <!-- TREATMENT PROCESS LIST -->
                 <h4>Treatment Process</h4>
                 <ol>
                     <li>Initial health assessment</li>
@@ -56,6 +59,7 @@
                     <li>Post-care monitoring</li>
                 </ol>
 
+                <!-- WATERING SCHEDULE TABLE -->
                 <h4>Watering Schedule</h4>
                 <table class="aside-table">
                     <tr>
@@ -76,6 +80,7 @@
                     </tr>
                 </table>
 
+                <!-- SERVICE TERMINOLOGY LIST -->
                 <h4>Terminology</h4>
                 <dl class="service-dl">
                     <dt>Root Rot</dt>
@@ -86,64 +91,77 @@
                 </dl>
             </aside>
 
+            <!-- SERVICES LIST -->
             <div class="services-list">
                 
+                <!-- SERVICE 1: PLANT HOSPITAL -->
                 <article class="service-row">
                     <figure>
                         <img src="images/repotting.jpg" alt="Plant Hospital Repotting">
                         <figcaption>Professional Repotting <a href="https://pin.it/6zDtNyDIg">Source</a></figcaption>
                     </figure>
+
                     <div class="service-text">
                         <h3>The Plant Hospital</h3>
                         <p>Did you overwater your succulent? Is your cactus stretching for light? Bring your struggling plants to our Kuching home-base. We provide professional root-rot treatments, precision pruning, and repotting in our premium gritty soil mix to bring your desert gems back to life.</p>
+                        
                         <div class="price-action-row">
                             <p class="price">From RM 15.00</p>
-                            <a href="enquiry.html" class="add-to-cart">Book a Rescue</a>
+                            <a href="enquiry.php" class="add-to-cart">Book a Rescue</a>
                         </div>
                     </div>
                 </article>
 
+                <!-- SERVICE 2: CUSTOM TERRARIUMS -->
                 <article class="service-row reverse">
                     <figure>
                         <img src="images/terrarium.jpg" alt="Custom Terrariums">
                         <figcaption>Custom Terrariums <a href="https://pin.it/3B9oUqJFv">Source</a></figcaption>
                     </figure>
+
                     <div class="service-text">
                         <h3>Custom Terrariums</h3>
                         <p>Perfect for office desks or unique gifts. We design and build enclosed or open-air glass terrariums tailored to your aesthetic. Choose your preferred glass shape, sand colors, and plant varieties, and we handle the complex layering required for proper drainage.</p>
+                        
                         <div class="price-action-row">
                             <p class="price">From RM 65.00</p>
-                            <a href="enquiry.html" class="add-to-cart">Design Yours</a>
+                            <a href="enquiry.php" class="add-to-cart">Design Yours</a>
                         </div>
                     </div>
                 </article>
 
+                <!-- SERVICE 3: TERRARIUM WORKSHOP -->
                 <article class="service-row">
                     <figure>
                         <img src="images/workshop.jpg" alt="Hands-on Terrarium Workshop in Kuching">
                         <figcaption>Terrarium Workshop <a href="https://pin.it/adKGgj00G">Source</a></figcaption>
                     </figure>
+
                     <div class="service-text">
                         <h3>Terrarium Workshop</h3>
                         <p>Join us for a hands-on afternoon and learn the art of building your own desert landscape. We provide all the materials, including glass vessels, specialized gritty soil, decorative sands, and your choice of premium succulents. Perfect for weekend dates, team building, or just a relaxing solo activity!</p>
+                        
                         <div class="price-action-row">
                             <p class="price">From RM 85.00 <span>/ person</span></p>
-                            <a href="enquiry.html" class="add-to-cart">Book a Slot</a>
+                            <a href="enquiry.php" class="add-to-cart">Book a Slot</a>
                         </div>
                     </div>
                 </article>
 
+                <!-- SERVICE 4: PLANT BOARDING -->
                 <article class="service-row reverse">
                     <figure>
                         <img src="images/boarding.jpg" alt="Plant Boarding Service">
                         <figcaption>Plant Boarding <a href="https://www.freepik.com/free-photo/asian-gardener-woman-wearing-face-mask-apron-holding-spray-watering-green-houseplant-hand_18684843.htm#fromView=search&page=4&position=2&uuid=4ffb5aa7-11a7-43fb-ae83-270c07284659&query=Plant+nursery+service">Source</a></figcaption>
                     </figure>
+
                     <div class="service-text">
                         <h3>Plant Boarding</h3>
                         <p>Going on a long holiday? Don't leave your precious succulents to wither or get overwatered by well-meaning neighbors. Drop them off at our dedicated greenhouse. We provide optimal sunlight exposure, controlled watering schedules, and daily monitoring to ensure your plants thrive while you are away.</p>
+                        
                         <div class="price-action-row">
                             <p class="price">From RM 5.00 <span>/ day</span></p>
-                            <a href="enquiry.html" class="add-to-cart">Reserve Space</a>
+                            <a href="enquiry.php" class="add-to-cart">Reserve Space</a>
                         </div>
                     </div>
                 </article>
@@ -158,7 +176,10 @@
                 <p>Bulk succulent orders for weddings, corporate events, and parties.</p>
             </div>
             
+            <!-- PRICING PACKAGE CARDS -->
             <div class="pricing-grid">
+
+                <!-- STANDARD PACKAGE CARD -->
                 <div class="pricing-card">
                     <h4>Standard Package</h4>
                     <p class="tier-price">RM 8.00 <span>/ plant</span></p>
@@ -168,9 +189,10 @@
                         <li>Nursery plastic pot</li>
                         <li>Basic care instruction card</li>
                     </ul>
-                    <a href="enquiry.html" class="tier-btn solid-btn">Enquire Now</a>
+                    <a href="enquiry.php" class="tier-btn solid-btn">Enquire Now</a>
                 </div>
 
+                <!-- LUXURY PACKAGE CARD -->
                 <div class="pricing-card luxury-card">
                     <h4>Luxury Package</h4>
                     <p class="tier-price">RM 25.00 <span>/ plant</span></p>
@@ -181,9 +203,10 @@
                         <li>Custom laser-cut wooden tags</li>
                         <li>Decorative top-dressing stones</li>
                     </ul>
-                    <a href="enquiry.html" class="tier-btn solid-btn">Most Popular</a>
+                    <a href="enquiry.php" class="tier-btn solid-btn">Most Popular</a>
                 </div>
 
+                <!-- PREMIUM PACKAGE CARD -->
                 <div class="pricing-card">
                     <h4>Premium Package</h4>
                     <p class="tier-price">RM 15.00 <span>/ plant</span></p>
@@ -193,7 +216,7 @@
                         <li>Artisan Terracotta pot</li>
                         <li>Custom printed name tags</li>
                     </ul>
-                    <a href="enquiry.html" class="tier-btn solid-btn">Enquire Now</a>
+                    <a href="enquiry.php" class="tier-btn solid-btn">Enquire Now</a>
                 </div>
             </div>
         </section>

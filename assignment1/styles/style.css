@@ -649,6 +649,15 @@ h1 {
     margin: 0; 
 }
 
+/* Featured Video Section */
+.video-section-container {
+    text-align: center;
+}
+
+.video-wrapper iframe {
+    display: block;
+}
+
 /* About Us Section */
 .home-about { 
     padding: 70px 0 45px 0; 
@@ -2706,4 +2715,204 @@ body {
         box-shadow: 0 15px 30px rgba(0,0,0,0.1); 
         border: 4px solid #6D9E51;
     }
+}
+
+/* ==========================================================================
+   ADMIN DASHBOARD & ADMIN RECORD VIEW PAGES
+   ========================================================================== */
+
+/* Admin dashboard vertical menu */
+.admin-dashboard-menu {
+    width: 100%;
+    max-width: 330px;
+    margin: 30px auto;
+    text-align: center;
+}
+
+.admin-dashboard-menu .admin-menu-link {
+    display: block;
+    width: 100%;
+    background-color: #6D9E51;
+    color: #ffffff;
+    border: 2px solid #6D9E51;
+    border-radius: 8px;
+    text-decoration: none;
+    text-align: center;
+    font-family: 'Cinzel', serif;
+    font-weight: bold;
+    padding: 14px 20px;
+    margin-bottom: 18px;
+    box-sizing: border-box;
+    transition: all 0.3s ease-out;
+}
+
+.admin-dashboard-menu .admin-menu-link:hover {
+    background-color: #EB5B26;
+    border-color: #EB5B26;
+    color: #ffffff;
+    box-shadow: 0 8px 20px rgba(235, 91, 38, 0.2);
+    transform: translateY(-3px);
+}
+
+.admin-dashboard-menu .admin-menu-link:last-child {
+    margin-bottom: 0;
+}
+
+/* Admin table wrapper */
+.admin-table-wrapper {
+    width: 100%;
+    margin: 25px auto;
+    overflow-x: auto;
+}
+
+/* Admin summary table */
+.admin-summary-table {
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    text-align: center;
+    background-color: #ffffff;
+}
+
+.admin-summary-table th {
+    background-color: #6D9E51;
+    color: #ffffff;
+    padding: 14px;
+    font-family: 'Cinzel', serif;
+    border: 1px solid #6D9E51;
+    text-align: center;
+}
+
+.admin-summary-table td {
+    padding: 13px;
+    border: 1px solid #dddddd;
+    color: #333333;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.admin-summary-table tr:nth-child(even) td {
+    background-color: #f6faf4;
+}
+
+/* Admin detail table */
+.admin-detail-table {
+    width: 100%;
+    max-width: 760px;
+    margin: 0 auto 25px auto;
+    border-collapse: collapse;
+    background-color: #ffffff;
+}
+
+.admin-detail-table th {
+    width: 35%;
+    background-color: #f4f7f4;
+    color: #333333;
+    padding: 13px 16px;
+    text-align: left;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    border: 1px solid #dddddd;
+}
+
+.admin-detail-table td {
+    padding: 13px 16px;
+    color: #333333;
+    border: 1px solid #dddddd;
+    background-color: #ffffff;
+    text-align: left;
+    word-break: break-word;
+}
+
+/* Section row inside detail table */
+.admin-detail-table .admin-section-row th {
+    background-color: #6D9E51;
+    color: #ffffff;
+    text-align: center;
+    font-family: 'Cinzel', serif;
+    letter-spacing: 1px;
+}
+
+/* View button inside summary table */
+.admin-view-btn {
+    display: inline-block;
+    background-color: #6D9E51;
+    color: #ffffff;
+    border: 2px solid #6D9E51;
+    border-radius: 8px;
+    text-decoration: none;
+    text-align: center;
+    font-family: 'Cinzel', serif;
+    font-weight: bold;
+    padding: 8px 18px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease-out;
+}
+
+.admin-view-btn:hover {
+    background-color: #EB5B26;
+    border-color: #EB5B26;
+    color: #ffffff;
+}
+
+/* Bottom action buttons */
+.admin-action-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin: 30px auto;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.admin-action-link {
+    display: inline-block;
+    background-color: #6D9E51;
+    color: #ffffff;
+    border: 2px solid #6D9E51;
+    border-radius: 8px;
+    text-decoration: none;
+    text-align: center;
+    font-family: 'Cinzel', serif;
+    font-weight: bold;
+    padding: 12px 25px;
+    transition: all 0.3s ease-out;
+}
+
+.admin-action-link:hover {
+    background-color: #EB5B26;
+    border-color: #EB5B26;
+    color: #ffffff;
+}
+
+/* ==========================================================================
+   ADMIN ACCOUNT STATUS BADGES
+   ========================================================================== */
+
+.admin-status-badge {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-family: 'Cinzel', serif;
+    font-size: 0.85rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.admin-status-registered {
+    background-color: #eaf5e6;
+    color: #6D9E51;
+    border: 1px solid #6D9E51;
+}
+
+.admin-status-unregistered {
+    background-color: #fff0e8;
+    color: #EB5B26;
+    border: 1px solid #EB5B26;
+}
+
+.admin-unregistered-row td {
+    background-color: #fff8f4;
 }

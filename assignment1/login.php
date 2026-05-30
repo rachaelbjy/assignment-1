@@ -1,10 +1,12 @@
 <?php 
 session_start(); 
+
 $d = isset($_SESSION['login_data']) ? $_SESSION['login_data'] : [];
 $v_login = isset($d['login']) ? htmlspecialchars($d['login']) : '';
 
 unset($_SESSION['login_data']); 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +17,7 @@ unset($_SESSION['login_data']);
     <meta name="author" content="Rachael, Eleona, Amber">
     
     <title>Login | Cacti-Succulent Kuching</title>
-    
+
     <link rel="stylesheet" href="styles/style.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,8 +27,10 @@ unset($_SESSION['login_data']);
 
 <body class="login-page">
 
+<!-- HEADER & NAVIGATION -->
 <?php include 'header.inc'; ?>
 
+    <!-- LOGIN FORM SECTION -->
     <main class="form-main">
         <div class="form-header">
             <h1>Login</h1>
@@ -34,11 +38,14 @@ unset($_SESSION['login_data']);
         </div>
 
         <div class="form-card">
-            <form action="process_login.php" method="post">
+            <!-- ACCOUNT LOGIN FORM -->
+            <form action="login_process.php" method="post">
 
+                <!-- ACCOUNT DETAILS FIELDSET -->
                 <fieldset>
                     <legend>Account Details</legend>
 
+                    <!-- USERNAME INPUT -->
                     <div class="form-row">
                         <div class="input-group full-width">
                             <label for="login">Username</label>
@@ -46,31 +53,37 @@ unset($_SESSION['login_data']);
                         </div>
                     </div>
 
+                    <!-- PASSWORD INPUT -->
                     <div class="form-row">
                         <div class="input-group full-width">
                             <label for="password">Password</label>
-                            <input type="password" id="password" name="password" maxlength="25" pattern="[A-Za-z]+" title="Maximum 25 alphabetical characters only" placeholder="Enter your password (letters only)" required>
+                            <input type="password" id="password" name="password" maxlength="25" title="Enter your password" placeholder="Enter your password" required>
                         </div>
                     </div>
                 </fieldset>
 
+                <!-- FORM BUTTONS -->
                 <div class="button-group">
                     <input type="submit" value="Login">
                     <input type="reset" value="Clear Form">
                 </div>
 
+                <!-- REGISTER REDIRECTION LINK -->
                 <div class="form-redirect">
-                    <p>Don't have an account? <a href="register.html">Register with us</a></p>
+                    <p>Don't have an account? <a href="register.php">Register with us</a></p>
                 </div>
 
             </form>
         </div>
     </main>
 
+<!-- WEBSITE FOOTER & COPYRIGHT -->
 <?php include 'footer.inc'; ?>
 
+<!-- BACK TO TOP BUTTON -->
 <a href="#" class="back-to-top">▲</a>
 
+<!-- LOGIN ERROR MESSAGE SCRIPT -->
 <?php
 if (isset($_GET['error']) && $_GET['error'] === 'invalid_credentials') {
     echo "<script>
@@ -89,7 +102,8 @@ if (isset($_GET['error']) && $_GET['error'] === 'invalid_credentials') {
                 passwordInput.addEventListener('input', function() {
                     passwordInput.setCustomValidity('');
                 });
-                if(loginInput) {
+
+                if (loginInput) {
                     loginInput.addEventListener('input', function() {
                         passwordInput.setCustomValidity('');
                     });

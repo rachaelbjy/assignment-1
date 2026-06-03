@@ -9,7 +9,7 @@
     
     <title>Home | Cacti-Succulent Kuching</title>
 
-    <link rel="stylesheet" href="styles/style.css"> 
+    <link rel="stylesheet" href="styles/style.css?v=adminfix4"> 
     <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -131,20 +131,6 @@
         </div>
     </div>
 
-   <!-- YOUTUBE VIDEO SECTION -->
-    <section class="home-video">
-        <div class="home-container video-section-container">
-            <div class="section-heading">
-                <h2>See Us In Action</h2>
-                <div class="heading-line"></div>
-            </div>
-            
-            <div class="video-wrapper">
-                <iframe width="100%" height="450" src="https://www.youtube.com/embed/6vFobepZvf4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-        </div>
-    </section>
-
     <!-- WHY CHOOSE US SECTION -->
     <section class="home-services">
         <div class="home-container">
@@ -183,6 +169,20 @@
                     <h3>Affordable</h3>
                     <p>Bring beautiful, lush plants into your home at reasonable prices, without ever compromising on quality or service.</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- YOUTUBE VIDEO SECTION -->
+    <section class="home-video">
+        <div class="home-container video-section-container">
+            <div class="section-heading">
+                <h2>See Us In Action</h2>
+                <div class="heading-line"></div>
+            </div>
+            
+            <div class="video-wrapper">
+                <iframe width="100%" height="450" src="https://www.youtube.com/embed/6vFobepZvf4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
     </section>

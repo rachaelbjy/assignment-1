@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- BASIC PAGE METADATA -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Cacti Collection of Cacti-Succulent Kuching">
@@ -9,7 +10,8 @@
     
     <title>Cacti | Cacti-Succulent Kuching</title>
     
-    <link rel="stylesheet" href="styles/style.css">
+    <!-- EXTERNAL STYLESHEETS AND ICONS -->
+    <link rel="stylesheet" href="styles/style.css?v=adminfix3">
     <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,10 +43,14 @@
     </section>
 
     <main class="content-wrapper">
+
+        <!-- PRODUCT AND SERVICE SEARCH BAR -->
+        <?php include 'product_service_search.inc'; ?>
         
         <!-- PRODUCTS SECTION -->
         <div class="product-grid">
-            <article class="cactus-card">
+
+            <article class="cactus-card" id="golden-barrel">
                 <figure>
                     <img src="images/cacti-golden-barrel.jpg" alt="Golden Barrel">
                     <figcaption>E. grusonii. <a href="https://www.pexels.com/photo/green-cactus-plants-11678322/">Source</a></figcaption>
@@ -56,7 +62,7 @@
                 </div>
             </article>
 
-            <article class="cactus-card">
+            <article class="cactus-card" id="bunny-ear">
                 <figure>
                     <img src="images/cacti-bunny-ear.jpg" alt="Bunny Ear">
                     <figcaption>O. microdasys. <a href="https://www.pexels.com/photo/lots-of-bunny-ears-cacti-in-pots-18468949/">Source</a></figcaption>
@@ -68,7 +74,7 @@
                 </div>
             </article>
 
-            <article class="cactus-card">
+            <article class="cactus-card" id="old-lady">
                 <figure>
                     <img src="images/cacti-old-lady.jpg" alt="Old Lady">
                     <figcaption>M. hahniana. <a href="https://www.pexels.com/photo/blooming-cactus-in-pot-16667048/">Source</a></figcaption>
@@ -80,7 +86,7 @@
                 </div>
             </article>
 
-            <article class="cactus-card">
+            <article class="cactus-card" id="princess-of-night">
                 <figure>
                     <img src="images/cacti-princess-of-the-night.jpg" alt="Princess of the Night">
                     <figcaption>C. jamacaru. <a href="https://www.pexels.com/photo/blooming-cactus-at-sunset-in-brazilian-countryside-36769813/">Source</a></figcaption>
@@ -92,7 +98,7 @@
                 </div>
             </article>
 
-            <article class="cactus-card">
+            <article class="cactus-card" id="prickly-pear">
                 <figure>
                     <img src="images/cacti-prickly-pear.jpg" alt="Prickly Pear">
                     <figcaption>O. ficus-indica. <a href="https://unsplash.com/photos/cactus-plants-Npfkyf94cik">Source</a></figcaption>
@@ -104,10 +110,10 @@
                 </div>
             </article>
             
-            <article class="cactus-card">
+            <article class="cactus-card" id="cardon">
                 <figure>
                     <img src="images/cacti-cardon-cactus.jpg" alt="Cardon">
-                    <figcaption> P. pringlei. <a href="https://unsplash.com/photos/green-cactus-under-blue-sky-at-daytime-a_YGMhAa0e0">Source</a></figcaption>
+                    <figcaption>P. pringlei. <a href="https://unsplash.com/photos/green-cactus-under-blue-sky-at-daytime-a_YGMhAa0e0">Source</a></figcaption>
                 </figure>
                 <div class="card-content">
                     <h3>Cardon</h3>

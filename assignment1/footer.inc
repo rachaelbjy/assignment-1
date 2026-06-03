@@ -12,7 +12,8 @@ echo "
                 <ul>
                     <li><a href='enquiry.php'>Enquiry</a></li>
                     <li><a href='profile.php'>Our Profile</a></li>
-                    <li><a href='enhancement1.php'>Enhancements</a></li>
+                    <li><a href='enhancement1.php'>Enhancement 1</a></li>
+                    <li><a href='enhancement2.php'>Enhancement 2</a></li>
                 </ul>
             </div>
 

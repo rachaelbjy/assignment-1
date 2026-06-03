@@ -49,7 +49,7 @@ unset($_SESSION['login_data']);
                     <div class="form-row">
                         <div class="input-group full-width">
                             <label for="login">Username</label>
-                            <input type="text" id="login" name="login" value="<?php echo $v_login; ?>" maxlength="10" pattern="[A-Za-z]+" title="Maximum 10 alphabetical characters only" placeholder="Enter your username (letters only)" required>
+                            <input type="text" id="login" name="login" value="<?php echo $v_login; ?>" maxlength="10" pattern="[A-Za-z]+" title="Maximum 10 alphabetical characters only" placeholder="Enter your username" required>
                         </div>
                     </div>
 

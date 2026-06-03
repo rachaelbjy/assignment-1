@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- BASIC PAGE METADATA -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Succulent Collection of Cacti-Succulent Kuching">
@@ -9,7 +10,8 @@
     
     <title>Succulents | Cacti-Succulent Kuching</title>
     
-    <link rel="stylesheet" href="styles/style.css">
+    <!-- EXTERNAL STYLESHEETS AND ICONS -->
+    <link rel="stylesheet" href="styles/style.css?v=adminfix3">
     <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,7 +23,7 @@
 <!-- HEADER & NAVIGATION -->
 <?php include 'header.inc'; ?>
 
-    <!-- Enhancement -->
+    <!-- ENHANCEMENT -->
     <div class="cactus-party">
         <span class="c1">🪴</span><span class="c2">🌿</span><span class="c3">🌸</span>
         <span class="c4">🌱</span><span class="c5">🪴</span><span class="c6">🌺</span>
@@ -42,9 +44,12 @@
 
     <main class="content-wrapper">
 
+        <!-- PRODUCT AND SERVICE SEARCH BAR -->
+        <?php include 'product_service_search.inc'; ?>
+
         <!-- PRODUCTS SECTION -->
         <div class="product-grid">
-            <article class="cactus-card">
+            <article class="cactus-card" id="echeveria-lola">
                 <figure>
                     <img src="images/suc-amazing-grace.jpg" alt="Amazing Grace">
                     <figcaption>E. laui. <a href="https://pin.it/7I8cqINrJ">Source</a></figcaption>
@@ -56,7 +61,7 @@
                 </div>
             </article>
 
-            <article class="cactus-card">
+            <article class="cactus-card" id="jade-plant">
                 <figure>
                     <img src="images/suc-jade-plant.jpg" alt="Jade Plant">
                     <figcaption>C. ovata. <a href="https://pin.it/59rRfd60E">Source</a></figcaption>
@@ -68,7 +73,7 @@
                 </div>
             </article>
 
-            <article class="cactus-card">
+            <article class="cactus-card" id="moonstones">
                 <figure>
                     <img src="images/suc-moonstones.jpg" alt="Moonstones">
                     <figcaption>G. amethystinum. <a href="https://pin.it/6gsBKyem5">Source</a></figcaption>
@@ -80,7 +85,7 @@
                 </div>
             </article>
 
-            <article class="cactus-card">
+            <article class="cactus-card" id="aloe-vera">
                 <figure>
                     <img src="images/suc-aloe-vera.jpg" alt="Aloe Vera">
                     <figcaption>A. barbadensis. <a href="https://pin.it/8fKzJ9X2V">Source</a></figcaption>
@@ -92,7 +97,7 @@
                 </div>
             </article>
 
-            <article class="cactus-card">
+            <article class="cactus-card" id="ghosty">
                 <figure>
                     <img src="images/suc-ghosty.jpg" alt="Ghosty">
                     <figcaption>G. paraguayense. <a href="https://pin.it/6LwPxgoLj">Source</a></figcaption>
@@ -104,10 +109,10 @@
                 </div>
             </article>
             
-            <article class="cactus-card">
+            <article class="cactus-card" id="string-of-pearls">
                 <figure>
                     <img src="images/suc-string-of-pearls.jpg" alt="String of Pearls">
-                    <figcaption> S. rowleyanus. <a href="https://pin.it/33ZzdQ2ET">Source</a></figcaption>
+                    <figcaption>S. rowleyanus. <a href="https://pin.it/33ZzdQ2ET">Source</a></figcaption>
                 </figure>
                 <div class="card-content">
                     <h3>String of Pearls</h3>

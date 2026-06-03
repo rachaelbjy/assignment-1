@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- BASIC PAGE METADATA -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Planting Accessories for desert plants">
@@ -9,7 +10,8 @@
     
     <title>Planting Accessories | Cacti-Succulent Kuching</title>
     
-    <link rel="stylesheet" href="styles/style.css">
+    <!-- EXTERNAL STYLESHEETS AND ICONS -->
+    <link rel="stylesheet" href="styles/style.css?v=adminfix3">
     <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,7 +23,7 @@
 <!-- HEADER & NAVIGATION -->
 <?php include 'header.inc'; ?>
 
-    <!-- Enhancement -->
+    <!-- ENHANCEMENT -->
     <div class="cactus-party">
         <span class="c1">✂️</span><span class="c2">🧤</span><span class="c3">🪴</span>
         <span class="c4">💧</span><span class="c5">🪣</span><span class="c6">✂️</span>
@@ -29,7 +31,6 @@
         <span class="c10">🪣</span><span class="c11">✂️</span><span class="c12">🧤</span>
         <span class="c13">🪴</span><span class="c14">💧</span><span class="c15">🪣</span>
     </div>
-
 
     <!-- HERO SECTION -->
     <section class="hero-section hero-accessories">
@@ -42,10 +43,14 @@
     </section>
 
     <main class="content-wrapper">
+
+        <!-- PRODUCT AND SERVICE SEARCH BAR -->
+        <?php include 'product_service_search.inc'; ?>
        
         <!-- PRODUCTS SECTION -->
-       <div class="product-grid">
-            <article class="cactus-card">
+        <div class="product-grid">
+
+            <article class="cactus-card" id="artisan-terracotta">
                 <figure>
                     <img src="images/acc-terracotta-pot.jpg" alt="Terracotta Pot">
                     <figcaption>Breathable Clay. <a href="https://pin.it/2WzknA4F8">Source</a></figcaption>
@@ -61,7 +66,7 @@
                 </div>
             </article>
 
-            <article class="cactus-card">
+            <article class="cactus-card" id="premium-cactus-mix">
                 <figure>
                     <img src="images/acc-cactus-soil.jpg" alt="Cactus Soil Mix">
                     <figcaption>Fast-Draining. <a href="https://pin.it/6YrfMEAHy">Source</a></figcaption>
@@ -77,7 +82,7 @@
                 </div>
             </article>
 
-            <article class="cactus-card">
+            <article class="cactus-card" id="natural-pumice">
                 <figure>
                     <img src="images/acc-pumice-stone.jpg" alt="Pumice Stone">
                     <figcaption>Volcanic Rock. <a href="https://pin.it/1Rx7HkHvh">Source</a></figcaption>
@@ -93,7 +98,7 @@
                 </div>
             </article>
 
-            <article class="cactus-card">
+            <article class="cactus-card" id="long-spout-can">
                 <figure>
                     <img src="images/acc-watering-can.jpg" alt="Watering Can">
                     <figcaption>Stainless Steel. <a href="https://pin.it/2ntpM6Ih4">Source</a></figcaption>
@@ -109,7 +114,7 @@
                 </div>
             </article>
 
-            <article class="cactus-card">
+            <article class="cactus-card" id="planting-tweezers">
                 <figure>
                     <img src="images/acc-tweezers.jpg" alt="Precision Tweezers">
                     <figcaption>Extra Long. <a href="https://pin.it/5SQixT7Jj">Source</a></figcaption>
@@ -125,7 +130,7 @@
                 </div>
             </article>
             
-            <article class="cactus-card">
+            <article class="cactus-card" id="pruning-shears">
                 <figure>
                     <img src="images/acc-pruning-sheers.jpg" alt="Pruning Shears">
                     <figcaption>Carbon Steel. <a href="https://pin.it/5QugjbdMH">Source</a></figcaption>
@@ -141,7 +146,7 @@
                 </div>
             </article>
 
-            <article class="cactus-card">
+            <article class="cactus-card" id="liquid-cactus-food">
                 <figure>
                     <img src="images/acc-liquid-fertilizer.jpg" alt="Liquid Fertilizer">
                     <figcaption>Low-Nitrogen. <a href="https://pin.it/1lPFa10eo">Source</a></figcaption>
@@ -157,7 +162,7 @@
                 </div>
             </article>
 
-            <article class="cactus-card">
+            <article class="cactus-card" id="river-stone-dressing">
                 <figure>
                     <img src="images/acc-top-dressing.jpg" alt="Top Dressing Pebbles">
                     <figcaption>Decorative Stones. <a href="https://pin.it/1O2jrIwtG">Source</a></figcaption>
@@ -173,7 +178,7 @@
                 </div>
             </article>
 
-            <article class="cactus-card">
+            <article class="cactus-card" id="soil-moisture-meter">
                 <figure>
                     <img src="images/acc-moisture-meter.jpg" alt="Moisture Meter">
                     <figcaption>Root-Level Tech. <a href="https://pin.it/4LvlLriA1">Source</a></figcaption>

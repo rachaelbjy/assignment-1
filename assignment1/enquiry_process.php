@@ -65,6 +65,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
     }
 
+    /*
+        Anti-spam enhancement:
+        The same email can submit a maximum of 3 enquiries within 10 minutes.
+        The 4th enquiry within 10 minutes will be blocked.
+    */
+    $spam_sql = "SELECT COUNT(*) AS recent_count 
+                 FROM `enquiry` 
+                 WHERE email = ? 
+                 AND submitted_at >= (NOW() - INTERVAL 10 MINUTE)";
+
+    $spam_stmt = mysqli_prepare($conn, $spam_sql);
+    mysqli_stmt_bind_param($spam_stmt, "s", $email);
+    mysqli_stmt_execute($spam_stmt);
+    $spam_result = mysqli_stmt_get_result($spam_stmt);
+    $spam_row = mysqli_fetch_assoc($spam_result);
+
+    if ($spam_row && $spam_row['recent_count'] >= 3) {
+        mysqli_stmt_close($spam_stmt);
+        mysqli_close($conn);
+        echo "<script>alert('Too many enquiries submitted. Please wait 10 minutes before submitting again.'); window.location.href = 'enquiry.php';</script>";
+        exit();
+    }
+
+    mysqli_stmt_close($spam_stmt);
+
     /* Insert validated enquiry data into enquiry table */
     $sql = "INSERT INTO `enquiry`
             (fname, lname, email, phone, subject, comments)

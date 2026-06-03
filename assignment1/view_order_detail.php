@@ -157,7 +157,6 @@ if (!$row) {
                 <div class="admin-action-buttons">
                     <a href="view_order.php" class="admin-action-link">Back to Orders</a>
                     <a href="admin_dashboard.php" class="admin-action-link">Back to Dashboard</a>
-                    <a href="logout.php" class="admin-action-link">Logout</a>
                 </div>
             </fieldset>
 

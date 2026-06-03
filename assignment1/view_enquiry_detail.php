@@ -149,7 +149,6 @@ $is_registered = !empty($row['username']);
                 <div class="admin-action-buttons">
                     <a href="view_enquiry.php" class="admin-action-link">Back to Enquiries</a>
                     <a href="admin_dashboard.php" class="admin-action-link">Back to Dashboard</a>
-                    <a href="logout.php" class="admin-action-link">Logout</a>
                 </div>
             </fieldset>
 

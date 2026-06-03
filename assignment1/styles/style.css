@@ -8,6 +8,7 @@
 /* ==========================================================================
    01. GLOBAL STYLES & TYPOGRAPHY
    ========================================================================== */
+   
 /* Font Imports */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&display=swap');
@@ -1588,7 +1589,7 @@ table.bio-table td.bio-email-cell {
     color: #ffffff; 
     display: inline-block; 
     border-bottom: 1.3px solid #ffffff; 
-    padding-top: 10px; 
+    padding-top: 26px; 
     padding-bottom: 7px; 
 }
 
@@ -2320,13 +2321,13 @@ body {
     /* Contrast Isolation Blocks */
     html body, 
     html body .home-about, 
-    html body .home-services, 
+    html body .home-video,
     html body .product-knowledge-base {
         background-color: #121212;
     }
 
     html body .home-catalogues, 
-    html body .home-video,
+    html body .home-services, 
     html body .form-main, 
     html body .profile-main {
         background-color: #1a1e1a; 
@@ -2701,20 +2702,49 @@ body {
     html body .enhancement-video {
         box-shadow: 0 10px 30px rgba(0,0,0,0.6); 
     }
+}
 
-    /* Featured Video Section */
-    html body .home-video {
-        padding: 30px 0 60px 0; 
-    }
+/* Featured Video Section */
+.home-video {
+    background-color: #ffffff;
+    padding: 40px 0 80px 0;
+}
 
-    html body .video-wrapper {
-        max-width: 800px; 
-        margin: 0 auto; 
-        border-radius: 12px; 
-        overflow: hidden; 
-        box-shadow: 0 15px 30px rgba(0,0,0,0.1); 
-        border: 4px solid #6D9E51;
-    }
+.video-section-container {
+    text-align: center;
+}
+
+.home-video .section-heading {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.home-video .section-heading h2 {
+    font-size: 2.5rem;
+    color: #6D9E51;
+    margin: 0 0 15px 0;
+}
+
+.home-video .heading-line {
+    width: 60px;
+    height: 3px;
+    background-color: #EB5B26;
+    margin: 0 auto;
+}
+
+.video-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.video-wrapper iframe {
+    display: block;
+    width: 100%;
+    height: 390px;
+    border: 0;
 }
 
 /* ==========================================================================
@@ -2915,4 +2945,1239 @@ body {
 
 .admin-unregistered-row td {
     background-color: #fff8f4;
+}
+
+/* ==========================================================================
+   PRODUCT AND SERVICE SEARCH
+   ========================================================================== */
+
+.site-search-section {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 25px;
+    background-color: #ffffff;
+    border: 2px solid #6D9E51;
+    border-radius: 18px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.site-search-form label {
+    display: block;
+    margin-bottom: 12px;
+    font-family: 'Cinzel', serif;
+    font-weight: bold;
+    color: #EB5B26;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.site-search-row {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.site-search-row input[type="text"] {
+    flex: 1;
+    padding: 13px 15px;
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+}
+
+.site-search-row input[type="text"]:focus {
+    outline: none;
+    border-color: #6D9E51;
+    box-shadow: 0 0 8px rgba(109, 158, 81, 0.25);
+}
+
+.site-search-row input[type="submit"] {
+    padding: 13px 28px;
+    background-color: #6D9E51;
+    color: #ffffff;
+    border: 2px solid #6D9E51;
+    border-radius: 8px;
+    font-family: 'Cinzel', serif;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+}
+
+.site-search-row input[type="submit"]:hover {
+    background-color: #EB5B26;
+    border-color: #EB5B26;
+}
+
+.site-search-results-dropdown {
+    margin-top: 18px;
+    background-color: #f6faf4;
+    border: 1px solid #6D9E51;
+    border-radius: 12px;
+    padding: 18px;
+}
+
+.site-search-result-title {
+    margin: 0 0 12px 0;
+    font-weight: bold;
+    color: #333333;
+    text-align: center;
+}
+
+.site-search-results-dropdown ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.site-search-results-dropdown li {
+    margin-bottom: 10px;
+}
+
+.site-search-results-dropdown li:last-child {
+    margin-bottom: 0;
+}
+
+.site-search-results-dropdown a {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 12px 16px;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+    color: #333333;
+    text-decoration: none;
+    transition: all 0.3s ease-out;
+}
+
+.site-search-results-dropdown a:hover {
+    background-color: #6D9E51;
+    color: #ffffff;
+    border-color: #6D9E51;
+    transform: translateY(-2px);
+}
+
+.site-search-name {
+    font-weight: bold;
+}
+
+.site-search-category {
+    font-size: 0.9rem;
+    color: #EB5B26;
+    font-weight: bold;
+}
+
+.site-search-results-dropdown a:hover .site-search-category {
+    color: #ffffff;
+}
+
+.site-search-empty {
+    text-align: center;
+    color: #EB5B26;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* Highlight the selected product/service after clicking a search result */
+.cactus-card:target,
+.service-row:target,
+.pricing-card:target {
+    scroll-margin-top: 120px;
+    border: 3px solid #EB5B26;
+    box-shadow: 0 0 20px rgba(235, 91, 38, 0.25);
+}
+
+/* Responsive search bar */
+@media (max-width: 700px) {
+    .site-search-row {
+        flex-direction: column;
+    }
+
+    .site-search-row input[type="text"],
+    .site-search-row input[type="submit"] {
+        width: 100%;
+    }
+
+    .site-search-results-dropdown a {
+        flex-direction: column;
+        gap: 5px;
+    }
+}
+
+/* ==========================================================================
+   ADMIN FILTER AND SEARCH FORM
+   ========================================================================== */
+
+/* Clean admin record fieldsets for users, orders and enquiries */
+.admin-page .admin-record-fieldset,
+.view-register-page .admin-user-fieldset {
+    width: 100%;
+    max-width: 100%;
+    border: 2px solid #6D9E51;
+    border-radius: 12px;
+    background-color: #fdfdfd;
+    padding: 34px 40px 32px 40px;
+    margin: 0 0 22px 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+/* Short fieldset legends */
+.admin-page .admin-record-fieldset legend,
+.view-register-page .admin-user-fieldset legend {
+    font-size: 1.8rem;
+    color: #EB5B26;
+    font-weight: 900;
+    padding: 0 15px;
+    margin-left: 20px;
+    max-width: 100%;
+    white-space: nowrap;
+    line-height: 1.2;
+}
+
+/* Apply and Clear button area */
+.admin-filter-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+    margin: -4px 0 48px 0;
+}
+
+/* Apply button: solid green */
+.admin-filter-actions input[type="submit"] {
+    display: inline-block;
+    width: 120px;
+    min-width: 120px;
+    max-width: 120px;
+    padding: 10px 0;
+    font-size: 0.92rem;
+    line-height: 1.2;
+    text-align: center;
+    background-color: #6D9E51;
+    color: #ffffff;
+    border: 2px solid #6D9E51;
+    border-radius: 8px;
+    font-family: 'Cinzel', serif;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+    box-sizing: border-box;
+}
+
+.admin-filter-actions input[type="submit"]:hover {
+    background-color: #EB5B26;
+    border-color: #EB5B26;
+    color: #ffffff;
+}
+
+/* Clear button: same size as Apply, outline by default */
+.admin-filter-actions .admin-action-link {
+    display: inline-block;
+    width: 120px;
+    min-width: 120px;
+    max-width: 120px;
+    padding: 10px 0;
+    font-size: 0.92rem;
+    line-height: 1.2;
+    text-align: center;
+    background-color: transparent;
+    color: #6D9E51;
+    border: 2px solid #6D9E51;
+    border-radius: 8px;
+    font-family: 'Cinzel', serif;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease-out;
+    box-sizing: border-box;
+}
+
+.admin-filter-actions .admin-action-link:hover {
+    background-color: #EB5B26;
+    border-color: #EB5B26;
+    color: #ffffff;
+}
+
+/* Total count area: farther from Apply/Clear, but closer to table */
+.admin-list-toolbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin: 0 0 12px 0;
+    flex-wrap: wrap;
+}
+
+.admin-list-toolbar p {
+    margin: 0;
+    font-weight: bold;
+    text-align: center;
+}
+
+.admin-list-toolbar .admin-action-buttons {
+    margin: 0;
+}
+
+/* Add New User button on View Registrations and Users page */
+.admin-list-toolbar .admin-action-link {
+    display: inline-block;
+    width: auto;
+    min-width: 145px;
+    padding: 10px 20px;
+    font-size: 0.92rem;
+    line-height: 1.2;
+    text-align: center;
+    background-color: #6D9E51;
+    color: #ffffff;
+    border: 2px solid #6D9E51;
+    border-radius: 8px;
+    font-family: 'Cinzel', serif;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease-out;
+    box-sizing: border-box;
+}
+
+.admin-list-toolbar .admin-action-link:hover {
+    background-color: #EB5B26;
+    border-color: #EB5B26;
+    color: #ffffff;
+}
+
+/* Keep admin tables inside the fieldset */
+.admin-record-fieldset .admin-table-wrapper,
+.admin-user-fieldset .admin-table-wrapper {
+    width: 100%;
+    max-width: 100%;
+    margin: 12px auto 20px auto;
+    overflow-x: auto;
+}
+
+/* Bottom Back to Dashboard / Logout buttons: balanced space */
+.admin-record-fieldset > .admin-action-buttons,
+.admin-user-fieldset > .admin-action-buttons {
+    margin: 26px auto 16px auto;
+}
+
+/* Admin record page form card spacing */
+.view-register-page .form-card,
+.view-order-page .form-card,
+.view-enquiry-page .form-card {
+    padding-bottom: 26px;
+}
+
+/* Mobile layout */
+@media (max-width: 700px) {
+    .admin-filter-actions {
+        flex-direction: column;
+        margin: 0 0 42px 0;
+    }
+
+    .admin-filter-actions input[type="submit"],
+    .admin-filter-actions .admin-action-link {
+        width: 100%;
+        max-width: 220px;
+    }
+
+    .admin-page .admin-record-fieldset,
+    .view-register-page .admin-user-fieldset {
+        padding: 30px 20px 28px 20px;
+    }
+}
+
+/* ==========================================================================
+   ADMIN DASHBOARD LAYOUT
+   ========================================================================== */
+
+/* Admin Dashboard page */
+.admin-dashboard-page .form-card {
+    padding-top: 54px;
+    padding-bottom: 65px;
+}
+
+/* Dashboard fieldboxes */
+.admin-dashboard-page .admin-dashboard-fieldset {
+    padding: 15px 38px;
+    margin: 0 0 55px 0;
+    border: 2px solid #6D9E51;
+    border-radius: 12px;
+    background-color: #fdfdfd;
+    box-sizing: border-box;
+}
+
+/* Last dashboard fieldbox */
+.admin-dashboard-page .admin-dashboard-fieldset:last-child {
+    margin-bottom: 5px;
+}
+
+/* Dashboard fieldbox title */
+.admin-dashboard-page .admin-dashboard-fieldset legend {
+    font-size: 1.8rem;
+    color: #EB5B26;
+    font-weight: 900;
+    padding: 0 15px;
+    margin-left: 20px;
+    line-height: 1.2;
+}
+
+/* Dashboard tables */
+.admin-dashboard-page .admin-table-wrapper {
+    margin: 18px auto 40px auto;
+}
+
+/* Last table inside each fieldbox */
+.admin-dashboard-page .admin-dashboard-fieldset .admin-table-wrapper:last-child {
+    margin-bottom: 20px;
+}
+
+/* Overview and status tables */
+.admin-dashboard-page .dashboard-overview-table,
+.admin-dashboard-page .dashboard-status-table {
+    max-width: 880px;
+}
+
+/* Management panel spacing inside its fieldbox */
+.admin-dashboard-page .admin-dashboard-menu {
+    width: 100%;
+    max-width: 330px;
+    margin: 18px auto 12px auto;
+    text-align: center;
+}
+
+/* Dashboard menu buttons */
+.admin-dashboard-page .admin-dashboard-menu .admin-menu-link {
+    display: block;
+    width: 100%;
+    background-color: #6D9E51;
+    color: #ffffff;
+    border: 2px solid #6D9E51;
+    border-radius: 8px;
+    text-decoration: none;
+    text-align: center;
+    font-family: 'Cinzel', serif;
+    font-weight: bold;
+    padding: 14px 20px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+    transition: all 0.3s ease-out;
+}
+
+.admin-dashboard-page .admin-dashboard-menu .admin-menu-link:hover {
+    background-color: #EB5B26;
+    border-color: #EB5B26;
+    color: #ffffff;
+    box-shadow: 0 8px 20px rgba(235, 91, 38, 0.2);
+    transform: translateY(-3px);
+}
+
+.admin-dashboard-page .admin-dashboard-menu .admin-menu-link:last-child {
+    margin-bottom: 0;
+}
+
+/* ==========================================================================
+   16. RESPONSIVE AND DARK MODE SUPPORT
+   ========================================================================== */
+
+/* Featured video section */
+.home-video {
+    background-color: #ffffff;
+    padding: 40px 0 80px 0;
+}
+
+.video-section-container {
+    text-align: center;
+}
+
+.home-video .section-heading {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.home-video .section-heading h2 {
+    font-size: 2.5rem;
+    color: #6D9E51;
+    margin: 0 0 15px 0;
+}
+
+.home-video .heading-line {
+    width: 60px;
+    height: 3px;
+    background-color: #EB5B26;
+    margin: 0 auto;
+}
+
+.video-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.video-wrapper iframe {
+    display: block;
+    width: 100%;
+    height: 390px;
+    border: 0;
+}
+
+/* Medium screen layout */
+@media (max-width: 1200px) {
+    .content-wrapper,
+    .home-container,
+    .header-container,
+    .footer-grid {
+        max-width: 100%;
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+    .catalogues-grid,
+    .services-grid {
+        gap: 35px;
+    }
+
+    .product-grid {
+        gap: 70px 45px;
+    }
+}
+
+/* Tablet layout */
+@media (max-width: 992px) {
+    .header-container {
+        flex-direction: column;
+        gap: 15px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .main-nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 18px;
+        padding: 0;
+    }
+
+    .dropdown-content {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .global-hero-graphic {
+        padding-bottom: 120px;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .hero-content-box {
+        width: 100%;
+        margin-left: 0;
+        transform: translateY(55px);
+        text-align: center;
+    }
+
+    .hero-content-box h1 {
+        text-align: center;
+        font-size: 3.2rem;
+    }
+
+    .hero-content-box p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-stats {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .catalogues-grid,
+    .services-grid,
+    .product-grid,
+    .pricing-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-wrapper {
+        flex-direction: column;
+        transform: none;
+        text-align: center;
+    }
+
+    .about-visual,
+    .about-content {
+        width: 100%;
+    }
+
+    .service-layout-wrapper .services-list,
+    .product-main-content {
+        width: 100%;
+        float: none;
+    }
+
+    .product-aside,
+    .service-aside {
+        width: 100%;
+        float: none;
+        margin: 30px 0;
+    }
+
+    .service-row,
+    .service-row.reverse {
+        flex-direction: column;
+    }
+
+    .service-row figure,
+    .service-text {
+        width: 100%;
+    }
+
+    .pricing-grid .luxury-card,
+    .pricing-grid .luxury-card:hover {
+        transform: none;
+    }
+
+    .admin-summary-table,
+    .admin-detail-table {
+        min-width: 650px;
+    }
+}
+
+/* Mobile layout */
+@media (max-width: 700px) {
+    body {
+        font-size: 100%;
+    }
+
+    h1,
+    body .hero-content-box h1 {
+        font-size: 2.4rem;
+        white-space: normal;
+    }
+
+    .hero-section {
+        height: auto;
+        min-height: 360px;
+        padding: 70px 20px;
+    }
+
+    .hero-section h1 {
+        white-space: normal;
+        font-size: 2.3rem;
+    }
+
+    .catalogues-grid,
+    .services-grid,
+    .product-grid,
+    .pricing-grid,
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .img-wrapper {
+        height: 280px;
+    }
+
+    .hero-stats {
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .stat-divider {
+        display: none;
+    }
+
+    .form-main {
+        padding: 40px 14px;
+    }
+
+    .form-header {
+        padding: 26px 18px;
+    }
+
+    .form-header h1 {
+        font-size: 2rem;
+    }
+
+    .form-card {
+        padding: 28px 18px;
+    }
+
+    .form-card fieldset {
+        padding: 24px 18px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        row-gap: 24px;
+    }
+
+    .button-group,
+    .admin-action-buttons,
+    .admin-filter-actions {
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .button-group input[type="submit"],
+    .button-group input[type="reset"],
+    .admin-action-link,
+    .admin-filter-actions input[type="submit"],
+    .admin-filter-actions .admin-action-link {
+        width: 100%;
+        max-width: 260px;
+    }
+
+    .admin-page .admin-record-fieldset,
+    .view-register-page .admin-user-fieldset,
+    .admin-dashboard-page .admin-dashboard-fieldset {
+        padding: 26px 18px;
+    }
+
+    .admin-table-wrapper {
+        overflow-x: auto;
+    }
+
+    .admin-summary-table,
+    .admin-detail-table {
+        min-width: 650px;
+    }
+
+    .site-search-section {
+        margin: 24px 14px;
+        padding: 22px 18px;
+    }
+
+    .site-search-row {
+        flex-direction: column;
+    }
+
+    .site-search-row input[type="text"],
+    .site-search-row input[type="submit"] {
+        width: 100%;
+    }
+
+    .site-search-results-dropdown a {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .home-video {
+        padding: 35px 0 70px 0;
+    }
+
+    .video-wrapper {
+        max-width: 92%;
+    }
+
+    .video-wrapper iframe {
+        height: 260px;
+    }
+
+    .enhancement-figure,
+    .enhancement-text {
+        width: 92%;
+    }
+}
+
+/* Small mobile layout */
+@media (max-width: 480px) {
+    .brand-name {
+        font-size: 1rem;
+    }
+
+    .site-logo {
+        height: 52px;
+    }
+
+    .main-nav ul {
+        gap: 10px;
+    }
+
+    .main-nav a {
+        font-size: 13px;
+    }
+
+    .hero-content-box h1 {
+        font-size: 2rem;
+    }
+
+    .section-heading h2,
+    .home-video .section-heading h2 {
+        font-size: 2rem;
+    }
+
+    .video-wrapper iframe {
+        height: 220px;
+    }
+
+    .back-to-top {
+        width: 42px;
+        height: 42px;
+        line-height: 42px;
+        right: 18px;
+        bottom: 18px;
+    }
+}
+
+/* Dark mode for recent sections */
+@media (prefers-color-scheme: dark) {
+    html body .home-video {
+        background-color: #121212;
+    }
+
+    html body .video-wrapper {
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+
+    html body .site-search-section {
+        background-color: #1e1e1e;
+        border-color: #6D9E51;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    }
+
+    html body .site-search-row input[type="text"] {
+        background-color: #2a2a2a;
+        color: #ffffff;
+        border-color: #444444;
+    }
+
+    html body .site-search-results-dropdown {
+        background-color: #1a1e1a;
+        border-color: #6D9E51;
+    }
+
+    html body .site-search-result-title {
+        color: #ffffff;
+    }
+
+    html body .site-search-results-dropdown a {
+        background-color: #2a2a2a;
+        border-color: #444444;
+        color: #ffffff;
+    }
+
+    html body .site-search-results-dropdown a:hover {
+        background-color: #6D9E51;
+        border-color: #6D9E51;
+        color: #ffffff;
+    }
+
+    html body .admin-summary-table,
+    html body .admin-detail-table {
+        background-color: #1e1e1e;
+    }
+
+    html body .admin-summary-table td,
+    html body .admin-detail-table td {
+        background-color: #1e1e1e;
+        color: #ffffff;
+        border-color: #333333;
+    }
+
+    html body .admin-summary-table tr:nth-child(even) td,
+    html body .admin-detail-table th {
+        background-color: #2a2a2a;
+        color: #ffffff;
+        border-color: #333333;
+    }
+
+    html body .admin-record-fieldset,
+    html body .admin-user-fieldset,
+    html body .admin-dashboard-fieldset {
+        background-color: #1e1e1e;
+        border-color: #6D9E51;
+    }
+
+    html body .admin-list-toolbar p {
+        color: #ffffff;
+    }
+
+    html body .admin-status-registered {
+        background-color: #1f331f;
+        color: #9bd37d;
+        border-color: #6D9E51;
+    }
+
+    html body .admin-status-unregistered {
+        background-color: #3a241b;
+        color: #ff9a6b;
+        border-color: #EB5B26;
+    }
+
+    html body .admin-unregistered-row td {
+        background-color: #2a211c;
+    }
+
+    html body .code-box {
+        background-color: #111111;
+        color: #e0e0e0;
+        border-left-color: #EB5B26;
+    }
+}
+
+/* ==========================================================================
+   ADMIN DASHBOARD DARK MODE
+   ========================================================================== */
+
+@media (prefers-color-scheme: dark) {
+    html body.admin-dashboard-page .form-card {
+        background-color: #1e1e1e;
+        box-shadow: 0 25px 50px rgba(0,0,0,0.5), 0 5px 15px rgba(0,0,0,0.3);
+    }
+
+    html body.admin-dashboard-page .admin-dashboard-fieldset {
+        background-color: #1e1e1e;
+        border-color: #6D9E51;
+    }
+
+    html body.admin-dashboard-page .admin-dashboard-fieldset legend {
+        color: #EB5B26;
+    }
+
+    html body.admin-dashboard-page .admin-summary-table {
+        background-color: #1e1e1e;
+    }
+
+    html body.admin-dashboard-page .admin-summary-table th {
+        background-color: #6D9E51;
+        color: #ffffff;
+        border-color: #6D9E51;
+    }
+
+    html body.admin-dashboard-page .admin-summary-table td {
+        background-color: #1e1e1e;
+        color: #ffffff;
+        border-color: #333333;
+    }
+
+    html body.admin-dashboard-page .admin-summary-table tr:nth-child(even) td {
+        background-color: #2a2a2a;
+    }
+
+    html body.admin-dashboard-page .admin-dashboard-menu .admin-menu-link {
+        background-color: #6D9E51;
+        color: #ffffff;
+        border-color: #6D9E51;
+    }
+
+    html body.admin-dashboard-page .admin-dashboard-menu .admin-menu-link:hover {
+        background-color: #EB5B26;
+        border-color: #EB5B26;
+        color: #ffffff;
+    }
+}
+
+/* ==========================================================================
+   ADMIN DARK MODE
+   ========================================================================== */
+
+@media (prefers-color-scheme: dark) {
+
+    /* Admin page background and main cards */
+    html body.admin-page,
+    html body.admin-dashboard-page,
+    html body.view-register-page,
+    html body.view-order-page,
+    html body.view-enquiry-page {
+        background-color: #121212;
+        color: #ffffff;
+    }
+
+    html body.admin-page .form-main,
+    html body.admin-dashboard-page .form-main,
+    html body.view-register-page .form-main,
+    html body.view-order-page .form-main,
+    html body.view-enquiry-page .form-main {
+        background-color: #121212;
+        color: #ffffff;
+    }
+
+    html body.admin-page .form-card,
+    html body.admin-dashboard-page .form-card,
+    html body.view-register-page .form-card,
+    html body.view-order-page .form-card,
+    html body.view-enquiry-page .form-card {
+        background-color: #1e1e1e;
+        color: #ffffff;
+        box-shadow: 0 25px 50px rgba(0,0,0,0.5), 0 5px 15px rgba(0,0,0,0.3);
+    }
+
+    /* Admin fieldsets */
+    html body.admin-page .admin-record-fieldset,
+    html body.view-register-page .admin-user-fieldset,
+    html body.admin-dashboard-page .admin-dashboard-fieldset,
+    html body.admin-page .form-card fieldset,
+    html body.admin-dashboard-page .form-card fieldset,
+    html body.view-register-page .form-card fieldset,
+    html body.view-order-page .form-card fieldset,
+    html body.view-enquiry-page .form-card fieldset {
+        background-color: #1e1e1e;
+        border-color: #6D9E51;
+        color: #ffffff;
+    }
+
+    html body.admin-page .admin-record-fieldset legend,
+    html body.view-register-page .admin-user-fieldset legend,
+    html body.admin-dashboard-page .admin-dashboard-fieldset legend,
+    html body.admin-page .form-card legend,
+    html body.admin-dashboard-page .form-card legend,
+    html body.view-register-page .form-card legend,
+    html body.view-order-page .form-card legend,
+    html body.view-enquiry-page .form-card legend {
+        color: #EB5B26;
+    }
+
+    /* Admin text */
+    html body.admin-page .form-card p,
+    html body.admin-dashboard-page .form-card p,
+    html body.view-register-page .form-card p,
+    html body.view-order-page .form-card p,
+    html body.view-enquiry-page .form-card p,
+    html body.admin-page .admin-list-toolbar p,
+    html body.view-register-page .admin-list-toolbar p,
+    html body.view-order-page .admin-list-toolbar p,
+    html body.view-enquiry-page .admin-list-toolbar p {
+        color: #ffffff;
+    }
+
+    /* Admin labels and form controls */
+    html body.admin-page .form-card label,
+    html body.admin-dashboard-page .form-card label,
+    html body.view-register-page .form-card label,
+    html body.view-order-page .form-card label,
+    html body.view-enquiry-page .form-card label {
+        color: #ffffff;
+    }
+
+    html body.admin-page .form-card input:not([type="submit"]):not([type="reset"]):not([type="radio"]):not([type="checkbox"]),
+    html body.admin-page .form-card select,
+    html body.admin-page .form-card textarea,
+    html body.admin-dashboard-page .form-card input:not([type="submit"]):not([type="reset"]):not([type="radio"]):not([type="checkbox"]),
+    html body.admin-dashboard-page .form-card select,
+    html body.admin-dashboard-page .form-card textarea,
+    html body.view-register-page .form-card input:not([type="submit"]):not([type="reset"]):not([type="radio"]):not([type="checkbox"]),
+    html body.view-register-page .form-card select,
+    html body.view-register-page .form-card textarea,
+    html body.view-order-page .form-card input:not([type="submit"]):not([type="reset"]):not([type="radio"]):not([type="checkbox"]),
+    html body.view-order-page .form-card select,
+    html body.view-order-page .form-card textarea,
+    html body.view-enquiry-page .form-card input:not([type="submit"]):not([type="reset"]):not([type="radio"]):not([type="checkbox"]),
+    html body.view-enquiry-page .form-card select,
+    html body.view-enquiry-page .form-card textarea {
+        background-color: #2a2a2a;
+        color: #ffffff;
+        border-color: #444444;
+    }
+
+    html body.admin-page .form-card input:focus,
+    html body.admin-page .form-card select:focus,
+    html body.admin-page .form-card textarea:focus,
+    html body.admin-dashboard-page .form-card input:focus,
+    html body.admin-dashboard-page .form-card select:focus,
+    html body.admin-dashboard-page .form-card textarea:focus,
+    html body.view-register-page .form-card input:focus,
+    html body.view-register-page .form-card select:focus,
+    html body.view-register-page .form-card textarea:focus,
+    html body.view-order-page .form-card input:focus,
+    html body.view-order-page .form-card select:focus,
+    html body.view-order-page .form-card textarea:focus,
+    html body.view-enquiry-page .form-card input:focus,
+    html body.view-enquiry-page .form-card select:focus,
+    html body.view-enquiry-page .form-card textarea:focus {
+        border-color: #6D9E51;
+        outline: none;
+    }
+
+    /* Admin summary and detail tables */
+    html body.admin-page .admin-summary-table,
+    html body.admin-page .admin-detail-table,
+    html body.admin-dashboard-page .admin-summary-table,
+    html body.admin-dashboard-page .admin-detail-table,
+    html body.view-register-page .admin-summary-table,
+    html body.view-register-page .admin-detail-table,
+    html body.view-order-page .admin-summary-table,
+    html body.view-order-page .admin-detail-table,
+    html body.view-enquiry-page .admin-summary-table,
+    html body.view-enquiry-page .admin-detail-table {
+        background-color: #1e1e1e;
+        color: #ffffff;
+    }
+
+    html body.admin-page .admin-summary-table th,
+    html body.admin-page .admin-detail-table .admin-section-row th,
+    html body.admin-dashboard-page .admin-summary-table th,
+    html body.admin-dashboard-page .admin-detail-table .admin-section-row th,
+    html body.view-register-page .admin-summary-table th,
+    html body.view-register-page .admin-detail-table .admin-section-row th,
+    html body.view-order-page .admin-summary-table th,
+    html body.view-order-page .admin-detail-table .admin-section-row th,
+    html body.view-enquiry-page .admin-summary-table th,
+    html body.view-enquiry-page .admin-detail-table .admin-section-row th {
+        background-color: #6D9E51;
+        color: #ffffff;
+        border-color: #6D9E51;
+    }
+
+    html body.admin-page .admin-summary-table td,
+    html body.admin-page .admin-detail-table td,
+    html body.admin-dashboard-page .admin-summary-table td,
+    html body.admin-dashboard-page .admin-detail-table td,
+    html body.view-register-page .admin-summary-table td,
+    html body.view-register-page .admin-detail-table td,
+    html body.view-order-page .admin-summary-table td,
+    html body.view-order-page .admin-detail-table td,
+    html body.view-enquiry-page .admin-summary-table td,
+    html body.view-enquiry-page .admin-detail-table td {
+        background-color: #1e1e1e;
+        color: #ffffff;
+        border-color: #333333;
+    }
+
+    html body.admin-page .admin-summary-table tr:nth-child(even) td,
+    html body.admin-dashboard-page .admin-summary-table tr:nth-child(even) td,
+    html body.view-register-page .admin-summary-table tr:nth-child(even) td,
+    html body.view-order-page .admin-summary-table tr:nth-child(even) td,
+    html body.view-enquiry-page .admin-summary-table tr:nth-child(even) td {
+        background-color: #2a2a2a;
+    }
+
+    html body.admin-page .admin-detail-table th,
+    html body.admin-dashboard-page .admin-detail-table th,
+    html body.view-register-page .admin-detail-table th,
+    html body.view-order-page .admin-detail-table th,
+    html body.view-enquiry-page .admin-detail-table th {
+        background-color: #2a2a2a;
+        color: #ffffff;
+        border-color: #333333;
+    }
+
+    /* Admin action buttons */
+    html body.admin-page .admin-view-btn,
+    html body.admin-page .admin-action-link,
+    html body.admin-page .admin-dashboard-menu .admin-menu-link,
+    html body.admin-dashboard-page .admin-view-btn,
+    html body.admin-dashboard-page .admin-action-link,
+    html body.admin-dashboard-page .admin-dashboard-menu .admin-menu-link,
+    html body.view-register-page .admin-view-btn,
+    html body.view-register-page .admin-action-link,
+    html body.view-order-page .admin-view-btn,
+    html body.view-order-page .admin-action-link,
+    html body.view-enquiry-page .admin-view-btn,
+    html body.view-enquiry-page .admin-action-link {
+        background-color: #6D9E51;
+        color: #ffffff;
+        border-color: #6D9E51;
+    }
+
+    html body.admin-page .admin-view-btn:hover,
+    html body.admin-page .admin-action-link:hover,
+    html body.admin-page .admin-dashboard-menu .admin-menu-link:hover,
+    html body.admin-dashboard-page .admin-view-btn:hover,
+    html body.admin-dashboard-page .admin-action-link:hover,
+    html body.admin-dashboard-page .admin-dashboard-menu .admin-menu-link:hover,
+    html body.view-register-page .admin-view-btn:hover,
+    html body.view-register-page .admin-action-link:hover,
+    html body.view-order-page .admin-view-btn:hover,
+    html body.view-order-page .admin-action-link:hover,
+    html body.view-enquiry-page .admin-view-btn:hover,
+    html body.view-enquiry-page .admin-action-link:hover {
+        background-color: #EB5B26;
+        color: #ffffff;
+        border-color: #EB5B26;
+    }
+
+    /* Admin filter buttons */
+    html body.admin-page .admin-filter-actions input[type="submit"],
+    html body.view-register-page .admin-filter-actions input[type="submit"],
+    html body.view-order-page .admin-filter-actions input[type="submit"],
+    html body.view-enquiry-page .admin-filter-actions input[type="submit"] {
+        background-color: #6D9E51;
+        color: #ffffff;
+        border-color: #6D9E51;
+    }
+
+    html body.admin-page .admin-filter-actions input[type="submit"]:hover,
+    html body.view-register-page .admin-filter-actions input[type="submit"]:hover,
+    html body.view-order-page .admin-filter-actions input[type="submit"]:hover,
+    html body.view-enquiry-page .admin-filter-actions input[type="submit"]:hover {
+        background-color: #EB5B26;
+        color: #ffffff;
+        border-color: #EB5B26;
+    }
+
+    html body.admin-page .admin-filter-actions .admin-action-link,
+    html body.view-register-page .admin-filter-actions .admin-action-link,
+    html body.view-order-page .admin-filter-actions .admin-action-link,
+    html body.view-enquiry-page .admin-filter-actions .admin-action-link {
+        background-color: transparent;
+        color: #9bd37d;
+        border-color: #6D9E51;
+    }
+
+    html body.admin-page .admin-filter-actions .admin-action-link:hover,
+    html body.view-register-page .admin-filter-actions .admin-action-link:hover,
+    html body.view-order-page .admin-filter-actions .admin-action-link:hover,
+    html body.view-enquiry-page .admin-filter-actions .admin-action-link:hover {
+        background-color: #EB5B26;
+        color: #ffffff;
+        border-color: #EB5B26;
+    }
+
+    /* Admin status badges */
+    html body.admin-page .admin-status-registered,
+    html body.view-register-page .admin-status-registered,
+    html body.view-order-page .admin-status-registered,
+    html body.view-enquiry-page .admin-status-registered {
+        background-color: #1f331f;
+        color: #9bd37d;
+        border-color: #6D9E51;
+    }
+
+    html body.admin-page .admin-status-unregistered,
+    html body.view-register-page .admin-status-unregistered,
+    html body.view-order-page .admin-status-unregistered,
+    html body.view-enquiry-page .admin-status-unregistered {
+        background-color: #3a241b;
+        color: #ff9a6b;
+        border-color: #EB5B26;
+    }
+
+    html body.admin-page .admin-unregistered-row td,
+    html body.view-register-page .admin-unregistered-row td,
+    html body.view-order-page .admin-unregistered-row td,
+    html body.view-enquiry-page .admin-unregistered-row td {
+        background-color: #2a211c;
+    }
+}
+
+/* ==========================================================================
+   ADMIN SUMMARY TABLE ROW COLOURS
+   ========================================================================== */
+
+.view-register-page .admin-summary-table tr:nth-child(odd) td,
+.view-order-page .admin-summary-table tr:nth-child(odd) td,
+.view-enquiry-page .admin-summary-table tr:nth-child(odd) td {
+    background-color: #ffffff;
+}
+
+.view-register-page .admin-summary-table tr:nth-child(even) td,
+.view-order-page .admin-summary-table tr:nth-child(even) td,
+.view-enquiry-page .admin-summary-table tr:nth-child(even) td {
+    background-color: #f6faf4;
+}
+
+@media (prefers-color-scheme: dark) {
+    html body.view-register-page .admin-summary-table tr:nth-child(odd) td,
+    html body.view-order-page .admin-summary-table tr:nth-child(odd) td,
+    html body.view-enquiry-page .admin-summary-table tr:nth-child(odd) td {
+        background-color: #1e1e1e;
+    }
+
+    html body.view-register-page .admin-summary-table tr:nth-child(even) td,
+    html body.view-order-page .admin-summary-table tr:nth-child(even) td,
+    html body.view-enquiry-page .admin-summary-table tr:nth-child(even) td {
+        background-color: #2a2a2a;
+    }
 }

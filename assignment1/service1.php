@@ -9,7 +9,7 @@
     
     <title>Services | Cacti-Succulent Kuching</title>
 
-    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/style.css?v=adminfix3">
     <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -42,6 +42,9 @@
 
     <!-- SERVICES MAIN CONTENT SECTION -->
     <main class="content-wrapper">
+
+        <!-- PRODUCT AND SERVICE SEARCH BAR -->
+        <?php include 'product_service_search.inc'; ?>
         
         <!-- SERVICES CONTENT LAYOUT -->
         <div class="service-layout-wrapper">
@@ -95,7 +98,7 @@
             <div class="services-list">
                 
                 <!-- SERVICE 1: PLANT HOSPITAL -->
-                <article class="service-row">
+                <article class="service-row" id="plant-hospital">
                     <figure>
                         <img src="images/repotting.jpg" alt="Plant Hospital Repotting">
                         <figcaption>Professional Repotting <a href="https://pin.it/6zDtNyDIg">Source</a></figcaption>
@@ -113,7 +116,7 @@
                 </article>
 
                 <!-- SERVICE 2: CUSTOM TERRARIUMS -->
-                <article class="service-row reverse">
+                <article class="service-row reverse" id="custom-terrariums">
                     <figure>
                         <img src="images/terrarium.jpg" alt="Custom Terrariums">
                         <figcaption>Custom Terrariums <a href="https://pin.it/3B9oUqJFv">Source</a></figcaption>
@@ -131,7 +134,7 @@
                 </article>
 
                 <!-- SERVICE 3: TERRARIUM WORKSHOP -->
-                <article class="service-row">
+                <article class="service-row" id="terrarium-workshop">
                     <figure>
                         <img src="images/workshop.jpg" alt="Hands-on Terrarium Workshop in Kuching">
                         <figcaption>Terrarium Workshop <a href="https://pin.it/adKGgj00G">Source</a></figcaption>
@@ -149,7 +152,7 @@
                 </article>
 
                 <!-- SERVICE 4: PLANT BOARDING -->
-                <article class="service-row reverse">
+                <article class="service-row reverse" id="plant-boarding">
                     <figure>
                         <img src="images/boarding.jpg" alt="Plant Boarding Service">
                         <figcaption>Plant Boarding <a href="https://www.freepik.com/free-photo/asian-gardener-woman-wearing-face-mask-apron-holding-spray-watering-green-houseplant-hand_18684843.htm#fromView=search&page=4&position=2&uuid=4ffb5aa7-11a7-43fb-ae83-270c07284659&query=Plant+nursery+service">Source</a></figcaption>
@@ -180,7 +183,7 @@
             <div class="pricing-grid">
 
                 <!-- STANDARD PACKAGE CARD -->
-                <div class="pricing-card">
+                <div class="pricing-card" id="standard-package">
                     <h4>Standard Package</h4>
                     <p class="tier-price">RM 8.00 <span>/ plant</span></p>
                     <ul>
@@ -193,7 +196,7 @@
                 </div>
 
                 <!-- LUXURY PACKAGE CARD -->
-                <div class="pricing-card luxury-card">
+                <div class="pricing-card luxury-card" id="luxury-package">
                     <h4>Luxury Package</h4>
                     <p class="tier-price">RM 25.00 <span>/ plant</span></p>
                     <ul>
@@ -207,7 +210,7 @@
                 </div>
 
                 <!-- PREMIUM PACKAGE CARD -->
-                <div class="pricing-card">
+                <div class="pricing-card" id="premium-package">
                     <h4>Premium Package</h4>
                     <p class="tier-price">RM 15.00 <span>/ plant</span></p>
                     <ul>

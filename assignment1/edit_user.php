@@ -22,7 +22,7 @@ $id = isset($_GET['id']) ? intval($_GET['id']) : 0;
 
 /* Redirect back if no valid ID is provided */
 if ($id <= 0) {
-    header("Location: manage_users.php");
+    header("Location: view_register.php");
     exit();
 }
 
@@ -38,7 +38,7 @@ $row = mysqli_fetch_assoc($result);
 if (!$row) {
     mysqli_stmt_close($stmt);
     mysqli_close($conn);
-    header("Location: manage_users.php");
+    header("Location: view_register.php");
     exit();
 }
 ?>
@@ -191,7 +191,7 @@ if (!$row) {
 
             <!-- ADMIN NAVIGATION BUTTONS -->
             <div class="admin-action-buttons">
-                <a href="manage_users.php" class="admin-action-link">Back to Manage Users</a>
+                <a href="view_register.php" class="admin-action-link">Back to Users</a>
                 <a href="admin_dashboard.php" class="admin-action-link">Back to Dashboard</a>
             </div>
 

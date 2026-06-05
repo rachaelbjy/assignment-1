@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     /* Redirect back if no valid user ID is submitted */
     if ($id <= 0) {
-        header("Location: manage_users.php");
+        header("Location: view_register.php");
         exit();
     }
 
@@ -107,7 +107,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (mysqli_stmt_execute($update_stmt)) {
         mysqli_stmt_close($update_stmt);
         mysqli_close($conn);
-        echo "<script>alert('User updated successfully.'); window.location.href = 'manage_users.php';</script>";
+        echo "<script>alert('User updated successfully.'); window.location.href = 'view_register.php';</script>";
         exit();
     } else {
         mysqli_stmt_close($update_stmt);
@@ -118,7 +118,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 } else {
     /* Redirect users who access this page directly */
-    header("Location: manage_users.php");
+    header("Location: view_register.php");
     exit();
 }
 ?>

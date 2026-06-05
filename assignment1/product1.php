@@ -11,7 +11,7 @@
     <title>Cacti | Cacti-Succulent Kuching</title>
     
     <!-- EXTERNAL STYLESHEETS AND ICONS -->
-    <link rel="stylesheet" href="styles/style.css?v=adminfix3">
+    <link rel="stylesheet" href="styles/style.css?v=cartproduct1">
     <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -49,78 +49,97 @@
         
         <!-- PRODUCTS SECTION -->
         <div class="product-grid">
+            <?php
+            /* Include database connection */
+            require_once('settings.php');
 
-            <article class="cactus-card" id="golden-barrel">
-                <figure>
-                    <img src="images/cacti-golden-barrel.jpg" alt="Golden Barrel">
-                    <figcaption>E. grusonii. <a href="https://www.pexels.com/photo/green-cactus-plants-11678322/">Source</a></figcaption>
-                </figure>
-                <div class="card-content">
-                    <h3>Golden Barrel</h3>
-                    <p class="price">RM 45.00</p>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-            </article>
+            /* Query to select only Cacti products */
+            $sql = "SELECT id, product_name, product_options, description, price, image_path, image_source, stock_quantity
+                    FROM product
+                    WHERE category = 'Cacti'
+                    ORDER BY id ASC";
 
-            <article class="cactus-card" id="bunny-ear">
-                <figure>
-                    <img src="images/cacti-bunny-ear.jpg" alt="Bunny Ear">
-                    <figcaption>O. microdasys. <a href="https://www.pexels.com/photo/lots-of-bunny-ears-cacti-in-pots-18468949/">Source</a></figcaption>
-                </figure>
-                <div class="card-content">
-                    <h3>Bunny Ear</h3>
-                    <p class="price">RM 25.00</p>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-            </article>
+            $result = mysqli_query($conn, $sql);
 
-            <article class="cactus-card" id="old-lady">
-                <figure>
-                    <img src="images/cacti-old-lady.jpg" alt="Old Lady">
-                    <figcaption>M. hahniana. <a href="https://www.pexels.com/photo/blooming-cactus-in-pot-16667048/">Source</a></figcaption>
-                </figure>
-                <div class="card-content">
-                    <h3>Old Lady</h3>
-                    <p class="price">RM 32.00</p>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-            </article>
+            /* Check if there are products in the database */
+            if ($result && mysqli_num_rows($result) > 0) {
 
-            <article class="cactus-card" id="princess-of-night">
-                <figure>
-                    <img src="images/cacti-princess-of-the-night.jpg" alt="Princess of the Night">
-                    <figcaption>C. jamacaru. <a href="https://www.pexels.com/photo/blooming-cactus-at-sunset-in-brazilian-countryside-36769813/">Source</a></figcaption>
-                </figure>
-                <div class="card-content">
-                    <h3>Princess of Night</h3>
-                    <p class="price">RM 55.00</p>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-            </article>
+                /* Loop through each product record */
+                while ($row = mysqli_fetch_assoc($result)) {
 
-            <article class="cactus-card" id="prickly-pear">
-                <figure>
-                    <img src="images/cacti-prickly-pear.jpg" alt="Prickly Pear">
-                    <figcaption>O. ficus-indica. <a href="https://unsplash.com/photos/cactus-plants-Npfkyf94cik">Source</a></figcaption>
-                </figure>
-                <div class="card-content">
-                    <h3>Prickly Pear</h3>
-                    <p class="price">RM 35.00</p>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-            </article>
-            
-            <article class="cactus-card" id="cardon">
-                <figure>
-                    <img src="images/cacti-cardon-cactus.jpg" alt="Cardon">
-                    <figcaption>P. pringlei. <a href="https://unsplash.com/photos/green-cactus-under-blue-sky-at-daytime-a_YGMhAa0e0">Source</a></figcaption>
-                </figure>
-                <div class="card-content">
-                    <h3>Cardon</h3>
-                    <p class="price">RM 85.00</p>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-            </article>
+                    /* Create a URL-safe ID for search jump link */
+                    $product_id = strtolower(str_replace(' ', '-', $row['product_name']));
+
+                    /* Check stock quantity */
+                    $stock_quantity = (int)$row['stock_quantity'];
+                    $is_sold_out = ($stock_quantity <= 0);
+            ?>
+
+                    <article class="cactus-card<?php echo $is_sold_out ? ' sold-out-card' : ''; ?>" id="<?php echo htmlspecialchars($product_id); ?>">
+                        <figure>
+                            <img src="<?php echo htmlspecialchars($row['image_path']); ?>" alt="<?php echo htmlspecialchars($row['product_name']); ?>">
+                            <figcaption>
+                                <?php echo htmlspecialchars($row['description']); ?>
+
+                                <?php if (!empty($row['image_source'])) { ?>
+                                    <a href="<?php echo htmlspecialchars($row['image_source']); ?>" target="_blank">Source</a>
+                                <?php } ?>
+                            </figcaption>
+                        </figure>
+
+                        <div class="card-content">
+                            <h3><?php echo htmlspecialchars($row['product_name']); ?></h3>
+
+                            <p class="price">RM <?php echo htmlspecialchars(number_format($row['price'], 2)); ?></p>
+
+                            <form action="add_to_cart.php" method="post">
+                                <input type="hidden" name="product_id" value="<?php echo htmlspecialchars($row['id']); ?>">
+                                <input type="hidden" name="quantity" value="1">
+
+                                <?php
+                                if (!empty($row['product_options'])) {
+                                    $options_array = explode(',', $row['product_options']);
+
+                                    echo '<select class="size-selector" name="item_option">';
+
+                                    foreach ($options_array as $option) {
+                                        $option = trim($option);
+
+                                        if ($option != "") {
+                                            if (strpos($option, ':') !== false) {
+                                                list($opt_name, $opt_price) = explode(':', $option);
+                                                $opt_name = trim($opt_name);
+                                                $opt_price = number_format((float)trim($opt_price), 2);
+                                                $hidden_value = htmlspecialchars(strtolower(str_replace(' ', '-', $opt_name)) . '|' . $opt_price);
+
+                                                echo '<option value="' . $hidden_value . '">' . htmlspecialchars($opt_name) . '</option>';
+                                            } else {
+                                                echo '<option value="' . htmlspecialchars(strtolower(str_replace(' ', '-', $option))) . '">' . htmlspecialchars($option) . '</option>';
+                                            }
+                                        }
+                                    }
+
+                                    echo '</select>';
+                                }
+                                ?>
+
+                                <?php if ($is_sold_out) { ?>
+                                    <button class="add-to-cart sold-out-button" disabled>Sold Out</button>
+                                <?php } else { ?>
+                                    <button type="submit" class="add-to-cart">Add to Cart</button>
+                                <?php } ?>
+                            </form>
+                        </div>
+                    </article>
+
+            <?php
+                }
+
+                mysqli_free_result($result);
+            } else {
+                echo "<p class='product-empty-message'>We are currently restocking our beautiful Cacti! Please check back later.</p>";
+            }
+            ?>
         </div>
 
         <!-- KNOWLEDGE BASE -->
@@ -133,19 +152,19 @@
                 <dl class="modern-dl">
                     <dt>Xerophyte</dt>
                     <dd>Species adapted to survive in dry environments with specialized water-storage organs.</dd>
-                    
+
                     <dt>Areole</dt>
                     <dd>The structural cushion on a cactus from which spines, branches, and floral buds emerge.</dd>
-                    
+
                     <dt>Glochid</dt>
                     <dd>Fine, hair-like barbed prickles that protect the plant from herbivores and intense sun.</dd>
                 </dl>
             </div>
-
+            
             <!-- ASIDE SECTION -->
             <aside class="product-aside">
                 <h3>Care Guide & Tips</h3>
-                
+
                 <h4>Growth Stages</h4>
                 <ol>
                     <li>Seedling establishment</li>
@@ -156,29 +175,17 @@
 
                 <h4>Quick Specs</h4>
                 <table>
-                    <tr>
-                        <th>Element</th>
-                        <th>Requirement</th>
-                    </tr>
-                    <tr>
-                        <td>Watering</td>
-                        <td>Once a month</td>
-                    </tr>
-                    <tr>
-                        <td>Light</td>
-                        <td>Full, direct sun</td>
-                    </tr>
-                    <tr>
-                        <td>Soil</td>
-                        <td>80% Pumice</td>
-                    </tr>
+                    <tr><th>Element</th><th>Requirement</th></tr>
+                    <tr><td>Watering</td><td>Once a month</td></tr>
+                    <tr><td>Light</td><td>Full, direct sun</td></tr>
+                    <tr><td>Soil</td><td>80% Pumice</td></tr>
                 </table>
 
                 <h4>Troubleshooting</h4>
                 <dl>
                     <dt>Yellowing Base</dt>
                     <dd>Usually a sign of overwatering and early root rot.</dd>
-                    
+
                     <dt>White Patches</dt>
                     <dd>Sunburn from sudden exposure to intense afternoon heat.</dd>
                 </dl>
@@ -194,3 +201,10 @@
 
 </body>
 </html>
+
+<?php
+/* Close database connection */
+if (isset($conn)) {
+    mysqli_close($conn);
+}
+?>

@@ -1,3 +1,11 @@
+<?php
+/*
+    Author: Rachael, Eleona, Amber
+    Student ID: 104402891, 104403014, 104399472
+    Purpose: Display the planting accessories product catalogue using database records.
+*/
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +19,7 @@
     <title>Planting Accessories | Cacti-Succulent Kuching</title>
     
     <!-- EXTERNAL STYLESHEETS AND ICONS -->
-    <link rel="stylesheet" href="styles/style.css?v=adminfix3">
+    <link rel="stylesheet" href="styles/style.css?v=cartproductoptionstock1">
     <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,11 +33,11 @@
 
     <!-- ENHANCEMENT -->
     <div class="cactus-party">
-        <span class="c1">✂️</span><span class="c2">🧤</span><span class="c3">🪴</span>
-        <span class="c4">💧</span><span class="c5">🪣</span><span class="c6">✂️</span>
-        <span class="c7">🧤</span><span class="c8">🪴</span><span class="c9">💧</span>
-        <span class="c10">🪣</span><span class="c11">✂️</span><span class="c12">🧤</span>
-        <span class="c13">🪴</span><span class="c14">💧</span><span class="c15">🪣</span>
+        <span class="c1">🌵</span><span class="c2">✨</span><span class="c3">🪴</span>
+        <span class="c4">🌵</span><span class="c5">🪴</span><span class="c6">✨</span>
+        <span class="c7">✨</span><span class="c8">🌵</span><span class="c9">🪴</span>
+        <span class="c10">🪴</span><span class="c11">✨</span><span class="c12">🌵</span>
+        <span class="c13">🌵</span><span class="c14">🪴</span><span class="c15">✨</span>
     </div>
 
     <!-- HERO SECTION -->
@@ -46,153 +54,213 @@
 
         <!-- PRODUCT AND SERVICE SEARCH BAR -->
         <?php include 'product_service_search.inc'; ?>
-       
+        
         <!-- PRODUCTS SECTION -->
         <div class="product-grid">
+            <?php
+            /* Include database connection */
+            require_once('settings.php');
 
-            <article class="cactus-card" id="artisan-terracotta">
-                <figure>
-                    <img src="images/acc-terracotta-pot.jpg" alt="Terracotta Pot">
-                    <figcaption>Breathable Clay. <a href="https://pin.it/2WzknA4F8">Source</a></figcaption>
-                </figure>
-                <div class="card-content">
-                    <h3>Artisan Terracotta</h3>
-                    <p class="price">RM 25.00</p>
-                    <select class="size-selector" name="pot-size">
-                        <option value="small">Small (4")</option>
-                        <option value="medium" selected>Medium (6")</option>
-                    </select>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-            </article>
+            /* Create product option table if it does not exist */
+            $create_option_table_sql = "
+                CREATE TABLE IF NOT EXISTS product_option (
+                    id INT AUTO_INCREMENT PRIMARY KEY,
+                    product_id INT NOT NULL,
+                    option_name VARCHAR(100) NOT NULL,
+                    option_price DECIMAL(10,2) NOT NULL,
+                    option_stock INT NOT NULL DEFAULT 0,
+                    FOREIGN KEY (product_id) REFERENCES product(id) ON DELETE CASCADE
+                )
+            ";
 
-            <article class="cactus-card" id="premium-cactus-mix">
-                <figure>
-                    <img src="images/acc-cactus-soil.jpg" alt="Cactus Soil Mix">
-                    <figcaption>Fast-Draining. <a href="https://pin.it/6YrfMEAHy">Source</a></figcaption>
-                </figure>
-                <div class="card-content">
-                    <h3>Premium Cactus Mix</h3>
-                    <p class="price">RM 18.00</p>
-                    <select class="size-selector" name="soil-size">
-                        <option value="1l">1 Litre Bag</option>
-                        <option value="3l" selected>3 Litre Bag</option>
-                    </select>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-            </article>
+            mysqli_query($conn, $create_option_table_sql);
 
-            <article class="cactus-card" id="natural-pumice">
-                <figure>
-                    <img src="images/acc-pumice-stone.jpg" alt="Pumice Stone">
-                    <figcaption>Volcanic Rock. <a href="https://pin.it/1Rx7HkHvh">Source</a></figcaption>
-                </figure>
-                <div class="card-content">
-                    <h3>Natural Pumice</h3>
-                    <p class="price">RM 15.00</p>
-                    <select class="size-selector" name="pumice-grain">
-                        <option value="fine">Fine Grain</option>
-                        <option value="medium" selected>Medium Grain</option>
-                    </select>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-            </article>
+            /* Query to select only Planting Accessories */
+            $sql = "SELECT id, product_name, product_options, description, price, image_path, image_source, stock_quantity
+                    FROM product
+                    WHERE category = 'Planting Accessories'
+                    ORDER BY id ASC";
 
-            <article class="cactus-card" id="long-spout-can">
-                <figure>
-                    <img src="images/acc-watering-can.jpg" alt="Watering Can">
-                    <figcaption>Stainless Steel. <a href="https://pin.it/2ntpM6Ih4">Source</a></figcaption>
-                </figure>
-                <div class="card-content">
-                    <h3>Long-Spout Can</h3>
-                    <p class="price">RM 45.00</p>
-                    <select class="size-selector" name="can-volume">
-                        <option value="500ml">500 ml</option>
-                        <option value="1l" selected>1 Litre</option>
-                    </select>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-            </article>
+            $result = mysqli_query($conn, $sql);
 
-            <article class="cactus-card" id="planting-tweezers">
-                <figure>
-                    <img src="images/acc-tweezers.jpg" alt="Precision Tweezers">
-                    <figcaption>Extra Long. <a href="https://pin.it/5SQixT7Jj">Source</a></figcaption>
-                </figure>
-                <div class="card-content">
-                    <h3>Planting Tweezers</h3>
-                    <p class="price">RM 12.00</p>
-                    <select class="size-selector" name="tweezer-style">
-                        <option value="straight" selected>Straight Tip</option>
-                        <option value="curved">Curved Tip</option>
-                    </select>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-            </article>
-            
-            <article class="cactus-card" id="pruning-shears">
-                <figure>
-                    <img src="images/acc-pruning-sheers.jpg" alt="Pruning Shears">
-                    <figcaption>Carbon Steel. <a href="https://pin.it/5QugjbdMH">Source</a></figcaption>
-                </figure>
-                <div class="card-content">
-                    <h3>Pruning Shears</h3>
-                    <p class="price">RM 35.00</p>
-                    <select class="size-selector" name="shear-type">
-                        <option value="standard" selected>Standard Steel</option>
-                        <option value="titanium">Titanium Coated</option>
-                    </select>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-            </article>
+            /* Check if there are products in the database */
+            if ($result && mysqli_num_rows($result) > 0) {
 
-            <article class="cactus-card" id="liquid-cactus-food">
-                <figure>
-                    <img src="images/acc-liquid-fertilizer.jpg" alt="Liquid Fertilizer">
-                    <figcaption>Low-Nitrogen. <a href="https://pin.it/1lPFa10eo">Source</a></figcaption>
-                </figure>
-                <div class="card-content">
-                    <h3>Liquid Cactus Food</h3>
-                    <p class="price">RM 22.00</p>
-                    <select class="size-selector" name="fertilizer-size">
-                        <option value="250ml" selected>250 ml</option>
-                        <option value="500ml">500 ml</option>
-                    </select>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-            </article>
+                /* Loop through each product record */
+                while ($row = mysqli_fetch_assoc($result)) {
 
-            <article class="cactus-card" id="river-stone-dressing">
-                <figure>
-                    <img src="images/acc-top-dressing.jpg" alt="Top Dressing Pebbles">
-                    <figcaption>Decorative Stones. <a href="https://pin.it/1O2jrIwtG">Source</a></figcaption>
-                </figure>
-                <div class="card-content">
-                    <h3>River Stone Dressing</h3>
-                    <p class="price">RM 10.00</p>
-                    <select class="size-selector" name="stone-color">
-                        <option value="white">Matte White</option>
-                        <option value="mixed" selected>Natural Mixed</option>
-                    </select>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-            </article>
+                    /* Create a URL-safe ID for search jump link */
+                    $product_id = strtolower(str_replace(' ', '-', $row['product_name']));
 
-            <article class="cactus-card" id="soil-moisture-meter">
-                <figure>
-                    <img src="images/acc-moisture-meter.jpg" alt="Moisture Meter">
-                    <figcaption>Root-Level Tech. <a href="https://pin.it/4LvlLriA1">Source</a></figcaption>
-                </figure>
-                <div class="card-content">
-                    <h3>Soil Moisture Meter</h3>
-                    <p class="price">RM 30.00</p>
-                    <select class="size-selector" name="meter-type">
-                        <option value="analog" selected>Analog</option>
-                        <option value="digital">Digital</option>
-                    </select>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-            </article>
+                    /* Retrieve option records for this product */
+                    $option_records = [];
+
+                    $option_sql = "SELECT id, option_name, option_price, option_stock
+                                   FROM product_option
+                                   WHERE product_id = ?
+                                   ORDER BY id ASC";
+
+                    $option_stmt = mysqli_prepare($conn, $option_sql);
+                    mysqli_stmt_bind_param($option_stmt, "i", $row['id']);
+                    mysqli_stmt_execute($option_stmt);
+                    $option_result = mysqli_stmt_get_result($option_stmt);
+
+                    if ($option_result && mysqli_num_rows($option_result) > 0) {
+                        while ($option_row = mysqli_fetch_assoc($option_result)) {
+                            $option_records[] = $option_row;
+                        }
+                    }
+
+                    mysqli_stmt_close($option_stmt);
+
+                    /* If new option table is empty, fall back to old product_options text */
+                    if (count($option_records) == 0 && !empty($row['product_options'])) {
+                        $old_options_array = explode(',', $row['product_options']);
+
+                        foreach ($old_options_array as $old_option) {
+                            $old_option = trim($old_option);
+
+                            if ($old_option != "") {
+                                $old_option_name = "";
+                                $old_option_price = $row['price'];
+
+                                if (strpos($old_option, ':') !== false) {
+                                    list($old_option_name, $old_option_price) = explode(':', $old_option, 2);
+                                    $old_option_name = trim($old_option_name);
+                                    $old_option_price = number_format((float)trim($old_option_price), 2, '.', '');
+                                } else {
+                                    $old_option_name = $old_option;
+                                    $old_option_price = number_format((float)$row['price'], 2, '.', '');
+                                }
+
+                                $option_records[] = [
+                                    "id" => 0,
+                                    "option_name" => $old_option_name,
+                                    "option_price" => $old_option_price,
+                                    "option_stock" => $row['stock_quantity']
+                                ];
+                            }
+                        }
+                    }
+
+                    /* Decide displayed price and stock condition */
+                    $display_price = number_format((float)$row['price'], 2);
+                    $is_sold_out = false;
+                    $has_available_option = false;
+
+                    if (count($option_records) > 0) {
+                        $first_available_price = "";
+
+                        foreach ($option_records as $option_record) {
+                            if ((int)$option_record['option_stock'] > 0) {
+                                $has_available_option = true;
+
+                                if ($first_available_price == "") {
+                                    $first_available_price = number_format((float)$option_record['option_price'], 2);
+                                }
+                            }
+                        }
+
+                        if ($first_available_price != "") {
+                            $display_price = $first_available_price;
+                        } else {
+                            $display_price = number_format((float)$option_records[0]['option_price'], 2);
+                        }
+
+                        $is_sold_out = !$has_available_option;
+                    } else {
+                        $stock_quantity = (int)$row['stock_quantity'];
+                        $is_sold_out = ($stock_quantity <= 0);
+                    }
+            ?>
+
+                    <article class="cactus-card<?php echo $is_sold_out ? ' sold-out-card' : ''; ?>" id="<?php echo htmlspecialchars($product_id); ?>">
+                        <figure>
+                            <img src="<?php echo htmlspecialchars($row['image_path']); ?>" alt="<?php echo htmlspecialchars($row['product_name']); ?>">
+                            <figcaption>
+                                <?php echo htmlspecialchars($row['description']); ?>
+
+                                <?php if (!empty($row['image_source'])) { ?>
+                                    <a href="<?php echo htmlspecialchars($row['image_source']); ?>" target="_blank">Source</a>
+                                <?php } ?>
+                            </figcaption>
+                        </figure>
+
+                        <div class="card-content">
+                            <h3><?php echo htmlspecialchars($row['product_name']); ?></h3>
+
+                            <!-- SMART PRICE TAG -->
+                            <p class="price option-price">RM <?php echo htmlspecialchars($display_price); ?></p>
+
+                            <form action="add_to_cart.php" method="post">
+                                <input type="hidden" name="product_id" value="<?php echo htmlspecialchars($row['id']); ?>">
+                                <input type="hidden" name="quantity" value="1">
+
+                                <!-- PRODUCT OPTION DROPDOWN -->
+                                <?php
+                                if (count($option_records) > 0) {
+                                    echo '<select class="size-selector option-selector" name="item_option">';
+
+                                    foreach ($option_records as $option_record) {
+                                        $option_name = trim($option_record['option_name']);
+                                        $option_price = number_format((float)$option_record['option_price'], 2, '.', '');
+                                        $option_stock = (int)$option_record['option_stock'];
+                                        $option_value = strtolower(str_replace(' ', '-', $option_name)) . "|" . $option_price;
+                                        $disabled = ($option_stock <= 0) ? "disabled" : "";
+                                        $option_label = $option_name;
+
+                                        if ($option_stock <= 0) {
+                                            $option_label .= " - Sold Out";
+                                        }
+
+                                        echo '<option value="' . htmlspecialchars($option_value) . '" data-price="' . htmlspecialchars($option_price) . '" ' . $disabled . '>' . htmlspecialchars($option_label) . '</option>';
+                                    }
+
+                                    echo '</select>';
+                                } else if (!empty($row['product_options'])) {
+                                    $options_array = explode(',', $row['product_options']);
+
+                                    echo '<select class="size-selector option-selector" name="item_option">';
+
+                                    foreach ($options_array as $option) {
+                                        $option = trim($option);
+
+                                        if ($option != "") {
+                                            if (strpos($option, ':') !== false) {
+                                                list($opt_name, $opt_price) = explode(':', $option, 2);
+                                                $opt_name = trim($opt_name);
+                                                $opt_price = number_format((float)trim($opt_price), 2);
+                                                $hidden_value = htmlspecialchars(strtolower(str_replace(' ', '-', $opt_name)) . '|' . $opt_price);
+
+                                                echo '<option value="' . $hidden_value . '" data-price="' . htmlspecialchars($opt_price) . '">' . htmlspecialchars($opt_name) . '</option>';
+                                            } else {
+                                                $fallback_price = number_format((float)$row['price'], 2);
+                                                echo '<option value="' . htmlspecialchars(strtolower(str_replace(' ', '-', $option))) . '" data-price="' . htmlspecialchars($fallback_price) . '">' . htmlspecialchars($option) . '</option>';
+                                            }
+                                        }
+                                    }
+
+                                    echo '</select>';
+                                }
+                                ?>
+
+                                <?php if ($is_sold_out) { ?>
+                                    <button class="add-to-cart sold-out-button" disabled>Sold Out</button>
+                                <?php } else { ?>
+                                    <button type="submit" class="add-to-cart">Add to Cart</button>
+                                <?php } ?>
+                            </form>
+                        </div>
+                    </article>
+
+            <?php
+                }
+
+                mysqli_free_result($result);
+            } else {
+                echo "<p class='product-empty-message'>We are currently restocking our premium Accessories! Please check back later.</p>";
+            }
+            ?>
         </div>
 
         <!-- STEP GUIDE SECTION -->
@@ -276,5 +344,32 @@
 <!-- BACK TO TOP BUTTON -->
 <a href="#" class="back-to-top">▲</a>
 
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const selectors = document.querySelectorAll(".option-selector");
+
+    selectors.forEach(function (selector) {
+        selector.addEventListener("change", function () {
+            const selectedOption = selector.options[selector.selectedIndex];
+            const selectedPrice = selectedOption.getAttribute("data-price");
+
+            const card = selector.closest(".cactus-card");
+            const priceDisplay = card.querySelector(".option-price");
+
+            if (selectedPrice && priceDisplay) {
+                priceDisplay.textContent = "RM " + selectedPrice;
+            }
+        });
+    });
+});
+</script>
+
 </body>
 </html>
+
+<?php
+/* Close database connection */
+if (isset($conn)) {
+    mysqli_close($conn);
+}
+?>

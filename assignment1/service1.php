@@ -1,6 +1,15 @@
+<?php
+/*
+    Author: Rachael, Eleona, Amber
+    Student ID: 104402891, 104403014, 104399472
+    Purpose: Display the services and workshops offered using database records.
+*/
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- BASIC PAGE METADATA -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Services offered by Cacti-Succulent Kuching">
@@ -9,7 +18,8 @@
     
     <title>Services | Cacti-Succulent Kuching</title>
 
-    <link rel="stylesheet" href="styles/style.css?v=adminfix3">
+    <!-- EXTERNAL STYLESHEETS AND ICONS -->
+    <link rel="stylesheet" href="styles/style.css?v=frontendstock1">
     <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,13 +31,13 @@
 <!-- HEADER & NAVIGATION -->
 <?php include 'header.inc'; ?>
 
-    <!-- ENHANCEMENT1: SERVICES PARTY -->
+    <!-- ENHANCEMENT -->
     <div class="cactus-party">
-        <span class="c1">✨</span><span class="c2">🧑‍🌾</span><span class="c3">🏥</span>
-        <span class="c4">🌿</span><span class="c5">✨</span><span class="c6">🧑‍🌾</span>
-        <span class="c7">🏥</span><span class="c8">🌿</span><span class="c9">✨</span>
-        <span class="c10">🧑‍🌾</span><span class="c11">🏥</span><span class="c12">🌿</span>
-        <span class="c13">✨</span><span class="c14">🧑‍🌾</span><span class="c15">🏥</span>
+        <span class="c1">🌵</span><span class="c2">✨</span><span class="c3">🪴</span>
+        <span class="c4">🌵</span><span class="c5">🪴</span><span class="c6">✨</span>
+        <span class="c7">✨</span><span class="c8">🌵</span><span class="c9">🪴</span>
+        <span class="c10">🪴</span><span class="c11">✨</span><span class="c12">🌵</span>
+        <span class="c13">🌵</span><span class="c14">🪴</span><span class="c15">✨</span>
     </div>
 
     <!-- SERVICES HERO SECTION -->
@@ -48,7 +58,7 @@
         
         <!-- SERVICES CONTENT LAYOUT -->
         <div class="service-layout-wrapper">
-            
+        
             <!-- SERVICE CARE GUIDE SIDEBAR -->
             <aside class="service-aside">
                 <h3>Care Guide & Glossary</h3>
@@ -96,79 +106,75 @@
 
             <!-- SERVICES LIST -->
             <div class="services-list">
-                
-                <!-- SERVICE 1: PLANT HOSPITAL -->
-                <article class="service-row" id="plant-hospital">
-                    <figure>
-                        <img src="images/repotting.jpg" alt="Plant Hospital Repotting">
-                        <figcaption>Professional Repotting <a href="https://pin.it/6zDtNyDIg">Source</a></figcaption>
-                    </figure>
+                <?php
+                /* Include database connection */
+                require_once('settings.php');
 
-                    <div class="service-text">
-                        <h3>The Plant Hospital</h3>
-                        <p>Did you overwater your succulent? Is your cactus stretching for light? Bring your struggling plants to our Kuching home-base. We provide professional root-rot treatments, precision pruning, and repotting in our premium gritty soil mix to bring your desert gems back to life.</p>
-                        
-                        <div class="price-action-row">
-                            <p class="price">From RM 15.00</p>
-                            <a href="enquiry.php" class="add-to-cart">Book a Rescue</a>
-                        </div>
-                    </div>
-                </article>
+                /* Query to select normal services only */
+                $sql = "SELECT product_name, product_options, description, price, image_path, image_source, stock_quantity
+                        FROM product
+                        WHERE category = 'Services'
+                        AND product_name NOT IN ('Standard Package', 'Luxury Package', 'Premium Package')
+                        ORDER BY id ASC";
 
-                <!-- SERVICE 2: CUSTOM TERRARIUMS -->
-                <article class="service-row reverse" id="custom-terrariums">
-                    <figure>
-                        <img src="images/terrarium.jpg" alt="Custom Terrariums">
-                        <figcaption>Custom Terrariums <a href="https://pin.it/3B9oUqJFv">Source</a></figcaption>
-                    </figure>
+                $result = mysqli_query($conn, $sql);
 
-                    <div class="service-text">
-                        <h3>Custom Terrariums</h3>
-                        <p>Perfect for office desks or unique gifts. We design and build enclosed or open-air glass terrariums tailored to your aesthetic. Choose your preferred glass shape, sand colors, and plant varieties, and we handle the complex layering required for proper drainage.</p>
-                        
-                        <div class="price-action-row">
-                            <p class="price">From RM 65.00</p>
-                            <a href="enquiry.php" class="add-to-cart">Design Yours</a>
-                        </div>
-                    </div>
-                </article>
+                if ($result && mysqli_num_rows($result) > 0) {
 
-                <!-- SERVICE 3: TERRARIUM WORKSHOP -->
-                <article class="service-row" id="terrarium-workshop">
-                    <figure>
-                        <img src="images/workshop.jpg" alt="Hands-on Terrarium Workshop in Kuching">
-                        <figcaption>Terrarium Workshop <a href="https://pin.it/adKGgj00G">Source</a></figcaption>
-                    </figure>
+                    /* Counter for alternating service row layout */
+                    $counter = 0;
 
-                    <div class="service-text">
-                        <h3>Terrarium Workshop</h3>
-                        <p>Join us for a hands-on afternoon and learn the art of building your own desert landscape. We provide all the materials, including glass vessels, specialized gritty soil, decorative sands, and your choice of premium succulents. Perfect for weekend dates, team building, or just a relaxing solo activity!</p>
-                        
-                        <div class="price-action-row">
-                            <p class="price">From RM 85.00 <span>/ person</span></p>
-                            <a href="enquiry.php" class="add-to-cart">Book a Slot</a>
-                        </div>
-                    </div>
-                </article>
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        $product_id = strtolower(str_replace(' ', '-', $row['product_name']));
+                        $row_class = ($counter % 2 !== 0) ? "service-row reverse" : "service-row";
 
-                <!-- SERVICE 4: PLANT BOARDING -->
-                <article class="service-row reverse" id="plant-boarding">
-                    <figure>
-                        <img src="images/boarding.jpg" alt="Plant Boarding Service">
-                        <figcaption>Plant Boarding <a href="https://www.freepik.com/free-photo/asian-gardener-woman-wearing-face-mask-apron-holding-spray-watering-green-houseplant-hand_18684843.htm#fromView=search&page=4&position=2&uuid=4ffb5aa7-11a7-43fb-ae83-270c07284659&query=Plant+nursery+service">Source</a></figcaption>
-                    </figure>
+                        /* Check stock quantity */
+                        $stock_quantity = (int)$row['stock_quantity'];
+                        $is_sold_out = ($stock_quantity <= 0);
 
-                    <div class="service-text">
-                        <h3>Plant Boarding</h3>
-                        <p>Going on a long holiday? Don't leave your precious succulents to wither or get overwatered by well-meaning neighbors. Drop them off at our dedicated greenhouse. We provide optimal sunlight exposure, controlled watering schedules, and daily monitoring to ensure your plants thrive while you are away.</p>
-                        
-                        <div class="price-action-row">
-                            <p class="price">From RM 5.00 <span>/ day</span></p>
-                            <a href="enquiry.php" class="add-to-cart">Reserve Space</a>
-                        </div>
-                    </div>
-                </article>
+                        if ($is_sold_out) {
+                            $row_class .= " sold-out-service";
+                        }
+                ?>
 
+                        <article class="<?php echo htmlspecialchars($row_class); ?>" id="<?php echo htmlspecialchars($product_id); ?>">
+                            <figure>
+                                <img src="<?php echo htmlspecialchars($row['image_path']); ?>" alt="<?php echo htmlspecialchars($row['product_name']); ?>">
+                                <figcaption>
+                                    <?php echo htmlspecialchars($row['product_name']); ?>
+
+                                    <?php if (!empty($row['image_source'])) { ?>
+                                        <a href="<?php echo htmlspecialchars($row['image_source']); ?>" target="_blank">Source</a>
+                                    <?php } ?>
+                                </figcaption>
+                            </figure>
+
+                            <div class="service-text">
+                                <h3><?php echo htmlspecialchars($row['product_name']); ?></h3>
+                                
+                                <p><?php echo htmlspecialchars($row['description']); ?></p>
+                                
+                                <div class="price-action-row">
+                                    <p class="price">From RM <?php echo htmlspecialchars(number_format($row['price'], 2)); ?></p>
+
+                                    <?php if ($is_sold_out) { ?>
+                                        <span class="add-to-cart sold-out-button">Unavailable</span>
+                                    <?php } else { ?>
+                                        <a href="enquiry.php" class="add-to-cart">Enquire Now</a>
+                                    <?php } ?>
+                                </div>
+                            </div>
+                        </article>
+
+                <?php
+                        $counter++;
+                    }
+
+                    mysqli_free_result($result);
+                } else {
+                    echo "<p class='service-empty-message'>We are currently updating our service offerings! Please check back later.</p>";
+                }
+                ?>
             </div>
         </div>
 
@@ -181,46 +187,78 @@
             
             <!-- PRICING PACKAGE CARDS -->
             <div class="pricing-grid">
+                <?php
+                /* Query to select Event Door Gifts packages only */
+                $package_sql = "SELECT product_name, product_options, description, price, image_path, image_source, stock_quantity
+                                FROM product
+                                WHERE category = 'Services'
+                                AND product_name IN ('Standard Package', 'Luxury Package', 'Premium Package')
+                                ORDER BY 
+                                    CASE product_name
+                                        WHEN 'Standard Package' THEN 1
+                                        WHEN 'Luxury Package' THEN 2
+                                        WHEN 'Premium Package' THEN 3
+                                        ELSE 4
+                                    END";
 
-                <!-- STANDARD PACKAGE CARD -->
-                <div class="pricing-card" id="standard-package">
-                    <h4>Standard Package</h4>
-                    <p class="tier-price">RM 8.00 <span>/ plant</span></p>
-                    <ul>
-                        <li>Minimum 50 units</li>
-                        <li>Standard Haworthia or Aloe</li>
-                        <li>Nursery plastic pot</li>
-                        <li>Basic care instruction card</li>
-                    </ul>
-                    <a href="enquiry.php" class="tier-btn solid-btn">Enquire Now</a>
-                </div>
+                $package_result = mysqli_query($conn, $package_sql);
 
-                <!-- LUXURY PACKAGE CARD -->
-                <div class="pricing-card luxury-card" id="luxury-package">
-                    <h4>Luxury Package</h4>
-                    <p class="tier-price">RM 25.00 <span>/ plant</span></p>
-                    <ul>
-                        <li>Minimum 20 units</li>
-                        <li>Imported Gymnocalycium</li>
-                        <li>Glazed ceramic pot</li>
-                        <li>Custom laser-cut wooden tags</li>
-                        <li>Decorative top-dressing stones</li>
-                    </ul>
-                    <a href="enquiry.php" class="tier-btn solid-btn">Most Popular</a>
-                </div>
+                if ($package_result && mysqli_num_rows($package_result) > 0) {
+                    while ($package = mysqli_fetch_assoc($package_result)) {
+                        $package_id = strtolower(str_replace(' ', '-', $package['product_name']));
+                        $card_class = ($package['product_name'] == 'Luxury Package') ? "pricing-card luxury-card" : "pricing-card";
+                        $button_text = ($package['product_name'] == 'Luxury Package') ? "Most Popular" : "Enquire Now";
 
-                <!-- PREMIUM PACKAGE CARD -->
-                <div class="pricing-card" id="premium-package">
-                    <h4>Premium Package</h4>
-                    <p class="tier-price">RM 15.00 <span>/ plant</span></p>
-                    <ul>
-                        <li>Minimum 30 units</li>
-                        <li>Rare Echeveria rosettes</li>
-                        <li>Artisan Terracotta pot</li>
-                        <li>Custom printed name tags</li>
-                    </ul>
-                    <a href="enquiry.php" class="tier-btn solid-btn">Enquire Now</a>
-                </div>
+                        /* Check package stock quantity */
+                        $package_stock = (int)$package['stock_quantity'];
+                        $package_sold_out = ($package_stock <= 0);
+
+                        if ($package_sold_out) {
+                            $card_class .= " sold-out-package";
+                        }
+
+                        /* Convert package description into bullet points */
+                        $description_parts = preg_split('/\.\s*/', trim($package['description']));
+                ?>
+
+                        <div class="<?php echo htmlspecialchars($card_class); ?>" id="<?php echo htmlspecialchars($package_id); ?>">
+                            <h4><?php echo htmlspecialchars($package['product_name']); ?></h4>
+
+                            <p class="tier-price">
+                                RM <?php echo htmlspecialchars(number_format($package['price'], 2)); ?> <span>/ plant</span>
+                            </p>
+
+                            <ul>
+                                <?php
+                                if (!empty($package['description'])) {
+                                    foreach ($description_parts as $part) {
+                                        $part = trim($part);
+
+                                        if ($part != "" && strtolower($part) != "event door gift package") {
+                                            echo "<li>" . htmlspecialchars($part) . "</li>";
+                                        }
+                                    }
+                                } else {
+                                    echo "<li>Package details will be updated soon</li>";
+                                }
+                                ?>
+                            </ul>
+
+                            <?php if ($package_sold_out) { ?>
+                                <span class="tier-btn solid-btn sold-out-button">Unavailable</span>
+                            <?php } else { ?>
+                                <a href="enquiry.php" class="tier-btn solid-btn"><?php echo htmlspecialchars($button_text); ?></a>
+                            <?php } ?>
+                        </div>
+
+                <?php
+                    }
+
+                    mysqli_free_result($package_result);
+                } else {
+                    echo "<p class='product-empty-message'>Event door gift packages are currently being updated.</p>";
+                }
+                ?>
             </div>
         </section>
     </main>
@@ -233,3 +271,10 @@
 
 </body>
 </html>
+
+<?php
+/* Close database connection */
+if (isset($conn)) {
+    mysqli_close($conn);
+}
+?>

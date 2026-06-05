@@ -156,7 +156,7 @@ if (!isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== tru
 
             <!-- ADMIN NAVIGATION BUTTONS -->
             <div class="admin-action-buttons">
-                <a href="manage_users.php" class="admin-action-link">Back to Manage Users</a>
+                <a href="view_register.php" class="admin-action-link">Back to Manage Users</a>
                 <a href="admin_dashboard.php" class="admin-action-link">Back to Dashboard</a>
             </div>
 

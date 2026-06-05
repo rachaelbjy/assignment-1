@@ -1699,10 +1699,21 @@ html {
     text-decoration: none;
     box-shadow: none;
     z-index: 9999;
-    transition: 0.3s ease;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(15px);
 }
 
-.back-to-top:hover { 
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+.back-to-top.show:hover { 
     background-color: #6D9E51; 
     transform: translateY(-5px); 
     box-shadow: none; 
@@ -3172,7 +3183,7 @@ body {
     color: #ffffff;
 }
 
-/* Clear button: same size as Apply, outline by default */
+/* Clear button*/
 .admin-filter-actions .admin-action-link {
     display: inline-block;
     width: 120px;
@@ -3199,7 +3210,7 @@ body {
     color: #ffffff;
 }
 
-/* Total count area: farther from Apply/Clear, but closer to table */
+/* Total count area*/
 .admin-list-toolbar {
     display: flex;
     justify-content: center;
@@ -4180,4 +4191,1165 @@ body {
     html body.view-enquiry-page .admin-summary-table tr:nth-child(even) td {
         background-color: #2a2a2a;
     }
+}
+
+/* ==========================================================================
+   PRODUCT AND SERVICE TABLE ACTION BUTTONS
+   ========================================================================== */
+
+.view-product-page .product-table-action-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.view-product-page .product-table-action-group .admin-view-btn {
+    width: 78px;
+    margin: 0;
+    padding: 7px 0;
+    text-align: center;
+}
+
+/* ==========================================================================
+   PRODUCT AND SERVICE MANAGEMENT
+   ========================================================================== */
+
+.view-product-page .product-table-action-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.view-product-page .product-table-action-group .admin-view-btn {
+    width: 78px;
+    margin: 0;
+    padding: 7px 0;
+    text-align: center;
+}
+
+.view-product-page .admin-summary-table th:nth-child(1),
+.view-product-page .admin-summary-table td:nth-child(1) {
+    width: 70px;
+}
+
+.view-product-page .admin-summary-table th:nth-child(4),
+.view-product-page .admin-summary-table td:nth-child(4),
+.view-product-page .admin-summary-table th:nth-child(5),
+.view-product-page .admin-summary-table td:nth-child(5) {
+    width: 100px;
+}
+
+.view-product-page .admin-summary-table th:nth-child(6),
+.view-product-page .admin-summary-table td:nth-child(6) {
+    width: 120px;
+}
+
+@media (max-width: 700px) {
+    .view-product-page .admin-summary-table {
+        min-width: 760px;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    html body.view-product-page .form-main {
+        background-color: #121212;
+        color: #ffffff;
+    }
+
+    html body.view-product-page .form-card,
+    html body.view-product-page .admin-record-fieldset {
+        background-color: #1e1e1e;
+        color: #ffffff;
+        border-color: #6D9E51;
+    }
+
+    html body.view-product-page .admin-record-fieldset legend {
+        color: #EB5B26;
+    }
+
+    html body.view-product-page .admin-summary-table,
+    html body.view-product-page .admin-detail-table {
+        background-color: #1e1e1e;
+        color: #ffffff;
+    }
+
+    html body.view-product-page .admin-summary-table th,
+    html body.view-product-page .admin-detail-table .admin-section-row th {
+        background-color: #6D9E51;
+        color: #ffffff;
+        border-color: #6D9E51;
+    }
+
+    html body.view-product-page .admin-summary-table td,
+    html body.view-product-page .admin-detail-table td {
+        background-color: #1e1e1e;
+        color: #ffffff;
+        border-color: #333333;
+    }
+
+    html body.view-product-page .admin-summary-table tr:nth-child(even) td,
+    html body.view-product-page .admin-detail-table th {
+        background-color: #2a2a2a;
+        color: #ffffff;
+        border-color: #333333;
+    }
+
+    html body.view-product-page .admin-list-toolbar p,
+    html body.view-product-page .form-card p,
+    html body.view-product-page .form-card label {
+        color: #ffffff;
+    }
+
+    html body.view-product-page .form-card input:not([type="submit"]):not([type="reset"]):not([type="radio"]):not([type="checkbox"]),
+    html body.view-product-page .form-card select,
+    html body.view-product-page .form-card textarea {
+        background-color: #2a2a2a;
+        color: #ffffff;
+        border-color: #444444;
+    }
+
+    html body.view-product-page .form-card input:focus,
+    html body.view-product-page .form-card select:focus,
+    html body.view-product-page .form-card textarea:focus {
+        border-color: #6D9E51;
+        outline: none;
+    }
+}
+
+/* ==========================================================================
+   ADMIN MOBILE RESPONSIVE LAYOUT
+   ========================================================================== */
+
+@media screen and (max-width: 700px) {
+
+    html body.admin-page,
+    html body.admin-dashboard-page,
+    html body.view-register-page,
+    html body.view-order-page,
+    html body.view-enquiry-page,
+    html body.view-product-page {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    html body.admin-page .form-main,
+    html body.admin-dashboard-page .form-main,
+    html body.view-register-page .form-main,
+    html body.view-order-page .form-main,
+    html body.view-enquiry-page .form-main,
+    html body.view-product-page .form-main {
+        width: 100%;
+        max-width: 100%;
+        padding: 35px 12px;
+        overflow-x: hidden;
+        box-sizing: border-box;
+    }
+
+    html body.admin-page .form-header,
+    html body.admin-dashboard-page .form-header,
+    html body.view-register-page .form-header,
+    html body.view-order-page .form-header,
+    html body.view-enquiry-page .form-header,
+    html body.view-product-page .form-header {
+        width: 100%;
+        max-width: 100%;
+        padding: 28px 16px;
+        border-radius: 12px 12px 0 0;
+        box-sizing: border-box;
+    }
+
+    html body.admin-page .form-header h1,
+    html body.admin-dashboard-page .form-header h1,
+    html body.view-register-page .form-header h1,
+    html body.view-order-page .form-header h1,
+    html body.view-enquiry-page .form-header h1,
+    html body.view-product-page .form-header h1 {
+        font-size: 2rem;
+        line-height: 1.2;
+        white-space: normal;
+        word-break: normal;
+    }
+
+    html body.admin-page .form-header p,
+    html body.admin-dashboard-page .form-header p,
+    html body.view-register-page .form-header p,
+    html body.view-order-page .form-header p,
+    html body.view-enquiry-page .form-header p,
+    html body.view-product-page .form-header p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+
+    html body.admin-page .form-card,
+    html body.admin-dashboard-page .form-card,
+    html body.view-register-page .form-card,
+    html body.view-order-page .form-card,
+    html body.view-enquiry-page .form-card,
+    html body.view-product-page .form-card {
+        width: 100%;
+        max-width: 100%;
+        padding: 26px 14px;
+        border-radius: 0 0 12px 12px;
+        overflow: hidden;
+        box-sizing: border-box;
+    }
+
+    html body.admin-page .form-card fieldset,
+    html body.admin-dashboard-page .form-card fieldset,
+    html body.view-register-page .form-card fieldset,
+    html body.view-order-page .form-card fieldset,
+    html body.view-enquiry-page .form-card fieldset,
+    html body.view-product-page .form-card fieldset,
+    html body.admin-page .admin-record-fieldset,
+    html body.admin-dashboard-page .admin-dashboard-fieldset,
+    html body.view-register-page .admin-user-fieldset,
+    html body.view-order-page .admin-record-fieldset,
+    html body.view-enquiry-page .admin-record-fieldset,
+    html body.view-product-page .admin-record-fieldset {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        padding: 28px 16px;
+        margin-left: 0;
+        margin-right: 0;
+        overflow: hidden;
+        box-sizing: border-box;
+    }
+
+    html body.admin-page .form-card legend,
+    html body.admin-dashboard-page .form-card legend,
+    html body.view-register-page .form-card legend,
+    html body.view-order-page .form-card legend,
+    html body.view-enquiry-page .form-card legend,
+    html body.view-product-page .form-card legend,
+    html body.admin-page .admin-record-fieldset legend,
+    html body.admin-dashboard-page .admin-dashboard-fieldset legend,
+    html body.view-register-page .admin-user-fieldset legend,
+    html body.view-order-page .admin-record-fieldset legend,
+    html body.view-enquiry-page .admin-record-fieldset legend,
+    html body.view-product-page .admin-record-fieldset legend {
+        font-size: 1.45rem;
+        max-width: 88%;
+        white-space: normal;
+        line-height: 1.2;
+        margin-left: 8px;
+        padding: 0 10px;
+    }
+
+    html body.admin-page .form-row,
+    html body.admin-dashboard-page .form-row,
+    html body.view-register-page .form-row,
+    html body.view-order-page .form-row,
+    html body.view-enquiry-page .form-row,
+    html body.view-product-page .form-row {
+        display: grid;
+        grid-template-columns: 1fr;
+        column-gap: 0;
+        row-gap: 24px;
+        margin-bottom: 28px;
+    }
+
+    html body.admin-page .input-group,
+    html body.admin-dashboard-page .input-group,
+    html body.view-register-page .input-group,
+    html body.view-order-page .input-group,
+    html body.view-enquiry-page .input-group,
+    html body.view-product-page .input-group {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+    }
+
+    html body.admin-page .form-card input,
+    html body.admin-page .form-card select,
+    html body.admin-page .form-card textarea,
+    html body.admin-dashboard-page .form-card input,
+    html body.admin-dashboard-page .form-card select,
+    html body.admin-dashboard-page .form-card textarea,
+    html body.view-register-page .form-card input,
+    html body.view-register-page .form-card select,
+    html body.view-register-page .form-card textarea,
+    html body.view-order-page .form-card input,
+    html body.view-order-page .form-card select,
+    html body.view-order-page .form-card textarea,
+    html body.view-enquiry-page .form-card input,
+    html body.view-enquiry-page .form-card select,
+    html body.view-enquiry-page .form-card textarea,
+    html body.view-product-page .form-card input,
+    html body.view-product-page .form-card select,
+    html body.view-product-page .form-card textarea {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+    }
+
+    html body.admin-page .admin-filter-actions,
+    html body.view-register-page .admin-filter-actions,
+    html body.view-order-page .admin-filter-actions,
+    html body.view-enquiry-page .admin-filter-actions,
+    html body.view-product-page .admin-filter-actions {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 14px;
+        margin: 5px 0 40px 0;
+    }
+
+    html body.admin-page .admin-filter-actions input[type="submit"],
+    html body.admin-page .admin-filter-actions .admin-action-link,
+    html body.view-register-page .admin-filter-actions input[type="submit"],
+    html body.view-register-page .admin-filter-actions .admin-action-link,
+    html body.view-order-page .admin-filter-actions input[type="submit"],
+    html body.view-order-page .admin-filter-actions .admin-action-link,
+    html body.view-enquiry-page .admin-filter-actions input[type="submit"],
+    html body.view-enquiry-page .admin-filter-actions .admin-action-link,
+    html body.view-product-page .admin-filter-actions input[type="submit"],
+    html body.view-product-page .admin-filter-actions .admin-action-link {
+        width: 100%;
+        max-width: 230px;
+        box-sizing: border-box;
+    }
+
+    html body.admin-page .admin-list-toolbar,
+    html body.view-register-page .admin-list-toolbar,
+    html body.view-order-page .admin-list-toolbar,
+    html body.view-enquiry-page .admin-list-toolbar,
+    html body.view-product-page .admin-list-toolbar {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+    }
+
+    html body.admin-page .admin-action-buttons,
+    html body.admin-dashboard-page .admin-action-buttons,
+    html body.view-register-page .admin-action-buttons,
+    html body.view-order-page .admin-action-buttons,
+    html body.view-enquiry-page .admin-action-buttons,
+    html body.view-product-page .admin-action-buttons {
+        flex-direction: column;
+        gap: 14px;
+        width: 100%;
+    }
+
+    html body.admin-page .admin-action-link,
+    html body.admin-dashboard-page .admin-action-link,
+    html body.view-register-page .admin-action-link,
+    html body.view-order-page .admin-action-link,
+    html body.view-enquiry-page .admin-action-link,
+    html body.view-product-page .admin-action-link {
+        width: 100%;
+        max-width: 260px;
+        box-sizing: border-box;
+    }
+
+    html body.admin-page .admin-table-wrapper,
+    html body.admin-dashboard-page .admin-table-wrapper,
+    html body.view-register-page .admin-table-wrapper,
+    html body.view-order-page .admin-table-wrapper,
+    html body.view-enquiry-page .admin-table-wrapper,
+    html body.view-product-page .admin-table-wrapper {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        box-sizing: border-box;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    html body.admin-page .admin-summary-table,
+    html body.admin-dashboard-page .admin-summary-table,
+    html body.view-register-page .admin-summary-table,
+    html body.view-order-page .admin-summary-table,
+    html body.view-enquiry-page .admin-summary-table,
+    html body.view-product-page .admin-summary-table {
+        width: 100%;
+        min-width: 680px;
+    }
+
+    html body.admin-page .admin-detail-table,
+    html body.admin-dashboard-page .admin-detail-table,
+    html body.view-register-page .admin-detail-table,
+    html body.view-order-page .admin-detail-table,
+    html body.view-enquiry-page .admin-detail-table,
+    html body.view-product-page .admin-detail-table {
+        width: 100%;
+        min-width: 620px;
+    }
+
+    html body.admin-dashboard-page .admin-dashboard-menu {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    html body.view-product-page .admin-summary-table {
+        min-width: 760px;
+    }
+
+    html body.view-product-page .product-table-action-group {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        align-items: center;
+    }
+
+    html body.view-product-page .product-table-action-group .admin-view-btn {
+        width: 78px;
+        margin: 0;
+        padding: 7px 0;
+        text-align: center;
+    }
+}
+
+/* ==========================================================================
+   SEARCH TARGET POSITION
+   ========================================================================== */
+
+.pricing-card {
+    scroll-margin-top: 120px;
+}
+
+.pricing-card:target {
+    background-color: #f6faf4;
+}
+
+@media (prefers-color-scheme: dark) {
+    html body .pricing-card:target {
+        background-color: #24301f;
+    }
+}
+
+/* ==========================================================================
+   PRODUCT STOCK STATUS
+   ========================================================================== */
+
+.view-product-page .admin-stock-normal,
+.view-product-page .admin-stock-warning,
+.view-product-page .admin-stock-soldout {
+    display: inline-block;
+    min-width: 82px;
+    padding: 6px 10px;
+    border-radius: 20px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.view-product-page .admin-stock-normal {
+    background-color: #edf6e8;
+    color: #4f7f38;
+    border: 1px solid #6D9E51;
+}
+
+.view-product-page .admin-stock-warning {
+    background-color: #fff5e6;
+    color: #b36b00;
+    border: 1px solid #e6a23c;
+}
+
+.view-product-page .admin-stock-soldout {
+    background-color: #ffeaea;
+    color: #b00020;
+    border: 1px solid #d64545;
+}
+
+.view-product-page .product-table-action-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.view-product-page .product-table-action-group .admin-view-btn {
+    width: 78px;
+    margin: 0;
+    padding: 7px 0;
+    text-align: center;
+}
+
+.sold-out-label {
+    display: inline-block;
+    margin: 8px 0 12px 0;
+    padding: 7px 14px;
+    background-color: #b00020;
+    color: #ffffff;
+    border-radius: 20px;
+    font-family: 'Cinzel', serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.sold-out-button {
+    background-color: #999999;
+    cursor: not-allowed;
+    opacity: 0.75;
+}
+
+.cactus-card.sold-out-card figure img,
+.service-row.sold-out-service figure img,
+.pricing-card.sold-out-package {
+    filter: grayscale(60%);
+}
+
+@media (prefers-color-scheme: dark) {
+    html body.view-product-page .admin-stock-normal {
+        background-color: #1f331f;
+        color: #9bd37d;
+        border-color: #6D9E51;
+    }
+
+    html body.view-product-page .admin-stock-warning {
+        background-color: #3a2e16;
+        color: #ffd27a;
+        border-color: #e6a23c;
+    }
+
+    html body.view-product-page .admin-stock-soldout {
+        background-color: #3a1b1b;
+        color: #ff9a9a;
+        border-color: #d64545;
+    }
+
+    html body .sold-out-label {
+        background-color: #d64545;
+        color: #ffffff;
+    }
+
+    html body .sold-out-button {
+        background-color: #555555;
+        color: #dddddd;
+    }
+}
+
+/* ==========================================================================
+   PRODUCT OPTION PRICES IN ADMIN TABLE
+   ========================================================================== */
+
+.view-product-page .admin-option-price-cell {
+    text-align: left;
+    line-height: 1.7;
+    min-width: 170px;
+}
+
+/* ==========================================================================
+   ADMIN CURRENT IMAGE
+   ========================================================================== */
+
+.admin-current-image-box {
+    width: 100%;
+    max-width: 260px;
+    padding: 10px;
+    border: 1px solid #dddddd;
+    border-radius: 12px;
+    background-color: #ffffff;
+}
+
+.admin-current-image-box img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+@media (prefers-color-scheme: dark) {
+    html body .admin-current-image-box {
+        background-color: #1e1e1e;
+        border-color: #444444;
+    }
+}
+
+/* ==========================================================================
+   ADMIN DASHBOARD STOCK STATUS
+   ========================================================================== */
+
+.admin-dashboard-page .admin-stock-warning,
+.admin-dashboard-page .admin-stock-soldout {
+    display: inline-block;
+    min-width: 82px;
+    padding: 6px 10px;
+    border-radius: 20px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.admin-dashboard-page .admin-stock-warning {
+    background-color: #fff5e6;
+    color: #b36b00;
+    border: 1px solid #e6a23c;
+}
+
+.admin-dashboard-page .admin-stock-soldout {
+    background-color: #ffeaea;
+    color: #b00020;
+    border: 1px solid #d64545;
+}
+
+@media (prefers-color-scheme: dark) {
+    html body.admin-dashboard-page .admin-stock-warning {
+        background-color: #3a2e16;
+        color: #ffd27a;
+        border-color: #e6a23c;
+    }
+
+    html body.admin-dashboard-page .admin-stock-soldout {
+        background-color: #3a1b1b;
+        color: #ff9a9a;
+        border-color: #d64545;
+    }
+}
+
+/* ==========================================================================
+   STORY PAGE
+   ========================================================================== */
+
+.story-page .story-intro-section {
+    padding-top: 90px;
+}
+
+.story-page .story-journey-section {
+    padding-top: 80px;
+    padding-bottom: 90px;
+}
+
+.story-page .story-detail-section {
+    padding-top: 90px;
+    padding-bottom: 90px;
+}
+
+.story-page .story-team-section {
+    padding-top: 80px;
+    padding-bottom: 100px;
+}
+
+.story-page .story-team-box {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 45px 35px;
+    text-align: center;
+    background-color: #ffffff;
+    border-radius: 22px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.story-page .story-team-box p {
+    margin-bottom: 28px;
+    line-height: 1.8;
+}
+
+@media (prefers-color-scheme: dark) {
+    html body.story-page .story-team-box {
+        background-color: #1e1e1e;
+        color: #ffffff;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+    }
+}
+
+/* ==========================================================================
+   SHOPPING CART
+   ========================================================================== */
+
+.cart-page .cart-item-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.cart-page .cart-item-info img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.cart-page .cart-quantity-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.cart-page .cart-quantity-form input[type="number"] {
+    width: 70px;
+    padding: 8px;
+    text-align: center;
+}
+
+.cart-page .cart-quantity-form input[type="submit"] {
+    padding: 8px 14px;
+    font-size: 0.8rem;
+}
+
+@media (max-width: 700px) {
+    .cart-page .cart-table {
+        min-width: 780px;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    html body.cart-page .cart-quantity-form input[type="number"] {
+        background-color: #2a2a2a;
+        color: #ffffff;
+        border-color: #444444;
+    }
+}
+
+/* ==========================================================================
+   ORDER SUMMARY
+   ========================================================================== */
+
+.order-page .order-summary-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.order-page .order-summary-item {
+    display: grid;
+    grid-template-columns: 90px 1fr 150px;
+    gap: 20px;
+    align-items: center;
+    padding: 18px;
+    background-color: #ffffff;
+    border: 1px solid #e6e6e6;
+    border-radius: 16px;
+}
+
+.order-page .order-summary-item img {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.order-page .order-summary-info h3 {
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+}
+
+.order-page .order-summary-info p {
+    margin: 4px 0;
+    font-size: 0.95rem;
+}
+
+.order-page .order-summary-subtotal {
+    text-align: right;
+}
+
+.order-page .order-summary-subtotal span,
+.order-page .order-total-box span {
+    display: block;
+    font-size: 1.1rem;
+    margin-bottom: 3px;
+    color: #666666;
+}
+
+.order-page .order-summary-subtotal strong,
+.order-page .order-total-box strong {
+    color: #f15a24;
+    font-family: 'Cinzel', serif;
+    font-size: 1.2rem;
+}
+
+.order-page .order-total-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 22px;
+    padding: 18px 22px;
+    background-color: #f4f9f1;
+    border: 1px solid #6D9E51;
+    border-radius: 16px;
+}
+
+.order-page .order-total-box strong {
+    font-size: 1.5rem;
+}
+
+@media (max-width: 700px) {
+    .order-page .order-summary-item {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .order-page .order-summary-item img {
+        margin: 0 auto;
+    }
+
+    .order-page .order-summary-subtotal {
+        text-align: center;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    html body.order-page .order-summary-item {
+        background-color: #242424;
+        border-color: #444444;
+    }
+
+    html body.order-page .order-summary-subtotal span,
+    html body.order-page .order-total-box span {
+        color: #bbbbbb;
+    }
+
+    html body.order-page .order-total-box {
+        background-color: #1f331f;
+        border-color: #6D9E51;
+    }
+}
+
+/* ==========================================================================
+   CART PAGE RESPONSIVE
+   ========================================================================== */
+
+.cart-page .admin-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.cart-page .cart-item-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.cart-page .cart-item-info img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 10px;
+    flex-shrink: 0;
+}
+
+.cart-page .cart-quantity-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.cart-page .cart-quantity-form input[type="number"] {
+    width: 70px;
+    min-width: 70px;
+    padding: 8px;
+    text-align: center;
+}
+
+.cart-page .cart-quantity-form input[type="submit"] {
+    width: auto;
+    min-width: 75px;
+    padding: 8px 12px;
+    font-size: 0.8rem;
+}
+
+.cart-page .admin-action-buttons {
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+/* Mobile cart layout */
+@media (max-width: 700px) {
+    .cart-page .form-main {
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+    .cart-page .form-card {
+        padding: 26px 16px;
+        overflow: hidden;
+    }
+
+    .cart-page .admin-record-fieldset {
+        padding: 35px 14px 25px;
+    }
+
+    .cart-page .admin-table-wrapper {
+        overflow-x: visible;
+    }
+
+    .cart-page .cart-table,
+    .cart-page .cart-table tbody,
+    .cart-page .cart-table tr,
+    .cart-page .cart-table td,
+    .cart-page .cart-table th {
+        display: block;
+        width: 100%;
+    }
+
+    .cart-page .cart-table {
+        border: none;
+        min-width: 0;
+    }
+
+    .cart-page .cart-table tr:first-child {
+        display: none;
+    }
+
+    .cart-page .cart-table tr {
+        margin-bottom: 18px;
+        padding: 16px;
+        border: 1px solid #d8d8d8;
+        border-radius: 16px;
+        background-color: #ffffff;
+    }
+
+    .cart-page .cart-table tr:last-child {
+        background-color: #6D9E51;
+        color: #ffffff;
+        text-align: center;
+    }
+
+    .cart-page .cart-table td,
+    .cart-page .cart-table th {
+        border: none;
+        padding: 10px 0;
+        text-align: center;
+    }
+
+    .cart-page .cart-table td:nth-child(1)::before {
+        content: "Item";
+    }
+
+    .cart-page .cart-table td:nth-child(2)::before {
+        content: "Option";
+    }
+
+    .cart-page .cart-table td:nth-child(3)::before {
+        content: "Price";
+    }
+
+    .cart-page .cart-table td:nth-child(4)::before {
+        content: "Quantity";
+    }
+
+    .cart-page .cart-table td:nth-child(5)::before {
+        content: "Subtotal";
+    }
+
+    .cart-page .cart-table td:nth-child(6)::before {
+        content: "Action";
+    }
+
+    .cart-page .cart-table td::before {
+        display: block;
+        margin-bottom: 6px;
+        font-family: 'Cinzel', serif;
+        font-weight: 700;
+        color: #6D9E51;
+    }
+
+    .cart-page .cart-item-info {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .cart-page .cart-item-info img {
+        width: 90px;
+        height: 90px;
+    }
+
+    .cart-page .cart-quantity-form {
+        flex-direction: column;
+    }
+
+    .cart-page .cart-quantity-form input[type="number"] {
+        width: 100%;
+        max-width: 120px;
+    }
+
+    .cart-page .cart-quantity-form input[type="submit"] {
+        width: 100%;
+        max-width: 160px;
+    }
+
+    .cart-page .admin-action-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .cart-page .admin-action-buttons .admin-action-link {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    html body.cart-page .cart-quantity-form input[type="number"] {
+        background-color: #2a2a2a;
+        color: #ffffff;
+        border-color: #444444;
+    }
+
+    html body.cart-page .cart-table tr {
+        background-color: #242424;
+        border-color: #444444;
+    }
+
+    html body.cart-page .cart-table tr:last-child {
+        background-color: #6D9E51;
+        color: #ffffff;
+    }
+
+    html body.cart-page .cart-table td::before {
+        color: #9bd37d;
+    }
+}
+
+/* ==========================================================================
+   CART AND ORDER BUTTON ALIGNMENT
+   ========================================================================== */
+
+.cart-page .admin-action-buttons,
+.order-page .admin-action-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.cart-page .admin-action-buttons .admin-action-link,
+.order-page .admin-action-buttons .admin-action-link {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+@media (max-width: 700px) {
+    .cart-page .admin-action-buttons,
+    .order-page .admin-action-buttons {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .cart-page .admin-action-buttons .admin-action-link,
+    .order-page .admin-action-buttons .admin-action-link {
+        width: 100%;
+        max-width: 320px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+
+    .cart-page .button-group,
+    .order-page .button-group {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .cart-page .button-group input,
+    .order-page .button-group input {
+        width: 100%;
+        max-width: 320px;
+        text-align: center;
+    }
+}
+
+/* ==========================================================================
+   ADMIN MESSAGE TEXT
+   ========================================================================== */
+
+.admin-message-bold {
+    text-align: center;
+    font-weight: bold;
+}
+
+.product-empty-message {
+    grid-column: 1 / -1;
+    text-align: center;
+}
+
+.service-empty-message {
+    text-align: center;
+    width: 100%;
+    padding: 40px;
+}
+
+/* ==========================================================================
+   ADMIN PRODUCT OPTION EDITOR
+   ========================================================================== */
+
+.admin-option-editor {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.admin-option-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 12px;
+    align-items: center;
+}
+
+@media (max-width: 700px) {
+    .admin-option-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ==========================================================================
+   CART STOCK NOTE
+   ========================================================================== */
+
+.cart-stock-note {
+    display: block;
+    margin-top: 6px;
+    font-size: 0.8rem;
+    color: #666666;
+}
+
+@media (prefers-color-scheme: dark) {
+    html body.cart-page .cart-stock-note {
+        color: #bbbbbb;
+    }
+}
+
+/* ==========================================================================
+   PRODUCT MANAGEMENT PAGE WIDTH AND OPTION STATUS
+   ========================================================================== */
+
+.view-product-page .form-header,
+.view-product-page .form-card {
+    max-width: 1180px;
+}
+
+.view-product-page .admin-summary-table {
+    max-width: 1080px;
+}
+
+.view-product-page .product-option-status-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: center;
+}
+
+.view-product-page .product-option-status-line {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    align-items: center;
+}
+
+.view-product-page .product-option-status-name {
+    font-size: 0.78rem;
+    font-weight: bold;
 }

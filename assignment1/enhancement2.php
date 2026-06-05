@@ -12,17 +12,15 @@
     <!-- BASIC PAGE METADATA -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="PHP and MySQL enhancement report for Cacti-Succulent Kuching Assignment 2">
-    <meta name="keywords" content="enhancement, PHP, MySQL, admin dashboard, search, anti-spam, CSV export">
+    <meta name="description" content="PHP and MySQL enhancements for Cacti-Succulent Kuching Assignment 2">
+    <meta name="keywords" content="enhancement, PHP, MySQL, product management, shopping cart, checkout">
     <meta name="author" content="Rachael, Eleona, Amber">
 
     <title>Enhancement 2 | Cacti-Succulent Kuching</title>
 
     <!-- EXTERNAL STYLESHEETS AND ICONS -->
-    <link rel="stylesheet" href="styles/style.css?v=adminfix1">
+    <link rel="stylesheet" href="styles/style.css?v=enhancement2final3">
     <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
 </head>
 
@@ -37,158 +35,96 @@
         <!-- ENHANCEMENT PAGE HEADER -->
         <div class="enhancements-header">
             <h1>Enhancement 2</h1>
-            <p>PHP and MySQL enhancements for admin management, customer searching, data export and enquiry protection</p>
+            <p>PHP and MySQL enhancements implemented beyond the basic assignment requirements</p>
         </div>
 
         <!-- ENHANCEMENT LIST -->
         <div class="enhancements-list">
 
-            <!-- ENHANCEMENT 1: ADMIN MANAGEMENT, ANALYTICS AND EXPORT MODULE -->
+            <!-- ENHANCEMENT 1: PRODUCT AND SERVICE MANAGEMENT MODULE -->
             <article class="enhancement-row">
+
+                <!-- ENHANCEMENT VIDEO -->
                 <figure class="enhancement-figure">
-                    <video class="enhancement-video" preload="auto" autoplay loop muted playsinline>
-                        <source src="videos/recording-admin-dashboard.mp4" type="video/mp4">
+                    <video class="enhancement-video" controls>
+                        <source src="videos/enhancement2.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                 </figure>
 
                 <div class="enhancement-text">
-                    <h2>1. Admin Management, Analytics and CSV Export Module</h2>
+                    <h2>1. Product and Service Management Module</h2>
 
-                    <p><strong>How it goes beyond basic requirements:</strong> The basic requirement asks the administrator to view registration, order and enquiry records. This enhancement improves the admin area into a more practical business management system. The dashboard summarises total users, orders, enquiries and pending orders, displays the latest user, order and enquiry activity, and shows order/enquiry status breakdowns in a compact overview. The Users, Orders and Enquiries pages also include keyword search, filters and CSV export buttons, allowing the business owner to find and download records more efficiently instead of manually checking phpMyAdmin.</p>
+                    <p><strong>How it goes beyond the basic requirements:</strong> The basic assignment requires register, order, enquiry, login and user management functions. This enhancement adds a complete product and service management module so the administrator can manage the actual products and services displayed on the public website.</p>
 
                     <p><strong>Main features included:</strong></p>
+
                     <div class="code-box">
-                        Admin Dashboard: summary statistics, latest activity and status breakdown<br>
-                        Users page: search users, filter by state, add/view/edit/delete users and export CSV<br>
-                        Orders page: search orders, filter by status, update order status and export CSV<br>
-                        Enquiries page: search enquiries, filter by status, update enquiry status and export CSV
+                        Admin can add, view, edit and delete products and services<br>
+                        Product and service data is stored in a MySQL product table<br>
+                        Public product and service pages read directly from the database<br>
+                        Admin can upload and update images for normal products and services<br>
+                        Package services can be managed without image upload fields<br>
+                        Admin can manage price, stock quantity, description, product options and image source links<br>
+                        Items with options can have separate option price and separate option stock<br>
+                        Low stock and sold out options are shown clearly in the analysis table<br>
+                        Product summary shows option price, option stock and option stock status<br>
+                        Sold out products and sold out options are disabled on the public product pages
                     </div>
 
-                    <p><strong>What a programmer needs to do:</strong> A programmer needs to create protected admin-only pages using PHP sessions, retrieve records from MySQL using mysqli, and write SQL queries using <code>COUNT()</code>, <code>GROUP BY</code>, <code>ORDER BY</code>, <code>LIKE</code> and <code>LEFT JOIN</code>. The CSV export feature uses PHP output headers and <code>fputcsv()</code> to generate downloadable spreadsheet-compatible files directly from database results.</p>
+                    <p><strong>What a programmer needs to do:</strong> A programmer needs to create a product table and a product option table, build protected admin pages, use PHP sessions to restrict access, and use mysqli commands to create, retrieve, update and delete records. The public product and service pages must retrieve data from the same database so that admin changes appear on the real website.</p>
 
-                    <p><strong>Files involved:</strong> <code>admin_dashboard.php</code>, <code>view_register.php</code>, <code>view_order.php</code>, <code>view_enquiry.php</code>, <code>view_register_detail.php</code>, <code>view_order_detail.php</code>, <code>view_enquiry_detail.php</code>, <code>edit_user.php</code>, <code>edit_user_process.php</code>, <code>delete_user.php</code>, <code>add_user.php</code>, <code>add_user_process.php</code>, <code>edit_order_status.php</code>, <code>edit_order_status_process.php</code>, <code>edit_enquiry_status.php</code>, <code>edit_enquiry_status_process.php</code>, <code>export_users.php</code>, <code>export_orders.php</code>, <code>export_enquiries.php</code>.</p>
+                    <p><strong>Files involved:</strong> <code>view_product.php</code>, <code>view_product_detail.php</code>, <code>add_product.php</code>, <code>add_product_process.php</code>, <code>edit_product.php</code>, <code>edit_product_process.php</code>, <code>delete_product.php</code>, <code>admin_dashboard.php</code>, <code>product1.php</code>, <code>product2.php</code>, <code>product3.php</code> and <code>service1.php</code>.</p>
 
-                    <p><strong>Database features used:</strong> <code>user</code>, <code>order</code> and <code>enquiry</code> tables, with additional status fields such as <code>order_status</code> and <code>enquiry_status</code>.</p>
+                    <p><strong>Database tables used:</strong> <code>product</code> and <code>product_option</code></p>
 
-                    <p><strong>Source / Citation:</strong> Self-developed using PHP sessions, mysqli queries and CSV output techniques. Reference: <a href="https://www.php.net/manual/en/function.fputcsv.php" target="_blank">PHP Manual: fputcsv()</a>, <a href="https://www.php.net/manual/en/book.mysqli.php" target="_blank">PHP Manual: MySQLi</a></p>
-
-                    <a href="admin_dashboard.php" class="btn-link1">View Feature</a>
+                    <a href="view_product.php" class="btn-link1">View Product Management</a>
                 </div>
             </article>
 
-            <!-- ENHANCEMENT 2: PRODUCT AND SERVICE SEARCH FEATURE -->
+            <!-- ENHANCEMENT 2: SHOPPING CART AND CHECKOUT MANAGEMENT MODULE -->
             <article class="enhancement-row">
+
+                <!-- ENHANCEMENT VIDEO -->
                 <figure class="enhancement-figure">
-                    <video class="enhancement-video" preload="auto" autoplay loop muted playsinline>
-                        <source src="videos/recording-product-search.mp4" type="video/mp4">
+                    <video class="enhancement-video" controls>
+                        <source src="videos/enhancement2.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                 </figure>
 
                 <div class="enhancement-text">
-                    <h2>2. PHP Product and Service Search Feature</h2>
+                    <h2>2. Shopping Cart and Checkout Management Module</h2>
 
-                    <p><strong>How it goes beyond basic requirements:</strong> The basic website allows users to browse product and service pages manually. This enhancement improves customer usability by adding a PHP-based keyword search bar to product and service pages. When customers type a keyword, matching products or services are displayed as clickable search results. Clicking a result brings the customer directly to the related item on the same page, making the shopping experience faster and more user-friendly.</p>
-
-                    <p><strong>Main features included:</strong></p>
-                    <div class="code-box">
-                        Customer enters keyword in the product/service search box<br>
-                        PHP compares the keyword with product and service names, categories and related keywords<br>
-                        Matching results are displayed in a clean dropdown-style result box<br>
-                        Customer clicks a result and jumps directly to the matching product or service section
-                    </div>
-
-                    <p><strong>What a programmer needs to do:</strong> A programmer needs to create searchable arrays for product and service data, read the customer keyword using <code>$_GET</code>, compare the keyword against the stored values, and output matching results using PHP. Each product or service card also needs an ID so the search result link can jump directly to the correct section using an anchor link.</p>
-
-                    <p><strong>Files involved:</strong> <code>product1.php</code>, <code>product2.php</code>, <code>product3.php</code>, <code>service1.php</code>, and <code>styles/style.css</code>.</p>
-
-                    <p><strong>Why this is useful:</strong> Customers do not need to scroll through long product and service pages. They can search by words related to cactus, succulent, accessories, repotting, consultation or plant care and quickly locate the relevant item.</p>
-
-                    <p><strong>Source / Citation:</strong> Self-developed using PHP GET requests and HTML anchor links. Reference: <a href="https://www.php.net/manual/en/reserved.variables.get.php" target="_blank">PHP Manual: $_GET</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a" target="_blank">MDN Web Docs: Anchor element</a></p>
-
-                    <a href="product1.php" class="btn-link2">View Feature</a>
-                </div>
-            </article>
-
-            <!-- ENHANCEMENT 3: ANTI-SPAM ENQUIRY PROTECTION -->
-            <article class="enhancement-row">
-                <figure class="enhancement-figure">
-                    <video class="enhancement-video" preload="auto" autoplay loop muted playsinline>
-                        <source src="videos/recording-antispam.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </figure>
-
-                <div class="enhancement-text">
-                    <h2>3. Anti-Spam Enquiry Protection</h2>
-
-                    <p><strong>How it goes beyond basic requirements:</strong> The basic enquiry form stores customer enquiries in the database after validation. This enhancement adds server-side spam protection by limiting repeated submissions from the same email address within a short time period. If the same email submits too many enquiries within 10 minutes, the system blocks the new submission and asks the user to wait before trying again.</p>
+                    <p><strong>How it goes beyond the basic requirements:</strong> The basic order form only allows customers to submit order details. This enhancement adds a shopping cart system before checkout so customers can review selected products, options, quantities, subtotals and total price before submitting an order.</p>
 
                     <p><strong>Main features included:</strong></p>
+
                     <div class="code-box">
-                        The enquiry table stores the submission time using submitted_at<br>
-                        PHP checks how many enquiries the same email submitted recently<br>
-                        The first three enquiries within 10 minutes are allowed<br>
-                        The fourth enquiry within 10 minutes is blocked
+                        Customer can add products to a shopping cart<br>
+                        Cart items are stored using PHP sessions<br>
+                        Customer can update quantity, remove items and clear the cart<br>
+                        Cart shows product image, selected option, price, quantity, subtotal and total<br>
+                        Product option prices are supported for items with different choices<br>
+                        Product option stock is checked before adding to cart<br>
+                        Cart quantity cannot exceed available product or option stock<br>
+                        Checkout page shows a clear order summary before submission<br>
+                        Order form receives cart items automatically<br>
+                        Successful order submission reduces product stock or selected option stock<br>
+                        Cart is cleared after a successful order submission
                     </div>
 
-                    <p><strong>What a programmer needs to do:</strong> A programmer needs to add a timestamp column to the enquiry table, then use a mysqli prepared statement to count recent enquiries from the same email address. If the recent count is already at the limit, PHP stops the insert operation and displays an error message instead of saving the spam enquiry.</p>
+                    <p><strong>What a programmer needs to do:</strong> A programmer needs to create PHP scripts for adding, updating, removing and clearing cart items. The cart data is stored in a session, while product and option stock are checked from MySQL using mysqli. During checkout, the order is saved in the order table and the related product or option stock is updated together.</p>
 
-                    <p><strong>Files involved:</strong> <code>enquiry_process.php</code>, <code>enquiry.php</code>, and the MySQL <code>enquiry</code> table.</p>
+                    <p><strong>Files involved:</strong> <code>add_to_cart.php</code>, <code>cart.php</code>, <code>update_cart.php</code>, <code>remove_from_cart.php</code>, <code>clear_cart.php</code>, <code>order.php</code>, <code>order_process.php</code>, <code>product1.php</code>, <code>product2.php</code> and <code>product3.php</code>.</p>
 
-                    <p><strong>Database change required:</strong></p>
-                    <div class="code-box">
-                        ALTER TABLE enquiry<br>
-                        ADD submitted_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP;
-                    </div>
+                    <p><strong>Database tables used:</strong> <code>product</code>, <code>product_option</code> and <code>order</code></p>
 
-                    <p><strong>Source / Citation:</strong> Self-developed using server-side validation, mysqli prepared statements and timestamp comparison. Reference: <a href="https://www.php.net/manual/en/mysqli.quickstart.prepared-statements.php" target="_blank">PHP Manual: MySQLi Prepared Statements</a>, <a href="https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html" target="_blank">MySQL Manual: Date and Time Functions</a></p>
-
-                    <a href="enquiry.php" class="btn-link3">View Feature</a>
-                </div>
-            </article>
-
-            <!-- ENHANCEMENT 4: ORDER AND ENQUIRY STATUS WORKFLOW -->
-            <article class="enhancement-row">
-                <figure class="enhancement-figure">
-                    <video class="enhancement-video" preload="auto" autoplay loop muted playsinline>
-                        <source src="videos/recording-status-management.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </figure>
-
-                <div class="enhancement-text">
-                    <h2>4. Order and Enquiry Status Workflow</h2>
-
-                    <p><strong>How it goes beyond basic requirements:</strong> The basic admin pages only display submitted records. This enhancement allows the administrator to actively manage record progress by updating order and enquiry statuses. Orders can be marked as Pending, Preparing, Ready for Pickup, Delivered or Cancelled. Enquiries can be marked as New, In Progress or Resolved. This gives the business owner a simple workflow system for tracking customer requests.</p>
-
-                    <p><strong>Main features included:</strong></p>
-                    <div class="code-box">
-                        Orders: Pending, Preparing, Ready for Pickup, Delivered, Cancelled<br>
-                        Enquiries: New, In Progress, Resolved<br>
-                        Admin can edit status from the summary table<br>
-                        Dashboard overview counts each status category automatically
-                    </div>
-
-                    <p><strong>What a programmer needs to do:</strong> A programmer needs to add status columns in MySQL, display the current status in the summary pages, create edit-status forms, validate allowed status values, and update the selected record using prepared SQL update statements. The dashboard then groups and counts the statuses to help the business owner understand current workload.</p>
-
-                    <p><strong>Files involved:</strong> <code>view_order.php</code>, <code>edit_order_status.php</code>, <code>edit_order_status_process.php</code>, <code>view_enquiry.php</code>, <code>edit_enquiry_status.php</code>, <code>edit_enquiry_status_process.php</code>, and <code>admin_dashboard.php</code>.</p>
-
-                    <p><strong>Database changes required:</strong></p>
-                    <div class="code-box">
-                        ALTER TABLE `order` ADD order_status VARCHAR(30) NOT NULL DEFAULT 'Pending';<br>
-                        ALTER TABLE enquiry ADD enquiry_status VARCHAR(30) NOT NULL DEFAULT 'New';
-                    </div>
-
-                    <p><strong>Source / Citation:</strong> Self-developed using MySQL update queries and PHP form processing. Reference: <a href="https://dev.mysql.com/doc/refman/8.0/en/update.html" target="_blank">MySQL Manual: UPDATE Statement</a>, <a href="https://www.php.net/manual/en/mysqli-stmt.bind-param.php" target="_blank">PHP Manual: mysqli_stmt::bind_param</a></p>
-
-                    <a href="view_order.php" class="btn-link4">View Feature</a>
+                    <a href="cart.php" class="btn-link2">View Shopping Cart</a>
                 </div>
             </article>
 
         </div>
-
     </main>
 
 <!-- WEBSITE FOOTER & COPYRIGHT -->

@@ -100,7 +100,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (mysqli_stmt_execute($insert_stmt)) {
         mysqli_stmt_close($insert_stmt);
         mysqli_close($conn);
-        echo "<script>alert('User added successfully.'); window.location.href = 'manage_users.php';</script>";
+        echo "<script>alert('User added successfully.'); window.location.href = 'view_register.php';</script>";
         exit();
     } else {
         mysqli_stmt_close($insert_stmt);
@@ -111,7 +111,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 } else {
     /* Redirect users who access this page directly */
-    header("Location: manage_users.php");
+    header("Location: view_register.php");
     exit();
 }
 ?>

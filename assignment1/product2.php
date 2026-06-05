@@ -1,3 +1,11 @@
+<?php
+/*
+    Author: Rachael, Eleona, Amber
+    Student ID: 104402891, 104403014, 104399472
+    Purpose: Display the succulent product catalogue using database records.
+*/
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +19,7 @@
     <title>Succulents | Cacti-Succulent Kuching</title>
     
     <!-- EXTERNAL STYLESHEETS AND ICONS -->
-    <link rel="stylesheet" href="styles/style.css?v=adminfix3">
+    <link rel="stylesheet" href="styles/style.css?v=cartproduct2">
     <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,11 +33,11 @@
 
     <!-- ENHANCEMENT -->
     <div class="cactus-party">
-        <span class="c1">🪴</span><span class="c2">🌿</span><span class="c3">🌸</span>
-        <span class="c4">🌱</span><span class="c5">🪴</span><span class="c6">🌺</span>
-        <span class="c7">🌿</span><span class="c8">🌱</span><span class="c9">🪴</span>
-        <span class="c10">🌸</span><span class="c11">🌺</span><span class="c12">🌿</span>
-        <span class="c13">🪴</span><span class="c14">🌱</span><span class="c15">🌸</span>
+        <span class="c1">🌵</span><span class="c2">✨</span><span class="c3">🪴</span>
+        <span class="c4">🌵</span><span class="c5">🪴</span><span class="c6">✨</span>
+        <span class="c7">✨</span><span class="c8">🌵</span><span class="c9">🪴</span>
+        <span class="c10">🪴</span><span class="c11">✨</span><span class="c12">🌵</span>
+        <span class="c13">🌵</span><span class="c14">🪴</span><span class="c15">✨</span>
     </div>
 
     <!-- HERO SECTION -->
@@ -46,80 +54,100 @@
 
         <!-- PRODUCT AND SERVICE SEARCH BAR -->
         <?php include 'product_service_search.inc'; ?>
-
+        
         <!-- PRODUCTS SECTION -->
         <div class="product-grid">
-            <article class="cactus-card" id="echeveria-lola">
-                <figure>
-                    <img src="images/suc-amazing-grace.jpg" alt="Amazing Grace">
-                    <figcaption>E. laui. <a href="https://pin.it/7I8cqINrJ">Source</a></figcaption>
-                </figure>
-                <div class="card-content">
-                    <h3>Echeveria Lola</h3>
-                    <p class="price">RM 25.00</p>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-            </article>
+            <?php
+            /* Include database connection */
+            require_once('settings.php');
 
-            <article class="cactus-card" id="jade-plant">
-                <figure>
-                    <img src="images/suc-jade-plant.jpg" alt="Jade Plant">
-                    <figcaption>C. ovata. <a href="https://pin.it/59rRfd60E">Source</a></figcaption>
-                </figure>
-                <div class="card-content">
-                    <h3>Jade Plant</h3>
-                    <p class="price">RM 28.00</p>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-            </article>
+            /* Query to select only Succulent products */
+            $sql = "SELECT id, product_name, product_options, description, price, image_path, image_source, stock_quantity
+                    FROM product
+                    WHERE category = 'Succulents'
+                    ORDER BY id ASC";
 
-            <article class="cactus-card" id="moonstones">
-                <figure>
-                    <img src="images/suc-moonstones.jpg" alt="Moonstones">
-                    <figcaption>G. amethystinum. <a href="https://pin.it/6gsBKyem5">Source</a></figcaption>
-                </figure>
-                <div class="card-content">
-                    <h3>Moonstones</h3>
-                    <p class="price">RM 38.00</p>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-            </article>
+            $result = mysqli_query($conn, $sql);
 
-            <article class="cactus-card" id="aloe-vera">
-                <figure>
-                    <img src="images/suc-aloe-vera.jpg" alt="Aloe Vera">
-                    <figcaption>A. barbadensis. <a href="https://pin.it/8fKzJ9X2V">Source</a></figcaption>
-                </figure>
-                <div class="card-content">
-                    <h3>Aloe Vera</h3>
-                    <p class="price">RM 20.00</p>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-            </article>
+            /* Check if there are products in the database */
+            if ($result && mysqli_num_rows($result) > 0) {
 
-            <article class="cactus-card" id="ghosty">
-                <figure>
-                    <img src="images/suc-ghosty.jpg" alt="Ghosty">
-                    <figcaption>G. paraguayense. <a href="https://pin.it/6LwPxgoLj">Source</a></figcaption>
-                </figure>
-                <div class="card-content">
-                    <h3>Ghosty</h3>
-                    <p class="price">RM 42.00</p>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-            </article>
-            
-            <article class="cactus-card" id="string-of-pearls">
-                <figure>
-                    <img src="images/suc-string-of-pearls.jpg" alt="String of Pearls">
-                    <figcaption>S. rowleyanus. <a href="https://pin.it/33ZzdQ2ET">Source</a></figcaption>
-                </figure>
-                <div class="card-content">
-                    <h3>String of Pearls</h3>
-                    <p class="price">RM 50.00</p>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-            </article>
+                /* Loop through each product record */
+                while ($row = mysqli_fetch_assoc($result)) {
+
+                    /* Create a URL-safe ID for search jump link */
+                    $product_id = strtolower(str_replace(' ', '-', $row['product_name']));
+
+                    /* Check stock quantity */
+                    $stock_quantity = (int)$row['stock_quantity'];
+                    $is_sold_out = ($stock_quantity <= 0);
+            ?>
+
+                    <article class="cactus-card<?php echo $is_sold_out ? ' sold-out-card' : ''; ?>" id="<?php echo htmlspecialchars($product_id); ?>">
+                        <figure>
+                            <img src="<?php echo htmlspecialchars($row['image_path']); ?>" alt="<?php echo htmlspecialchars($row['product_name']); ?>">
+                            <figcaption>
+                                <?php echo htmlspecialchars($row['description']); ?>
+
+                                <?php if (!empty($row['image_source'])) { ?>
+                                    <a href="<?php echo htmlspecialchars($row['image_source']); ?>" target="_blank">Source</a>
+                                <?php } ?>
+                            </figcaption>
+                        </figure>
+
+                        <div class="card-content">
+                            <h3><?php echo htmlspecialchars($row['product_name']); ?></h3>
+
+                            <p class="price">RM <?php echo htmlspecialchars(number_format($row['price'], 2)); ?></p>
+
+                            <form action="add_to_cart.php" method="post">
+                                <input type="hidden" name="product_id" value="<?php echo htmlspecialchars($row['id']); ?>">
+                                <input type="hidden" name="quantity" value="1">
+
+                                <?php
+                                if (!empty($row['product_options'])) {
+                                    $options_array = explode(',', $row['product_options']);
+
+                                    echo '<select class="size-selector" name="item_option">';
+
+                                    foreach ($options_array as $option) {
+                                        $option = trim($option);
+
+                                        if ($option != "") {
+                                            if (strpos($option, ':') !== false) {
+                                                list($opt_name, $opt_price) = explode(':', $option);
+                                                $opt_name = trim($opt_name);
+                                                $opt_price = number_format((float)trim($opt_price), 2);
+                                                $hidden_value = htmlspecialchars(strtolower(str_replace(' ', '-', $opt_name)) . '|' . $opt_price);
+
+                                                echo '<option value="' . $hidden_value . '">' . htmlspecialchars($opt_name) . '</option>';
+                                            } else {
+                                                echo '<option value="' . htmlspecialchars(strtolower(str_replace(' ', '-', $option))) . '">' . htmlspecialchars($option) . '</option>';
+                                            }
+                                        }
+                                    }
+
+                                    echo '</select>';
+                                }
+                                ?>
+
+                                <?php if ($is_sold_out) { ?>
+                                    <button class="add-to-cart sold-out-button" disabled>Sold Out</button>
+                                <?php } else { ?>
+                                    <button type="submit" class="add-to-cart">Add to Cart</button>
+                                <?php } ?>
+                            </form>
+                        </div>
+                    </article>
+
+            <?php
+                }
+
+                mysqli_free_result($result);
+            } else {
+                echo "<p class='product-empty-message'>We are currently restocking our beautiful Succulents! Please check back later.</p>";
+            }
+            ?>
         </div>
 
         <!-- KNOWLEDGE BASE -->
@@ -193,3 +221,10 @@
 
 </body>
 </html>
+
+<?php
+/* Close database connection */
+if (isset($conn)) {
+    mysqli_close($conn);
+}
+?>

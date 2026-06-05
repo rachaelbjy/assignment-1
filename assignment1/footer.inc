@@ -33,3 +33,23 @@ echo "
     </footer>
 ";
 ?>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const backToTopButton = document.querySelector(".back-to-top");
+
+    if (backToTopButton) {
+        function toggleBackToTopButton() {
+            if (window.scrollY > 200) {
+                backToTopButton.classList.add("show");
+            } else {
+                backToTopButton.classList.remove("show");
+            }
+        }
+
+        toggleBackToTopButton();
+
+        window.addEventListener("scroll", toggleBackToTopButton);
+    }
+});
+</script>

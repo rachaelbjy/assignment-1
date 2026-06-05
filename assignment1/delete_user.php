@@ -22,7 +22,7 @@ $id = isset($_GET['id']) ? intval($_GET['id']) : 0;
 
 /* Redirect back if no valid ID is provided */
 if ($id <= 0) {
-    header("Location: manage_users.php");
+    header("Location: view_register.php");
     exit();
 }
 
@@ -35,12 +35,12 @@ mysqli_stmt_bind_param($stmt, "i", $id);
 if (mysqli_stmt_execute($stmt)) {
     mysqli_stmt_close($stmt);
     mysqli_close($conn);
-    echo "<script>alert('User deleted successfully.'); window.location.href = 'manage_users.php';</script>";
+    echo "<script>alert('User deleted successfully.'); window.location.href = 'view_register.php';</script>";
     exit();
 } else {
     mysqli_stmt_close($stmt);
     mysqli_close($conn);
-    echo "<script>alert('Unable to delete user. Please try again.'); window.location.href = 'manage_users.php';</script>";
+    echo "<script>alert('Unable to delete user. Please try again.'); window.location.href = 'view_register.php';</script>";
     exit();
 }
 ?>

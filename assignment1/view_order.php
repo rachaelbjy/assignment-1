@@ -100,7 +100,7 @@ if ($filter_status == "All" && $search_keyword == "") {
     <title>View Orders | Cacti-Succulent Kuching</title>
 
     <!-- EXTERNAL STYLESHEETS AND ICONS -->
-    <link rel="stylesheet" href="styles/style.css?v=adminfix2">
+    <link rel="stylesheet" href="styles/style.css?v=adminfix5">
     <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

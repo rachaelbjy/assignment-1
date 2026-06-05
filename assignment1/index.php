@@ -126,7 +126,7 @@
                 <h2>Rooted in Passion</h2>
                 <p>Cacti-Succulent Kuching started as a small project by a group of friends sharing a strong interest in plants and nature. At first, we only kept plants for our own homes, but we soon realised that many people also enjoy having plants in their living spaces.</p>
                 <p>Over time, we turned our passion into a small business. Today, our goal remains the same: to provide healthy plants and create a simple, enjoyable experience for our community.</p>
-                <a href="profile.php" class="solid-btn">Read Our Full Story</a>
+                <a href="story.php" class="solid-btn">Read Our Full Story</a>
             </article>
         </div>
     </div>

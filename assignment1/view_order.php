@@ -164,7 +164,7 @@ if ($filter_status == "All" && $search_keyword == "") {
                             <th>ID</th>
                             <th>Customer</th>
                             <th>Account</th>
-                            <th>Date</th>
+                            <th>Preferred Date</th>
                             <th>Status</th>
                             <th>Update</th>
                             <th>Details</th>

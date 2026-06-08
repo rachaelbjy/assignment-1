@@ -4,10 +4,51 @@ session_start();
 
 /* Retrieve saved enquiry input from session, if available */
 $d = isset($_SESSION['enquiry_data']) ? $_SESSION['enquiry_data'] : [];
-$v_fname = isset($d['fname']) ? htmlspecialchars($d['fname']) : '';
-$v_lname = isset($d['lname']) ? htmlspecialchars($d['lname']) : '';
-$v_email = isset($d['email']) ? htmlspecialchars($d['email']) : '';
-$v_phone = isset($d['phone']) ? htmlspecialchars($d['phone']) : '';
+
+/* Default logged-in user information values */
+$logged_in_fname = "";
+$logged_in_lname = "";
+$logged_in_email = "";
+$logged_in_phone = "";
+
+/* If a normal user is logged in, load saved user information from database */
+if (
+    isset($_SESSION['user_logged_in']) &&
+    $_SESSION['user_logged_in'] === true &&
+    isset($_SESSION['username'])
+) {
+    require_once('settings.php');
+
+    $username = $_SESSION['username'];
+
+    $user_sql = "SELECT fname, lname, email, phone
+                 FROM `user`
+                 WHERE username = ?
+                 LIMIT 1";
+
+    $user_stmt = mysqli_prepare($conn, $user_sql);
+    mysqli_stmt_bind_param($user_stmt, "s", $username);
+    mysqli_stmt_execute($user_stmt);
+    $user_result = mysqli_stmt_get_result($user_stmt);
+
+    if ($user_result && mysqli_num_rows($user_result) > 0) {
+        $user_row = mysqli_fetch_assoc($user_result);
+
+        $logged_in_fname = $user_row['fname'];
+        $logged_in_lname = $user_row['lname'];
+        $logged_in_email = $user_row['email'];
+        $logged_in_phone = $user_row['phone'];
+    }
+
+    mysqli_stmt_close($user_stmt);
+    mysqli_close($conn);
+}
+
+/* Load enquiry form values. If validation failed, keep submitted values. Otherwise use logged-in user details. */
+$v_fname = isset($d['fname']) ? htmlspecialchars($d['fname']) : htmlspecialchars($logged_in_fname);
+$v_lname = isset($d['lname']) ? htmlspecialchars($d['lname']) : htmlspecialchars($logged_in_lname);
+$v_email = isset($d['email']) ? htmlspecialchars($d['email']) : htmlspecialchars($logged_in_email);
+$v_phone = isset($d['phone']) ? htmlspecialchars($d['phone']) : htmlspecialchars($logged_in_phone);
 $v_subject = isset($d['subject']) ? $d['subject'] : '';
 $v_comments = isset($d['comments']) ? htmlspecialchars($d['comments']) : '';
 
@@ -94,25 +135,25 @@ unset($_SESSION['enquiry_data']);
                                 <option value="" disabled <?php echo ($v_subject == '') ? 'selected' : ''; ?>>Select a Topic</option>
                                 
                                 <optgroup label="General">
-                                    <option value="general" <?php echo ($v_subject == 'general') ? 'selected' : ''; ?>>General Inquiry</option>
-                                    <option value="feedback" <?php echo ($v_subject == 'feedback') ? 'selected' : ''; ?>>Feedback & Suggestions</option>
+                                    <option value="General Inquiry" <?php echo ($v_subject == 'General Inquiry') ? 'selected' : ''; ?>>General Inquiry</option>
+                                    <option value="Feedback & Suggestions" <?php echo ($v_subject == 'Feedback & Suggestions') ? 'selected' : ''; ?>>Feedback & Suggestions</option>
                                 </optgroup>
 
                                 <option disabled label="&nbsp;">&nbsp;</option> 
 
                                 <optgroup label="Services">
-                                    <option value="hospital" <?php echo ($v_subject == 'hospital') ? 'selected' : ''; ?>>The Plant Hospital</option>
-                                    <option value="boarding" <?php echo ($v_subject == 'boarding') ? 'selected' : ''; ?>>Plant Boarding</option>
-                                    <option value="custom-terrarium" <?php echo ($v_subject == 'custom-terrarium') ? 'selected' : ''; ?>>Custom Terrariums</option>
-                                    <option value="workshop" <?php echo ($v_subject == 'workshop') ? 'selected' : ''; ?>>Terrarium Workshop</option>
+                                    <option value="The Plant Hospital" <?php echo ($v_subject == 'The Plant Hospital') ? 'selected' : ''; ?>>The Plant Hospital</option>
+                                    <option value="Plant Boarding" <?php echo ($v_subject == 'Plant Boarding') ? 'selected' : ''; ?>>Plant Boarding</option>
+                                    <option value="Custom Terrariums" <?php echo ($v_subject == 'Custom Terrariums') ? 'selected' : ''; ?>>Custom Terrariums</option>
+                                    <option value="Terrarium Workshop" <?php echo ($v_subject == 'Terrarium Workshop') ? 'selected' : ''; ?>>Terrarium Workshop</option>
                                 </optgroup>
 
                                 <option disabled label="&nbsp;">&nbsp;</option> 
 
                                 <optgroup label="Event Door Gifts">
-                                    <option value="gift-standard" <?php echo ($v_subject == 'gift-standard') ? 'selected' : ''; ?>>Standard Package</option>
-                                    <option value="gift-luxury" <?php echo ($v_subject == 'gift-luxury') ? 'selected' : ''; ?>>Luxury Package</option>
-                                    <option value="gift-premium" <?php echo ($v_subject == 'gift-premium') ? 'selected' : ''; ?>>Premium Package</option>
+                                    <option value="Standard Package" <?php echo ($v_subject == 'Standard Package') ? 'selected' : ''; ?>>Standard Package</option>
+                                    <option value="Luxury Package" <?php echo ($v_subject == 'Luxury Package') ? 'selected' : ''; ?>>Luxury Package</option>
+                                    <option value="Premium Package" <?php echo ($v_subject == 'Premium Package') ? 'selected' : ''; ?>>Premium Package</option>
                                 </optgroup>
                             </select>
                         </div>

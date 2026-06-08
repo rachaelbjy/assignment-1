@@ -17,6 +17,24 @@ if (!isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== tru
 /* Connect to the database */
 require_once('settings.php');
 
+
+/* Convert old stored subject values into the same full subject names shown in enquiry.php */
+function get_enquiry_subject_display($subject) {
+    $subject_map = [
+        "general" => "General Inquiry",
+        "feedback" => "Feedback & Suggestions",
+        "hospital" => "The Plant Hospital",
+        "boarding" => "Plant Boarding",
+        "custom-terrarium" => "Custom Terrariums",
+        "workshop" => "Terrarium Workshop",
+        "gift-standard" => "Standard Package",
+        "gift-luxury" => "Luxury Package",
+        "gift-premium" => "Premium Package"
+    ];
+
+    return isset($subject_map[$subject]) ? $subject_map[$subject] : $subject;
+}
+
 /* Get selected enquiry ID safely */
 $id = isset($_GET['id']) ? intval($_GET['id']) : 0;
 
@@ -105,7 +123,7 @@ $is_registered = !empty($row['username']);
                         </tr>
                         <tr>
                             <th>Subject</th>
-                            <td><?php echo htmlspecialchars($row['subject']); ?></td>
+                            <td><?php echo htmlspecialchars(get_enquiry_subject_display($row['subject'])); ?></td>
                         </tr>
                         <tr>
                             <th>Comments</th>

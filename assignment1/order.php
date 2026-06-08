@@ -16,14 +16,77 @@ if (!isset($_SESSION['cart'])) {
 /* Retrieve saved order input from session, if available */
 $d = isset($_SESSION['order_data']) ? $_SESSION['order_data'] : [];
 
+/* Default logged-in user information */
+$logged_in_name = "";
+$logged_in_email = "";
+$logged_in_phone = "";
+$logged_in_address = "";
+
+/* If a normal user is logged in, load saved user information from database */
+if (
+    isset($_SESSION['user_logged_in']) &&
+    $_SESSION['user_logged_in'] === true &&
+    isset($_SESSION['username'])
+) {
+    require_once('settings.php');
+
+    $username = $_SESSION['username'];
+
+    $user_sql = "SELECT fname, lname, email, phone, street, city, state, postcode
+                 FROM `user`
+                 WHERE username = ?
+                 LIMIT 1";
+
+    $user_stmt = mysqli_prepare($conn, $user_sql);
+
+    if ($user_stmt) {
+        mysqli_stmt_bind_param($user_stmt, "s", $username);
+        mysqli_stmt_execute($user_stmt);
+        $user_result = mysqli_stmt_get_result($user_stmt);
+
+        if ($user_result && mysqli_num_rows($user_result) > 0) {
+            $user_row = mysqli_fetch_assoc($user_result);
+
+            $logged_in_name = trim($user_row['fname'] . " " . $user_row['lname']);
+            $logged_in_email = $user_row['email'];
+            $logged_in_phone = $user_row['phone'];
+
+            $address_parts = [];
+
+            if (!empty($user_row['street'])) {
+                $address_parts[] = $user_row['street'];
+            }
+
+            if (!empty($user_row['city'])) {
+                $address_parts[] = $user_row['city'];
+            }
+
+            if (!empty($user_row['state'])) {
+                $address_parts[] = $user_row['state'];
+            }
+
+            if (!empty($user_row['postcode'])) {
+                $address_parts[] = $user_row['postcode'];
+            }
+
+            $logged_in_address = implode(", ", $address_parts);
+        }
+
+        mysqli_stmt_close($user_stmt);
+    }
+
+    mysqli_close($conn);
+}
+
+/* Load order form values. If validation failed, keep submitted values. Otherwise use logged-in user details. */
 $v_delivery = isset($d['delivery']) ? $d['delivery'] : '';
 $v_payment = isset($d['payment']) ? $d['payment'] : '';
 $v_date = isset($d['date']) ? htmlspecialchars($d['date']) : '';
 $v_time = isset($d['time']) ? $d['time'] : '';
-$v_name = isset($d['name']) ? htmlspecialchars($d['name']) : '';
-$v_email = isset($d['email']) ? htmlspecialchars($d['email']) : '';
-$v_phone = isset($d['phone']) ? htmlspecialchars($d['phone']) : '';
-$v_address = isset($d['address']) ? htmlspecialchars($d['address']) : '';
+$v_name = isset($d['name']) ? htmlspecialchars($d['name']) : htmlspecialchars($logged_in_name);
+$v_email = isset($d['email']) ? htmlspecialchars($d['email']) : htmlspecialchars($logged_in_email);
+$v_phone = isset($d['phone']) ? htmlspecialchars($d['phone']) : htmlspecialchars($logged_in_phone);
+$v_address = isset($d['address']) ? htmlspecialchars($d['address']) : htmlspecialchars($logged_in_address);
 $v_terms = isset($d['terms']) ? true : false;
 
 /* Clear saved order data after loading it */

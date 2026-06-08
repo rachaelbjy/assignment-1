@@ -38,6 +38,13 @@ if (!mysqli_query($conn, $create_option_table_sql)) {
     exit();
 }
 
+/* Process form only when submitted using POST */
+if ($_SERVER['REQUEST_METHOD'] != 'POST') {
+    mysqli_close($conn);
+    header("Location: add_product.php");
+    exit();
+}
+
 /* Get form values */
 $product_name = isset($_POST['product_name']) ? trim($_POST['product_name']) : "";
 $category = isset($_POST['category']) ? trim($_POST['category']) : "";
@@ -56,8 +63,7 @@ if (
     $product_name == "" ||
     $category == "" ||
     $description == "" ||
-    $price === "" ||
-    $stock_quantity === ""
+    $price === ""
 ) {
     mysqli_close($conn);
     header("Location: add_product.php?error=empty");
@@ -78,12 +84,8 @@ if (!is_numeric($price) || $price < 0) {
     exit();
 }
 
-/* Check stock quantity */
-if (!ctype_digit($stock_quantity)) {
-    mysqli_close($conn);
-    header("Location: add_product.php?error=stock");
-    exit();
-}
+/* Package services do not use product images */
+$is_package_service = ($category == "Services" && stripos($product_name, "package") !== false);
 
 /* Prepare option records */
 $valid_options = [];
@@ -130,57 +132,77 @@ for ($i = 0; $i < count($option_names); $i++) {
     }
 }
 
+/* Check stock quantity only for items without options */
+if (count($valid_options) == 0) {
+    if ($stock_quantity === "" || !ctype_digit($stock_quantity)) {
+        mysqli_close($conn);
+        header("Location: add_product.php?error=stock");
+        exit();
+    }
+}
+
 /* Build old product_options text for compatibility */
 $product_options = implode(", ", $product_options_text_array);
 
-/* If options are used, default price follows the first option and default stock is left blank */
+/* If options are used, default price follows first option and default stock is blank */
 if (count($valid_options) > 0) {
     $price = $valid_options[0]['option_price'];
     $stock_quantity = null;
 }
 
-/* Check that an image is uploaded */
-if (!isset($_FILES['product_image']) || $_FILES['product_image']['error'] != UPLOAD_ERR_OK) {
-    mysqli_close($conn);
-    header("Location: add_product.php?error=image_required");
-    exit();
-}
+/* Default image values */
+$image_path = "";
 
-/* Prepare upload folder */
-$upload_folder = "images/uploads/";
+/* Process uploaded image only for products and normal services */
+if (!$is_package_service) {
 
-if (!is_dir($upload_folder)) {
-    mkdir($upload_folder, 0777, true);
-}
+    /* Check that an image is uploaded */
+    if (!isset($_FILES['product_image']) || $_FILES['product_image']['error'] != UPLOAD_ERR_OK) {
+        mysqli_close($conn);
+        header("Location: add_product.php?error=image_required");
+        exit();
+    }
 
-/* Process uploaded image */
-$file_tmp = $_FILES['product_image']['tmp_name'];
-$file_name = basename($_FILES['product_image']['name']);
-$file_size = $_FILES['product_image']['size'];
-$file_ext = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
+    /* Prepare upload folder */
+    $upload_folder = "images/uploads/";
 
-$allowed_extensions = ["jpg", "jpeg", "png", "webp", "gif"];
+    if (!is_dir($upload_folder)) {
+        mkdir($upload_folder, 0777, true);
+    }
 
-if (!in_array($file_ext, $allowed_extensions)) {
-    mysqli_close($conn);
-    header("Location: add_product.php?error=image_type");
-    exit();
-}
+    /* Process uploaded image */
+    $file_tmp = $_FILES['product_image']['tmp_name'];
+    $file_name = basename($_FILES['product_image']['name']);
+    $file_size = $_FILES['product_image']['size'];
+    $file_ext = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
 
-if ($file_size > 5 * 1024 * 1024) {
-    mysqli_close($conn);
-    header("Location: add_product.php?error=image_size");
-    exit();
-}
+    $allowed_extensions = ["jpg", "jpeg", "png", "webp", "gif"];
 
-$safe_name = preg_replace("/[^a-zA-Z0-9._-]/", "_", pathinfo($file_name, PATHINFO_FILENAME));
-$new_file_name = $safe_name . "_" . time() . "." . $file_ext;
-$image_path = $upload_folder . $new_file_name;
+    if (!in_array($file_ext, $allowed_extensions)) {
+        mysqli_close($conn);
+        header("Location: add_product.php?error=image_type");
+        exit();
+    }
 
-if (!move_uploaded_file($file_tmp, $image_path)) {
-    mysqli_close($conn);
-    header("Location: add_product.php?error=image_upload");
-    exit();
+    if ($file_size > 5 * 1024 * 1024) {
+        mysqli_close($conn);
+        header("Location: add_product.php?error=image_size");
+        exit();
+    }
+
+    $safe_name = preg_replace("/[^a-zA-Z0-9._-]/", "_", pathinfo($file_name, PATHINFO_FILENAME));
+    $new_file_name = $safe_name . "_" . time() . "." . $file_ext;
+    $image_path = $upload_folder . $new_file_name;
+
+    if (!move_uploaded_file($file_tmp, $image_path)) {
+        mysqli_close($conn);
+        header("Location: add_product.php?error=image_upload");
+        exit();
+    }
+
+} else {
+    /* Package services do not need image source */
+    $image_source = "";
 }
 
 /* Format numeric values */
@@ -218,7 +240,7 @@ if (mysqli_stmt_execute($stmt)) {
     $new_product_id = mysqli_insert_id($conn);
     mysqli_stmt_close($stmt);
 
-    /* Insert options if the product has options */
+    /* Insert options if the item has options */
     if (count($valid_options) > 0) {
         $option_sql = "INSERT INTO product_option (product_id, option_name, option_price, option_stock)
                        VALUES (?, ?, ?, ?)";
@@ -254,7 +276,7 @@ if (mysqli_stmt_execute($stmt)) {
     mysqli_commit($conn);
     mysqli_close($conn);
 
-    header("Location: view_product.php?added=success");
+    header("Location: add_product.php?added=success");
     exit();
 
 } else {

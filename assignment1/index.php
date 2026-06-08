@@ -9,7 +9,7 @@
     
     <title>Home | Cacti-Succulent Kuching</title>
 
-    <link rel="stylesheet" href="styles/style.css?v=adminfix4"> 
+    <link rel="stylesheet" href="styles/style.css?v=adminfix5"> 
     <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

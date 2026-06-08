@@ -34,7 +34,7 @@ foreach ($_SESSION['cart'] as $cart_item) {
     <title>Shopping Cart | Cacti-Succulent Kuching</title>
 
     <!-- EXTERNAL STYLESHEETS AND ICONS -->
-    <link rel="stylesheet" href="styles/style.css?v=cartoptionstock1">
+    <link rel="stylesheet" href="styles/style.css?v=cartoptionstock2">
     <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
 </head>

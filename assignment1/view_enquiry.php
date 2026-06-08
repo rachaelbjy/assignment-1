@@ -17,6 +17,23 @@ if (!isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== tru
 /* Connect to the database */
 require_once('settings.php');
 
+/* Convert old stored subject values into the same full subject names shown in enquiry.php */
+function get_enquiry_subject_display($subject) {
+    $subject_map = [
+        "general" => "General Inquiry",
+        "feedback" => "Feedback & Suggestions",
+        "hospital" => "The Plant Hospital",
+        "boarding" => "Plant Boarding",
+        "custom-terrarium" => "Custom Terrariums",
+        "workshop" => "Terrarium Workshop",
+        "gift-standard" => "Standard Package",
+        "gift-luxury" => "Luxury Package",
+        "gift-premium" => "Premium Package"
+    ];
+
+    return isset($subject_map[$subject]) ? $subject_map[$subject] : $subject;
+}
+
 /* Get selected enquiry status filter */
 $filter_status = isset($_GET['status']) ? trim($_GET['status']) : "All";
 
@@ -180,7 +197,7 @@ if ($filter_status == "All" && $search_keyword == "") {
                                 echo "<td>" . htmlspecialchars($row['id']) . "</td>";
                                 echo "<td>" . htmlspecialchars($row['fname'] . " " . $row['lname']) . "</td>";
                                 echo "<td><span class='admin-status-badge " . $status_class . "'>" . $status_text . "</span></td>";
-                                echo "<td>" . htmlspecialchars($row['subject']) . "</td>";
+                                echo "<td>" . htmlspecialchars(get_enquiry_subject_display($row['subject'])) . "</td>";
                                 echo "<td>" . htmlspecialchars($row['enquiry_status']) . "</td>";
                                 echo "<td><a href='edit_enquiry_status.php?id=" . urlencode($row['id']) . "' class='admin-view-btn'>Edit</a></td>";
                                 echo "<td><a href='view_enquiry_detail.php?id=" . urlencode($row['id']) . "' class='admin-view-btn'>View</a></td>";

@@ -13,14 +13,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="PHP and MySQL enhancements for Cacti-Succulent Kuching Assignment 2">
-    <meta name="keywords" content="enhancement, PHP, MySQL, product management, shopping cart, checkout">
+    <meta name="keywords" content="enhancement, PHP, MySQL, product management, product search, anti-spam">
     <meta name="author" content="Rachael, Eleona, Amber">
 
     <title>Enhancement 2 | Cacti-Succulent Kuching</title>
 
     <!-- EXTERNAL STYLESHEETS AND ICONS -->
-    <link rel="stylesheet" href="styles/style.css?v=enhancement2final3">
+    <link rel="stylesheet" href="styles/style.css?v=enhancement2final7">
     <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
 </head>
 
@@ -47,7 +49,7 @@
                 <!-- ENHANCEMENT VIDEO -->
                 <figure class="enhancement-figure">
                     <video class="enhancement-video" controls>
-                        <source src="videos/enhancement2.mp4" type="video/mp4">
+                        <source src="videos/enhancement2-product-management.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                 </figure>
@@ -55,26 +57,13 @@
                 <div class="enhancement-text">
                     <h2>1. Product and Service Management Module</h2>
 
-                    <p><strong>How it goes beyond the basic requirements:</strong> The basic assignment requires register, order, enquiry, login and user management functions. This enhancement adds a complete product and service management module so the administrator can manage the actual products and services displayed on the public website.</p>
+                    <p><strong>How it goes beyond the specified requirements:</strong> The basic assignment only requires register, order, enquiry, login, admin viewing pages and user management. This enhancement adds a full product and service management module for the business owner. Products, services, event packages, prices, stock, product options and image details can be managed through protected admin PHP pages instead of being edited manually in the HTML pages.</p>
 
-                    <p><strong>Main features included:</strong></p>
+                    <p><strong>How it was implemented:</strong> The module uses PHP, MySQL and mysqli to add, view, edit and delete product records. Product information is stored in the <code>product</code> table, while different product options are stored in the <code>product_option</code> table. The public product and service pages read the latest product data from the database. Stock status, sold out items, option prices, option stock, image paths and CSV export are also handled through PHP and MySQL.</p>
 
-                    <div class="code-box">
-                        Admin can add, view, edit and delete products and services<br>
-                        Product and service data is stored in a MySQL product table<br>
-                        Public product and service pages read directly from the database<br>
-                        Admin can upload and update images for normal products and services<br>
-                        Package services can be managed without image upload fields<br>
-                        Admin can manage price, stock quantity, description, product options and image source links<br>
-                        Items with options can have separate option price and separate option stock<br>
-                        Low stock and sold out options are shown clearly in the analysis table<br>
-                        Product summary shows option price, option stock and option stock status<br>
-                        Sold out products and sold out options are disabled on the public product pages
-                    </div>
+                    <p><strong>What a programmer needs to do:</strong> A programmer needs to create the product database tables, protect the management pages with admin session checking, validate submitted product data, process image paths, use mysqli commands for database operations, and update the public catalogue pages so they retrieve product information from MySQL.</p>
 
-                    <p><strong>What a programmer needs to do:</strong> A programmer needs to create a product table and a product option table, build protected admin pages, use PHP sessions to restrict access, and use mysqli commands to create, retrieve, update and delete records. The public product and service pages must retrieve data from the same database so that admin changes appear on the real website.</p>
-
-                    <p><strong>Files involved:</strong> <code>view_product.php</code>, <code>view_product_detail.php</code>, <code>add_product.php</code>, <code>add_product_process.php</code>, <code>edit_product.php</code>, <code>edit_product_process.php</code>, <code>delete_product.php</code>, <code>admin_dashboard.php</code>, <code>product1.php</code>, <code>product2.php</code>, <code>product3.php</code> and <code>service1.php</code>.</p>
+                    <p><strong>Files involved:</strong> <code>view_product.php</code>, <code>view_product_detail.php</code>, <code>add_product.php</code>, <code>add_product_process.php</code>, <code>edit_product.php</code>, <code>edit_product_process.php</code>, <code>delete_product.php</code>, <code>export_products.php</code>, <code>admin_dashboard.php</code>, <code>product1.php</code>, <code>product2.php</code>, <code>product3.php</code> and <code>service1.php</code>.</p>
 
                     <p><strong>Database tables used:</strong> <code>product</code> and <code>product_option</code></p>
 
@@ -82,45 +71,32 @@
                 </div>
             </article>
 
-            <!-- ENHANCEMENT 2: SHOPPING CART AND CHECKOUT MANAGEMENT MODULE -->
+            <!-- ENHANCEMENT 2: PRODUCT SEARCH AND ANTI-SPAM FEATURE -->
             <article class="enhancement-row">
 
                 <!-- ENHANCEMENT VIDEO -->
                 <figure class="enhancement-figure">
                     <video class="enhancement-video" controls>
-                        <source src="videos/enhancement2.mp4" type="video/mp4">
+                        <source src="videos/enhancement2-search-antispam.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                 </figure>
 
                 <div class="enhancement-text">
-                    <h2>2. Shopping Cart and Checkout Management Module</h2>
+                    <h2>2. Product Search Feature and Anti-Spam Enquiry Protection</h2>
 
-                    <p><strong>How it goes beyond the basic requirements:</strong> The basic order form only allows customers to submit order details. This enhancement adds a shopping cart system before checkout so customers can review selected products, options, quantities, subtotals and total price before submitting an order.</p>
+                    <p><strong>How it goes beyond the specified requirements:</strong> The basic assignment does not require a catalogue search feature, and the enquiry form only needs to validate and store submitted data. This enhancement improves both usability and security by allowing customers to search products and services, while also preventing repeated enquiry spam from the same email address.</p>
 
-                    <p><strong>Main features included:</strong></p>
+                    <p><strong>How it was implemented:</strong> The search feature uses PHP, MySQL and mysqli prepared statements to search product records based on customer keywords. The search area is reused through <code>product_service_search.inc</code>, and matching results link customers to the correct product or service page. The anti-spam feature checks the <code>enquiry</code> table before saving a new enquiry. If the same email submits too many enquiries within ten minutes, the submission is blocked and the user is asked to wait.</p>
 
-                    <div class="code-box">
-                        Customer can add products to a shopping cart<br>
-                        Cart items are stored using PHP sessions<br>
-                        Customer can update quantity, remove items and clear the cart<br>
-                        Cart shows product image, selected option, price, quantity, subtotal and total<br>
-                        Product option prices are supported for items with different choices<br>
-                        Product option stock is checked before adding to cart<br>
-                        Cart quantity cannot exceed available product or option stock<br>
-                        Checkout page shows a clear order summary before submission<br>
-                        Order form receives cart items automatically<br>
-                        Successful order submission reduces product stock or selected option stock<br>
-                        Cart is cleared after a successful order submission
-                    </div>
+                    <p><strong>What a programmer needs to do:</strong> A programmer needs to collect the search keyword using the GET method, run a safe mysqli keyword search, display matching results using <code>htmlspecialchars()</code>, store enquiry submission time in the database, count recent submissions from the same email, and block repeated submissions when the limit is reached.</p>
 
-                    <p><strong>What a programmer needs to do:</strong> A programmer needs to create PHP scripts for adding, updating, removing and clearing cart items. The cart data is stored in a session, while product and option stock are checked from MySQL using mysqli. During checkout, the order is saved in the order table and the related product or option stock is updated together.</p>
+                    <p><strong>Files involved:</strong> <code>product_service_search.inc</code>, <code>product1.php</code>, <code>product2.php</code>, <code>product3.php</code>, <code>service1.php</code>, <code>enquiry.php</code>, <code>enquiry_process.php</code>, <code>view_enquiry.php</code> and <code>view_enquiry_detail.php</code>.</p>
 
-                    <p><strong>Files involved:</strong> <code>add_to_cart.php</code>, <code>cart.php</code>, <code>update_cart.php</code>, <code>remove_from_cart.php</code>, <code>clear_cart.php</code>, <code>order.php</code>, <code>order_process.php</code>, <code>product1.php</code>, <code>product2.php</code> and <code>product3.php</code>.</p>
+                    <p><strong>Database tables used:</strong> <code>product</code> and <code>enquiry</code></p>
 
-                    <p><strong>Database tables used:</strong> <code>product</code>, <code>product_option</code> and <code>order</code></p>
-
-                    <a href="cart.php" class="btn-link2">View Shopping Cart</a>
+                    <a href="product1.php" class="btn-link2">Try Product Search</a>
+                    <a href="enquiry.php" class="btn-link3">View Enquiry Form</a>
                 </div>
             </article>
 

@@ -19,7 +19,7 @@
     <title>Planting Accessories | Cacti-Succulent Kuching</title>
     
     <!-- EXTERNAL STYLESHEETS AND ICONS -->
-    <link rel="stylesheet" href="styles/style.css?v=cartproductoptionstock1">
+    <link rel="stylesheet" href="styles/style.css?v=product3optionstockfixed1">
     <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -143,31 +143,33 @@
                         }
                     }
 
-                    /* Decide displayed price and stock condition */
+                    /* Decide displayed price and sold out condition */
                     $display_price = number_format((float)$row['price'], 2);
                     $is_sold_out = false;
                     $has_available_option = false;
+                    $first_available_option_value = "";
 
                     if (count($option_records) > 0) {
-                        $first_available_price = "";
-
                         foreach ($option_records as $option_record) {
-                            if ((int)$option_record['option_stock'] > 0) {
+                            $option_stock = (int)$option_record['option_stock'];
+
+                            if ($option_stock > 0) {
                                 $has_available_option = true;
 
-                                if ($first_available_price == "") {
-                                    $first_available_price = number_format((float)$option_record['option_price'], 2);
+                                if ($first_available_option_value == "") {
+                                    $display_price = number_format((float)$option_record['option_price'], 2);
+                                    $option_name_for_value = trim($option_record['option_name']);
+                                    $option_price_for_value = number_format((float)$option_record['option_price'], 2, '.', '');
+                                    $first_available_option_value = strtolower(str_replace(' ', '-', $option_name_for_value)) . "|" . $option_price_for_value;
                                 }
                             }
                         }
 
-                        if ($first_available_price != "") {
-                            $display_price = $first_available_price;
-                        } else {
+                        if (!$has_available_option) {
+                            $is_sold_out = true;
                             $display_price = number_format((float)$option_records[0]['option_price'], 2);
                         }
 
-                        $is_sold_out = !$has_available_option;
                     } else {
                         $stock_quantity = (int)$row['stock_quantity'];
                         $is_sold_out = ($stock_quantity <= 0);
@@ -206,17 +208,25 @@
                                         $option_price = number_format((float)$option_record['option_price'], 2, '.', '');
                                         $option_stock = (int)$option_record['option_stock'];
                                         $option_value = strtolower(str_replace(' ', '-', $option_name)) . "|" . $option_price;
-                                        $disabled = ($option_stock <= 0) ? "disabled" : "";
+
+                                        $disabled = "";
+                                        $selected = "";
                                         $option_label = $option_name;
 
                                         if ($option_stock <= 0) {
+                                            $disabled = "disabled";
                                             $option_label .= " - Sold Out";
                                         }
 
-                                        echo '<option value="' . htmlspecialchars($option_value) . '" data-price="' . htmlspecialchars($option_price) . '" ' . $disabled . '>' . htmlspecialchars($option_label) . '</option>';
+                                        if ($option_value == $first_available_option_value) {
+                                            $selected = "selected";
+                                        }
+
+                                        echo '<option value="' . htmlspecialchars($option_value) . '" data-price="' . htmlspecialchars($option_price) . '" ' . $disabled . ' ' . $selected . '>' . htmlspecialchars($option_label) . '</option>';
                                     }
 
                                     echo '</select>';
+
                                 } else if (!empty($row['product_options'])) {
                                     $options_array = explode(',', $row['product_options']);
 

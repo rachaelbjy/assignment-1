@@ -49,7 +49,7 @@
                 <!-- ENHANCEMENT VIDEO -->
                 <figure class="enhancement-figure">
                     <video class="enhancement-video" controls>
-                        <source src="videos/enhancement2-product-management.mp4" type="video/mp4">
+                        <source src="videos/recording-management.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                 </figure>
@@ -77,7 +77,7 @@
                 <!-- ENHANCEMENT VIDEO -->
                 <figure class="enhancement-figure">
                     <video class="enhancement-video" controls>
-                        <source src="videos/enhancement2-search-antispam.mp4" type="video/mp4">
+                        <source src="videos/recording-search-antispam.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                 </figure>

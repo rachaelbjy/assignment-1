@@ -2133,7 +2133,7 @@ body.enhancement-page .enhancements-list .enhancement-text h3 {
 /* ==========================================================================
    14. ENHANCEMENTS ANIMATIONS
    ========================================================================== */
-   
+
 /* Dynamic Emoji Overlay Initialization */
 .cactus-party {
     position: fixed;
@@ -7834,8 +7834,59 @@ body {
     margin-right: auto;
 }
 
+.view-order-page .form-card {
+    box-shadow: 0 25px 50px rgba(0,0,0,0.08), 0 5px 15px rgba(0,0,0,0.04);
+    overflow: visible;
+}
+
 .view-order-page .form-header,
 .view-order-page .form-card {
     width: 100%;
     max-width: 100%;
+}
+
+@media (prefers-color-scheme: dark) {
+    html body.view-order-page .form-card {
+        box-shadow: 0 25px 50px rgba(0,0,0,0.5), 0 5px 15px rgba(0,0,0,0.3);
+    }
+}
+
+/* ==========================================================================
+   VIEW ORDER PAGE FORM SHADOW AND SPACING FIX
+   ========================================================================== */
+
+.view-order-page .form-main {
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.view-order-page .form-header,
+.view-order-page .form-card {
+    width: min(100%, 1100px);
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.view-order-page .form-card {
+    box-shadow: 0 25px 50px rgba(0,0,0,0.08), 0 5px 15px rgba(0,0,0,0.04);
+    overflow: visible;
+}
+
+.view-order-page .admin-record-fieldset {
+    overflow: visible;
+}
+
+.view-order-page .admin-table-wrapper {
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+}
+
+@media (prefers-color-scheme: dark) {
+    html body.view-order-page .form-card {
+        box-shadow: 0 25px 50px rgba(0,0,0,0.5), 0 5px 15px rgba(0,0,0,0.3);
+    }
 }

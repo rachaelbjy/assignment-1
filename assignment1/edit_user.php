@@ -118,12 +118,6 @@ if (!$row) {
                             <input type="text" id="username" name="username" value="<?php echo htmlspecialchars($row['username']); ?>" maxlength="10" pattern="[A-Za-z]+" title="Letters only, maximum 10 characters" required>
                         </div>
 
-                        <div class="input-group">
-                            <label for="password">Password</label>
-                            <input type="text" id="password" name="password" value="<?php echo htmlspecialchars($row['password']); ?>" maxlength="25" title="Password must not be empty and must be maximum 25 characters" required>
-                        </div>
-                    </div>
-
                     <!-- PREFERRED CONTACT -->
                     <div class="form-row">
                         <div class="input-group full-width">
